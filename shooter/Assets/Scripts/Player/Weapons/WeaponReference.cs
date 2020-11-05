@@ -14,7 +14,5 @@ public class WeaponReference : MonoBehaviour
     protected float endDamage;
     protected RaycastHit hit;
 
-    public virtual void Fire(Transform dir)
-    {
-    }
+    public virtual void Fire(Transform dir) { }
 }

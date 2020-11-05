@@ -762,6 +762,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1254581864554528203, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e9f2dd68ea59ad9438042d26d65ad899, type: 2}
     - target: {fileID: 2211358916103573254, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -825,6 +829,10 @@ PrefabInstance:
     - target: {fileID: 3020725539476537099, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121276084043328015, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
+      propertyPath: baseAttackSpeed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}

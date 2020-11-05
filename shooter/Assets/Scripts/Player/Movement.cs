@@ -72,9 +72,10 @@ public class Movement : MonoBehaviour
         }
 
         //movement
-        moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), downForce, Input.GetAxisRaw("Vertical"));
+        moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         moveDir = transform.TransformDirection(moveDir);
         controller.Move(moveDir.normalized * speed * Time.deltaTime);
+        controller.Move(new Vector3(0, downForce, 0) * speed * Time.deltaTime);
 
         //rotation
         rotX += Input.GetAxis("Mouse X") * FindObjectOfType<CameraController>().rotSpeed;

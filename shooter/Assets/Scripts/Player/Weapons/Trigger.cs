@@ -19,6 +19,7 @@ public class Trigger : MonoBehaviour
         currentWeapon = GetComponentInChildren<WeaponReference>().transform;
         weapon = currentWeapon.GetComponent<WeaponReference>();
         currentWeapon.position = weaponHold.position;
+        attackCooldown = weapon.baseAttackSpeed / (weapon.baseAttackSpeed * weapon.baseAttackSpeed);
     }
     private void Update()
     {
@@ -34,8 +35,8 @@ public class Trigger : MonoBehaviour
         {
             if(Time.time >= nextAttack)
             {
-                weapon.Fire(transform);
                 nextAttack = attackCooldown + Time.time;
+                weapon.Fire(transform);
             }
         }
     }

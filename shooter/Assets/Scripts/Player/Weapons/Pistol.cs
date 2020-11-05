@@ -7,6 +7,6 @@ public class Pistol : WeaponReference
     public override void Fire(Transform dir)
     {
         Rigidbody clone = Instantiate(basicBullet, bulletOri.position, transform.rotation);
-        clone.velocity = clone.transform.forward;
+        clone.velocity = clone.transform.forward * bulletSpeed;
     }
 }

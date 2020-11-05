@@ -91,7 +91,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: e9f2dd68ea59ad9438042d26d65ad899, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,9 +127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseAttackSpeed: 2
   baseDamage: 10
-  bulletSpeed: 10
+  bulletSpeed: 100
   bulletOri: {fileID: 8302137599924640472}
-  bulletRot: {fileID: 8302137599924640472}
   basicBullet: {fileID: 340289178427617518, guid: 9be40e21abab7034286e6f3ca149104f, type: 3}
   isUsed: 0
   canShoot:
