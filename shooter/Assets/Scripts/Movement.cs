@@ -11,12 +11,13 @@ public class Movement : MonoBehaviour
     private Vector3 moveDir;
 
     private float rotX, speed, groundedCooldown = 0.1f, downForce, bodyHeight;
-    private bool mayJump;
+    private bool mayJump, mayJumpCheck;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         bodyHeight = GetComponent<CharacterController>().height;
+        JumpCheck();
     }
 
     private void Update()
@@ -28,6 +29,7 @@ public class Movement : MonoBehaviour
             {
                 mayJump = false;
                 downForce = jumpForce;
+                Invoke("JumpCheck", 0.1f);
             }
         }
 
@@ -54,15 +56,14 @@ public class Movement : MonoBehaviour
         //gravity
         if (controller.isGrounded)
         {
-            mayJump = true;
+            if(mayJumpCheck)
+            {
+                mayJumpCheck = false;
+                mayJump = true;
+            }
             if (Time.time == groundedCooldown + Time.time)
             {
                 downForce = -0.01f;
-                groundedCooldown = 0.1f;
-            }
-            else
-            {
-                groundedCooldown = 0;
             }
         }
         else
@@ -73,10 +74,14 @@ public class Movement : MonoBehaviour
         //movement
         moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), downForce, Input.GetAxisRaw("Vertical"));
         moveDir = transform.TransformDirection(moveDir);
-        controller.Move(moveDir.normalized * movementSpeed * Time.deltaTime);
+        controller.Move(moveDir.normalized * speed * Time.deltaTime);
 
         //rotation
         rotX += Input.GetAxis("Mouse X") * FindObjectOfType<CameraController>().rotSpeed;
         transform.rotation = Quaternion.Euler(0, rotX, 0f);
+    }
+    private void JumpCheck()
+    {
+        mayJumpCheck = true;
     }
 }
