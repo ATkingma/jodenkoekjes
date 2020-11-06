@@ -11,7 +11,14 @@ public class Pickup : MonoBehaviour
         if(player.tag == "Player")
         {
             player.GetComponent<ItemList>().itemQuantity[(int)item] += 1;
+            StatChanges();
             Destroy(gameObject);
         }
+    }
+    public void StatChanges()
+    {
+        FindObjectOfType<Trigger>().CalculateStats();
+        FindObjectOfType<Movement>().CalculateStats();
+        FindObjectOfType<PlayerHealth>().CalculateStats();
     }
 }

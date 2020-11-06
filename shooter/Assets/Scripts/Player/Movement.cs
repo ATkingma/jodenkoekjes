@@ -13,10 +13,13 @@ public class Movement : MonoBehaviour
     private float rotX, speed, groundedCooldown = 0.1f, downForce, bodyHeight;
     private bool mayJump, mayJumpCheck;
 
+    private ItemList list;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         bodyHeight = GetComponent<CharacterController>().height;
+        list = FindObjectOfType<ItemList>();
         JumpCheck();
     }
 
@@ -84,5 +87,10 @@ public class Movement : MonoBehaviour
     private void JumpCheck()
     {
         mayJumpCheck = true;
+    }
+    public void CalculateStats()
+    {
+        sprintSpeed = sprintSpeed * (1 + (0.1f * list.itemQuantity[3]));
+        movementSpeed = movementSpeed * (1 + (0.1f * list.itemQuantity[3]));
     }
 }
