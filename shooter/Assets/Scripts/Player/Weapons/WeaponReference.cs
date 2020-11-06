@@ -11,8 +11,7 @@ public class WeaponReference : MonoBehaviour
     public LayerMask canShoot;
 
     //protected
-    protected float endDamage;
     protected RaycastHit hit;
 
-    public virtual void Fire(Transform dir) { }
+    public virtual void Fire(float dir) { }
 }

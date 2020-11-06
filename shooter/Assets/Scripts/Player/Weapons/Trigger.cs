@@ -8,18 +8,21 @@ public class Trigger : MonoBehaviour
     public LayerMask canShoot, guns;
 
     //privates
-    private float nextAttack, attackCooldown;
+    private float nextAttack, attackCooldown, attacksPerSec, calculatedDamage;
     private Transform currentWeapon;
     private WeaponReference weapon;
     private RaycastHit hit, hitInfo;
     private Vector3 aimAt;
+    private ItemList itemList;
 
     private void Start()
     {
         currentWeapon = GetComponentInChildren<WeaponReference>().transform;
         weapon = currentWeapon.GetComponent<WeaponReference>();
+        itemList = FindObjectOfType<ItemList>();
         currentWeapon.position = weaponHold.position;
-        attackCooldown = weapon.baseAttackSpeed / (weapon.baseAttackSpeed * weapon.baseAttackSpeed);
+
+        CalculateStats();
     }
     private void Update()
     {
@@ -47,13 +50,14 @@ public class Trigger : MonoBehaviour
             if(Time.time >= nextAttack)
             {
                 nextAttack = attackCooldown + Time.time;
-                weapon.Fire(transform);
+                weapon.Fire(calculatedDamage);
             }
         }
     }
 
     private void WeaponSwap(Transform newWeapon)
     {
+        //dump last weapon
         weapon.isUsed = false;
         currentWeapon.parent = weaponDump;
         currentWeapon.position = newWeapon.position;
@@ -65,6 +69,15 @@ public class Trigger : MonoBehaviour
         currentWeapon.position = weaponHold.position;
         weapon = currentWeapon.GetComponent<WeaponReference>();
         weapon.isUsed = true;
-        attackCooldown = weapon.baseAttackSpeed / (weapon.baseAttackSpeed * weapon.baseAttackSpeed);
+
+        CalculateStats();
+    }
+    public void CalculateStats()
+    {
+        //change damage and attackspeed
+        calculatedDamage = weapon.baseDamage * (1 + (0.1f * itemList.itemQuantity[0]));
+
+        attacksPerSec = weapon.baseAttackSpeed * (1 + (0.1f * itemList.itemQuantity[1]));
+        attackCooldown = attacksPerSec / Mathf.Pow(attacksPerSec, 2);
     }
 }
