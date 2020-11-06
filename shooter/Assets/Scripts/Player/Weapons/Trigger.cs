@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
-    public Transform weaponHold;
-    public LayerMask canShoot;
+    public Transform weaponHold, weaponDump;
+    public LayerMask canShoot, guns;
 
     //privates
     private float nextAttack, attackCooldown;
     private Transform currentWeapon;
     private WeaponReference weapon;
-    private RaycastHit hit;
+    private RaycastHit hit, hitInfo;
     private Vector3 aimAt;
 
     private void Start()
@@ -23,12 +23,23 @@ public class Trigger : MonoBehaviour
     }
     private void Update()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out hit, canShoot))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 1000, canShoot))
         {
             aimAt = hit.point;
             if (Vector3.Distance(transform.position, aimAt) > 2)
             {
                 currentWeapon.LookAt(aimAt, Vector3.up);
+            }
+        }
+        //gunpickup
+        if(Physics.Raycast(transform.position, transform.forward, out hitInfo, 1000, guns))
+        {
+            if (Input.GetButtonDown("Fire2"))
+            {
+                if (hitInfo.transform.tag == "Gun")
+                {
+                    WeaponSwap(hitInfo.transform);
+                }
             }
         }
         if (Input.GetButton("Fire1"))
@@ -44,7 +55,7 @@ public class Trigger : MonoBehaviour
     private void WeaponSwap(Transform newWeapon)
     {
         weapon.isUsed = false;
-        currentWeapon.parent = FindObjectOfType<Transform>(tag == "WeaponDump");
+        currentWeapon.parent = weaponDump;
         currentWeapon.position = newWeapon.position;
         currentWeapon.rotation = newWeapon.rotation;
 
