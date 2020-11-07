@@ -7,7 +7,7 @@ public class BaseHealthScript : MonoBehaviour
     public float maxHealth;
 
     //privates
-    private float health;
+    protected float health;
     protected ItemList list;
 
     private void Start()
@@ -15,7 +15,7 @@ public class BaseHealthScript : MonoBehaviour
         health = maxHealth;
         list = FindObjectOfType<ItemList>();
     }
-    public virtual void DoDamage(float amount)
+    public virtual void ReceiveDamage(float amount)
     {
         health = Mathf.Clamp(health - amount, 0, maxHealth);
 

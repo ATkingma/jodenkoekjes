@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemieScript : MonoBehaviour
 {
     //public
-    public float attackCoolDown;
+    public float attackCoolDown, damageValue;
     public Animator anim;
     //private
     private GameObject player;
@@ -42,18 +42,47 @@ public class EnemieScript : MonoBehaviour
     {
         if (doingDamage == false)
         {
-            DoDamage();
+            Invoke("DoDamage", 0.5f);
+            Invoke("DoDamage2", 1);
             Atack();
         }
         print("Attacking");
         isAtacking = true;
     }
+
+    //damage
     public void DoDamage()
     {
         Invoke("Resset", attackCoolDown);
         Invoke("DoTaunt", attackCoolDown / 2);
-        print("DoDammage");
+        float dist = Vector3.Distance(player.transform.position, transform.position);
+        if (dist <= 6.4f)
+        {
+            Collider[] hit = Physics.OverlapSphere(transform.position + transform.forward + transform.up * 2, 2);
+            foreach (Collider hitCollider in hit)
+            {
+                if (hitCollider.gameObject.tag == "Player")
+                {
+                    hitCollider.GetComponent<PlayerHealth>().ReceiveDamage(damageValue);
+                }
+            }
+        }
         doingDamage = true;
+    }
+    public void DoDamage2()
+    {
+        float dist = Vector3.Distance(player.transform.position, transform.position);
+        if (dist <= 6.4f)
+        {
+            Collider[] hit = Physics.OverlapSphere(transform.position + transform.forward + transform.up * 2, 2);
+            foreach (Collider hitCollider in hit)
+            {
+                if (hitCollider.gameObject.tag == "Player")
+                {
+                    hitCollider.GetComponent<PlayerHealth>().ReceiveDamage(damageValue);
+                }
+            }
+        }
     }
     public void DoTaunt()
     {
