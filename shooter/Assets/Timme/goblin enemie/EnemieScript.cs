@@ -87,7 +87,7 @@ public class EnemieScript : MonoBehaviour
     public void DoTaunt()
     {
         float dist = Vector3.Distance(player.transform.position, transform.position);
-        if (dist <= 6.4f)
+        if (dist <= 4.5f)
         {
             Taunt();
         }
@@ -129,3 +129,7 @@ public class EnemieScript : MonoBehaviour
         }
     }
 }
+///moet niet maar bug dat die defende er uit hallen
+///
+
+    ///moet wel de walking animatie apart aan laten gaan en dan een empty ofz er tussen zetten omdat die nu loopt onder de animaties door
