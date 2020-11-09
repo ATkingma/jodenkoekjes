@@ -6,6 +6,6 @@ public class PlayerHealth : BaseHealthScript
 {
     public void CalculateStats()
     {
-        maxHealth = maxHealth * (1 + (10 * list.itemQuantity[2]));
+        maxHealth = maxHealth + (10 * list.itemQuantity[2]);
     }
 }

@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     private CharacterController controller;
     private Vector3 moveDir;
 
-    private float rotX, speed, groundedCooldown = 0.1f, downForce, bodyHeight;
+    private float rotX, speed, groundedCooldown = 0.1f, downForce, bodyHeight, baseSprintSpeed, baseMovewmentSpeed;
     private bool mayJump, mayJumpCheck;
 
     private ItemList list;
@@ -21,6 +21,8 @@ public class Movement : MonoBehaviour
         bodyHeight = GetComponent<CharacterController>().height;
         list = FindObjectOfType<ItemList>();
         JumpCheck();
+        baseMovewmentSpeed = movementSpeed;
+        baseSprintSpeed = sprintSpeed;
     }
 
     private void Update()
@@ -90,7 +92,7 @@ public class Movement : MonoBehaviour
     }
     public void CalculateStats()
     {
-        sprintSpeed = sprintSpeed * (1 + (0.1f * list.itemQuantity[3]));
-        movementSpeed = movementSpeed * (1 + (0.1f * list.itemQuantity[3]));
+        sprintSpeed = baseSprintSpeed * (1 + (0.1f * list.itemQuantity[3]));
+        movementSpeed = baseMovewmentSpeed * (1 + (0.1f * list.itemQuantity[3]));
     }
 }
