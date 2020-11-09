@@ -8,6 +8,6 @@ public class BulletBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //hier moet damage gedaan worden
+        other.GetComponent<BaseHealthScript>().ReceiveDamage(damage);
     }
 }
