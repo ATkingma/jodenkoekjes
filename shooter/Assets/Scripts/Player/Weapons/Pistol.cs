@@ -9,5 +9,12 @@ public class Pistol : WeaponReference
         Rigidbody clone = Instantiate(basicBullet, bulletOri.position, transform.rotation);
         clone.velocity = clone.transform.forward * bulletSpeed;
         clone.GetComponent<BulletBehaviour>().damage = dir;
+        DoFuntions(dir);
+    }
+    public override void Fire2(float dir)
+    {
+        Rigidbody clone = Instantiate(basicBullet, bulletOri.position, transform.rotation);
+        clone.velocity = clone.transform.forward * bulletSpeed;
+        clone.GetComponent<BulletBehaviour>().damage = dir;
     }
 }

@@ -79,5 +79,11 @@ public class Trigger : MonoBehaviour
 
         attacksPerSec = weapon.baseAttackSpeed * (1 + (0.1f * itemList.itemQuantity[1]));
         attackCooldown = attacksPerSec / Mathf.Pow(attacksPerSec, 2);
+        weapon.attackSpeed = attackCooldown;
+
+        if(itemList.itemQuantity[10] >= 0)
+        {
+            weapon.doubleShotActive = true;
+        }
     }
 }
