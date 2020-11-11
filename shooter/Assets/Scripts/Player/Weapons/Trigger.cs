@@ -81,9 +81,15 @@ public class Trigger : MonoBehaviour
         attackCooldown = attacksPerSec / Mathf.Pow(attacksPerSec, 2);
         weapon.attackSpeed = attackCooldown;
 
-        if(itemList.itemQuantity[10] >= 0)
+        //glasscannon
+        if(itemList.itemQuantity[11] > 0)
         {
-            weapon.doubleShotActive = true;
+            calculatedDamage = (itemList.itemQuantity[11] + itemList.itemQuantity[11]) * calculatedDamage;
+        }
+        //explosives
+        if(itemList.itemQuantity[12] > 0)
+        {
+            weapon.explosiveChance = itemList.itemQuantity[12];
         }
     }
 }

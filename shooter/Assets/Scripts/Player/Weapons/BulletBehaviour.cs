@@ -4,13 +4,35 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
-    public float damage;
+    public float damage, normalHitRange, explosionRange;
+    public bool explode;
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<BaseHealthScript>())
+        if (other.tag == "Enemy")
         {
-            other.GetComponent<BaseHealthScript>().ReceiveDamage(damage);
+            HitEnemy(other.transform.position);
         }
+    }
+    public void HitEnemy(Vector3 pos)
+    {
+        if (explode)
+        {
+            print("hoi");
+            normalHitRange = explosionRange;
+        }
+        else
+        {
+            normalHitRange = 1;
+        }
+        Collider[] hitcolliders = Physics.OverlapSphere(transform.position, normalHitRange);
+        foreach (Collider hitcollider in hitcolliders)
+        {
+            if (hitcollider.GetComponent<BaseHealthScript>())
+            {
+                hitcollider.GetComponent<BaseHealthScript>().ReceiveDamage(damage);
+            }
+        }
+        Destroy(gameObject);
     }
 }

@@ -4,8 +4,4 @@ using UnityEngine;
 
 public class DoubleShot : Pickup
 {
-    private void Start()
-    {
-        item = 10;
-    }
 }
