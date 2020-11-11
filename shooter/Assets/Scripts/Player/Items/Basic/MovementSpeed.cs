@@ -4,8 +4,4 @@ using UnityEngine;
 
 public class MovementSpeed : Pickup
 {
-    private void Start()
-    {
-        item = 3;
-    }
 }

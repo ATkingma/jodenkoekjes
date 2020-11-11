@@ -8,9 +8,9 @@ public class EnemyHealth : BaseHealthScript
     {
         health = Mathf.Clamp(health - amount, 0, maxHealth);
 
-        if (health >= 0)
+        if (health == 0)
         {
-            print("enemy krijgt ouwie");
+            
         }
     }
 

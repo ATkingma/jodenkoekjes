@@ -4,8 +4,4 @@ using UnityEngine;
 
 public class Damage : Pickup
 {
-    private void Start()
-    {
-        item = 0;
-    }
 }

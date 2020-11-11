@@ -4,8 +4,4 @@ using UnityEngine;
 
 public class AttackSpeed : Pickup
 {
-    private void Start()
-    {
-        item = 1;
-    }
 }

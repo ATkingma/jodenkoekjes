@@ -7,11 +7,12 @@ public class BaseHealthScript : MonoBehaviour
     public float maxHealth;
 
     //privates
-    protected float health;
+    protected float health, maxMaxHealth;
     protected ItemList list;
 
     private void Start()
     {
+        maxMaxHealth = maxHealth;
         health = maxHealth;
         list = FindObjectOfType<ItemList>();
     }
@@ -19,7 +20,7 @@ public class BaseHealthScript : MonoBehaviour
     {
         health = Mathf.Clamp(health - amount, 0, maxHealth);
 
-        if(health >= 0)
+        if(health == 0)
         {
             print("moet inheritance gebruiken!");
         }
