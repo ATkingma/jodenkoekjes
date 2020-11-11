@@ -21,7 +21,7 @@ public class MagicBall : MonoBehaviour
     {
         if (gameobject.gameObject.tag == "Player")
         {
-            print("kanker dat deed pijn");
+            ///doe dammage hier
         }
     }
 }
