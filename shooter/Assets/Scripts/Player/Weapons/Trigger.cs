@@ -8,7 +8,7 @@ public class Trigger : MonoBehaviour
     public LayerMask canShoot, guns;
 
     //privates
-    private float nextAttack, attackCooldown, attacksPerSec, calculatedDamage;
+    private float nextAttack, attackCooldown, attacksPerSec, calculatedDamage, slowBulletAttackSpeed;
     private Transform currentWeapon;
     private WeaponReference weapon;
     private RaycastHit hit, hitInfo;
@@ -79,7 +79,6 @@ public class Trigger : MonoBehaviour
 
         attacksPerSec = weapon.baseAttackSpeed * (1 + (0.1f * itemList.itemQuantity[1]));
         attackCooldown = attacksPerSec / Mathf.Pow(attacksPerSec, 2);
-        weapon.attackSpeed = attackCooldown;
 
         //glasscannon
         if(itemList.itemQuantity[11] > 0)
@@ -91,5 +90,14 @@ public class Trigger : MonoBehaviour
         {
             weapon.explosiveChance = itemList.itemQuantity[12];
         }
+        if(itemList.itemQuantity[15] > 0)
+        {
+            weapon.Slowbullets();
+            attacksPerSec = weapon.baseAttackSpeed * (1 + (0.1f * itemList.itemQuantity[1]));
+            slowBulletAttackSpeed = 1.5f * Mathf.Pow(2, itemList.itemQuantity[15]);
+            attackCooldown = slowBulletAttackSpeed / Mathf.Pow(slowBulletAttackSpeed, 2);
+        }
+        //give attackSpeedCooldown to weapon
+        weapon.attackSpeed = attackCooldown;
     }
 }

@@ -22,11 +22,13 @@ public class Pickup : MonoBehaviour
         //attackspeed
         //doubleshot
         //explosive
+        //slow bullets
 
         FindObjectOfType<Movement>().CalculateStats();
         //movementspeed
 
         FindObjectOfType<BaseHealthScript>().CalculateStats();
+        //+maxhealth
         //execute
         //lifesteal
         //glasscannon

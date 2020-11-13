@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponReference : MonoBehaviour
 {
-    public float baseAttackSpeed, baseDamage, bulletSpeed, attackSpeed, explosiveChance;
+    public float baseAttackSpeed, baseDamage, baseBulletSpeed, attackSpeed, explosiveChance, bulletSpeedMulti;
     public Transform bulletOri;
     public Rigidbody basicBullet;
     public bool isUsed;
@@ -14,10 +14,12 @@ public class WeaponReference : MonoBehaviour
     protected RaycastHit hit;
     protected ItemList list;
     protected bool isExplosive;
+    protected float bulletSpeed;
 
     private void Start()
     {
         list = FindObjectOfType<ItemList>();
+        bulletSpeed = baseBulletSpeed;
     }
     public virtual void Fire(float dir) { }
     public virtual void Fire2(float dir) { }
@@ -33,5 +35,10 @@ public class WeaponReference : MonoBehaviour
         {
             Fire2(dir);
         }
+    }
+
+    public void Slowbullets()
+    {
+        bulletSpeed = baseBulletSpeed / Mathf.Pow(2, list.itemQuantity[15]);
     }
 }
