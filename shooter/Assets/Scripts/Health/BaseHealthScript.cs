@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseHealthScript : MonoBehaviour
 {
-    public float maxHealth;
+    public float maxHealth, executebelow;
     public Transform popup;
 
     //privates

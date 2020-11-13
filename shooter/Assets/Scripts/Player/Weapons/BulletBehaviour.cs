@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
-    public float damage, normalHitRange, explosionRange;
+    public float damage, normalHitRange, explosionRange, executePrecent;
     public bool explode;
 
     private void OnTriggerEnter(Collider other)
