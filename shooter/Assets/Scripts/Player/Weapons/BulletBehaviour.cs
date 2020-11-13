@@ -18,7 +18,6 @@ public class BulletBehaviour : MonoBehaviour
     {
         if (explode)
         {
-            print("hoi");
             normalHitRange = explosionRange;
         }
         else

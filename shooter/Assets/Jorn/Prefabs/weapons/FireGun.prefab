@@ -128,7 +128,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseAttackSpeed: 1
   baseDamage: 25
-  bulletSpeed: 100
+  bulletSpeed: 50
+  attackSpeed: 0
+  explosiveChance: 0
   bulletOri: {fileID: 6031521036322684039}
   basicBullet: {fileID: 340289178427617518, guid: 7beeabc1e970d49429611b2263f5c97f, type: 3}
   isUsed: 0
