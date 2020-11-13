@@ -18,7 +18,17 @@ public class Pickup : MonoBehaviour
     public void StatChanges()
     {
         FindObjectOfType<Trigger>().CalculateStats();
+        //damage
+        //attackspeed
+        //doubleshot
+        //explosive
+
         FindObjectOfType<Movement>().CalculateStats();
-        FindObjectOfType<PlayerHealth>().CalculateStats();
+        //movementspeed
+
+        FindObjectOfType<BaseHealthScript>().CalculateStats();
+        //execute
+        //lifesteal
+        //glasscannon
     }
 }

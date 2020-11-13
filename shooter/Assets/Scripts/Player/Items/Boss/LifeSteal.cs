@@ -2,6 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : BaseHealthScript
+public class LifeSteal : Pickup
 {
 }

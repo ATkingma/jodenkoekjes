@@ -30,4 +30,24 @@ public class BaseHealthScript : MonoBehaviour
     {
         health = Mathf.Clamp(health + amount, 0, maxHealth);
     }
+
+    //execute
+    public void CalculateExecute()
+    {
+        executebelow = maxMaxHealth / 20 * list.itemQuantity[13];
+    }
+
+    //calaculate
+    public void CalculateStats()
+    {
+        maxMaxHealth = maxMaxHealth + (10 * list.itemQuantity[2]);
+        maxHealth = maxMaxHealth;
+        //glasscannon health stat
+        float lastGlassCannon = 0;
+        if (list.itemQuantity[11] > lastGlassCannon)
+        {
+            lastGlassCannon = list.itemQuantity[11];
+            maxHealth = maxMaxHealth / Mathf.Pow(2, list.itemQuantity[11]);
+        }
+    }
 }

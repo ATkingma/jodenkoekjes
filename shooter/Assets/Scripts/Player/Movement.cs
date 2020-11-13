@@ -48,15 +48,15 @@ public class Movement : MonoBehaviour
             speed = movementSpeed;
         }
 
-        //sprint
-        if (Input.GetButton("Crouch"))
-        {
-            GetComponent<CharacterController>().height = crouchHeight;
-        }
-        else
-        {
-            GetComponent<CharacterController>().height = bodyHeight;
-        }
+        //crouch
+        //if (Input.GetButton("Crouch"))
+        //{
+        //    GetComponent<CharacterController>().height = crouchHeight;
+        //}
+        //else
+        //{
+        //    GetComponent<CharacterController>().height = bodyHeight;
+        //}
 
         //gravity
         if (controller.isGrounded)
