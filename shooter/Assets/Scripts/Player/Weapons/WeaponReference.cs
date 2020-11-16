@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponReference : MonoBehaviour
 {
     public float baseAttackSpeed, baseDamage, baseBulletSpeed, attackSpeed, explosiveChance, bulletSpeedMulti;
+    public int maxAmmo, ammoRecharge;
     public Transform bulletOri;
     public Rigidbody basicBullet;
     public bool isUsed;
@@ -13,13 +14,16 @@ public class WeaponReference : MonoBehaviour
     //protected
     protected RaycastHit hit;
     protected ItemList list;
-    protected bool isExplosive;
-    protected float bulletSpeed;
+    protected bool isExplosive, isReloading;
+    protected float bulletSpeed, reloadDone;
+    protected int ammo;
 
     private void Start()
     {
         list = FindObjectOfType<ItemList>();
         bulletSpeed = baseBulletSpeed;
+        ammo = maxAmmo;
+        reloadDone = Time.time + ammoRecharge;
     }
     public virtual void Fire(float dir) { }
     public virtual void Fire2(float dir) { }
@@ -35,6 +39,11 @@ public class WeaponReference : MonoBehaviour
         {
             Fire2(dir);
         }
+    }
+    public void ReloadSpeed()
+    {
+        ammo = maxAmmo;
+        isReloading = false;
     }
 
     public void Slowbullets()
