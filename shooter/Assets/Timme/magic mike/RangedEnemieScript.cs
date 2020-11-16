@@ -6,11 +6,11 @@ using UnityEngine.AI;
 public class RangedEnemieScript : MonoBehaviour
 {
     //publics
-    public float attackCoolDown;
+    public float attackCoolDown,health;
     public Animator anim;
     public GameObject magicBall;
     //privates
-    private bool playerIsClose, PlayerInTrigger, doingDamage, isAtacking;
+    private bool playerIsClose, PlayerInTrigger, doingDamage, isAtacking,death, doingDead;
     private GameObject player,balPosition,shield;
     private float speed;
     RaycastHit hit;
@@ -25,44 +25,56 @@ public class RangedEnemieScript : MonoBehaviour
     }
     void Update()
     {
-            float dist = Vector3.Distance(player.transform.position, transform.position);
-        if (dist<=20)
+        if (health <= 0)
         {
-            playerIsClose = true;
-            GetComponent<NavMeshAgent>().speed = 0;
-        }
-        if (dist >= 22)
-        {
-            playerIsClose = false;
-            GetComponent<NavMeshAgent>().speed = speed;
-        }
-        if (playerIsClose == true)
-        {
-            if (PlayerInTrigger == true)
+            death = true;
+            if (!doingDead)
             {
-                if (isAtacking == false)
-                {
-                    Attacking();
+                Death();
 
-                }
             }
         }
+        if (!death)
+        {
+            float dist = Vector3.Distance(player.transform.position, transform.position);
+            if (dist <= 20)
+            {
+                playerIsClose = true;
+                GetComponent<NavMeshAgent>().speed = 0;
+            }
+            if (dist >= 22)
+            {
+                playerIsClose = false;
+                GetComponent<NavMeshAgent>().speed = speed;
+            }
+            if (playerIsClose == true)
+            {
+                if (PlayerInTrigger == true)
+                {
+                    if (isAtacking == false)
+                    {
+                        Attacking();
+
+                    }
+                }
+            }
             if (playerIsClose == false)
             {
                 UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
                 agent.destination = player.transform.position;
-            shield.SetActive(false);
-            ResetAnim();
+                shield.SetActive(false);
+                ResetAnim();
             }
-        if (playerIsClose == true)
-        {
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 20))
+            if (playerIsClose == true)
             {
-            }
-            else
-            {
-                gameObject.transform.LookAt(player.transform);
-                print("koekoek");
+                if (Physics.Raycast(transform.position, transform.forward, out hit, 20))
+                {
+                }
+                else
+                {
+                    gameObject.transform.LookAt(player.transform);
+                    print("koekoek");
+                }
             }
         }
     }
@@ -117,6 +129,16 @@ public class RangedEnemieScript : MonoBehaviour
          Invoke("FireBall", 2);
         print("atack");
         shield.SetActive(false);
+    }
+    public void Death()
+    {
+        anim.SetBool("Death", true);
+        Invoke("IsDeath", 3);
+    }
+    public void IsDeath()
+    {
+        Destroy(gameObject);
+        //andere shit
     }
     public void ResetAnim()
     {

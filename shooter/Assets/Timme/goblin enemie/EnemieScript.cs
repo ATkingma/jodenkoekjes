@@ -6,36 +6,48 @@ using UnityEngine.AI;
 public class EnemieScript : MonoBehaviour
 {
     //public
-    public float attackCoolDown, damageValue;
+    public float attackCoolDown, damageValue,health;
     public Animator anim;
     //private
     private GameObject player;
-    private bool doingDamage, isAtacking, PlayerInTrigger;
+    private bool doingDamage, isAtacking, PlayerInTrigger,death,doingDead;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
     void Update()
     {
-        float dist = Vector3.Distance(player.transform.position, transform.position);
-        if (dist <= 4)
+        if (health <= 0)
         {
-
-            if (isAtacking == false)
+            death = true;
+            if (!doingDead)
             {
-                if (PlayerInTrigger == true)
-                {
-                Attacking();
-                    UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-                    agent.destination = gameObject.transform.position;
-                }
+            Death();
+
             }
         }
-        if (dist >= 6.4f)
+        if (!death)
         {
-            ResetAnim();
-            UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-            agent.destination = player.transform.position;
+            float dist = Vector3.Distance(player.transform.position, transform.position);
+            if (dist <= 4)
+            {
+
+                if (isAtacking == false)
+                {
+                    if (PlayerInTrigger == true)
+                    {
+                        Attacking();
+                        UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+                        agent.destination = gameObject.transform.position;
+                    }
+                }
+            }
+            if (dist >= 6.4f)
+            {
+                ResetAnim();
+                UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+                agent.destination = player.transform.position;
+            }
         }
     }
     public void Attacking()
@@ -114,6 +126,16 @@ public class EnemieScript : MonoBehaviour
         anim.SetBool("IsAttacking", false);
         anim.SetBool("IsTaunting", false);
     }
+    public void Death()
+    {
+        anim.SetBool("Death", true);
+        Invoke("IsDeath", 3);
+    }
+    public void IsDeath()
+    {
+        Destroy(gameObject);
+        //andere shit
+    }
    public  void OnTriggerEnter(Collider gameobject)
     {
         if (gameobject.gameObject.tag == "Player")
@@ -129,7 +151,3 @@ public class EnemieScript : MonoBehaviour
         }
     }
 }
-///moet niet maar bug dat die defende er uit hallen
-///
-
-    ///moet wel de walking animatie apart aan laten gaan en dan een empty ofz er tussen zetten omdat die nu loopt onder de animaties door
