@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8261984661651545479}
   - component: {fileID: 8261984661651545478}
-  - component: {fileID: 8261984661651545473}
+  - component: {fileID: 4236550476647885783}
   m_Layer: 0
   m_Name: DamageItem
   m_TagString: Untagged
@@ -46,7 +46,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8261984661651545473
+--- !u!114 &4236550476647885783
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8261984661651545472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d851ef3d47522bc438a21ef2039cac9b, type: 3}
+  m_Script: {fileID: 11500000, guid: 94bdc7f1a7a7e1644a22427f44fb47ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item: 0

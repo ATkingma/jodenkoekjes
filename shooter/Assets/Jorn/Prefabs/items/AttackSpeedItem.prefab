@@ -4822,7 +4822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7474496259039102307}
   - component: {fileID: 7474496259039102306}
-  - component: {fileID: 7474496259039102305}
+  - component: {fileID: 7821221559535150523}
   m_Layer: 0
   m_Name: AttackSpeedItem
   m_TagString: Untagged
@@ -4858,7 +4858,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7474496259039102305
+--- !u!114 &7821221559535150523
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4867,7 +4867,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7474496259039102304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d696a3c8f04406147a894f0b1acc9841, type: 3}
+  m_Script: {fileID: 11500000, guid: 94bdc7f1a7a7e1644a22427f44fb47ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item: 1

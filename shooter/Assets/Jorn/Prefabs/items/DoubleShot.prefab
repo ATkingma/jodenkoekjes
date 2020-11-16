@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3082202875343948179}
   - component: {fileID: 9123072649257207658}
-  - component: {fileID: 8738815718341791892}
+  - component: {fileID: 8666401863940097271}
   m_Layer: 0
   m_Name: DoubleShot
   m_TagString: Untagged
@@ -46,7 +46,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8738815718341791892
+--- !u!114 &8666401863940097271
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 525505925168239913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59328f1ca4f2a2645ac9411b2052fa55, type: 3}
+  m_Script: {fileID: 11500000, guid: 94bdc7f1a7a7e1644a22427f44fb47ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item: 10

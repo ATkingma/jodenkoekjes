@@ -4822,7 +4822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4818373682785142994}
   - component: {fileID: 1622360501220623915}
-  - component: {fileID: 893120133840465921}
+  - component: {fileID: 4865095529924397944}
   m_Layer: 0
   m_Name: MovementSpeedItem
   m_TagString: Untagged
@@ -4858,7 +4858,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &893120133840465921
+--- !u!114 &4865095529924397944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4867,7 +4867,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8021643900280869992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 431f6d9886fab2040bb2f14731aa9dab, type: 3}
+  m_Script: {fileID: 11500000, guid: 94bdc7f1a7a7e1644a22427f44fb47ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item: 3

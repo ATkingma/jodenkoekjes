@@ -4822,7 +4822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6042625448899444543}
   - component: {fileID: 542176635189490118}
-  - component: {fileID: 100407209001906220}
+  - component: {fileID: 7823585964414325869}
   m_Layer: 0
   m_Name: Exlosion
   m_TagString: Untagged
@@ -4858,7 +4858,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &100407209001906220
+--- !u!114 &7823585964414325869
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4867,7 +4867,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9103850867608953733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2331997174bf2994eb9df85df2915f9f, type: 3}
+  m_Script: {fileID: 11500000, guid: 94bdc7f1a7a7e1644a22427f44fb47ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   item: 12

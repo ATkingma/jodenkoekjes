@@ -94,7 +94,7 @@ public class Trigger : MonoBehaviour
         {
             weapon.Slowbullets();
             attacksPerSec = weapon.baseAttackSpeed * (1 + (0.1f * itemList.itemQuantity[1]));
-            slowBulletAttackSpeed = 1.5f * Mathf.Pow(2, itemList.itemQuantity[15]);
+            slowBulletAttackSpeed = 1.5f * Mathf.Pow(attacksPerSec, itemList.itemQuantity[15]);
             attackCooldown = slowBulletAttackSpeed / Mathf.Pow(slowBulletAttackSpeed, 2);
         }
         //give attackSpeedCooldown to weapon
