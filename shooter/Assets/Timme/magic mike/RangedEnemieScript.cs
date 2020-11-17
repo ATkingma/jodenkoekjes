@@ -8,18 +8,16 @@ public class RangedEnemieScript : MonoBehaviour
     //publics
     public float attackCoolDown,health;
     public Animator anim;
-    public GameObject magicBall;
+    public GameObject magicBall, balPosition, shield;
     //privates
     private bool playerIsClose, PlayerInTrigger, doingDamage, isAtacking,death, doingDead;
-    private GameObject player,balPosition,shield;
+    private GameObject player;
     private float speed;
     RaycastHit hit;
     void Start()
     {       
         player = GameObject.FindGameObjectWithTag("Player");
         speed = GetComponent<NavMeshAgent>().speed;
-        balPosition = GameObject.FindGameObjectWithTag("BallInHand");        
-        shield = GameObject.FindGameObjectWithTag("ShieldInHand");
         balPosition.GetComponent<MeshRenderer>().enabled = false;
         shield.SetActive(false);
     }
