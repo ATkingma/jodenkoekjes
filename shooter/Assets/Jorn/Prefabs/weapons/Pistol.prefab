@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 5261377482426350720}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5799999, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8302137599924640472}
   m_Father: {fileID: 0}
@@ -72,7 +72,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5261377482426350720}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 5903716995365422195, guid: 1e68c57ef8ef60a46982405cf6589436, type: 3}
 --- !u!23 &561017184471409270
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -92,7 +92,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e9f2dd68ea59ad9438042d26d65ad899, type: 2}
+  - {fileID: 2100000, guid: 18a960b9589d7f84088acd8ebc9a48e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -131,6 +131,9 @@ MonoBehaviour:
   baseBulletSpeed: 50
   attackSpeed: 0
   explosiveChance: 0
+  bulletSpeedMulti: 0
+  maxAmmo: 0
+  ammoRecharge: 0
   bulletOri: {fileID: 8302137599924640472}
   basicBullet: {fileID: 340289178427617518, guid: 9be40e21abab7034286e6f3ca149104f, type: 3}
   isUsed: 0

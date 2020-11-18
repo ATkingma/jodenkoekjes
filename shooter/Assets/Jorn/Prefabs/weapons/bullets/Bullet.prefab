@@ -122,7 +122,7 @@ Transform:
   m_GameObject: {fileID: 5066471756462782042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 9163963212628742654}
   m_Father: {fileID: 0}
@@ -208,7 +208,7 @@ MonoBehaviour:
   damage: 0
   normalHitRange: 0.1
   explosionRange: 2
-  bulletSpeed: 0
+  executePrecent: 0
   explode: 0
 --- !u!65 &5353069698673785826
 BoxCollider:
