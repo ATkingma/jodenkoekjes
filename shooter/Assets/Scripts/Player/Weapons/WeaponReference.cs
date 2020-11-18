@@ -56,6 +56,7 @@ public class WeaponReference : MonoBehaviour
 
     private void Update()
     {
+        //werkt niet?
         mat.a = 0;
     }
 }
