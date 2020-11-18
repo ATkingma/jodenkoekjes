@@ -15,7 +15,7 @@ public class EnemyHealth : BaseHealthScript
             CalculateExecute();
         }
         health = Mathf.Clamp(health - amount, 0, maxHealth);
-        Transform text = Instantiate(popup, transform.position, Quaternion.identity, transform);
+        Transform text = Instantiate(popup, transform.position, Quaternion.identity);
         text.GetComponent<DamagePopup>().damageAmount = amount;
 
         if (health == 0 || health <= executebelow)
