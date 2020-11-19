@@ -18,7 +18,7 @@ public class WeaponReference : MonoBehaviour
     protected bool isExplosive, isReloading;
     protected float bulletSpeed, reloadDone;
     protected int ammo;
-    private Color mat;
+    protected MeshRenderer mat;
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class WeaponReference : MonoBehaviour
         bulletSpeed = baseBulletSpeed;
         ammo = maxAmmo;
         reloadDone = Time.time + ammoRecharge;
-        mat = gem.GetComponent<MeshRenderer>().material.color;
+        mat = gem.GetComponent<MeshRenderer>();
     }
     public virtual void Fire(float dir) { }
     public virtual void Fire2(float dir) { }
@@ -52,11 +52,5 @@ public class WeaponReference : MonoBehaviour
     public void Slowbullets()
     {
         bulletSpeed = baseBulletSpeed / Mathf.Pow(2, list.itemQuantity[15]);
-    }
-
-    private void Update()
-    {
-        //werkt niet?
-        mat.a = 0;
     }
 }
