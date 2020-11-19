@@ -5,9 +5,9 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     //public
-    public List<GameObject> spawnPoints, enemie;
+    public List<GameObject> spawnPoints, enemie,emergencySpawnPoint;
     //private
-    private float SpawnCoolDown;
+    private float SpawnCoolDown,chingChongSpawntimeShitTussenStukjeFadi;
     private bool isSpawning;
     void Start()
     {
@@ -27,11 +27,9 @@ public class Spawner : MonoBehaviour
     {
         foreach (GameObject spawnPoint in spawnPoints)
         {
-            if (spawnPoint.GetComponent<SpawnPoint>().SpawnAble == true)
-            {               
+              
                int enemiePrefab= Random.Range(0, enemie.Count);
                       Instantiate(enemie[enemiePrefab], spawnPoint.transform.position, Quaternion.identity);
-            }
         }
         isSpawning = true;
     }
