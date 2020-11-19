@@ -33,4 +33,9 @@ public class Pickup : MonoBehaviour
         //lifesteal
         //glasscannon
     }
+
+    private void Update()
+    {
+        transform.Rotate(0, 100 * Time.deltaTime, 0);
+    }
 }
