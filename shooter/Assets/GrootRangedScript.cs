@@ -29,7 +29,6 @@ public class GrootRangedScript : MonoBehaviour
             if (!doingDead)
             {
                 Death();
-
             }
         }
         if (!death)
@@ -41,8 +40,9 @@ public class GrootRangedScript : MonoBehaviour
             }
             if (doingIdle)
             {
+                idleLine_1.SetActive(true);
                 idleLine_1.GetComponent<LineRenderer>().SetPosition(1, idleLine_1.transform.position);
-                idleLine_1.GetComponent<LineRenderer>().SetPosition(0, idleLine_2.transform.position);
+                idleLine_1.GetComponent<LineRenderer>().SetPosition(0, idleLine_2.transform.position);               
             }
             float dist = Vector3.Distance(player.transform.position, transform.position);
             if (dist <= 20)
@@ -62,7 +62,6 @@ public class GrootRangedScript : MonoBehaviour
                     if (isAtacking == false)
                     {
                         Attacking();
-
                     }
                 }
             }
@@ -71,6 +70,16 @@ public class GrootRangedScript : MonoBehaviour
                 UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
                 agent.destination = player.transform.position;
                 ResetAnim();
+                isAtacking = false;
+                doingDamage = false;
+                attackline_1.SetActive(false);
+                attackline_2.SetActive(false);
+                doingIdle = false;
+                settingLine = false;
+                idleLine_1.SetActive(false);
+                idleLine_2.SetActive(false);
+                defenceSphere.SetActive(false);
+                print("poeppoeppoeppoep");
             }
             if (playerIsClose == true)
             {
@@ -109,8 +118,8 @@ public class GrootRangedScript : MonoBehaviour
     public void Resset()
     {
         ResetAnim();
-        isAtacking = false;
         print("Resset");
+        isAtacking = false;
         doingDamage = false;
         attackline_1.SetActive(false);
         attackline_2.SetActive(false);
@@ -127,39 +136,50 @@ public class GrootRangedScript : MonoBehaviour
         {
             RandomTaunt();
         }
-        print("taunt");
+        print("taunt");        
     }
     public void RandomTaunt()
     {
-        //float RandomIdle = Random.Range(1, 3);
-        float RandomIdle = tester;
+        float RandomIdle = Random.Range(1, 3);
         if (RandomIdle == 1)
         {
             anim.SetBool("IsTaunting", true);
             doingIdle = true;
+            Invoke("Resset", 11);
+            attackline_1.SetActive(false);
+            attackline_2.SetActive(false);
         }
         if (RandomIdle == 2)
         {
             anim.SetBool("IsTaunting", true);
             doingIdle = true;
+            Invoke("Resset", 11);
+            attackline_1.SetActive(false);
+            attackline_2.SetActive(false);
         }
         if (RandomIdle == 3)
         {
             Invoke("DefenceShieldOn",2);
             anim.SetBool("isDefending", true);
+            Invoke("Resset", 6);
+            attackline_1.SetActive(false);
+            attackline_2.SetActive(false);
         }
     }
     public void Atack()
+    {      
+        ResetAnim();
+        anim.SetBool("IsAttacking", true);
+        print("atack");
+        Invoke("DoLine", 1.5f);
+    }
+    public void DoLine()
     {
         settingLine = true;
         attackline_1.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
         attackline_2.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
         attackline_1.SetActive(true);
         attackline_2.SetActive(true);
-        ResetAnim();
-        anim.SetBool("IsAttacking", true);
-        print("atack");
-
     }
     public void Death()
     {
@@ -173,6 +193,7 @@ public class GrootRangedScript : MonoBehaviour
     }
     public void ResetAnim()
     {
+        anim.SetBool("isDefending", false);
         anim.SetBool("IsAttacking", false);
         anim.SetBool("IsTaunting", false);
         print("reset anim");
