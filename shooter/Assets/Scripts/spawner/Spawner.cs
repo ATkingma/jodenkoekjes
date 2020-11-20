@@ -26,10 +26,9 @@ public class Spawner : MonoBehaviour
     public void Spawn()
     {
         foreach (GameObject spawnPoint in spawnPoints)
-        {
-              
+        {            
                int enemiePrefab= Random.Range(0, enemie.Count);
-                      Instantiate(enemie[enemiePrefab], spawnPoint.transform.position, Quaternion.identity);
+               Instantiate(enemie[enemiePrefab], spawnPoint.transform.position, Quaternion.identity);
         }
         isSpawning = true;
     }
