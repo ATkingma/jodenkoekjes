@@ -20,6 +20,7 @@ public class GrootRangedScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         speed = GetComponent<NavMeshAgent>().speed;
         defenceSphere.SetActive(false);
+        Invoke("LookAtHim", 0.5f);
     }
     void Update()
     {
@@ -45,12 +46,12 @@ public class GrootRangedScript : MonoBehaviour
                 idleLine_1.GetComponent<LineRenderer>().SetPosition(0, idleLine_2.transform.position);               
             }
             float dist = Vector3.Distance(player.transform.position, transform.position);
-            if (dist <= 20)
+            if (dist <= 10)
             {
                 playerIsClose = true;
                 GetComponent<NavMeshAgent>().speed = 0;
             }
-            if (dist >= 22)
+            if (dist >= 12)
             {
                 playerIsClose = false;
                 GetComponent<NavMeshAgent>().speed = speed;
@@ -83,7 +84,7 @@ public class GrootRangedScript : MonoBehaviour
             }
             if (playerIsClose == true)
             {
-                if (Physics.Raycast(transform.position, transform.forward, out hit, 20))
+                if (Physics.Raycast(transform.position, transform.forward, out hit, 10))
                 {
                 }
                 else
@@ -137,6 +138,10 @@ public class GrootRangedScript : MonoBehaviour
             RandomTaunt();
         }
         print("taunt");        
+    }
+    public void LookAtHim()
+    {
+        gameObject.transform.LookAt(player.transform);
     }
     public void RandomTaunt()
     {

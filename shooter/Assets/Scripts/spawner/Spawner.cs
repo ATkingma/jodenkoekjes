@@ -8,12 +8,14 @@ public class Spawner : MonoBehaviour
     public List<GameObject> spawnPoints, enemie,emergencySpawnPoint;
     public GameObject Time;
     //private
-    private float SpawnCoolDown,coolDownTime,chingChongSpawntimeShitTussenStukjeFadi;
+    private float SpawnCoolDown,coolDownTime,fiveminits,tenminits,chingChongSpawntimeShitTussenStukjeFadi;
     private bool isSpawning, doingCooldDown;
     void Start()
     {
         spawnPoints.AddRange(GameObject.FindGameObjectsWithTag("SpawnPoint"));
-        SpawnCoolDown = 3f;
+        SpawnCoolDown = 20f;
+        fiveminits = 300;
+        tenminits = 600;
     }
     void Update()
     {
