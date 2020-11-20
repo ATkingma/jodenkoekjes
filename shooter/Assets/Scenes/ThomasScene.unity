@@ -1814,7 +1814,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 886546021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 133.14, y: 5.36, z: 41.38}
+  m_LocalPosition: {x: 134.42, y: 5.36, z: 41.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4143,6 +4143,7 @@ MonoBehaviour:
   - {fileID: 5112546977502310959, guid: a741f121b3040424fac4019cf684b820, type: 3}
   emergencySpawnPoint: []
   Time: {fileID: 318192412}
+  maxEnemiesTokill: 0
 --- !u!4 &2065066879
 Transform:
   m_ObjectHideFlags: 0
