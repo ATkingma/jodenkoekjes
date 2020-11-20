@@ -17,14 +17,14 @@ public class SpawnPoint : MonoBehaviour
     }
     public void OnTriggerEnter(Collider gameobject)
     {
-        if (gameobject.gameObject.tag == "Wall")
+        if (gameobject.gameObject.tag == "Player")
         {
             SpawnAble = false;
         }
     }
     public void OntriggerExit(Collider gameobject)
     {
-        if (gameobject.gameObject.tag == "Wall")
+        if (gameobject.gameObject.tag == "Player")
         {
             SpawnAble = true;
         }
