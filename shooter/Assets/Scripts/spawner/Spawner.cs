@@ -6,20 +6,24 @@ public class Spawner : MonoBehaviour
 {
     //public
     public List<GameObject> spawnPoints, enemie,emergencySpawnPoint;
+    public GameObject Time;
     //private
-    private float SpawnCoolDown,chingChongSpawntimeShitTussenStukjeFadi;
-    private bool isSpawning;
+    private float SpawnCoolDown,coolDownTime,chingChongSpawntimeShitTussenStukjeFadi;
+    private bool isSpawning, doingCooldDown;
     void Start()
     {
         spawnPoints.AddRange(GameObject.FindGameObjectsWithTag("SpawnPoint"));
+        SpawnCoolDown = 3f;
     }
     void Update()
     {
-        if (SpawnCoolDown <= Time.deltaTime)
-        {
-            if (isSpawning == false)
-            {
+        float time = Time.GetComponent<TimeTime>().timeToSafe;
+        if (coolDownTime <= time)
+        {         
             Spawn();
+            if (!doingCooldDown)
+            {
+            Cooldown();
             }
         }
     }
@@ -31,5 +35,15 @@ public class Spawner : MonoBehaviour
                Instantiate(enemie[enemiePrefab], spawnPoint.transform.position, Quaternion.identity);
         }
         isSpawning = true;
+    }
+    public void Cooldown()
+    {
+        doingCooldDown = true;
+        coolDownTime = SpawnCoolDown + Time.GetComponent<TimeTime>().timeToSafe;
+        Invoke("CoolBool", 0.5f);
+    }
+    public void CoolBool()
+    {
+        doingCooldDown = false;
     }
 }

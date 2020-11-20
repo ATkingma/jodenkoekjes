@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
     public bool SpawnAble;
+
     void Start()
     {
         SpawnAble = true;
@@ -13,7 +14,7 @@ public class SpawnPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void OnTriggerEnter(Collider gameobject)
     {
