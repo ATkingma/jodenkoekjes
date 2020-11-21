@@ -208,7 +208,9 @@ MonoBehaviour:
   damage: 0
   normalHitRange: 0.1
   explosionRange: 2
+  executePrecent: 0
   explode: 0
+  explosionRadius: {fileID: 6804563409148012847, guid: f2ba43ce1b7400242bdc199c6e14a81b, type: 3}
 --- !u!65 &6630865347414900306
 BoxCollider:
   m_ObjectHideFlags: 0

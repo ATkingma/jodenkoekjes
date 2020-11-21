@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
-    public float damage, normalHitRange, explosionRange, executePrecent;
+    public float damage, normalHitRange, explosionRange, executePrecent, explosionCount;
     public bool explode;
+    public GameObject explosionRadius;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Enemy")
-        {
-            HitEnemy(other.transform.position);
-        }
-    }
+    //privates
+    private Vector3 prefLocation;
+
     public void HitEnemy(Vector3 pos)
     {
         if (explode)
         {
-            normalHitRange = explosionRange;
+            normalHitRange = explosionRange * explosionCount;
+            GameObject boom = Instantiate(explosionRadius, pos, Quaternion.identity);
+            boom.transform.localScale = new Vector3(normalHitRange, normalHitRange, normalHitRange) * 2;
+            Destroy(boom, 0.1f);
         }
         else
         {
-            normalHitRange = 1;
+            normalHitRange = 0.2f;
         }
-        Collider[] hitcolliders = Physics.OverlapSphere(transform.position, normalHitRange);
+        Collider[] hitcolliders = Physics.OverlapSphere(pos, normalHitRange);
         foreach (Collider hitcollider in hitcolliders)
         {
             if (hitcollider.GetComponent<BaseHealthScript>())
@@ -33,5 +33,20 @@ public class BulletBehaviour : MonoBehaviour
             }
         }
         Destroy(gameObject);
+    }
+    private void FixedUpdate()
+    {
+        if(prefLocation != Vector3.zero)
+        {
+            RaycastHit hit;
+            if(Physics.Raycast(transform.position, transform.forward, out hit, 1))
+            {
+                if (hit.transform.tag == "Enemy")
+                {
+                    HitEnemy(hit.point);
+                }
+            }
+        }
+        prefLocation = transform.position;
     }
 }

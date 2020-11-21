@@ -21,6 +21,7 @@ public class Pistol : WeaponReference
             Rigidbody clone = Instantiate(basicBullet, bulletOri.position, transform.rotation);
             clone.velocity = clone.transform.forward * bulletSpeed;
             clone.GetComponent<BulletBehaviour>().damage = dir;
+            clone.GetComponent<BulletBehaviour>().explosionCount = list.itemQuantity[12];
             DoFuntions(dir);
             ammo--;
         }
@@ -38,6 +39,7 @@ public class Pistol : WeaponReference
         Rigidbody clone = Instantiate(basicBullet, bulletOri.position, transform.rotation);
         clone.velocity = clone.transform.forward * bulletSpeed;
         clone.GetComponent<BulletBehaviour>().damage = dir;
+        clone.GetComponent<BulletBehaviour>().explosionCount = list.itemQuantity[12];
     }
 
     public void Update()
