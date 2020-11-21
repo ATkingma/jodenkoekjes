@@ -6,7 +6,7 @@ public class WeaponReference : MonoBehaviour
 {
     public float baseAttackSpeed, baseDamage, baseBulletSpeed, attackSpeed, explosiveChance, bulletSpeedMulti;
     public int maxAmmo, ammoRecharge;
-    public Transform bulletOri;
+    public Transform bulletOri, muzzleFlash;
     public Rigidbody basicBullet;
     public bool isUsed;
     public LayerMask canShoot;
