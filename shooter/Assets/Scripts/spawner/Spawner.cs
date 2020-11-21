@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -8,6 +9,7 @@ public class Spawner : MonoBehaviour
     public List<GameObject> spawnPoints, enemie,emergencySpawnPoint;
     public GameObject Time;
     public int maxEnemiesTokill;
+    public TextMeshProUGUI text;
     //private
     private float SpawnCoolDown,coolDownTime,fiveminits,tenminits,chingChongSpawntimeShitTussenStukjeFadi;
     private int maxEnemiesToSpawn,remeberme;
@@ -19,11 +21,12 @@ public class Spawner : MonoBehaviour
         tenminits = 600;
         maxEnemiesToSpawn = 10;
         remeberme = 10;
-        fiveminits = 120;
+        fiveminits = 300;
     }
     void Update()
-    {        
+    {
         float hard = Time.GetComponent<TimeTime>().timeToSafe;
+        text.text = hard.ToString();
         if (fiveminits <= hard)
         {
             if (!gettingHard)
@@ -76,8 +79,9 @@ public class Spawner : MonoBehaviour
     }
     public void GettingHarderbool()
     {
-        maxEnemiesTokill = maxEnemiesToSpawn;
         maxEnemiesToSpawn = remeberme;
+        maxEnemiesTokill = maxEnemiesToSpawn;
         gettingHard = false;
+        SpawnCoolDown -= 0.1f;
     }
 }
