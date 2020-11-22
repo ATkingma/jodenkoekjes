@@ -11,29 +11,29 @@ public class Spawner : MonoBehaviour
     public int maxEnemiesTokill;
     public TextMeshProUGUI text;
     //private
-    private float SpawnCoolDown,coolDownTime,fiveminits,tenminits,chingChongSpawntimeShitTussenStukjeFadi;
+    private float SpawnCoolDown,coolDownTime,chingChongSpawntimeShitTussenStukjeFadi, countminup;
     private int maxEnemiesToSpawn,remeberme;
     private bool isSpawning, doingCooldDown,gettingHard;
     void Start()
     {
         spawnPoints.AddRange(GameObject.FindGameObjectsWithTag("SpawnPoint"));
-        SpawnCoolDown = 5f;
-        tenminits = 600;
-        maxEnemiesToSpawn = 10;
+        SpawnCoolDown = 30f;
+        maxEnemiesToSpawn = 100;
         remeberme = 10;
-        fiveminits = 300;
+        countminup = 5;
     }
     void Update()
     {
-        float hard = Time.GetComponent<TimeTime>().timeToSafe;
-        text.text = hard.ToString();
-        if (fiveminits <= hard)
-        {
-            if (!gettingHard)
+        float minutes = Mathf.Floor(Time.GetComponent<TimeTime>().timeToSafe / 60);
+        float seconds = Time.GetComponent<TimeTime>().timeToSafe % 60;
+        text.text = minutes + ":" + Mathf.RoundToInt(seconds);
+            if (minutes==countminup)
             {
-                GettingHarder();
+                      if (doingCooldDown == false)
+                      { 
+                      GettingHarder();
+                      }
             }
-        }
         float time = Time.GetComponent<TimeTime>().timeToSafe;
         if (coolDownTime <= time)
         {      
@@ -72,9 +72,9 @@ public class Spawner : MonoBehaviour
     public void GettingHarder()
     {
         print("wordmoeilijkerneef");
-        fiveminits += 300;
         gettingHard = true;
-        remeberme += 10;
+        remeberme += 20;
+        countminup += 5;
         Invoke("GettingHarderbool", 0.1f);
     }
     public void GettingHarderbool()

@@ -58,7 +58,6 @@ public class EnemieScript : MonoBehaviour
             Invoke("DoDamage2", 1);
             Atack();
         }
-        print("Attacking");
         isAtacking = true;
     }
 
@@ -108,7 +107,6 @@ public class EnemieScript : MonoBehaviour
     {
         ResetAnim();
         isAtacking = false;
-        print("Resset");
         doingDamage = false;
     }
     public void Taunt()

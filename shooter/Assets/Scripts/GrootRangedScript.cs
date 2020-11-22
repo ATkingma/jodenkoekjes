@@ -80,7 +80,6 @@ public class GrootRangedScript : MonoBehaviour
                 idleLine_1.SetActive(false);
                 idleLine_2.SetActive(false);
                 defenceSphere.SetActive(false);
-                print("poeppoeppoeppoep");
             }
             if (playerIsClose == true)
             {
@@ -90,7 +89,6 @@ public class GrootRangedScript : MonoBehaviour
                 else
                 {
                     gameObject.transform.LookAt(player.transform);
-                    print("koekoek");
                 }
             }
         }
@@ -102,24 +100,20 @@ public class GrootRangedScript : MonoBehaviour
             DoDamage();
             Atack();
         }
-        print("Attacking");
         isAtacking = true;
     }
     public void DoDamage()
     {
         Invoke("DoTaunt", attackCoolDown / 2);
-        print("DoDammage");
         doingDamage = true;
     }
     public void DoTaunt()
     {
         Taunt();
-        print("dotaunt");
     }
     public void Resset()
     {
         ResetAnim();
-        print("Resset");
         isAtacking = false;
         doingDamage = false;
         attackline_1.SetActive(false);
@@ -136,8 +130,7 @@ public class GrootRangedScript : MonoBehaviour
         if (playerIsClose == true)
         {
             RandomTaunt();
-        }
-        print("taunt");        
+        }   
     }
     public void LookAtHim()
     {
@@ -175,7 +168,6 @@ public class GrootRangedScript : MonoBehaviour
     {      
         ResetAnim();
         anim.SetBool("IsAttacking", true);
-        print("atack");
         Invoke("DoLine", 1.5f);
     }
     public void DoLine()
@@ -201,7 +193,6 @@ public class GrootRangedScript : MonoBehaviour
         anim.SetBool("isDefending", false);
         anim.SetBool("IsAttacking", false);
         anim.SetBool("IsTaunting", false);
-        print("reset anim");
     }
     public void OnTriggerEnter(Collider gameobject)
     {
@@ -222,6 +213,4 @@ public class GrootRangedScript : MonoBehaviour
         defenceSphere.SetActive(true);
     }
 }
-///reset maken 
-///beter tijden voor animaties enz
 ///beter leaves textures
