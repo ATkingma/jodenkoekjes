@@ -6,6 +6,13 @@ public class Pickup : MonoBehaviour
 {
     public float item;
 
+    //private
+    private Index index;
+
+    private void Start()
+    {
+        index = FindObjectOfType<Index>();
+    }
     public void OnTriggerEnter(Collider player)
     {
         if(player.tag == "Player")
@@ -32,6 +39,8 @@ public class Pickup : MonoBehaviour
         //execute
         //lifesteal
         //glasscannon
+
+        index.AddItem();
     }
 
     private void Update()
