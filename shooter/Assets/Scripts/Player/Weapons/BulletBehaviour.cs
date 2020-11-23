@@ -11,6 +11,11 @@ public class BulletBehaviour : MonoBehaviour
     //privates
     private Vector3 prefLocation;
 
+    private void Start()
+    {
+        Destroy(gameObject, 10);
+    }
+
     public void HitEnemy(Vector3 pos)
     {
         if (explode)
