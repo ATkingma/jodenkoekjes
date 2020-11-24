@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 7eed5b9196875764396e17c169fc7b41, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 84b8a19fc80857f4f9213f91925361f7, type: 2}
 --- !u!1 &10235272 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c49da7fe081294d4998b690a998be848, type: 3}
@@ -2875,7 +2875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1140115156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3683,7 +3683,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8966847975709675518, guid: 6c7b2e8972959b94cbac73254b6a875f, type: 3}
       propertyPath: far clip plane
-      value: 100000000
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8966847975709675518, guid: 6c7b2e8972959b94cbac73254b6a875f, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 9030711421209504604, guid: 6c7b2e8972959b94cbac73254b6a875f, type: 3}
       propertyPath: m_CameraType
@@ -5253,7 +5257,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 4294967287
   m_IsActive: 1
 --- !u!154 &2000604522
 TerrainCollider:
