@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
-    public Transform weaponHold, weaponDump, muzzleFlash;
+    public Transform weaponHold, weaponDump;
     public LayerMask canShoot, guns;
 
     //privates
