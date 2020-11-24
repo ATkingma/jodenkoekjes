@@ -8,7 +8,6 @@ public class Index : MonoBehaviour
 {
     public List<GameObject> items, index, index2;
     public ItemList itemslist;
-
     public Image itemindex, tab;
 
     //privates
@@ -27,7 +26,7 @@ public class Index : MonoBehaviour
                     itemCount++;
                 }
                 index2[i].GetComponentInChildren<TextMeshProUGUI>().text = itemslist.itemQuantity[i].ToString();
-                GetComponent<RectTransform>().sizeDelta = new Vector2(130 * itemCount, 100);
+                GetComponent<RectTransform>().sizeDelta = new Vector2(150 * itemCount, 100);
             }
         }
     }
