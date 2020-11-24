@@ -6,12 +6,18 @@ using TMPro;
 
 public class Index : MonoBehaviour
 {
-    public List<GameObject> items, index, index2;
+    public List<GameObject> items, index;
+    public List<int> itemCheck;
     public ItemList itemslist;
     public Image itemindex, tab;
 
     //privates
     private int itemCount;
+    private void Start()
+    {
+        List<GameObject> items = new List<GameObject>();
+        List<GameObject> index = new List<GameObject>();
+    }
 
     public void AddItem()
     {
@@ -19,13 +25,13 @@ public class Index : MonoBehaviour
         {
             if (itemslist.itemQuantity[i] > 0)
             {
-                if (!index.Contains(items[i]))
+                if (!itemCheck.Contains(i))
                 {
-                    index.Add(items[i]);
-                    index2[i] = Instantiate(index[i], transform);
+                    itemCheck.Add(i);
+                    index[i] = Instantiate(items[i], transform);
                     itemCount++;
                 }
-                index2[i].GetComponentInChildren<TextMeshProUGUI>().text = itemslist.itemQuantity[i].ToString();
+                index[i].GetComponentInChildren<TextMeshProUGUI>().text = itemslist.itemQuantity[i].ToString();
                 GetComponent<RectTransform>().sizeDelta = new Vector2(150 * itemCount, 100);
             }
         }
@@ -38,7 +44,7 @@ public class Index : MonoBehaviour
         {
             if (itemslist.itemQuantity[i] > 0)
             {
-                index2[i].SetActive(Input.GetButton("TAB"));
+                index[i].SetActive(Input.GetButton("TAB"));
             }
         }
     }

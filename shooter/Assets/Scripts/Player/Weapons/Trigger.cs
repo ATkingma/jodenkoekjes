@@ -6,6 +6,7 @@ public class Trigger : MonoBehaviour
 {
     public Transform weaponHold, weaponDump;
     public LayerMask canShoot, guns;
+    public bool menuIsActive;
 
     //privates
     private float nextAttack, attackCooldown, attacksPerSec, calculatedDamage, slowBulletAttackSpeed;
@@ -26,31 +27,34 @@ public class Trigger : MonoBehaviour
     }
     private void Update()
     {
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 1000, canShoot))
+        if (!menuIsActive)
         {
-            aimAt = hit.point;
-            if (Vector3.Distance(transform.position, aimAt) > 2)
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 1000, canShoot))
             {
-                currentWeapon.LookAt(aimAt, Vector3.up);
-            }
-        }
-        //gunpickup
-        if(Physics.Raycast(transform.position, transform.forward, out hitInfo, 1000, guns))
-        {
-            if (Input.GetButtonDown("Fire2"))
-            {
-                if (hitInfo.transform.tag == "Gun")
+                aimAt = hit.point;
+                if (Vector3.Distance(transform.position, aimAt) > 2)
                 {
-                    WeaponSwap(hitInfo.transform);
+                    currentWeapon.LookAt(aimAt, Vector3.up);
                 }
             }
-        }
-        if (Input.GetButton("Fire1"))
-        {
-            if(Time.time >= nextAttack)
+            //gunpickup
+            if (Physics.Raycast(transform.position, transform.forward, out hitInfo, 1000, guns))
             {
-                nextAttack = attackCooldown + Time.time;
-                weapon.Fire(calculatedDamage);
+                if (Input.GetButtonDown("Pickup"))
+                {
+                    if (hitInfo.transform.tag == "Gun")
+                    {
+                        WeaponSwap(hitInfo.transform);
+                    }
+                }
+            }
+            if (Input.GetButton("Fire1"))
+            {
+                if (Time.time >= nextAttack)
+                {
+                    nextAttack = attackCooldown + Time.time;
+                    weapon.Fire(calculatedDamage);
+                }
             }
         }
     }
