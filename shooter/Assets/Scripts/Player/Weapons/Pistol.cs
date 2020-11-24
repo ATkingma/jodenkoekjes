@@ -47,7 +47,7 @@ public class Pistol : WeaponReference
 
     public void Update()
     {
-        Color nNew = new Color(mat.material.color.r, mat.material.color.g, mat.material.color.b, ammo * (ammo * 0.001f));
+        Color nNew = new Color(mat.material.color.r, mat.material.color.g, mat.material.color.b, ammo / (0.1f * maxAmmo));
         mat.material.SetColor("_BaseColor", nNew);
     }
 }
