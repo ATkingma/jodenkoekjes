@@ -11,6 +11,9 @@ public class Index : MonoBehaviour
 
     public Image itemindex, tab;
 
+    //privates
+    private int itemCount;
+
     public void AddItem()
     {
         for(int i = 0; i < itemslist.itemQuantity.Count; i++)
@@ -21,8 +24,10 @@ public class Index : MonoBehaviour
                 {
                     index.Add(items[i]);
                     index2[i] = Instantiate(index[i], transform);
+                    itemCount++;
                 }
                 index2[i].GetComponentInChildren<TextMeshProUGUI>().text = itemslist.itemQuantity[i].ToString();
+                GetComponent<RectTransform>().sizeDelta = new Vector2(130 * itemCount, 100);
             }
         }
     }
