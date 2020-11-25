@@ -1106,6 +1106,7 @@ GameObject:
   - component: {fileID: 5708130709673004157}
   - component: {fileID: 5708130709673004158}
   - component: {fileID: 5708130709673004152}
+  - component: {fileID: 4026652822152074175}
   m_Layer: 0
   m_Name: Brutal To Happy Walking
   m_TagString: Enemy
@@ -1193,7 +1194,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tester: 3
   attackCoolDown: 6
-  health: 5
   anim: {fileID: 5708130709673004157}
   defenceSphere: {fileID: 5708130709850320303}
   attackline_1: {fileID: 5708130710811130556}
@@ -1222,6 +1222,23 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4026652822152074175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4897158211990988432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1a74e2c9ff8f2479ca60fa2e3e5341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 200
+  executebelow: 0
+  popup: {fileID: 3528436963971658951, guid: ac737ff13280d054b91b3cfd19707034, type: 3}
+  health: 0
+  maxMaxHealth: 0
 --- !u!1 &5370655808207631329
 GameObject:
   m_ObjectHideFlags: 0
