@@ -10,7 +10,7 @@ public class EnemieScript : MonoBehaviour
     public Animator anim;
     //private
     private GameObject player;
-    private bool doingDamage, isAtacking, PlayerInTrigger,death,doingDead;
+    private bool doingDamage, isAtacking, PlayerInTrigger,death,doingDead, deathIsDoing;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -22,7 +22,11 @@ public class EnemieScript : MonoBehaviour
             death = true;
             if (!doingDead)
             {
+                if (!deathIsDoing)
+                {
+
             Death();
+                }
 
             }
         }
@@ -42,11 +46,18 @@ public class EnemieScript : MonoBehaviour
                     }
                 }
             }
-            if (dist >= 6.4f)
+            if (dist >= 5.4f)
             {
                 ResetAnim();
                 UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
                 agent.destination = player.transform.position;
+
+                Vector3 forward = transform.TransformDirection(Vector3.forward);
+                Vector3 toOther = player.transform.position - transform.position;
+                if (Vector3.Dot(forward, toOther) < 0)
+                {
+                    gameObject.transform.LookAt(player.transform);
+                }
             }
         }
     }
@@ -126,13 +137,17 @@ public class EnemieScript : MonoBehaviour
     }
     public void Death()
     {
+        deathIsDoing = true;
+        UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent.destination = gameObject.transform.position;
         anim.SetBool("Death", true);
+        //hier andere shit
+        WhatItemWeGonGet();
         Invoke("IsDeath", 3);
     }
     public void IsDeath()
     {
-        Destroy(gameObject);
-        //andere shit
+        Destroy(gameObject);      
     }
    public  void OnTriggerEnter(Collider gameobject)
     {
@@ -146,6 +161,90 @@ public class EnemieScript : MonoBehaviour
         if (gameobject.gameObject.tag == "Player")
         {
             PlayerInTrigger = false;
+        }
+    }
+    public void WhatItemWeGonGet()
+    {
+        int number=Random.Range(1, 16);
+        if (number <= 4)
+        {
+            print("niks nederlandder");
+        }
+        if (number <= 8 & number >4)
+        {
+            print("niks nederlandd");
+        }
+        if (number <= 12 & number > 8)
+        {
+            WeaponDrop();
+        }
+        if (number <= 16 & number > 12)
+        {
+            ItemDrop();
+        }
+    }
+    public void WeaponDrop()
+    {
+        int number = Random.Range(1, 16);
+        if (number <= 4)
+        {
+            print("gannu 1");
+        }
+        if (number <= 8 & number > 4)
+        {
+            print("gannu 2");
+        }
+        if (number <= 12 & number > 8)
+        {
+            print("gannu 3");
+        }
+    }
+    public void ItemDrop()
+    {
+        int number = Random.Range(1, 16);
+        if (number <= 6)
+        {
+            print("comman");
+        }
+        if (number <= 12 & number > 6)
+        {
+            print("comman");
+        }
+        if (number <= 18 & number > 12)
+        {
+            print("comman");
+        }
+        if (number <= 24 & number > 18)
+        {
+            print("comman");
+        }
+        if (number <= 26 & number > 24)
+        {
+            print("rarereder");
+        }
+        if (number <= 28 & number > 26)
+        {
+            print("rarereder");
+        }
+        if (number <= 30 & number > 28)
+        {
+            print("rarereder");
+        }
+        if (number <= 32 & number > 30)
+        {
+            print("rarereder");
+        }
+        if (number <= 34 & number > 32)
+        {
+            print("rarereder");
+        }
+        if (number <= 36 & number > 34)
+        {
+            print("rarereder");
+        }
+        if (number <= 38 & number > 36)
+        {
+            print("rarereder");
         }
     }
 }
