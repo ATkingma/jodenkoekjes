@@ -1070,6 +1070,7 @@ GameObject:
   - component: {fileID: 5346339773113409176}
   - component: {fileID: 5346339773113409174}
   - component: {fileID: 5346339773113409170}
+  - component: {fileID: 8092061508970012002}
   m_Layer: 0
   m_Name: _izzy_Idle
   m_TagString: Enemy
@@ -1195,6 +1196,21 @@ MonoBehaviour:
   damageValue: 10
   health: 5
   anim: {fileID: 5346339773113409176}
+--- !u!114 &8092061508970012002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5112546977502310959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1a74e2c9ff8f2479ca60fa2e3e5341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  executebelow: 0
+  popup: {fileID: 5600431538634614933}
 --- !u!1 &5200850292913065272
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemieScript : MonoBehaviour
 {
     //public
-    public float attackCoolDown, damageValue,health;
+    public float attackCoolDown, damageValue;
     public Animator anim;
     //private
     private GameObject player;
@@ -17,7 +17,7 @@ public class EnemieScript : MonoBehaviour
     }
     void Update()
     {
-        if (health <= 0)
+        if (GetComponent<EnemyHealth>().maxHealth <= 0)
         {
             death = true;
             if (!doingDead)

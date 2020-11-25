@@ -5,7 +5,6 @@ using UnityEngine.AI;
 public class Boss : MonoBehaviour
 {
     //publics
-    public float  health;
     public Animator anim;
     public GameObject icePegel1, icePegel2;
     //privates
@@ -38,7 +37,7 @@ public class Boss : MonoBehaviour
         {
             if (bossisdeath == false)
             {
-                if (health <= 0)
+                if (GetComponent<EnemyHealth>().maxHealth <= 0)
                 {
                     DeathFunction();
                 }

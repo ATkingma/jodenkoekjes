@@ -7,7 +7,7 @@ public class GrootRangedScript : MonoBehaviour
 {
     //publics
     public int tester;
-    public float attackCoolDown, health;
+    public float attackCoolDown;
     public Animator anim;
     public GameObject defenceSphere, attackline_1, attackline_2, idleLine_1, idleLine_2;
     //privates
@@ -24,7 +24,7 @@ public class GrootRangedScript : MonoBehaviour
     }
     void Update()
     {
-        if (health <= 0)
+        if (GetComponent<EnemyHealth>().maxHealth <= 0)
         {
             death = true;
             if (!doingDead)

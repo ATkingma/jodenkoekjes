@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class RangedEnemieScript : MonoBehaviour
 {
     //publics
-    public float attackCoolDown,health;
+    public float attackCoolDown;
     public Animator anim;
     public GameObject magicBall, balPosition, shield;
     //privates
@@ -23,7 +23,7 @@ public class RangedEnemieScript : MonoBehaviour
     }
     void Update()
     {
-        if (health <= 0)
+        if (GetComponent<EnemyHealth>().maxHealth <= 0)
         {
             death = true;
             if (!doingDead)
