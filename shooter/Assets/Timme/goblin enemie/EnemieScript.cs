@@ -17,7 +17,7 @@ public class EnemieScript : MonoBehaviour
     }
     void Update()
     {
-        if (GetComponent<EnemyHealth>().maxHealth <= 0)
+        if (GetComponent<EnemyHealth>().health <= 0)
         {
             death = true;
             if (!doingDead)

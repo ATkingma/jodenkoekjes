@@ -8,7 +8,7 @@ public class BaseHealthScript : MonoBehaviour
     public Transform popup;
 
     //privates
-    protected float health, maxMaxHealth;
+    public float health, maxMaxHealth;
     protected ItemList list;
 
     private void Start()
