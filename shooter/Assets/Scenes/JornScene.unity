@@ -352,7 +352,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.734
+    m_Strength: 1
     m_Bias: 1
     m_NormalBias: 1
     m_NearPlane: 1
@@ -391,7 +391,7 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
-  m_ShadowAngle: 5
+  m_ShadowAngle: 38.3
 --- !u!4 &615039948
 Transform:
   m_ObjectHideFlags: 0
@@ -733,7 +733,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249881340}
   m_LocalRotation: {x: -0, y: 0.29061314, z: -0, w: 0.95684063}
-  m_LocalPosition: {x: 2.3, y: 2.85, z: 30.5}
+  m_LocalPosition: {x: 6.61, y: 3.22, z: 27.29}
   m_LocalScale: {x: 1, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1195,7 +1195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6579444859761588946, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 6579444859761588946, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
       propertyPath: m_LocalRotation.x
