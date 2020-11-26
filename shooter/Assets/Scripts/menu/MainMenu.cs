@@ -10,6 +10,10 @@ public class MainMenu : MonoBehaviour
     //privates
     protected bool menuOn, OptionsOn;
     private int chosenScene;
+    private void Start()
+    {
+        menuOn = true;
+    }
 
     //hier doet ie laat scene timme
     public void StartGame()

@@ -140,6 +140,7 @@ public class RangedEnemieScript : MonoBehaviour
         agent.destination = gameObject.transform.position;
         anim.SetBool("Death", true);
         //hier andere shit
+        itemHolder.GetComponent<Spawner>().enemiesDied++;
         gameObject.GetComponent<MeshCollider>().enabled = false;
         WhatItemWeGonGet();
         Invoke("IsDeath", 3);
