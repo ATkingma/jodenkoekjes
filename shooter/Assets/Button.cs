@@ -9,6 +9,12 @@ public class Button : MonoBehaviour
     public GameObject top,door;
     //private
     private bool triggert, isDown,dontDoAnny;
+    private GameObject[] spawnpoints;
+    void Start()
+    {
+        spawnpoints = GameObject.FindGameObjectsWithTag("ButtonSpawn");
+        RandomButtonSpawn();
+    }
     void Update()
     {
         if (isDown)
@@ -38,5 +44,10 @@ public class Button : MonoBehaviour
         {
             triggert = true;
         }
+    }
+    public void RandomButtonSpawn()
+    {
+        int spawn = Random.Range(0, spawnpoints.Length);
+        gameObject.transform.position = spawnpoints[spawn].transform.position;
     }
 }

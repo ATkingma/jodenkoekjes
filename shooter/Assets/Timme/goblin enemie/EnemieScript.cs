@@ -9,11 +9,12 @@ public class EnemieScript : MonoBehaviour
     public float attackCoolDown, damageValue;
     public Animator anim;
     //private
-    private GameObject player;
+    private GameObject player,itemHolder;
     private bool doingDamage, isAtacking, PlayerInTrigger,death,doingDead, deathIsDoing;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        itemHolder = GameObject.FindGameObjectWithTag("GameManager");
     }
     void Update()
     {
@@ -142,6 +143,7 @@ public class EnemieScript : MonoBehaviour
         agent.destination = gameObject.transform.position;
         anim.SetBool("Death", true);
         //hier andere shit
+        gameObject.GetComponent<MeshCollider>().enabled=false;
         WhatItemWeGonGet();
         Invoke("IsDeath", 3);
     }
@@ -188,63 +190,59 @@ public class EnemieScript : MonoBehaviour
         int number = Random.Range(1, 16);
         if (number <= 4)
         {
-            print("gannu 1");
+            Instantiate(itemHolder.GetComponent<ItemHolder>().guns[0], gameObject.transform.position, Quaternion.identity);
         }
         if (number <= 8 & number > 4)
         {
-            print("gannu 2");
+            Instantiate(itemHolder.GetComponent<ItemHolder>().guns[1], gameObject.transform.position, Quaternion.identity);
         }
         if (number <= 12 & number > 8)
         {
-            print("gannu 3");
+            Instantiate(itemHolder.GetComponent<ItemHolder>().guns[2], gameObject.transform.position, Quaternion.identity);
         }
     }
     public void ItemDrop()
     {
         int number = Random.Range(1, 16);
-        if (number <= 6)
+        if (number <= 8)
         {
-            print("comman");
+            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[0], gameObject.transform.position, Quaternion.identity);
         }
-        if (number <= 12 & number > 6)
+        if (number <= 16 & number > 8)
         {
-            print("comman");
+            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[1], gameObject.transform.position, Quaternion.identity);
         }
-        if (number <= 18 & number > 12)
+        if (number <= 24 & number > 16)
         {
-            print("comman");
-        }
-        if (number <= 24 & number > 18)
-        {
-            print("comman");
+            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[2], gameObject.transform.position, Quaternion.identity);
         }
         if (number <= 26 & number > 24)
         {
-            print("rarereder");
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[0], gameObject.transform.position, Quaternion.identity);
         }
         if (number <= 28 & number > 26)
         {
-            print("rarereder");
+             Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[1], gameObject.transform.position, Quaternion.identity);       
         }
         if (number <= 30 & number > 28)
         {
-            print("rarereder");
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[2], gameObject.transform.position, Quaternion.identity);
         }
         if (number <= 32 & number > 30)
         {
-            print("rarereder");
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[3], gameObject.transform.position, Quaternion.identity);
         }
         if (number <= 34 & number > 32)
         {
-            print("rarereder");
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[4], gameObject.transform.position, Quaternion.identity);
         }
         if (number <= 36 & number > 34)
         {
-            print("rarereder");
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[5], gameObject.transform.position, Quaternion.identity);
         }
         if (number <= 38 & number > 36)
         {
-            print("rarereder");
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[6], gameObject.transform.position, Quaternion.identity);            
         }
     }
 }

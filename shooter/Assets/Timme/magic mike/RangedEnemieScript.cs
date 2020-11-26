@@ -10,8 +10,8 @@ public class RangedEnemieScript : MonoBehaviour
     public Animator anim;
     public GameObject magicBall, balPosition, shield;
     //privates
-    private bool playerIsClose, PlayerInTrigger, doingDamage, isAtacking,death, doingDead;
-    private GameObject player;
+    private bool playerIsClose, PlayerInTrigger, doingDamage, isAtacking,death, doingDead, deathIsDoing;
+    private GameObject player, itemHolder;
     private float speed;
     RaycastHit hit;
     void Start()
@@ -20,6 +20,7 @@ public class RangedEnemieScript : MonoBehaviour
         speed = GetComponent<NavMeshAgent>().speed;
         balPosition.GetComponent<MeshRenderer>().enabled = false;
         shield.SetActive(false);
+        itemHolder = GameObject.FindGameObjectWithTag("GameManager");
     }
     void Update()
     {
@@ -28,7 +29,11 @@ public class RangedEnemieScript : MonoBehaviour
             death = true;
             if (!doingDead)
             {
+                if (!deathIsDoing)
+                {
                 Death();
+
+                }
 
             }
         }
@@ -130,13 +135,18 @@ public class RangedEnemieScript : MonoBehaviour
     }
     public void Death()
     {
+        deathIsDoing = true;
+        UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent.destination = gameObject.transform.position;
         anim.SetBool("Death", true);
+        //hier andere shit
+        gameObject.GetComponent<MeshCollider>().enabled = false;
+        WhatItemWeGonGet();
         Invoke("IsDeath", 3);
     }
     public void IsDeath()
     {
         Destroy(gameObject);
-        //andere shit
     }
     public void ResetAnim()
     {
@@ -185,6 +195,86 @@ public class RangedEnemieScript : MonoBehaviour
         if (playerIsClose)
         {
         shield.SetActive(true);
+        }
+    }
+    public void WhatItemWeGonGet()
+    {
+        int number = Random.Range(1, 16);
+        if (number <= 4)
+        {
+            print("niks nederlandder");
+        }
+        if (number <= 8 & number > 4)
+        {
+            print("niks nederlandd");
+        }
+        if (number <= 12 & number > 8)
+        {
+            WeaponDrop();
+        }
+        if (number <= 16 & number > 12)
+        {
+            ItemDrop();
+        }
+    }
+    public void WeaponDrop()
+    {
+        int number = Random.Range(1, 16);
+        if (number <= 4)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().guns[0], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 8 & number > 4)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().guns[1], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 12 & number > 8)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().guns[2], gameObject.transform.position, Quaternion.identity);
+        }
+    }
+    public void ItemDrop()
+    {
+        int number = Random.Range(1, 16);
+        if (number <= 8)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[0], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 16 & number > 8)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[1], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 24 & number > 16)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[2], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 26 & number > 24)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[0], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 28 & number > 26)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[1], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 30 & number > 28)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[2], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 32 & number > 30)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[3], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 34 & number > 32)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[4], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 36 & number > 34)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[5], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 38 & number > 36)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[6], gameObject.transform.position, Quaternion.identity);
         }
     }
 }   
