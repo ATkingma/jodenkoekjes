@@ -9,8 +9,9 @@ public class RangedEnemieScript : MonoBehaviour
     public float attackCoolDown;
     public Animator anim;
     public GameObject magicBall, balPosition, shield;
+    public bool PlayerInTrigger;
     //privates
-    private bool playerIsClose, PlayerInTrigger, doingDamage, isAtacking,death, doingDead, deathIsDoing;
+    private bool playerIsClose, doingDamage, isAtacking,death, doingDead, deathIsDoing;
     private GameObject player, itemHolder;
     private float speed;
     RaycastHit hit;
@@ -155,19 +156,6 @@ public class RangedEnemieScript : MonoBehaviour
         anim.SetBool("IsTaunting", false);
         print("reset anim");
     }
-    public void OnTriggerEnter(Collider gameobject)
-    {
-        if (gameobject.gameObject.tag == "Player")
-        {
-            PlayerInTrigger = true;
-        }
-    }
-    public void OntriggerExit(Collider gameobject)
-    {
-        if (gameobject.gameObject.tag == "Player")
-        {
-            PlayerInTrigger = false;
-        }
     }
     public void FireBall()
     {

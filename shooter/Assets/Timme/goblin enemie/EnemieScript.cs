@@ -8,9 +8,10 @@ public class EnemieScript : MonoBehaviour
     //public
     public float attackCoolDown, damageValue;
     public Animator anim;
+    public bool PlayerInTrigger;
     //private
     private GameObject player,itemHolder;
-    private bool doingDamage, isAtacking, PlayerInTrigger,death,doingDead, deathIsDoing;
+    private bool doingDamage, isAtacking,death,doingDead, deathIsDoing;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -155,20 +156,6 @@ public class EnemieScript : MonoBehaviour
     public void IsDeath()
     {
         Destroy(gameObject);      
-    }
-   public  void OnTriggerEnter(Collider gameobject)
-    {
-        if (gameobject.gameObject.tag == "Player")
-        {
-            PlayerInTrigger = true;
-        }
-    }
-    public void OntriggerExit(Collider gameobject)
-    {
-        if (gameobject.gameObject.tag == "Player")
-        {
-            PlayerInTrigger = false;
-        }
     }
     public void WhatItemWeGonGet()
     {
