@@ -47,6 +47,10 @@ public class EnemieScript : MonoBehaviour
                     }
                 }
             }
+            if (dist <= 2)
+            {
+                gameObject.transform.LookAt(player.transform);
+            }
             if (dist >= 5.4f)
             {
                 ResetAnim();
@@ -144,6 +148,7 @@ public class EnemieScript : MonoBehaviour
         anim.SetBool("Death", true);
         //hier andere shit
         gameObject.GetComponent<MeshCollider>().enabled=false;
+        itemHolder.GetComponent<Spawner>().enemiesDied++;
         WhatItemWeGonGet();
         Invoke("IsDeath", 3);
     }
@@ -203,7 +208,7 @@ public class EnemieScript : MonoBehaviour
     }
     public void ItemDrop()
     {
-        int number = Random.Range(1, 16);
+        int number = Random.Range(1, 38);
         if (number <= 8)
         {
             Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[0], gameObject.transform.position, Quaternion.identity);

@@ -7,23 +7,34 @@ public class Spawner : MonoBehaviour
 {
     //public
     public List<GameObject> spawnPoints, enemie,emergencySpawnPoint;
-    public GameObject Time;
-    public int maxEnemiesTokill;
+    public GameObject Time, portal;
+    public int maxEnemiesTokill,enemiesDied;
     public TextMeshProUGUI text;
     //private
-    private float SpawnCoolDown,coolDownTime,chingChongSpawntimeShitTussenStukjeFadi, countminup;
-    private int maxEnemiesToSpawn,remeberme;
+    private float SpawnCoolDown,coolDownTime, countminup;
+    private int maxEnemiesToSpawn,remeberme,plusmax;
     private bool isSpawning, doingCooldDown,gettingHard;
     void Start()
     {
         spawnPoints.AddRange(GameObject.FindGameObjectsWithTag("SpawnPoint"));
-        SpawnCoolDown = 30f;
+        SpawnCoolDown = 20;
         maxEnemiesToSpawn = 100;
+        plusmax = PlayerPrefs.GetInt("MaxEnemiesToKill");
+        plusmax = +5;
+        PlayerPrefs.SetInt("MaxEnemiesToKill",plusmax);
+        maxEnemiesTokill = PlayerPrefs.GetInt("MaxEnemiesToKill");
         remeberme = 10;
         countminup = 5;
+        portal = FindObjectOfType<Portal>().gameObject;
+        portal.SetActive(false);
     }
     void Update()
     {
+        if(enemiesDied >= maxEnemiesTokill)
+        {
+            print("hij doet t");
+            portal.SetActive(true);
+        }
         float minutes = Mathf.Floor(Time.GetComponent<TimeTime>().timeToSafe / 60);
         float seconds = Time.GetComponent<TimeTime>().timeToSafe % 60;
         text.text = minutes + ":" + Mathf.RoundToInt(seconds);
@@ -43,6 +54,10 @@ public class Spawner : MonoBehaviour
             Cooldown();
             }
         }
+    }
+    public void LoadScene()
+    {
+        GetComponent<SceneSwitcher>().SceneLoader();
     }
     public void Spawn()
     {
@@ -73,7 +88,7 @@ public class Spawner : MonoBehaviour
     {
         print("wordmoeilijkerneef");
         gettingHard = true;
-        remeberme += 20;
+        remeberme += 50;
         countminup += 5;
         Invoke("GettingHarderbool", 0.1f);
     }
