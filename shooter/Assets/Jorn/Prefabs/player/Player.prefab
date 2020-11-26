@@ -421,8 +421,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.47834912, y: 0.70098823, z: 3.1421223}
-  m_Center: {x: 0.0030584135, y: 0.1495059, z: 1.1998184}
+  m_Size: {x: 0.69284445, y: 0.8382209, z: 3.1421218}
+  m_Center: {x: 0.0023823604, y: 0.2181222, z: 1.1998184}
 --- !u!1 &6572984664586095492
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,6 +582,8 @@ MonoBehaviour:
   maxHealth: 100
   executebelow: 0
   popup: {fileID: 0}
+  health: 0
+  maxMaxHealth: 0
 --- !u!1 &6579444861186322667
 GameObject:
   m_ObjectHideFlags: 0

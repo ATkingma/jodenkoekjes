@@ -71,6 +71,7 @@ public class Trigger : MonoBehaviour
         currentWeapon = newWeapon;
         currentWeapon.parent = transform;
         currentWeapon.position = weaponHold.position;
+        currentWeapon.rotation = weaponHold.rotation;
         weapon = currentWeapon.GetComponent<WeaponReference>();
         weapon.isUsed = true;
 
