@@ -6,7 +6,6 @@ public class IngameMenu : MainMenu
 {
 
     //privates
-    private bool menuOn, OptionsOn;
     private Trigger trig;
 
     private void Start()
@@ -31,6 +30,10 @@ public class IngameMenu : MainMenu
             }
             else
             {
+                if (OptionsOn)
+                {
+                    OptionsOn = false;
+                }
                 menuOn = true;
                 trig.menuIsActive = true;
             }
@@ -44,5 +47,6 @@ public class IngameMenu : MainMenu
             Time.timeScale = 1;
         }
         menu.SetActive(menuOn);
+        options.SetActive(OptionsOn);
     }
 }

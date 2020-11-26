@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public GameObject menu, options;
 
     //privates
+    protected bool menuOn, OptionsOn;
     private int chosenScene;
 
     //hier doet ie laat scene timme
@@ -25,24 +26,21 @@ public class MainMenu : MonoBehaviour
 
     public void ToMenu()
     {
-        menu.SetActive(true);
-        options.SetActive(false);
+        menuOn = true;
+        OptionsOn = false;
     }
     public void ToOptions()
     {
-        menu.SetActive(false);
-        options.SetActive(true);
+        OptionsOn = true;
+        menuOn = false;
     }
     public void ExitGame()
     {
         Application.Quit();
     }
-
     private void Update()
     {
-        if(Input.GetButtonDown("Cancel"))
-        {
-            ToMenu();
-        }
+        menu.SetActive(menuOn);
+        options.SetActive(OptionsOn);
     }
 }
