@@ -15,7 +15,13 @@ public class BulletBehaviour : MonoBehaviour
     {
         Destroy(gameObject, 10);
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Enemy")
+        {
+            HitEnemy(transform.position);
+        }
+    }
     public void HitEnemy(Vector3 pos)
     {
         if (explode)
