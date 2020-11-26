@@ -135,11 +135,13 @@ MonoBehaviour:
   maxAmmo: 0
   ammoRecharge: 0
   bulletOri: {fileID: 8302137599924640472}
-  basicBullet: {fileID: 340289178427617518, guid: 9be40e21abab7034286e6f3ca149104f, type: 3}
+  muzzleFlash: {fileID: 7282281588982598596, guid: d713f30e4e2d40f489927772ba860559, type: 3}
+  basicBullet: {fileID: 8957334777587658837, guid: eb29a7e6a3675b547a994a149f7267fb, type: 3}
   isUsed: 0
   canShoot:
     serializedVersion: 2
     m_Bits: 0
+  gem: {fileID: 0}
 --- !u!135 &6820586169013824799
 SphereCollider:
   m_ObjectHideFlags: 0
