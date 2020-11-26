@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
 {
     //public
     public List<GameObject> spawnPoints, enemie,emergencySpawnPoint;
-    public GameObject Time;
+    public GameObject Time, portal;
     public int maxEnemiesTokill,enemiesDied;
     public TextMeshProUGUI text;
     //private
@@ -25,13 +25,15 @@ public class Spawner : MonoBehaviour
         maxEnemiesTokill = PlayerPrefs.GetInt("MaxEnemiesToKill");
         remeberme = 10;
         countminup = 5;
+        portal = FindObjectOfType<Portal>().gameObject;
+        portal.SetActive(false);
     }
     void Update()
     {
         if(enemiesDied >= maxEnemiesTokill)
         {
             print("hij doet t");
-            Invoke("LoadScene", 3);
+            portal.SetActive(true);
         }
         float minutes = Mathf.Floor(Time.GetComponent<TimeTime>().timeToSafe / 60);
         float seconds = Time.GetComponent<TimeTime>().timeToSafe % 60;
