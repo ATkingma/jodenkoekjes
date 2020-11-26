@@ -15,16 +15,15 @@ public class SceneSwitcher : MonoBehaviour
     }
     public void SceneLoader()
     {
-        if (scenes == 3)
+        if (scenes <= 2)
         {
-            SceneManager.LoadScene(3);
+        FindObjectOfType<LoadingScreen>().StartLoadingScreenNormalMap();
         }
-        if (scenes<=2)
+        if (scenes >= 3)
         {
-        int sceneindex = Random.Range(1, maxScenes+1);
-        SceneManager.LoadScene(sceneindex);
-         Plus();
+        FindObjectOfType<LoadingScreen>().StartLoadingScreenNormaBossMap();
         }
+        Plus();
     }
     public void ResetDieShit()
     {
