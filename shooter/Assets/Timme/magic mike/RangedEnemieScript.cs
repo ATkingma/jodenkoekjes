@@ -156,19 +156,6 @@ public class RangedEnemieScript : MonoBehaviour
         anim.SetBool("IsTaunting", false);
         print("reset anim");
     }
-    public void OnTriggerEnter(Collider gameobject)
-    {
-        if (gameobject.gameObject.tag == "Player")
-        {
-            PlayerInTrigger = true;
-        }
-    }
-    public void OntriggerExit(Collider gameobject)
-    {
-        if (gameobject.gameObject.tag == "Player")
-        {
-            PlayerInTrigger = false;
-        }
     }
     public void FireBall()
     {

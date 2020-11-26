@@ -205,20 +205,6 @@ public class GrootRangedScript : MonoBehaviour
         anim.SetBool("IsAttacking", false);
         anim.SetBool("IsTaunting", false);
     }
-    public void OnTriggerEnter(Collider gameobject)
-    {
-        if (gameobject.gameObject.tag == "Player")
-        {
-            PlayerInTrigger = true;
-        }
-    }
-    public void OntriggerExit(Collider gameobject)
-    {
-        if (gameobject.gameObject.tag == "Player")
-        {
-            PlayerInTrigger = false;
-        }
-    }
     public void DefenceShieldOn()
     {
         defenceSphere.SetActive(true);
