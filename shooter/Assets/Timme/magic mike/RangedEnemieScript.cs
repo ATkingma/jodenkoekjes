@@ -9,8 +9,9 @@ public class RangedEnemieScript : MonoBehaviour
     public float attackCoolDown;
     public Animator anim;
     public GameObject magicBall, balPosition, shield;
+    public bool PlayerInTrigger;
     //privates
-    private bool playerIsClose, PlayerInTrigger, doingDamage, isAtacking,death, doingDead, deathIsDoing;
+    private bool playerIsClose, doingDamage, isAtacking,death, doingDead, deathIsDoing;
     private GameObject player, itemHolder;
     private float speed;
     RaycastHit hit;

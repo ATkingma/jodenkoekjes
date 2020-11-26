@@ -10,8 +10,9 @@ public class GrootRangedScript : MonoBehaviour
     public float attackCoolDown;
     public Animator anim;
     public GameObject defenceSphere, attackline_1, attackline_2, idleLine_1, idleLine_2;
+    public bool PlayerInTrigger;
     //privates
-    private bool playerIsClose, PlayerInTrigger, doingDamage, isAtacking, death, doingDead, settingLine,doingIdle, deathIsDoing;
+    private bool playerIsClose, doingDamage, isAtacking, death, doingDead, settingLine,doingIdle, deathIsDoing;
     private GameObject player, itemHolder;
     private float speed;
     RaycastHit hit;
