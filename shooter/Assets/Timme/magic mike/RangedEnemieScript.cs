@@ -9,7 +9,7 @@ public class RangedEnemieScript : MonoBehaviour
     public float attackCoolDown;
     public Animator anim;
     public GameObject magicBall, balPosition, shield;
-    public bool PlayerInTrigger;
+        public bool PlayerInTrigger;
     //privates
     private bool playerIsClose, doingDamage, isAtacking,death, doingDead, deathIsDoing;
     private GameObject player, itemHolder;
@@ -155,7 +155,6 @@ public class RangedEnemieScript : MonoBehaviour
         anim.SetBool("IsAttacking", false);
         anim.SetBool("IsTaunting", false);
         print("reset anim");
-    }
     }
     public void FireBall()
     {
