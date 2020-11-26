@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &-3505288428282948681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2166382868429091313}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3457222829971803474}
+  m_Layer: 0
+  m_Name: goblin melee (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3457222829971803474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2166382868429091313}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -3505288428282948681}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: -7537552796262020943}
+  - {fileID: 1844840602152752666}
+  m_Father: {fileID: 5074151660423195616}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &105788466324282856
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +278,37 @@ Transform:
   - {fileID: 1616422534752022729}
   m_Father: {fileID: 1156975838502722237}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1356111718555061408
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 349e629e48f667046a6a83d8d865a5e7, type: 3}
+  m_PrefabInstance: {fileID: 2166382868429091313}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: -7537552796262020943}
+  - component: {fileID: 7558644632486973865}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &-7537552796262020943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2166382868429091313}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356111718555061408}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3457222829971803474}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7558644632486973865
 BoxCollider:
@@ -1083,7 +1146,7 @@ GameObject:
   - component: {fileID: 5346339773113409174}
   - component: {fileID: 5346339773113409170}
   - component: {fileID: 8092061508970012002}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: _izzy_Idle
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1471,6 +1534,36 @@ Transform:
   - {fileID: 5074151660423195616}
   m_Father: {fileID: 2330480144367280950}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6546923916990955624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 2166382868429091313}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1844840602152752666}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1844840602152752666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 349e629e48f667046a6a83d8d865a5e7, type: 3}
+  m_PrefabInstance: {fileID: 2166382868429091313}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6546923916990955624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3457222829971803474}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6769613212527722485
 GameObject:
@@ -2351,7 +2444,7 @@ Transform:
   m_LocalPosition: {x: 0.000026544816, y: 0.0316962, z: -8.6458296e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1844840602152752666}
+  - {fileID: 3457222829971803474}
   m_Father: {fileID: 3183235651661648197}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2592,13 +2685,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 349e629e48f667046a6a83d8d865a5e7, type: 3}
---- !u!1 &1356111718555061408 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 349e629e48f667046a6a83d8d865a5e7, type: 3}
-  m_PrefabInstance: {fileID: 2166382868429091313}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1844840602152752666 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 349e629e48f667046a6a83d8d865a5e7, type: 3}
-  m_PrefabInstance: {fileID: 2166382868429091313}
-  m_PrefabAsset: {fileID: 0}
