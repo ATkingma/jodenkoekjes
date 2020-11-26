@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
         SpawnCoolDown = 20;
         maxEnemiesToSpawn = 100;
         plusmax = PlayerPrefs.GetInt("MaxEnemiesToKill");
-        plusmax = +5;
+        plusmax = +1;
         PlayerPrefs.SetInt("MaxEnemiesToKill",plusmax);
         maxEnemiesTokill = PlayerPrefs.GetInt("MaxEnemiesToKill");
         remeberme = 10;
@@ -95,7 +95,7 @@ public class Spawner : MonoBehaviour
     public void GettingHarderbool()
     {
         maxEnemiesToSpawn = remeberme;
-        maxEnemiesTokill = maxEnemiesToSpawn;
+        //maxEnemiesTokill = maxEnemiesToSpawn;
         gettingHard = false;
         SpawnCoolDown -= 0.1f;
     }

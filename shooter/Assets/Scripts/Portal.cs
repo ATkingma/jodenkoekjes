@@ -8,6 +8,7 @@ public class Portal : MonoBehaviour
     {
         if(other.tag == "Player")
         {
+            print("ringdigndijgnng");
             FindObjectOfType<SceneSwitcher>().SceneLoader();
         }
     }

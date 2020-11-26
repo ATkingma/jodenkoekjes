@@ -21,7 +21,7 @@ public class SceneSwitcher : MonoBehaviour
         }
         if (scenes<=2)
         {
-        int sceneindex = Random.Range(1, maxScenes);
+        int sceneindex = Random.Range(1, maxScenes+1);
         SceneManager.LoadScene(sceneindex);
          Plus();
         }
