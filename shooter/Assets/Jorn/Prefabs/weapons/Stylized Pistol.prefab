@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3454140853429116399}
   - component: {fileID: 2640308273281943383}
   - component: {fileID: 2673145041434365955}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stylized Pistol
-  m_TagString: Untagged
+  m_TagString: Gun
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,9 +25,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2640308273281943381}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.46, y: -0.45999998, z: 0.17}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38.330753, y: 1.1539999, z: 68.87179}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 1414445142778321500}
   - {fileID: 4710960574760500236}
@@ -49,19 +49,20 @@ MonoBehaviour:
   baseAttackSpeed: 2
   baseDamage: 10
   baseBulletSpeed: 50
-  attackSpeed: 0
+  attackSpeed: 0.5
   explosiveChance: 0
   bulletSpeedMulti: 0
   maxAmmo: 50
   ammoRecharge: 5
   bulletOri: {fileID: 4710960574760500236}
   muzzleFlash: {fileID: 7282281588982598596, guid: d713f30e4e2d40f489927772ba860559, type: 3}
-  basicBullet: {fileID: 340289178427617518, guid: 9be40e21abab7034286e6f3ca149104f, type: 3}
+  basicBullet: {fileID: 8957334777587658837, guid: eb29a7e6a3675b547a994a149f7267fb, type: 3}
   isUsed: 1
   canShoot:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 5120
   gem: {fileID: 8314230032728289911}
+  gunNumber: 0
 --- !u!65 &2673145041434365955
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -99,7 +100,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4197066302301128505}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.13, z: 2.64}
+  m_LocalPosition: {x: 0, y: -0.017, z: 2.64}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3454140853429116399}
@@ -131,7 +132,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7252436758035432314}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: -0.188, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7687848299776811453}

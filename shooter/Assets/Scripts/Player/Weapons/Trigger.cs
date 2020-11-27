@@ -7,6 +7,8 @@ public class Trigger : MonoBehaviour
     public Transform weaponHold, weaponDump;
     public LayerMask canShoot, guns;
     public bool menuIsActive;
+    public List<GameObject> gunlist;
+    public int gunNumber;
 
     //privates
     private float nextAttack, attackCooldown, attacksPerSec, calculatedDamage, slowBulletAttackSpeed;
@@ -18,7 +20,7 @@ public class Trigger : MonoBehaviour
 
     private void Start()
     {
-        currentWeapon = GetComponentInChildren<WeaponReference>().transform;
+        currentWeapon = Instantiate(gunlist[gunNumber].transform, weaponHold.position, weaponHold.rotation, transform);
         weapon = currentWeapon.GetComponent<WeaponReference>();
         itemList = FindObjectOfType<ItemList>();
         currentWeapon.position = weaponHold.position;
@@ -68,6 +70,7 @@ public class Trigger : MonoBehaviour
         currentWeapon.rotation = newWeapon.rotation;
 
         //swap
+        gunNumber = weapon.gunNumber;
         currentWeapon = newWeapon;
         currentWeapon.parent = transform;
         currentWeapon.position = weaponHold.position;
@@ -104,5 +107,9 @@ public class Trigger : MonoBehaviour
         }
         //give attackSpeedCooldown to weapon
         weapon.attackSpeed = attackCooldown;
+    }
+    public void Save()
+    {
+        PlayerPrefs.SetInt("CurrentGun", gunNumber);
     }
 }

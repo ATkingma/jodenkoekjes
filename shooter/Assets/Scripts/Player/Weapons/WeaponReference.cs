@@ -11,6 +11,7 @@ public class WeaponReference : MonoBehaviour
     public bool isUsed;
     public LayerMask canShoot;
     public GameObject gem;
+    public int gunNumber;
 
     //protected
     protected RaycastHit hit;
