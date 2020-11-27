@@ -108,6 +108,10 @@ public class Trigger : MonoBehaviour
         //give attackSpeedCooldown to weapon
         weapon.attackSpeed = attackCooldown;
     }
+    public void GetSaves()
+    {
+        gunNumber = PlayerPrefs.GetInt("CurrentGun", gunNumber);
+    }
     public void Save()
     {
         PlayerPrefs.SetInt("CurrentGun", gunNumber);
