@@ -11,6 +11,11 @@ public class LoadingScreen : MonoBehaviour
     public int scene;
     public GameObject loadingScreen;
     public TextMeshProUGUI text;
+
+    private void Start()
+    {
+        scene = Random.Range(1, 3);
+    }
     public void StartLoadingScreenNormalMap()
     {
         StartCoroutine(LoadSceneNormalEnumerator());
@@ -29,7 +34,7 @@ public class LoadingScreen : MonoBehaviour
             float progress = Mathf.Clamp01(operation.progress / .9f);
             slider.value = progress;
             text.text = progress * 100f + "%";
-            yield return null;
+            yield return null; 
         }
     }
     IEnumerator LoadSceneBossEnumerator()

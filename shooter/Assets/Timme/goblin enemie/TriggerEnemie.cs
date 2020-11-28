@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TriggerEnemie : MonoBehaviour
 {
+    //public
     public bool goblin, groot, ranged;
     public GameObject enemy;
     public void OnTriggerEnter(Collider gameobject)
