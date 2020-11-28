@@ -32,7 +32,7 @@ public class SceneSwitcher : MonoBehaviour
     public void ResetDieShit()
     {
         PlayerPrefs.SetFloat("TimeSaved", 0f);
-        PlayerPrefs.SetInt("scene", 0);
+        PlayerPrefs.SetInt("scene", 1);
     }
     public void Plus()
     {

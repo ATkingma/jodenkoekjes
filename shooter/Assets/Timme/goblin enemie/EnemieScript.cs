@@ -37,9 +37,9 @@ public class EnemieScript : MonoBehaviour
             float dist = Vector3.Distance(player.transform.position, transform.position);
             if (dist <= 4)
             {
-
                 if (isAtacking == false)
                 {
+                gameObject.transform.LookAt(player.transform);
                     if (PlayerInTrigger == true)
                     {
                         Attacking();
