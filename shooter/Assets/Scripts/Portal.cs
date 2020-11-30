@@ -12,13 +12,15 @@ public class Portal : MonoBehaviour
     private void Start()
     {
         safe = FindObjectOfType<Saves>();
+
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        KillEnemie();
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             safe.SaveEverything();
-            print("ringdigndijgnng");
             FindObjectOfType<SceneSwitcher>().SceneLoader();
             GetEnemies();
         }

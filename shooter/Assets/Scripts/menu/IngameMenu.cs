@@ -18,9 +18,10 @@ public class IngameMenu : MainMenu
         {
             if (menuOn)
             {
-                if(OptionsOn)
+                if(optionsOn || itemsOn)
                 {
-                    OptionsOn = false;
+                    optionsOn = false;
+                    itemsOn = false;
                 }
                 else
                 {
@@ -30,9 +31,10 @@ public class IngameMenu : MainMenu
             }
             else
             {
-                if (OptionsOn)
+                if (optionsOn || itemsOn)
                 {
-                    OptionsOn = false;
+                    optionsOn = false;
+                    itemsOn = false;
                 }
                 menuOn = true;
                 trig.menuIsActive = true;
@@ -47,6 +49,7 @@ public class IngameMenu : MainMenu
             Time.timeScale = 1;
         }
         menu.SetActive(menuOn);
-        options.SetActive(OptionsOn);
+        options.SetActive(optionsOn);
+        items.SetActive(itemsOn);
     }
 }

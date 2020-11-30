@@ -25,6 +25,6 @@ public class EnemyHealth : BaseHealthScript
     }
     public void Die()
     {
-        print("Je die is dood!");
+        
     }
 }

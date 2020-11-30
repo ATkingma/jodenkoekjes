@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject menu, options;
+    public GameObject menu, options, items;
 
     //privates
-    protected bool menuOn, OptionsOn;
+    protected bool menuOn, optionsOn, itemsOn;
     private int chosenScene;
     private void Start()
     {
@@ -31,11 +31,17 @@ public class MainMenu : MonoBehaviour
     public void ToMenu()
     {
         menuOn = true;
-        OptionsOn = false;
+        optionsOn = false;
+        itemsOn = false;
     }
     public void ToOptions()
     {
-        OptionsOn = true;
+        optionsOn = true;
+        menuOn = false;
+    }
+    public void ToItems()
+    {
+        itemsOn = true;
         menuOn = false;
     }
     public void ExitGame()
@@ -45,6 +51,7 @@ public class MainMenu : MonoBehaviour
     private void Update()
     {
         menu.SetActive(menuOn);
-        options.SetActive(OptionsOn);
+        options.SetActive(optionsOn);
+        items.SetActive(itemsOn);
     }
 }

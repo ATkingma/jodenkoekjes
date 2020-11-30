@@ -70,12 +70,12 @@ public class Trigger : MonoBehaviour
         currentWeapon.rotation = newWeapon.rotation;
 
         //swap
-        gunNumber = weapon.gunNumber;
         currentWeapon = newWeapon;
         currentWeapon.parent = transform;
         currentWeapon.position = weaponHold.position;
         currentWeapon.rotation = weaponHold.rotation;
         weapon = currentWeapon.GetComponent<WeaponReference>();
+        gunNumber = weapon.gunNumber;
         weapon.isUsed = true;
 
         CalculateStats();
