@@ -11,7 +11,7 @@ public class RangedEnemieScript : MonoBehaviour
     public GameObject magicBall, balPosition, shield;
         public bool PlayerInTrigger;
     //privates
-    private bool playerIsClose, doingDamage, isAtacking,death, doingDead, deathIsDoing;
+    private bool playerIsClose, doingDamage, isAtacking,death, doingDead, deathIsDoing, didto0;
     private GameObject player, itemHolder;
     private float speed;
     RaycastHit hit;
@@ -25,6 +25,13 @@ public class RangedEnemieScript : MonoBehaviour
     }
     void Update()
     {
+        if (GetComponent<EnemyHealth>().health <= GetComponent<EnemyHealth>().executebelow)
+        {
+            if (didto0)
+            {
+                GetComponent<EnemyHealth>().health = 0;
+            }
+        }
         if (GetComponent<EnemyHealth>().maxHealth <= 0)
         {
             death = true;
@@ -142,7 +149,7 @@ public class RangedEnemieScript : MonoBehaviour
         anim.SetBool("Death", true);
         //hier andere shit
         itemHolder.GetComponent<Spawner>().enemiesDied++;
-        gameObject.GetComponent<MeshCollider>().enabled = false;
+        gameObject.GetComponent<BoxCollider>().enabled = false;
         WhatItemWeGonGet();
         Invoke("IsDeath", 3);
     }

@@ -11,7 +11,7 @@ public class EnemieScript : MonoBehaviour
     public bool PlayerInTrigger;
     //private
     private GameObject player,itemHolder, lookat;
-    private bool doingDamage, isAtacking,death,doingDead, deathIsDoing;
+    private bool doingDamage, isAtacking,death,doingDead, deathIsDoing, didto0;
     void Start()
     {
         lookat = GameObject.FindGameObjectWithTag("LookAPlayer");
@@ -20,6 +20,13 @@ public class EnemieScript : MonoBehaviour
     }
     void Update()
     {
+        if (GetComponent<EnemyHealth>().health <= GetComponent<EnemyHealth>().executebelow)
+        {
+            if (didto0)
+            {
+             GetComponent<EnemyHealth>().health = 0;
+            }           
+        }
         if (GetComponent<EnemyHealth>().health <= 0)
         {
             death = true;

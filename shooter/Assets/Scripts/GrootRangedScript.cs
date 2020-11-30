@@ -12,7 +12,7 @@ public class GrootRangedScript : MonoBehaviour
     public GameObject defenceSphere, attackline_1, attackline_2, idleLine_1, idleLine_2;
     public bool PlayerInTrigger;
     //privates
-    private bool playerIsClose, doingDamage, isAtacking, death, doingDead, settingLine,doingIdle, deathIsDoing;
+    private bool playerIsClose, doingDamage, didto0, isAtacking, death, doingDead, settingLine,doingIdle, deathIsDoing;
     private GameObject player, itemHolder;
     private float speed;
     RaycastHit hit;
@@ -26,6 +26,13 @@ public class GrootRangedScript : MonoBehaviour
     }
     void Update()
     {
+        if (GetComponent<EnemyHealth>().health <= GetComponent<EnemyHealth>().executebelow)
+        {
+            if (didto0)
+            {
+                GetComponent<EnemyHealth>().health = 0;
+            }
+        }
         if (GetComponent<EnemyHealth>().health <= 0)
         {
             death = true;
@@ -191,7 +198,7 @@ public class GrootRangedScript : MonoBehaviour
         anim.SetBool("Death", true);
         //hier andere shit
         itemHolder.GetComponent<Spawner>().enemiesDied++;
-        gameObject.GetComponent<MeshCollider>().enabled = false;
+        gameObject.GetComponent<BoxCollider>().enabled = false;
         WhatItemWeGonGet();
         Invoke("IsDeath", 3);
     }
