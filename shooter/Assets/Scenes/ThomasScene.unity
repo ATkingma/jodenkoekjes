@@ -6392,10 +6392,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoints: []
   enemie:
-  - {fileID: 5112546977502310959, guid: a741f121b3040424fac4019cf684b820, type: 3}
+  - {fileID: 2656510125842196378, guid: f16d0c0aa0472544cb7bdbfd29b65b1c, type: 3}
+  - {fileID: 5906671018567844216, guid: e71f3a0897f12c7488e9af4811ef4c77, type: 3}
   - {fileID: 4897158211990988432, guid: 7e259310c550366489e830e92a0f3e30, type: 3}
-  - {fileID: 5112546977502310959, guid: a741f121b3040424fac4019cf684b820, type: 3}
-  - {fileID: 5112546977502310959, guid: a741f121b3040424fac4019cf684b820, type: 3}
   emergencySpawnPoint: []
   Time: {fileID: 318192412}
   portal: {fileID: 0}
@@ -6429,7 +6428,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35e21bdf1c884f94d999df3b06c704ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxScenes: 2
 --- !u!114 &2065066881
 MonoBehaviour:
   m_ObjectHideFlags: 0

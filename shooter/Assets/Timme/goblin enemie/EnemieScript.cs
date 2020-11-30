@@ -10,10 +10,11 @@ public class EnemieScript : MonoBehaviour
     public Animator anim;
     public bool PlayerInTrigger;
     //private
-    private GameObject player,itemHolder;
+    private GameObject player,itemHolder, lookat;
     private bool doingDamage, isAtacking,death,doingDead, deathIsDoing;
     void Start()
     {
+        lookat = GameObject.FindGameObjectWithTag("LookAPlayer");
         player = GameObject.FindGameObjectWithTag("Player");
         itemHolder = GameObject.FindGameObjectWithTag("GameManager");
     }
@@ -39,7 +40,7 @@ public class EnemieScript : MonoBehaviour
             {
                 if (isAtacking == false)
                 {
-                gameObject.transform.LookAt(player.transform);
+                gameObject.transform.LookAt(lookat.transform);
                     if (PlayerInTrigger == true)
                     {
                         Attacking();
@@ -50,7 +51,7 @@ public class EnemieScript : MonoBehaviour
             }
             if (dist <= 2)
             {
-                gameObject.transform.LookAt(player.transform);
+                gameObject.transform.LookAt(lookat.transform);
             }
             if (dist >= 5.4f)
             {
@@ -62,7 +63,7 @@ public class EnemieScript : MonoBehaviour
                 Vector3 toOther = player.transform.position - transform.position;
                 if (Vector3.Dot(forward, toOther) < 0)
                 {
-                    gameObject.transform.LookAt(player.transform);
+                    gameObject.transform.LookAt(lookat.transform);
                 }
             }
         }
@@ -148,7 +149,7 @@ public class EnemieScript : MonoBehaviour
         agent.destination = gameObject.transform.position;
         anim.SetBool("Death", true);
         //hier andere shit
-        gameObject.GetComponent<MeshCollider>().enabled=false;
+        gameObject.GetComponent<BoxCollider>().enabled=false;
         itemHolder.GetComponent<Spawner>().enemiesDied++;
         WhatItemWeGonGet();
         Invoke("IsDeath", 3);
