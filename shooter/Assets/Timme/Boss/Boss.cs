@@ -9,7 +9,7 @@ public class Boss : MonoBehaviour
     public GameObject icePegel1, icePegel2;
     public bool PlayerInTrigger;
     //privates
-    private bool playerIsDeath,bossisdeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive,noParticle;
+    private bool playerIsDeath,bossisdeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive,noParticle, didto0;
     private GameObject player;
     private GameObject attack1_1Pos, attack1_2Pos, attack1_3Pos, attack1_4Pos, attack2Pos, attack3Pos, attack4_1Pos, attack4_2Pos, attack4_3Pos;
     private Vector3[] attack1RenderLine;
@@ -38,7 +38,14 @@ public class Boss : MonoBehaviour
         {
             if (bossisdeath == false)
             {
-                if (GetComponent<EnemyHealth>().maxHealth <= 0)
+                if (GetComponent<EnemyHealth>().health <= GetComponent<EnemyHealth>().executebelow)
+                {
+                    if (!didto0)
+                    {
+                        GetComponent<EnemyHealth>().health = 0;
+                    }
+                }
+                if (GetComponent<EnemyHealth>().health <= 0)
                 {
                     DeathFunction();
                 }
@@ -94,7 +101,6 @@ public class Boss : MonoBehaviour
                     UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
                     agent.destination = player.transform.position;
                     Walking();
-
                 }
                 if (dist <= 40)
                 {

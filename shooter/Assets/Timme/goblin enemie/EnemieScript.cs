@@ -22,7 +22,7 @@ public class EnemieScript : MonoBehaviour
     {
         if (GetComponent<EnemyHealth>().health <= GetComponent<EnemyHealth>().executebelow)
         {
-            if (didto0)
+            if (!didto0)
             {
              GetComponent<EnemyHealth>().health = 0;
             }           
