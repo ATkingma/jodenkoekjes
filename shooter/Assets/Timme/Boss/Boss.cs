@@ -6,7 +6,7 @@ public class Boss : MonoBehaviour
 {
     //publics
     public Animator anim;
-    public GameObject icePegel1, icePegel2;
+    public GameObject icePegel1, icePegel2,portal;
     public bool PlayerInTrigger;
     //privates
     private bool playerIsDeath,bossisdeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive,noParticle, didto0;
@@ -330,10 +330,10 @@ public class Boss : MonoBehaviour
         bossisdeath = true;
         Invoke("Disapear",4);
         anim.SetBool("BosDeath", true);
+        portal.GetComponent<GoUp>().canGoUp = true;
     }
     public void Disapear()
     {
-        ///doe hier maar wat leuks
         Destroy(gameObject);
     }
     public void Taunt()
