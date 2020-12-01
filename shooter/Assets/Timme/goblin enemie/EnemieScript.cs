@@ -45,9 +45,16 @@ public class EnemieScript : MonoBehaviour
             float dist = Vector3.Distance(player.transform.position, transform.position);
             if (dist <= 4)
             {
-                if (isAtacking == false)
+                if (!isAtacking)
                 {
-                gameObject.transform.LookAt(lookat.transform);
+                    if (!PlayerInTrigger)
+                    {
+                        UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+                        if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
+                        {
+                            transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+                        }
+                    }
                     if (PlayerInTrigger == true)
                     {
                         Attacking();
@@ -58,9 +65,13 @@ public class EnemieScript : MonoBehaviour
             }
             if (dist <= 2)
             {
-                gameObject.transform.LookAt(lookat.transform);
+                UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+                if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
+                {
+                    transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+                }
             }
-            if (dist >= 5.4f)
+            if (dist >= 2.4f)
             {
                 ResetAnim();
                 UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -70,7 +81,12 @@ public class EnemieScript : MonoBehaviour
                 Vector3 toOther = player.transform.position - transform.position;
                 if (Vector3.Dot(forward, toOther) < 0)
                 {
+                    print("achter je");
                     gameObject.transform.LookAt(lookat.transform);
+                    if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
+                    {
+                        transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+                    }
                 }
             }
         }
@@ -131,8 +147,14 @@ public class EnemieScript : MonoBehaviour
     public void Resset()
     {
         ResetAnim();
+        UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         isAtacking = false;
         doingDamage = false;
+        gameObject.transform.LookAt(lookat.transform);
+        if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
+        {
+            transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+        }
     }
     public void Taunt()
     {

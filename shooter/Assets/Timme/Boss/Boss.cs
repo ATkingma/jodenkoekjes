@@ -7,8 +7,9 @@ public class Boss : MonoBehaviour
     //publics
     public Animator anim;
     public GameObject icePegel1, icePegel2;
+    public bool PlayerInTrigger;
     //privates
-    private bool playerIsDeath,bossisdeath, playerIsClose, PlayerInTrigger, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive,noParticle;
+    private bool playerIsDeath,bossisdeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive,noParticle;
     private GameObject player;
     private GameObject attack1_1Pos, attack1_2Pos, attack1_3Pos, attack1_4Pos, attack2Pos, attack3Pos, attack4_1Pos, attack4_2Pos, attack4_3Pos;
     private Vector3[] attack1RenderLine;
@@ -97,12 +98,12 @@ public class Boss : MonoBehaviour
                 }
                 if (dist <= 40)
                 {
+                    if (dist >= 4);
                     if (PlayerInTrigger == false)
                     {
 
                         if (Physics.Raycast(transform.position + new Vector3(0, 4, 0), transform.forward, out hit, 40))
                         {
-                            print("ietsamders");
                             if (Dontlook == true)
                             {
                                 gameObject.transform.LookAt(playerPos);
@@ -270,20 +271,6 @@ public class Boss : MonoBehaviour
         attack4_1Pos.SetActive(false);
         attack4_2Pos.SetActive(false);
         attack4_3Pos.SetActive(false);
-    }
-    public void OnTriggerEnter(Collider gameobject)
-    {
-        if (gameobject.gameObject.tag == "Player")
-        {
-            PlayerInTrigger = true;
-        }
-    }
-    public void OnTriggerExit(Collider gameobject)
-    {
-        if (gameobject.gameObject.tag == "Player")
-        {
-            PlayerInTrigger = false;
-        }
     }
     public void SpawnAttack2()
     {

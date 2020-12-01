@@ -6,6 +6,6 @@ public class RessetSceneInt : MonoBehaviour
 {
     void Start()
     {
-        PlayerPrefs.SetInt("scene", 0);
+        PlayerPrefs.SetInt("scene", 1);
     }
 }

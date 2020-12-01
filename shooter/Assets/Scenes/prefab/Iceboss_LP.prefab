@@ -289,12 +289,14 @@ GameObject:
   - component: {fileID: 960152552908857623}
   - component: {fileID: 960152552908857640}
   - component: {fileID: 960152552908857641}
-  - component: {fileID: 960152552908857642}
   - component: {fileID: 960152552908857621}
   - component: {fileID: 960152552908857622}
-  m_Layer: 0
+  - component: {fileID: 6407195701746977906}
+  - component: {fileID: 899669620}
+  - component: {fileID: 899669619}
+  m_Layer: 12
   m_Name: Iceboss_LP
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -306,13 +308,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960152552908857643}
-  m_LocalRotation: {x: -0, y: -0.9627579, z: -0, w: 0.27036524}
+  m_LocalRotation: {x: 0, y: -0.9627578, z: 0, w: 0.2703653}
   m_LocalPosition: {x: 738.97095, y: 1438.9908, z: -750.0519}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 4549602559276671467}
   - {fileID: 7155883382106349602}
   - {fileID: 2779684028928439852}
+  - {fileID: 2847042295017161652}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -148.628, z: 0}
@@ -429,7 +432,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 960152552908857643}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5701589
+  m_Radius: 0.25
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -438,7 +441,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 3.7796686
+  m_Height: 1.79
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -455,8 +458,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 960152552908857641}
-  icePegel1: {fileID: 0}
-  icePegel2: {fileID: 0}
+  icePegel1: {fileID: 6837123013999073002, guid: 0a4b7054f402b5148b525e9ebb60f146, type: 3}
+  icePegel2: {fileID: 5881946994635102831, guid: b344c6104432f71439dc7d3c718a1db0, type: 3}
+  PlayerInTrigger: 0
 --- !u!95 &960152552908857641
 Animator:
   serializedVersion: 3
@@ -476,19 +480,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &960152552908857642
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 960152552908857643}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.1325257, y: 0.90754604, z: 10.1549225}
-  m_Center: {x: 0.0038960576, y: 0.33330584, z: 5.2602005}
 --- !u!198 &960152552908857621
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5327,6 +5318,52 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &6407195701746977906
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960152552908857643}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.71765256, y: 1.9586322, z: 0.44503564}
+  m_Center: {x: 0.02824223, y: 0.85884917, z: -0.02537866}
+--- !u!54 &899669620
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960152552908857643}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &899669619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960152552908857643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa1a74e2c9ff8f2479ca60fa2e3e5341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  executebelow: 0
+  popup: {fileID: 3528436963971658951, guid: ac737ff13280d054b91b3cfd19707034, type: 3}
+  health: 0
+  maxMaxHealth: 0
 --- !u!1 &1033789998638577127
 GameObject:
   m_ObjectHideFlags: 0
@@ -6799,6 +6836,68 @@ Transform:
   m_Father: {fileID: 7293774481146418991}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6964829142364546776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2847042295017161652}
+  - component: {fileID: 3056212377084883329}
+  - component: {fileID: 5991179643509496968}
+  m_Layer: 0
+  m_Name: hitbox
+  m_TagString: eenanderehitbox?
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2847042295017161652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6964829142364546776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2554973888460817179}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3056212377084883329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6964829142364546776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab9e38e11534f6240a6389de8a25cfd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goblin: 0
+  groot: 0
+  ranged: 0
+  boss: 1
+  enemy: {fileID: 960152552908857643}
+--- !u!65 &5991179643509496968
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6964829142364546776}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5090252, y: 1.9059448, z: 9.099712}
+  m_Center: {x: -0.09125802, y: 0.4529724, z: 4.453259}
 --- !u!1 &6999790210511029100
 GameObject:
   m_ObjectHideFlags: 0

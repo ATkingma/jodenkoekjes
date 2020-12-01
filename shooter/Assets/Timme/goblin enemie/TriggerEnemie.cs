@@ -5,7 +5,7 @@ using UnityEngine;
 public class TriggerEnemie : MonoBehaviour
 {
     //public
-    public bool goblin, groot, ranged;
+    public bool goblin, groot, ranged,boss;
     public GameObject enemy;
     public void OnTriggerEnter(Collider gameobject)
     {
@@ -23,6 +23,10 @@ public class TriggerEnemie : MonoBehaviour
             if (ranged)
             {
                 enemy.GetComponent<RangedEnemieScript>().PlayerInTrigger = true;
+            }
+            if (boss)
+            {
+                enemy.GetComponent<Boss>().PlayerInTrigger = true;
             }
         }
     }
@@ -42,6 +46,10 @@ public class TriggerEnemie : MonoBehaviour
             if (ranged)
             {
                 enemy.GetComponent<RangedEnemieScript>().PlayerInTrigger = false;
+            }
+            if (boss)
+            {
+                enemy.GetComponent<Boss>().PlayerInTrigger = false;
             }
         }
     }

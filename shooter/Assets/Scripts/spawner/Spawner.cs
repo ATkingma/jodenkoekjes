@@ -68,7 +68,6 @@ public class Spawner : MonoBehaviour
                int enemiePrefab= Random.Range(0, enemie.Count);
                Instantiate(enemie[enemiePrefab], spawnPoint.transform.position, Quaternion.identity);
                 maxEnemiesToSpawn -= 1;
-                print("spawned");
             }
         }
         isSpawning = true;
