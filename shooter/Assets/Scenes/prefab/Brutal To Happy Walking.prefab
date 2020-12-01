@@ -1107,7 +1107,7 @@ GameObject:
   - component: {fileID: 5708130709673004152}
   - component: {fileID: 4026652822152074175}
   - component: {fileID: 3958663610405753880}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Brutal To Happy Walking
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1363,6 +1363,7 @@ MonoBehaviour:
   goblin: 0
   groot: 1
   ranged: 0
+  boss: 0
   enemy: {fileID: 4897158211990988432}
 --- !u!1 &5699252218084513080
 GameObject:
