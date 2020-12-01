@@ -103,8 +103,7 @@ public class Boss : MonoBehaviour
                     Walking();
                 }
                 if (dist <= 40)
-                {
-                    if (dist >= 4);
+                {                 
                     if (PlayerInTrigger == false)
                     {
 

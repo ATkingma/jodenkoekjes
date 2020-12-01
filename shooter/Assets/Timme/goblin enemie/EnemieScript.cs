@@ -8,10 +8,10 @@ public class EnemieScript : MonoBehaviour
     //public
     public float attackCoolDown, damageValue;
     public Animator anim;
-    public bool PlayerInTrigger;
+    public bool PlayerInTrigger, isAtacking;
     //private
     private GameObject player,itemHolder, lookat;
-    private bool doingDamage, isAtacking,death,doingDead, deathIsDoing, didto0;
+    private bool doingDamage,death,doingDead, deathIsDoing, didto0;
     void Start()
     {
         lookat = GameObject.FindGameObjectWithTag("LookAPlayer");
