@@ -1271,6 +1271,7 @@ MonoBehaviour:
   damageValue: 10
   anim: {fileID: 5346339773113409176}
   PlayerInTrigger: 0
+  isAtacking: 0
 --- !u!114 &8092061508970012002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1285,6 +1286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   executebelow: 0
+  popupheight: 1.5
   popup: {fileID: 3528436963971658951, guid: ac737ff13280d054b91b3cfd19707034, type: 3}
   health: 0
   maxMaxHealth: 0
