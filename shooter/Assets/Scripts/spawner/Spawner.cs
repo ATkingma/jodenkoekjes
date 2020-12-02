@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     public List<GameObject> spawnPoints, enemie,emergencySpawnPoint;
     public GameObject Time, portal;
     public int maxEnemiesTokill,enemiesDied;
-    public TextMeshProUGUI text;
+    public TextMeshProUGUI text, emeiesDiedCount;
     //private
     private float SpawnCoolDown,coolDownTime, countminup;
     private int maxEnemiesToSpawn,remeberme,plusmax;
@@ -37,6 +37,7 @@ public class Spawner : MonoBehaviour
         float minutes = Mathf.Floor(Time.GetComponent<TimeTime>().timeToSafe / 60);
         float seconds = Time.GetComponent<TimeTime>().timeToSafe % 60;
         text.text = minutes + ":" + Mathf.RoundToInt(seconds);
+        emeiesDiedCount.text = enemiesDied.ToString();
             if (minutes==countminup)
             {
                       if (doingCooldDown == false)
