@@ -17,6 +17,6 @@ public class HealthBar : MonoBehaviour
     void Update()
     {
         transform.LookAt(mainCamera.transform.position);
-       // healthSlider.value = enemy.GetComponent<EnemyHealth>().health;
+        healthSlider.value = enemy.GetComponent<EnemyHealth>().health;
     }
 }

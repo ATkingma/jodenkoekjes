@@ -2811,6 +2811,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 560469066409874027, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: isNormalMap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999636475249325008, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4999636475249325008, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6481214843149250570, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
       propertyPath: m_NavMeshLayer
       value: 0
@@ -2953,6 +2965,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6481214844863774033, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
       propertyPath: m_NavMeshLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130774653228730371, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130774653228730371, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
