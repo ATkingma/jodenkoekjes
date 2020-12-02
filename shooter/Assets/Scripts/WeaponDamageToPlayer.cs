@@ -26,7 +26,6 @@ public class WeaponDamageToPlayer : MonoBehaviour
     public void DoDamage()
     {
         doingDamage = true;
-        print("hoere veel damage op u moeder");
         Invoke("Resettt", 3);
     }
     public void Resettt()

@@ -138,7 +138,6 @@ public class Boss : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            print("hij raakt hem hoor");
         }
     }
         public void RandomAttack()
@@ -221,7 +220,6 @@ public class Boss : MonoBehaviour
     public void AOE()
     {
         noParticle = false;
-        print("aoe");
         Invoke("ParticleSetActive", 3f);
         ResetAnim();
         anim.SetBool("Aoe", true);

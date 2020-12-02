@@ -32,7 +32,6 @@ public class Spawner : MonoBehaviour
     {
         if(enemiesDied >= maxEnemiesTokill)
         {
-            print("hij doet t");
             portal.SetActive(true);
         }
         float minutes = Mathf.Floor(Time.GetComponent<TimeTime>().timeToSafe / 60);
@@ -77,7 +76,6 @@ public class Spawner : MonoBehaviour
         doingCooldDown = true;
         coolDownTime = SpawnCoolDown + Time.GetComponent<TimeTime>().timeToSafe;
         Invoke("CoolBool", 0.5f);
-        print("cooldowndingen");
     }
     public void CoolBool()
     {
@@ -85,7 +83,6 @@ public class Spawner : MonoBehaviour
     }
     public void GettingHarder()
     {
-        print("wordmoeilijkerneef");
         gettingHard = true;
         remeberme += 50;
         countminup += 5;
