@@ -8,6 +8,7 @@ public class Boss : MonoBehaviour
     public Animator anim;
     public GameObject icePegel1, icePegel2,portal;
     public bool PlayerInTrigger;
+    public float damage1, damage2, damage3;
     //privates
     private bool playerIsDeath,bossisdeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive,noParticle, didto0;
     private GameObject player;
@@ -134,14 +135,8 @@ public class Boss : MonoBehaviour
             }
         }
     }
-    public void OnParticleCollision(GameObject other)
+    public void RandomAttack()
     {
-        if (other.gameObject.tag == "Player")
-        {
-        }
-    }
-        public void RandomAttack()
-         {
         float RanomAttack = Random.Range(1,10);
         if (RanomAttack == 1)
         {
@@ -187,7 +182,7 @@ public class Boss : MonoBehaviour
             Idle();
         }
         isAtacking = true;
-         }
+    }
     public void Attacking1()
     {
         ResetAnim();
@@ -229,7 +224,7 @@ public class Boss : MonoBehaviour
     {
         if (noParticle == false)
         {
-        particle.Play(true);           
+            particle.Play(true);           
         }
     }
     public void Idle()
@@ -281,7 +276,7 @@ public class Boss : MonoBehaviour
         Instantiate(icePegel1, attack2Pos.transform.position, Quaternion.identity);
         Instantiate(icePegel2, attack2Pos.transform.position, Quaternion.identity);
     }
-    public void GetThat()
+    public void GetThat()//deze
     {
         attack1IsActive = true;
         attack1_1Pos.SetActive(true);
@@ -292,29 +287,53 @@ public class Boss : MonoBehaviour
         attack1_2Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
         attack1_3Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
         attack1_4Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
+        RaycastHit hit;
+        if (Physics.Linecast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
+        {
+            if (hit.transform.tag == "Player")
+            {
+                player.GetComponent<PlayerHealth>().ReceiveDamage(damage3);
+            }
+        }
     }
-    public void QuickLighting()
+    public void QuickLighting()//deze
     {
         attack2IsActive = true;
         attack2Pos.SetActive(true);
         attack2Pos.GetComponent<LineRenderer>().SetPosition(0, attack2Pos.transform.position);
         attack2Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
+        {
+            if (hit.transform.tag == "Player")
+            {
+                player.GetComponent<PlayerHealth>().ReceiveDamage(damage1);
+            }
+        }
     }
     public void ResetAttack2()
     {
         attack2IsActive = false;
         attack2Pos.SetActive(false);
     }
-    public void Attack4Line()
+    public void Attack4Line()//deze
     {
-            attack4IsActive = true;
-            attack4_1Pos.SetActive(true);
-            attack4_2Pos.SetActive(true);
-            attack4_3Pos.SetActive(true);
-            attack4_1Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
-            attack4_2Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
-            attack4_3Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
-              Invoke("DoAttack4LineOff", 0.6f);
+        attack4IsActive = true;
+        attack4_1Pos.SetActive(true);
+        attack4_2Pos.SetActive(true);
+        attack4_3Pos.SetActive(true);
+        attack4_1Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
+        attack4_2Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
+        attack4_3Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
+        {
+            if (hit.transform.tag == "Player")
+            {
+                player.GetComponent<PlayerHealth>().ReceiveDamage(damage2);
+            }
+        }
+        Invoke("DoAttack4LineOff", 0.6f);
     }
     public void DoAttack4LineOff()
     {

@@ -7,6 +7,7 @@ public class BulletBehaviour : MonoBehaviour
     public float damage, normalHitRange, explosionRange, executePrecent, explosionCount;
     public bool explode;
     public GameObject explosionRadius;
+    public float speed;
 
     //privates
     private Vector3 prefLocation;
@@ -14,10 +15,17 @@ public class BulletBehaviour : MonoBehaviour
     private void Start()
     {
         Destroy(gameObject, 10);
+        if(gameObject.tag == "ijs")
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            gameObject.transform.LookAt(player.transform);
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.velocity = transform.forward * speed;
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Enemy")
+        if (other.transform.tag == "Enemy" || other.transform.tag == "Player")
         {
             HitEnemy(transform.position);
         }
@@ -52,7 +60,7 @@ public class BulletBehaviour : MonoBehaviour
             RaycastHit hit;
             if(Physics.Raycast(transform.position, transform.forward, out hit, 1))
             {
-                if (hit.transform.tag == "Enemy")
+                if (hit.transform.tag == "Enemy" || hit.transform.tag == "Player")
                 {
                     HitEnemy(hit.point);
                 }

@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 6407195701746977906}
   - component: {fileID: 899669620}
   - component: {fileID: 899669619}
+  - component: {fileID: 5688262499097402663}
   m_Layer: 12
   m_Name: Iceboss_LP
   m_TagString: Enemy
@@ -460,6 +461,7 @@ MonoBehaviour:
   anim: {fileID: 960152552908857641}
   icePegel1: {fileID: 6837123013999073002, guid: 0a4b7054f402b5148b525e9ebb60f146, type: 3}
   icePegel2: {fileID: 5881946994635102831, guid: b344c6104432f71439dc7d3c718a1db0, type: 3}
+  portal: {fileID: 0}
   PlayerInTrigger: 0
 --- !u!95 &960152552908857641
 Animator:
@@ -5364,6 +5366,19 @@ MonoBehaviour:
   popup: {fileID: 3528436963971658951, guid: ac737ff13280d054b91b3cfd19707034, type: 3}
   health: 0
   maxMaxHealth: 0
+--- !u!114 &5688262499097402663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960152552908857643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d71e417a50b85a48b14c6aa8d4c2cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aoeDamage: 10
 --- !u!1 &1033789998638577127
 GameObject:
   m_ObjectHideFlags: 0
