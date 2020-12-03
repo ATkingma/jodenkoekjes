@@ -85,7 +85,7 @@ public class Movement : MonoBehaviour
         controller.Move(moveDir.normalized * speed * Time.deltaTime);
         controller.Move(new Vector3(0, downForce, 0) * speed * Time.deltaTime);
 
-        if (!menu.menuOn)
+        if (!menu.anyIsOn)
         {
             //rotation
             rotX += Input.GetAxis("Mouse X") * FindObjectOfType<CameraController>().rotSpeed;

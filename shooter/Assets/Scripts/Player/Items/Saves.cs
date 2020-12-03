@@ -23,4 +23,8 @@ public class Saves : MonoBehaviour
         list.Save();
         trig.Save();
     }
+    public void ClearSaves()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }

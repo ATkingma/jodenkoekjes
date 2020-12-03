@@ -8,11 +8,13 @@ public class MainMenu : MonoBehaviour
     public GameObject menu, options, items;
 
     //privates
-    public bool menuOn, optionsOn, itemsOn;
+    public bool menuOn, optionsOn, itemsOn, anyIsOn;
     private int chosenScene;
+    private Saves clear;
     private void Start()
     {
         menuOn = true;
+        clear = FindObjectOfType<Saves>();
     }
 
     //hier doet ie laat scene timme
@@ -44,8 +46,14 @@ public class MainMenu : MonoBehaviour
         itemsOn = true;
         menuOn = false;
     }
+    public void ToMainMenu()
+    {
+        clear.ClearSaves();
+        SceneManager.LoadScene(0);
+    }
     public void ExitGame()
     {
+        clear.ClearSaves();
         Application.Quit();
     }
     private void Update()

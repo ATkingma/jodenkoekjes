@@ -15,15 +15,15 @@ public class CameraController : MonoBehaviour
     public GameObject player;
 
     //private
-    private MainMenu menu;
+    private IngameMenu menu;
 
     private void Start()
     {
-        menu = FindObjectOfType<MainMenu>();
+        menu = FindObjectOfType<IngameMenu>();
     }
     void Update()
     {
-        if (!menu.menuOn)
+        if (!menu.anyIsOn)
         {
             transform.position = player.transform.position;
             //rotation

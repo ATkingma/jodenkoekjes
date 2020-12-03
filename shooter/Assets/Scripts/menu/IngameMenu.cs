@@ -26,7 +26,6 @@ public class IngameMenu : MainMenu
                 else
                 {
                     menuOn = false;
-                    trig.menuIsActive = false;
                 }
             }
             else
@@ -37,7 +36,6 @@ public class IngameMenu : MainMenu
                     itemsOn = false;
                 }
                 menuOn = true;
-                trig.menuIsActive = true;
             }
         }
         if(menuOn || itemsOn || optionsOn)
@@ -45,15 +43,25 @@ public class IngameMenu : MainMenu
             Time.timeScale = 0;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            anyIsOn = true;
+            trig.menuIsActive = true;
         }
         else
         {
             Time.timeScale = 1;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+            anyIsOn = false;
+            trig.menuIsActive = false;
         }
         menu.SetActive(menuOn);
         options.SetActive(optionsOn);
         items.SetActive(itemsOn);
+    }
+    public void Resume()
+    {
+        menuOn = false;
+        optionsOn = false;
+        itemsOn = false;
     }
 }
