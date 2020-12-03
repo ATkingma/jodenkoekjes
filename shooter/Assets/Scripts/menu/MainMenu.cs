@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     //privates
     public bool menuOn, optionsOn, itemsOn, anyIsOn;
     private int chosenScene;
-    private Saves clear;
+    protected Saves clear;
     private void Start()
     {
         menuOn = true;

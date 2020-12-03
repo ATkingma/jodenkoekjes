@@ -11,6 +11,7 @@ public class IngameMenu : MainMenu
     private void Start()
     {
         trig = FindObjectOfType<Trigger>();
+        clear = FindObjectOfType<Saves>();
     }
     private void Update()
     {
