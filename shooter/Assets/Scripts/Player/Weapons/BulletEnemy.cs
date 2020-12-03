@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletBehaviour : MonoBehaviour
+public class BulletEnemy : MonoBehaviour
 {
     public float damage, normalHitRange, explosionRange, executePrecent, explosionCount;
     public bool explode;
@@ -25,7 +25,7 @@ public class BulletBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Enemy")
+        if (other.transform.tag == "Player")
         {
             HitEnemy(transform.position);
         }
@@ -60,7 +60,7 @@ public class BulletBehaviour : MonoBehaviour
             RaycastHit hit;
             if(Physics.Raycast(transform.position, transform.forward, out hit, 1))
             {
-                if (hit.transform.tag == "Enemy")
+                if (hit.transform.tag == "Player")
                 {
                     HitEnemy(hit.point);
                 }

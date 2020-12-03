@@ -40,7 +40,7 @@ public class IngameMenu : MainMenu
                 trig.menuIsActive = true;
             }
         }
-        if(menuOn)
+        if(menuOn || itemsOn || optionsOn)
         {
             Time.timeScale = 0;
             Cursor.visible = true;

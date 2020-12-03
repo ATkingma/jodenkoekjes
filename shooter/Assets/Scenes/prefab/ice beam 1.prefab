@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5035775728365319999}
   - component: {fileID: 5918643578494544988}
   - component: {fileID: 1630300803474870085}
-  - component: {fileID: -5979268846812621760}
+  - component: {fileID: 2363745083069700182}
   m_Layer: 0
   m_Name: ice beam 1
   m_TagString: ijs
@@ -113,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &-5979268846812621760
+--- !u!114 &2363745083069700182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,10 +122,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6837123013999073002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a3c41785b3eb9d45b8a869952fc301d, type: 3}
+  m_Script: {fileID: 11500000, guid: 1553f110bc3a37441b2344af2c8e58b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 20
   normalHitRange: 0
   explosionRange: 0
   executePrecent: 0
