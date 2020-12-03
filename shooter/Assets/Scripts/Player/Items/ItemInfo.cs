@@ -1,18 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ItemInfo : MonoBehaviour
 {
-    public GameObject haba, item;
+    public TextMeshProUGUI info;
 
-    void Update()
+    public void Test(TextMeshProUGUI UwU)
     {
-
-    }
-
-    public void Test(GameObject UwU)
-    {
-        item = UwU;
+        info.text = UwU.text;
     }
 }
