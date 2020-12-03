@@ -171,7 +171,7 @@ public class RangedEnemieScript : MonoBehaviour
             {
                 if (!death)
                 {
-                Instantiate(magicBall, balPosition.transform.position, Quaternion.identity);
+                    Instantiate(magicBall, balPosition.transform.position, Quaternion.identity);
                 }
             }
         }
