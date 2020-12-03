@@ -32,7 +32,7 @@ public class Index : MonoBehaviour
                     itemCount++;
                 }
                 index[i].GetComponentInChildren<TextMeshProUGUI>().text = itemslist.itemQuantity[i].ToString();
-                GetComponent<RectTransform>().sizeDelta = new Vector2(150 * itemCount, 100);
+                GetComponent<RectTransform>().sizeDelta = new Vector2(150 * itemCount, 150);
             }
         }
     }
