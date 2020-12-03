@@ -14,7 +14,7 @@ public class LoadingScreen : MonoBehaviour
 
     private void Start()
     {
-        scene = Random.Range(1, 2);
+        scene = Random.Range(1, 3);
     }
     public void StartLoadingScreenNormalMap()
     {
