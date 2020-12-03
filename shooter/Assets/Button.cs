@@ -6,9 +6,9 @@ public class Button : MonoBehaviour
 {
 
     //public
-    public GameObject top,door;
+    public GameObject top,door,spawner,spawn1,spawn2,spawn3;
     //private
-    private bool triggert, isDown,dontDoAnny;
+    private bool triggert, isDown,dontDoAnny, stopRightHere;
     private GameObject[] spawnpoints;
     void Start()
     {
@@ -19,7 +19,14 @@ public class Button : MonoBehaviour
     {
         if (isDown)
         {
+            if (!stopRightHere)
+            {
+            stopRightHere = true;
             door.SetActive(false);
+            spawner.GetComponent<Spawner>().spawnPoints.Add(spawn1);
+            spawner.GetComponent<Spawner>().spawnPoints.Add(spawn2);
+            spawner.GetComponent<Spawner>().spawnPoints.Add(spawn3);
+            }
         }
         if (!dontDoAnny)
         {

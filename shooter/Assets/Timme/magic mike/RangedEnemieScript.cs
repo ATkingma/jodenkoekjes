@@ -32,7 +32,7 @@ public class RangedEnemieScript : MonoBehaviour
                 GetComponent<EnemyHealth>().health = 0;
             }
         }
-        if (GetComponent<EnemyHealth>().maxHealth <= 0)
+        if (GetComponent<EnemyHealth>().health <= 0)
         {
             death = true;
             if (!doingDead)
@@ -50,6 +50,9 @@ public class RangedEnemieScript : MonoBehaviour
             float dist = Vector3.Distance(player.transform.position, transform.position);
             if (dist <= 20)
             {
+                Vector3 targetPosition = player.transform.position;
+                targetPosition.y = transform.position.y;
+                transform.LookAt(targetPosition);
                 playerIsClose = true;
                 GetComponent<NavMeshAgent>().speed = 0;
             }
@@ -84,7 +87,6 @@ public class RangedEnemieScript : MonoBehaviour
                 else
                 {
                     gameObject.transform.LookAt(player.transform);
-                    print("koekoek");
                 }
             }
         }
@@ -95,23 +97,23 @@ public class RangedEnemieScript : MonoBehaviour
         {
             DoDamage();
             Atack();
-            balPosition.GetComponent<MeshRenderer>().enabled = true;
+            if (!death)
+            {
+                balPosition.GetComponent<MeshRenderer>().enabled = true;
+            }
             Bigger();
         }
-        print("Attacking");
         isAtacking = true;
     }
     public void DoDamage()
     {
         Invoke("Resset", attackCoolDown+=1);
         Invoke("DoTaunt", attackCoolDown / 2);
-        print("DoDammage");
         doingDamage = true;
     }
     public void DoTaunt()
     {
         Taunt();
-        print("dotaunt");
         balPosition.GetComponent<MeshRenderer>().enabled = false;
         Invoke("GrabShield", 0.6f);
         balPosition.transform.localScale=new Vector3 (0.1f,0.1f,0.1f);
@@ -121,7 +123,6 @@ public class RangedEnemieScript : MonoBehaviour
         shield.SetActive(false);
         ResetAnim();
         isAtacking = false;
-        print("Resset");
         doingDamage = false;
     }
     public void Taunt()
@@ -131,14 +132,12 @@ public class RangedEnemieScript : MonoBehaviour
         {
             anim.SetBool("IsTaunting", true);
         }
-        print("taunt");
     }
-    public void Atack()
+        public void Atack()
     {
         ResetAnim();
         anim.SetBool("IsAttacking", true);
          Invoke("FireBall", 2);
-        print("atack");
         shield.SetActive(false);
     }
     public void Death()
@@ -161,16 +160,21 @@ public class RangedEnemieScript : MonoBehaviour
     {
         anim.SetBool("IsAttacking", false);
         anim.SetBool("IsTaunting", false);
-        print("reset anim");
     }
     public void FireBall()
     {
         if (playerIsClose == true)
         {
-
-        Instantiate(magicBall, balPosition.transform.position, Quaternion.identity);
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
+            Vector3 toOther = player.transform.position - transform.position;
+            if (Vector3.Dot(forward, toOther) > 0)
+            {
+                if (!death)
+                {
+                Instantiate(magicBall, balPosition.transform.position, Quaternion.identity);
+                }
+            }
         }
-        print("vuurbal");
         balPosition.GetComponent<MeshRenderer>().enabled = false;
     }
     public void Bigger()
@@ -189,7 +193,10 @@ public class RangedEnemieScript : MonoBehaviour
     {
         if (playerIsClose)
         {
-        shield.SetActive(true);
+            if (!death)
+            {
+                shield.SetActive(true);
+            }
         }
     }
     public void WhatItemWeGonGet()
@@ -197,11 +204,9 @@ public class RangedEnemieScript : MonoBehaviour
         int number = Random.Range(1, 16);
         if (number <= 4)
         {
-            print("niks nederlandder");
         }
         if (number <= 8 & number > 4)
         {
-            print("niks nederlandd");
         }
         if (number <= 12 & number > 8)
         {

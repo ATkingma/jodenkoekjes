@@ -14,7 +14,6 @@ public class TriggerEnemie : MonoBehaviour
             if (goblin)
             {
                 enemy.GetComponent<EnemieScript>().PlayerInTrigger = true;
-                print("y");
             }
             if (groot)
             {
@@ -37,7 +36,6 @@ public class TriggerEnemie : MonoBehaviour
             if (goblin)
             {
                 enemy.GetComponent<EnemieScript>().PlayerInTrigger = false;
-                print("n");
             }
             if (groot)
             {

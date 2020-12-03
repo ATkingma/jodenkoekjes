@@ -8,10 +8,10 @@ public class EnemieScript : MonoBehaviour
     //public
     public float attackCoolDown, damageValue;
     public Animator anim;
-    public bool PlayerInTrigger;
+    public bool PlayerInTrigger, isAtacking;
     //private
     private GameObject player,itemHolder, lookat;
-    private bool doingDamage, isAtacking,death,doingDead, deathIsDoing, didto0;
+    private bool doingDamage,death,doingDead, deathIsDoing, didto0;
     void Start()
     {
         lookat = GameObject.FindGameObjectWithTag("LookAPlayer");
@@ -81,7 +81,6 @@ public class EnemieScript : MonoBehaviour
                 Vector3 toOther = player.transform.position - transform.position;
                 if (Vector3.Dot(forward, toOther) < 0)
                 {
-                    print("achter je");
                     gameObject.transform.LookAt(lookat.transform);
                     if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
                     {
@@ -101,8 +100,6 @@ public class EnemieScript : MonoBehaviour
         }
         isAtacking = true;
     }
-
-    //damage
     public void DoDamage()
     {
         Invoke("Resset", attackCoolDown);
@@ -177,7 +174,6 @@ public class EnemieScript : MonoBehaviour
         UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.destination = gameObject.transform.position;
         anim.SetBool("Death", true);
-        //hier andere shit
         gameObject.GetComponent<BoxCollider>().enabled=false;
         itemHolder.GetComponent<Spawner>().enemiesDied++;
         WhatItemWeGonGet();
@@ -192,11 +188,9 @@ public class EnemieScript : MonoBehaviour
         int number=Random.Range(1, 16);
         if (number <= 4)
         {
-            print("niks nederlandder");
         }
         if (number <= 8 & number >4)
         {
-            print("niks nederlandd");
         }
         if (number <= 12 & number > 8)
         {

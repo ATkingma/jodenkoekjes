@@ -9,14 +9,14 @@ public class Spawner : MonoBehaviour
     public List<GameObject> spawnPoints, enemie,emergencySpawnPoint;
     public GameObject Time, portal;
     public int maxEnemiesTokill,enemiesDied;
-    public TextMeshProUGUI text;
+    public TextMeshProUGUI text, emeiesDiedCount;
     //private
     private float SpawnCoolDown,coolDownTime, countminup;
     private int maxEnemiesToSpawn,remeberme,plusmax;
     private bool isSpawning, doingCooldDown,gettingHard;
     void Start()
     {
-        spawnPoints.AddRange(GameObject.FindGameObjectsWithTag("SpawnPoint"));
+        GetSpawnPoints();
         SpawnCoolDown = 20;
         maxEnemiesToSpawn = 100;
         plusmax = PlayerPrefs.GetInt("MaxEnemiesToKill");
@@ -32,12 +32,12 @@ public class Spawner : MonoBehaviour
     {
         if(enemiesDied >= maxEnemiesTokill)
         {
-            print("hij doet t");
             portal.SetActive(true);
         }
         float minutes = Mathf.Floor(Time.GetComponent<TimeTime>().timeToSafe / 60);
         float seconds = Time.GetComponent<TimeTime>().timeToSafe % 60;
         text.text = minutes + ":" + Mathf.RoundToInt(seconds);
+        emeiesDiedCount.text = enemiesDied.ToString();
             if (minutes==countminup)
             {
                       if (doingCooldDown == false)
@@ -77,7 +77,6 @@ public class Spawner : MonoBehaviour
         doingCooldDown = true;
         coolDownTime = SpawnCoolDown + Time.GetComponent<TimeTime>().timeToSafe;
         Invoke("CoolBool", 0.5f);
-        print("cooldowndingen");
     }
     public void CoolBool()
     {
@@ -85,7 +84,6 @@ public class Spawner : MonoBehaviour
     }
     public void GettingHarder()
     {
-        print("wordmoeilijkerneef");
         gettingHard = true;
         remeberme += 50;
         countminup += 5;
@@ -97,5 +95,9 @@ public class Spawner : MonoBehaviour
         //maxEnemiesTokill = maxEnemiesToSpawn;
         gettingHard = false;
         SpawnCoolDown -= 0.1f;
+    }
+    public void GetSpawnPoints()
+    {
+        spawnPoints.AddRange(GameObject.FindGameObjectsWithTag("SpawnPoint"));
     }
 }

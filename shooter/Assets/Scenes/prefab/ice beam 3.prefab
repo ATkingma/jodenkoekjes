@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 2145088235401988080}
   - component: {fileID: 4188370929510888250}
   - component: {fileID: 3306064935115616579}
-  - component: {fileID: 3306064935115616576}
+  - component: {fileID: 1212460366145518291}
   m_Layer: 0
   m_Name: ice beam 3
-  m_TagString: Untagged
+  m_TagString: ijs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.011212237, y: 0.013041763, z: 0.018397719}
   m_Center: {x: -0.0014911199, y: 0.0009464987, z: 0.0017081874}
---- !u!114 &3306064935115616576
+--- !u!114 &1212460366145518291
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,8 +105,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2387164381029733103}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d119ad04a9d95004c918f70874652a9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a3c41785b3eb9d45b8a869952fc301d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.26
-  coolDown: 0
+  damage: 20
+  normalHitRange: 0
+  explosionRange: 0
+  executePrecent: 0
+  explosionCount: 0
+  explode: 0
+  explosionRadius: {fileID: 0}
+  speed: 20

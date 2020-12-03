@@ -221,11 +221,9 @@ public class GrootRangedScript : MonoBehaviour
         int number = Random.Range(1, 16);
         if (number <= 4)
         {
-            print("niks nederlandder");
         }
         if (number <= 8 & number > 4)
         {
-            print("niks nederlandd");
         }
         if (number <= 12 & number > 8)
         {
