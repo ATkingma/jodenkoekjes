@@ -15,6 +15,8 @@ public class Movement : MonoBehaviour
 
     private ItemList list;
 
+    private MainMenu menu;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -23,6 +25,7 @@ public class Movement : MonoBehaviour
         JumpCheck();
         baseMovewmentSpeed = movementSpeed;
         baseSprintSpeed = sprintSpeed;
+        menu = FindObjectOfType<MainMenu>();
     }
 
     private void Update()
@@ -82,9 +85,12 @@ public class Movement : MonoBehaviour
         controller.Move(moveDir.normalized * speed * Time.deltaTime);
         controller.Move(new Vector3(0, downForce, 0) * speed * Time.deltaTime);
 
-        //rotation
-        rotX += Input.GetAxis("Mouse X") * FindObjectOfType<CameraController>().rotSpeed;
-        transform.rotation = Quaternion.Euler(0, rotX, 0f);
+        if (!menu.menuOn)
+        {
+            //rotation
+            rotX += Input.GetAxis("Mouse X") * FindObjectOfType<CameraController>().rotSpeed;
+            transform.rotation = Quaternion.Euler(0, rotX, 0f);
+        }
     }
     private void JumpCheck()
     {

@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     public GameObject menu, options, items;
 
     //privates
-    protected bool menuOn, optionsOn, itemsOn;
+    public bool menuOn, optionsOn, itemsOn;
     private int chosenScene;
     private void Start()
     {

@@ -14,15 +14,24 @@ public class CameraController : MonoBehaviour
     // position
     public GameObject player;
 
+    //private
+    private MainMenu menu;
 
+    private void Start()
+    {
+        menu = FindObjectOfType<MainMenu>();
+    }
     void Update()
     {
-        transform.position = player.transform.position;
-        //rotation
-        rotX += Input.GetAxis("Mouse X") * rotSpeed;
-        rotY += Input.GetAxis("Mouse Y") * rotSpeed;
+        if (!menu.menuOn)
+        {
+            transform.position = player.transform.position;
+            //rotation
+            rotX += Input.GetAxis("Mouse X") * rotSpeed;
+            rotY += Input.GetAxis("Mouse Y") * rotSpeed;
 
-        rotY = Mathf.Clamp(rotY, -maxLookDown, maxLookUp);
-        transform.rotation = Quaternion.Euler(-rotY, rotX, 0f);
+            rotY = Mathf.Clamp(rotY, -maxLookDown, maxLookUp);
+            transform.rotation = Quaternion.Euler(-rotY, rotX, 0f);
+        }
     }
 }
