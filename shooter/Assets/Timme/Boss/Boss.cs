@@ -6,18 +6,20 @@ public class Boss : MonoBehaviour
 {
     //publics
     public Animator anim;
-    public GameObject icePegel1, icePegel2,portal;
-    public bool PlayerInTrigger;
+    public GameObject icePegel1, icePegel2, portal;
+    public bool PlayerInTrigger, bossisdeath;
     public float damage1, damage2, damage3;
     //privates
-    private bool playerIsDeath,bossisdeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive,noParticle, didto0;
-    private GameObject player;
+    private bool playerIsDeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive, noParticle, didto0;
+    private GameObject player, itemHolder;
     private GameObject attack1_1Pos, attack1_2Pos, attack1_3Pos, attack1_4Pos, attack2Pos, attack3Pos, attack4_1Pos, attack4_2Pos, attack4_3Pos;
     private Vector3[] attack1RenderLine;
     private float speed;
     private ParticleSystem particle;
     private Vector3 playerPos;
+    private int soMutch;
     RaycastHit hit;
+
     void Start()
     {
         particle = GetComponent<ParticleSystem>();
@@ -32,6 +34,8 @@ public class Boss : MonoBehaviour
         attack4_1Pos = GameObject.FindGameObjectWithTag("Attack4_1Pos");
         attack4_2Pos = GameObject.FindGameObjectWithTag("Attack4_2Pos");
         attack4_3Pos = GameObject.FindGameObjectWithTag("Attack4_3Pos");
+        soMutch = 5;
+        itemHolder = GameObject.FindGameObjectWithTag("GameManager");
     }
     void Update()
     {
@@ -104,7 +108,7 @@ public class Boss : MonoBehaviour
                     Walking();
                 }
                 if (dist <= 40)
-                {                 
+                {
                     if (PlayerInTrigger == false)
                     {
 
@@ -137,7 +141,7 @@ public class Boss : MonoBehaviour
     }
     public void RandomAttack()
     {
-        float RanomAttack = Random.Range(1,10);
+        float RanomAttack = Random.Range(1, 10);
         if (RanomAttack == 1)
         {
             Dontlook = true;
@@ -199,14 +203,14 @@ public class Boss : MonoBehaviour
         Invoke("SpawnAttack2", 0.9f);
     }
     public void Attacking3()
-    {        
+    {
         ResetAnim();
         anim.SetBool("Attack3", true);
         Invoke("QuickLighting", 0.9f);
         Invoke("Reset", 3);
     }
     public void Attacking4()
-    {        
+    {
         ResetAnim();
         anim.SetBool("Attack4", true);
         Invoke("Reset", 4);
@@ -214,6 +218,7 @@ public class Boss : MonoBehaviour
     }
     public void AOE()
     {
+        gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         noParticle = false;
         Invoke("ParticleSetActive", 3f);
         ResetAnim();
@@ -224,7 +229,8 @@ public class Boss : MonoBehaviour
     {
         if (noParticle == false)
         {
-            particle.Play(true);           
+            particle.Play(true);
+            gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
     }
     public void Idle()
@@ -344,10 +350,27 @@ public class Boss : MonoBehaviour
     public void DeathFunction()
     {
         bossisdeath = true;
-        Invoke("Disapear",4);
+        Invoke("Disapear", 4);
         anim.SetBool("BosDeath", true);
         portal.GetComponent<GoUp>().canGoUp = true;
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        DoDrop();
     }
+    public void DoDrop()
+    {
+        if (soMutch >= 0)
+        {
+            ItemDrop();
+            Min();
+            DoDrop();
+        }
+    }
+public void Min()
+    {
+        soMutch -= 1;
+    }
+
+
     public void Disapear()
     {
         Destroy(gameObject);
@@ -356,5 +379,49 @@ public class Boss : MonoBehaviour
     {
         playerIsDeath = true;
         anim.SetBool("PlayerIsDead", true);
+    }
+    public void ItemDrop()
+    {
+        int number = Random.Range(1, 16);
+        if (number <= 8)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[0], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 16 & number > 8)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[1], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 24 & number > 16)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[2], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 26 & number > 24)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[0], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 28 & number > 26)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[1], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 30 & number > 28)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[2], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 32 & number > 30)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[3], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 34 & number > 32)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[4], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 36 & number > 34)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[5], gameObject.transform.position, Quaternion.identity);
+        }
+        if (number <= 38 & number > 36)
+        {
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[6], gameObject.transform.position, Quaternion.identity);
+        }
     }
 }

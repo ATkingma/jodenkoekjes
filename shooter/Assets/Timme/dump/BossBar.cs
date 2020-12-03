@@ -24,7 +24,10 @@ public class BossBar : MonoBehaviour
     {
         if (!isNormalMap)
         {
+            if (bos.GetComponent<Boss>().bossisdeath==false)
+            { 
             healthSlider.value = bos.GetComponent<EnemyHealth>().health;
+            }
         }
     }
 }
