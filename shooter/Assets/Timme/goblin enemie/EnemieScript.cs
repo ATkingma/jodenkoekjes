@@ -100,8 +100,6 @@ public class EnemieScript : MonoBehaviour
         }
         isAtacking = true;
     }
-
-    //damage
     public void DoDamage()
     {
         Invoke("Resset", attackCoolDown);
@@ -176,7 +174,6 @@ public class EnemieScript : MonoBehaviour
         UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.destination = gameObject.transform.position;
         anim.SetBool("Death", true);
-        //hier andere shit
         gameObject.GetComponent<BoxCollider>().enabled=false;
         itemHolder.GetComponent<Spawner>().enemiesDied++;
         WhatItemWeGonGet();

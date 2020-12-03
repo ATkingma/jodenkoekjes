@@ -32,7 +32,7 @@ public class RangedEnemieScript : MonoBehaviour
                 GetComponent<EnemyHealth>().health = 0;
             }
         }
-        if (GetComponent<EnemyHealth>().maxHealth <= 0)
+        if (GetComponent<EnemyHealth>().health <= 0)
         {
             death = true;
             if (!doingDead)
@@ -50,6 +50,9 @@ public class RangedEnemieScript : MonoBehaviour
             float dist = Vector3.Distance(player.transform.position, transform.position);
             if (dist <= 20)
             {
+                Vector3 targetPosition = player.transform.position;
+                targetPosition.y = transform.position.y;
+                transform.LookAt(targetPosition);
                 playerIsClose = true;
                 GetComponent<NavMeshAgent>().speed = 0;
             }
@@ -94,7 +97,10 @@ public class RangedEnemieScript : MonoBehaviour
         {
             DoDamage();
             Atack();
-            balPosition.GetComponent<MeshRenderer>().enabled = true;
+            if (!death)
+            {
+                balPosition.GetComponent<MeshRenderer>().enabled = true;
+            }
             Bigger();
         }
         isAtacking = true;
@@ -159,8 +165,15 @@ public class RangedEnemieScript : MonoBehaviour
     {
         if (playerIsClose == true)
         {
-
-        Instantiate(magicBall, balPosition.transform.position, Quaternion.identity);
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
+            Vector3 toOther = player.transform.position - transform.position;
+            if (Vector3.Dot(forward, toOther) > 0)
+            {
+                if (!death)
+                {
+                Instantiate(magicBall, balPosition.transform.position, Quaternion.identity);
+                }
+            }
         }
         balPosition.GetComponent<MeshRenderer>().enabled = false;
     }
@@ -180,7 +193,10 @@ public class RangedEnemieScript : MonoBehaviour
     {
         if (playerIsClose)
         {
-        shield.SetActive(true);
+            if (!death)
+            {
+                shield.SetActive(true);
+            }
         }
     }
     public void WhatItemWeGonGet()

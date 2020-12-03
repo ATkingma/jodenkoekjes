@@ -16,7 +16,7 @@ public class Spawner : MonoBehaviour
     private bool isSpawning, doingCooldDown,gettingHard;
     void Start()
     {
-        spawnPoints.AddRange(GameObject.FindGameObjectsWithTag("SpawnPoint"));
+        GetSpawnPoints();
         SpawnCoolDown = 20;
         maxEnemiesToSpawn = 100;
         plusmax = PlayerPrefs.GetInt("MaxEnemiesToKill");
@@ -95,5 +95,9 @@ public class Spawner : MonoBehaviour
         //maxEnemiesTokill = maxEnemiesToSpawn;
         gettingHard = false;
         SpawnCoolDown -= 0.1f;
+    }
+    public void GetSpawnPoints()
+    {
+        spawnPoints.AddRange(GameObject.FindGameObjectsWithTag("SpawnPoint"));
     }
 }
