@@ -8,6 +8,7 @@ public class BulletBehaviour : MonoBehaviour
     public bool explode;
     public GameObject explosionRadius;
     public float speed;
+    public LayerMask mask;
 
     //privates
     private Vector3 prefLocation;
@@ -25,8 +26,15 @@ public class BulletBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (other.transform.tag == "eenanderehitbox")
+        {
+            print("eenanderehitbox");
+            Destroy(gameObject);
+            return;
+        }
         if (other.transform.tag == "Enemy")
         {
+            print(other.transform.gameObject);
             HitEnemy(transform.position);
         }
     }
@@ -58,10 +66,17 @@ public class BulletBehaviour : MonoBehaviour
         if(prefLocation != Vector3.zero)
         {
             RaycastHit hit;
-            if(Physics.Raycast(transform.position, transform.forward, out hit, 1))
+            if(Physics.Raycast(transform.position, transform.forward, out hit, 1, mask))
             {
+                if (hit.transform.tag == "eenanderehitbox")
+                {
+                    print("eenanderehitbox");
+                    Destroy(gameObject);
+                    return;
+                }
                 if (hit.transform.tag == "Enemy")
                 {
+                    print(hit.transform.gameObject);
                     HitEnemy(hit.point);
                 }
             }

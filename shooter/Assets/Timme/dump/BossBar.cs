@@ -41,7 +41,6 @@ public class BossBar : MonoBehaviour
     }
     public void DestroyBar()
     {
-        Destroy(gameObject);
         Destroy(healthSlider);
         Destroy(UI);
     }

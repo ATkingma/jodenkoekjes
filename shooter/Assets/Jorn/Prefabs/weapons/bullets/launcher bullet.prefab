@@ -102,6 +102,10 @@ MonoBehaviour:
   explosionCount: 0
   explode: 1
   explosionRadius: {fileID: 6804563409148012847, guid: f2ba43ce1b7400242bdc199c6e14a81b, type: 3}
+  speed: 0
+  mask:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!54 &372717927063429436
 Rigidbody:
   m_ObjectHideFlags: 0
