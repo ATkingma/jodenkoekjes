@@ -8,6 +8,7 @@ public class BossBar : MonoBehaviour
     public bool isNormalMap;
     public GameObject UI,bos;
     public Slider healthSlider;
+    private bool gettingDestroyed;
     void Start()
     {
         if (isNormalMap)
@@ -29,5 +30,19 @@ public class BossBar : MonoBehaviour
             healthSlider.value = bos.GetComponent<EnemyHealth>().health;
             }
         }
+        if (bos.GetComponent<EnemyHealth>().health <= 0)
+        {
+            if (!gettingDestroyed)
+            {
+                Invoke("DestroyBar", 0.1f);
+                gettingDestroyed = true;
+            }
+        }
+    }
+    public void DestroyBar()
+    {
+        Destroy(gameObject);
+        Destroy(healthSlider);
+        Destroy(UI);
     }
 }

@@ -3002,6 +3002,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 4897158211990988432}
+    - target: {fileID: 4127941223980256544, guid: f1d0d58cb4847f445b39bf1d60cd0e66, type: 3}
+      propertyPath: UI
+      value: 
+      objectReference: {fileID: 6834250067858653258}
     - target: {fileID: 8956156949427059511, guid: f1d0d58cb4847f445b39bf1d60cd0e66, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3088,6 +3092,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1d0d58cb4847f445b39bf1d60cd0e66, type: 3}
+--- !u!1 &6834250067858653258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1749344478540809110, guid: f1d0d58cb4847f445b39bf1d60cd0e66, type: 3}
+  m_PrefabInstance: {fileID: 5088726398970938332}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4239119775767083243 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8956156949427059511, guid: f1d0d58cb4847f445b39bf1d60cd0e66, type: 3}

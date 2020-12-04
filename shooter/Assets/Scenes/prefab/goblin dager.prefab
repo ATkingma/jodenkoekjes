@@ -1173,6 +1173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   executebelow: 0
+  popupheight: 0
   popup: {fileID: 3528436963971658951, guid: ac737ff13280d054b91b3cfd19707034, type: 3}
   health: 0
   maxMaxHealth: 0
@@ -3073,6 +3074,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 2656510125842196378}
+    - target: {fileID: 4127941223980256544, guid: f1d0d58cb4847f445b39bf1d60cd0e66, type: 3}
+      propertyPath: UI
+      value: 
+      objectReference: {fileID: 8343227944943866079}
     - target: {fileID: 8956156949427059511, guid: f1d0d58cb4847f445b39bf1d60cd0e66, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3159,6 +3164,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1d0d58cb4847f445b39bf1d60cd0e66, type: 3}
+--- !u!1 &8343227944943866079 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1749344478540809110, guid: f1d0d58cb4847f445b39bf1d60cd0e66, type: 3}
+  m_PrefabInstance: {fileID: 7750679653509665609}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1712875698079950974 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8956156949427059511, guid: f1d0d58cb4847f445b39bf1d60cd0e66, type: 3}
