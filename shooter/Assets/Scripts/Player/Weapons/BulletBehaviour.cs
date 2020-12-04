@@ -26,17 +26,12 @@ public class BulletBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "eenanderehitbox")
-        {
-            print("eenanderehitbox");
-            Destroy(gameObject);
-            return;
-        }
         if (other.transform.tag == "Enemy")
         {
             print(other.transform.gameObject);
             HitEnemy(transform.position);
         }
+        Destroy(gameObject);
     }
     public void HitEnemy(Vector3 pos)
     {
@@ -68,16 +63,14 @@ public class BulletBehaviour : MonoBehaviour
             RaycastHit hit;
             if(Physics.Raycast(transform.position, transform.forward, out hit, 1, mask))
             {
-                if (hit.transform.tag == "eenanderehitbox")
-                {
-                    print("eenanderehitbox");
-                    Destroy(gameObject);
-                    return;
-                }
                 if (hit.transform.tag == "Enemy")
                 {
                     print(hit.transform.gameObject);
                     HitEnemy(hit.point);
+                }
+                else
+                {
+                    Destroy(gameObject);
                 }
             }
         }
