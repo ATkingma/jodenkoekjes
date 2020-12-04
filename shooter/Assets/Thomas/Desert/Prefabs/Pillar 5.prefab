@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1302684937101777601}
-  - component: {fileID: 242352343821218018}
+  - component: {fileID: 4906865341126749568}
   m_Layer: 0
   m_Name: Pillar 5
   m_TagString: Untagged
@@ -32,8 +32,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &242352343821218018
-MeshCollider:
+--- !u!65 &4906865341126749568
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -42,10 +42,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1550514412580984892, guid: 373b1020d23ad0c4e8b2d883039c81cf, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 2.6770706, y: 8.135702, z: 2.5299606}
+  m_Center: {x: 0.06193161, y: 4.0900507, z: 0.032169342}
 --- !u!1001 &4765409719510482474
 PrefabInstance:
   m_ObjectHideFlags: 0

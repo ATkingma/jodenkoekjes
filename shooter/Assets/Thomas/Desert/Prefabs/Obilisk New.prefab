@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8247594068176105717}
-  - component: {fileID: 2151711424560685039}
+  - component: {fileID: 2176261784132712773}
   m_Layer: 0
   m_Name: Obilisk New
   m_TagString: Untagged
@@ -32,8 +32,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2151711424560685039
-MeshCollider:
+--- !u!65 &2176261784132712773
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -42,10 +42,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: ba8cba4c03159be4d88f1dea930df96d, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1.5218544, y: 14.912009, z: 1.4509201}
+  m_Center: {x: -0.03689766, y: 7.5045586, z: 0.07463455}
 --- !u!1 &6593156357586140941
 GameObject:
   m_ObjectHideFlags: 0
