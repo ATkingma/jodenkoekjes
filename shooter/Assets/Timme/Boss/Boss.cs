@@ -141,7 +141,7 @@ public class Boss : MonoBehaviour
     }
     public void RandomAttack()
     {
-        float RanomAttack = Random.Range(1, 10);
+        float RanomAttack = Random.Range(1, 7);
         if (RanomAttack == 1)
         {
             Dontlook = true;
@@ -170,18 +170,6 @@ public class Boss : MonoBehaviour
             Idle();
         }
         if (RanomAttack == 7)
-        {
-            Idle();
-        }
-        if (RanomAttack == 8)
-        {
-            Idle();
-        }
-        if (RanomAttack == 9)
-        {
-            Idle();
-        }
-        if (RanomAttack == 10)
         {
             Idle();
         }

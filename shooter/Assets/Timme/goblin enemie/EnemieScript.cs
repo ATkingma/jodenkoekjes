@@ -71,6 +71,11 @@ public class EnemieScript : MonoBehaviour
                     transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
                 }
             }
+            if (dist <= 1)
+            {
+                UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+                agent.destination = gameObject.transform.position;
+            }
             if (dist >= 2.4f)
             {
                 ResetAnim();
