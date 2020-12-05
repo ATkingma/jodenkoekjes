@@ -6,16 +6,19 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     //public
-    public List<GameObject> spawnPoints, enemie,emergencySpawnPoint;
+    public List<GameObject> spawnPoints, enemie,emergencySpawnPoint, activeSpawnPoints;
     public GameObject Time, portal;
     public int maxEnemiesTokill,enemiesDied;
     public TextMeshProUGUI text, emeiesDiedCount;
     //private
     private float SpawnCoolDown,coolDownTime, countminup;
-    private int maxEnemiesToSpawn,remeberme,plusmax;
+    private int maxEnemiesToSpawn,remeberme,plusmax, spawnThisTime;
     private bool isSpawning, doingCooldDown,gettingHard;
-    void Start()
+    private GameObject player;
+
+    private void Awake()
     {
+        player = FindObjectOfType<PlayerHealth>().gameObject;
         GetSpawnPoints();
         SpawnCoolDown = 20;
         maxEnemiesToSpawn = 100;
@@ -40,10 +43,10 @@ public class Spawner : MonoBehaviour
         emeiesDiedCount.text = enemiesDied.ToString();
             if (minutes==countminup)
             {
-                      if (doingCooldDown == false)
-                      { 
-                      GettingHarder();
-                      }
+                if (doingCooldDown == false)
+                { 
+                    GettingHarder();
+                }
             }
         float time = Time.GetComponent<TimeTime>().timeToSafe;
         if (coolDownTime <= time)
@@ -51,7 +54,7 @@ public class Spawner : MonoBehaviour
             Spawn();
             if (!doingCooldDown)
             {
-            Cooldown();
+                Cooldown();
             }
         }
     }
@@ -61,13 +64,23 @@ public class Spawner : MonoBehaviour
     }
     public void Spawn()
     {
+        spawnThisTime = Random.Range(1, 5);
         foreach (GameObject spawnPoint in spawnPoints)
         {
             if (maxEnemiesToSpawn > 0)
             {
-               int enemiePrefab= Random.Range(0, enemie.Count);
-               Instantiate(enemie[enemiePrefab], spawnPoint.transform.position, Quaternion.identity);
-               maxEnemiesToSpawn -= 1;
+                if (spawnThisTime > 0)
+                {
+                    float dist;
+                    dist = Vector3.Distance(player.transform.position, spawnPoint.transform.position);
+                    if (dist <= 100 && dist >= 15)
+                    {
+                        int enemiePrefab = Random.Range(0, enemie.Count);
+                        Instantiate(enemie[enemiePrefab], spawnPoint.transform.position, Quaternion.identity);
+                        spawnThisTime -= 1;
+                        activeSpawnPoints.Clear();
+                    }
+                }
             }
         }
         isSpawning = true;
