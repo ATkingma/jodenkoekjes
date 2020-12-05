@@ -20,8 +20,8 @@ public class Spawner : MonoBehaviour
         SpawnCoolDown = 20;
         maxEnemiesToSpawn = 100;
         plusmax = PlayerPrefs.GetInt("MaxEnemiesToKill");
-        plusmax = +1;
-        PlayerPrefs.SetInt("MaxEnemiesToKill",plusmax);
+        plusmax += 1; //balancing
+        PlayerPrefs.SetInt("MaxEnemiesToKill", plusmax);
         maxEnemiesTokill = PlayerPrefs.GetInt("MaxEnemiesToKill");
         remeberme = 10;
         countminup = 5;
@@ -67,7 +67,7 @@ public class Spawner : MonoBehaviour
             {
                int enemiePrefab= Random.Range(0, enemie.Count);
                Instantiate(enemie[enemiePrefab], spawnPoint.transform.position, Quaternion.identity);
-                maxEnemiesToSpawn -= 1;
+               maxEnemiesToSpawn -= 1;
             }
         }
         isSpawning = true;
