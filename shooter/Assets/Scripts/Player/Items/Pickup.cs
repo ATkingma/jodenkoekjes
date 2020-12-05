@@ -35,7 +35,7 @@ public class Pickup : MonoBehaviour
         FindObjectOfType<Movement>().CalculateStats();
         //movementspeed
 
-        FindObjectOfType<BaseHealthScript>().CalculateStats();
+        FindObjectOfType<PlayerHealth>().CalculateStats();
         //+maxhealth
         //execute
         //lifesteal

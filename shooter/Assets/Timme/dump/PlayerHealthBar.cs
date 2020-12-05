@@ -20,5 +20,6 @@ public class PlayerHealthBar : MonoBehaviour
     {
         healthSlider.value = player.GetComponent<PlayerHealth>().health;
         healthValueText.text = player.GetComponent<PlayerHealth>().health.ToString() + " / " + player.GetComponent<PlayerHealth>().maxHealth.ToString();
+        healthSlider.maxValue = player.GetComponent<PlayerHealth>().maxHealth;
     }
 }

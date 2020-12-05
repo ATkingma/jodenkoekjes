@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1905311687403557887}
   m_Layer: 11
-  m_Name: GameObject
+  m_Name: bulletorigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   isUsed: 0
   canShoot:
     serializedVersion: 2
-    m_Bits: 5120
+    m_Bits: 13312
   gem: {fileID: 2939070098708511766}
   gunNumber: 2
 --- !u!65 &3295791727743766658

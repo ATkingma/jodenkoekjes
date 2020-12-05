@@ -34,7 +34,10 @@ public class BaseHealthScript : MonoBehaviour
     //execute
     public void CalculateExecute()
     {
-        executebelow = maxMaxHealth / 20 * list.itemQuantity[13];
+        if(gameObject.tag != "Player")
+        {
+            executebelow = maxMaxHealth / 20 * list.itemQuantity[13];
+        }
     }
 
     //calaculate

@@ -24,15 +24,6 @@ public class BulletBehaviour : MonoBehaviour
             rb.velocity = transform.forward * speed;
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.transform.tag == "Enemy")
-        {
-            print(other.transform.gameObject);
-            HitEnemy(transform.position);
-        }
-        Destroy(gameObject);
-    }
     public void HitEnemy(Vector3 pos)
     {
         if (explode)
@@ -65,7 +56,6 @@ public class BulletBehaviour : MonoBehaviour
             {
                 if (hit.transform.tag == "Enemy")
                 {
-                    print(hit.transform.gameObject);
                     HitEnemy(hit.point);
                 }
                 else

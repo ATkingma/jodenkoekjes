@@ -23,7 +23,6 @@ public class Trigger : MonoBehaviour
         currentWeapon = Instantiate(gunlist[gunNumber].transform, weaponHold.position, weaponHold.rotation, transform);
         weapon = currentWeapon.GetComponent<WeaponReference>();
         itemList = FindObjectOfType<ItemList>();
-        currentWeapon.position = weaponHold.position;
 
         CalculateStats();
     }
