@@ -1205,6 +1205,18 @@ PrefabInstance:
       propertyPath: TriggerModule.collisionShape2
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 960152552908857621, guid: 905a637fc9b89de46a7f90e9a4df2abd, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].repeatInterval
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 960152552908857621, guid: 905a637fc9b89de46a7f90e9a4df2abd, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].probability
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 960152552908857621, guid: 905a637fc9b89de46a7f90e9a4df2abd, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 960152552908857622, guid: 905a637fc9b89de46a7f90e9a4df2abd, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -1280,6 +1292,10 @@ PrefabInstance:
     - target: {fileID: 2554973888460817179, guid: 905a637fc9b89de46a7f90e9a4df2abd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688262499097402663, guid: 905a637fc9b89de46a7f90e9a4df2abd, type: 3}
+      propertyPath: aoeDamage
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6407195701746977906, guid: 905a637fc9b89de46a7f90e9a4df2abd, type: 3}
       propertyPath: m_IsTrigger
