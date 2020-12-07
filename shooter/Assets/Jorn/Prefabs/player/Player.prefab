@@ -269,7 +269,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLookUp: 70
   maxLookDown: 70
-  rotSpeed: 10
+  rotSpeed: 0
+  sensitivity: 1
+  sliderValue: 10
   player: {fileID: 6579444859761588959}
 --- !u!1 &6579444859761588959
 GameObject:

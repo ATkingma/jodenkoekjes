@@ -6,6 +6,7 @@ public class BaseHealthScript : MonoBehaviour
 {
     public float maxHealth, executebelow, popupheight;
     public Transform popup;
+    public bool damageNumbersBool = true;
 
     //privates
     public float health, maxMaxHealth;
@@ -16,6 +17,7 @@ public class BaseHealthScript : MonoBehaviour
         maxMaxHealth = maxHealth;
         health = maxHealth;
         list = FindObjectOfType<ItemList>();
+        damageNumbersBool = PlayerPrefs.GetInt("damageNumbersBool") != 0;
     }
     public virtual void ReceiveDamage(float amount)
     {
