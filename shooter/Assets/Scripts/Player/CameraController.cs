@@ -10,6 +10,8 @@ public class CameraController : MonoBehaviour
     public float maxLookUp;
     public float maxLookDown;
     public float rotSpeed;
+    public float sensitivity;
+    public float sliderValue;
 
     // position
     public GameObject player;
@@ -20,9 +22,11 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         menu = FindObjectOfType<IngameMenu>();
+        sliderValue = PlayerPrefs.GetFloat("sensitivity", 10);
     }
     void Update()
     {
+        rotSpeed = sensitivity * sliderValue;
         if (!menu.anyIsOn)
         {
             transform.position = player.transform.position;
