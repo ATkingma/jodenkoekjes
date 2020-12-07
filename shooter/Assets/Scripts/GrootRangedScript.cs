@@ -61,7 +61,9 @@ public class GrootRangedScript : MonoBehaviour
             if (dist <= 10)
             {
                 playerIsClose = true;
-                GetComponent<NavMeshAgent>().speed = 0;
+                UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+                agent.destination = player.transform.position;
+                gameObject.transform.LookAt(player.transform);
             }
             if (dist >= 12)
             {
@@ -183,7 +185,7 @@ public class GrootRangedScript : MonoBehaviour
     {      
         ResetAnim();
         anim.SetBool("IsAttacking", true);
-        Invoke("h", 1.5f);
+        Invoke("DoLine", 1.5f);
     }
     public void DoLine()
     {
@@ -198,12 +200,12 @@ public class GrootRangedScript : MonoBehaviour
         idleLine_1.SetActive(false);
         idleLine_2.SetActive(false);
         attackline_1.SetActive(false);
-        attackline_1.SetActive(false);
+        attackline_2.SetActive(false);
         defenceSphere.SetActive(false);
+        anim.SetBool("Death", true);
         deathIsDoing = true;
         UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.destination = gameObject.transform.position;
-        anim.SetBool("Death", true);
         //hier andere shit
         itemHolder.GetComponent<Spawner>().enemiesDied++;
         gameObject.GetComponent<BoxCollider>().enabled = false;
@@ -250,7 +252,7 @@ public class GrootRangedScript : MonoBehaviour
     }
     public void WeaponDrop()
     {
-        int number = Random.Range(1, 16);
+        int number = Random.Range(1, 12);
         if (number <= 4)
         {
             Instantiate(itemHolder.GetComponent<ItemHolder>().guns[0], gameObject.transform.position, Quaternion.identity);
@@ -266,7 +268,7 @@ public class GrootRangedScript : MonoBehaviour
     }
     public void ItemDrop()
     {
-        int number = Random.Range(1, 16);
+        int number = Random.Range(1, 36);
         if (number <= 8)
         {
             Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[0], gameObject.transform.position, Quaternion.identity);

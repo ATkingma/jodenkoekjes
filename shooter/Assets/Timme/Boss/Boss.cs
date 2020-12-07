@@ -357,8 +357,6 @@ public void Min()
     {
         soMutch -= 1;
     }
-
-
     public void Disapear()
     {
         Destroy(gameObject);
@@ -370,7 +368,7 @@ public void Min()
     }
     public void ItemDrop()
     {
-        int number = Random.Range(1, 16);
+        int number = Random.Range(24, 36);
         if (number <= 8)
         {
             Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[0], gameObject.transform.position, Quaternion.identity);

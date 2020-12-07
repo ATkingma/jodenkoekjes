@@ -219,7 +219,7 @@ public class RangedEnemieScript : MonoBehaviour
     }
     public void WeaponDrop()
     {
-        int number = Random.Range(1, 16);
+        int number = Random.Range(1, 12);
         if (number <= 4)
         {
             Instantiate(itemHolder.GetComponent<ItemHolder>().guns[0], gameObject.transform.position, Quaternion.identity);
@@ -235,7 +235,7 @@ public class RangedEnemieScript : MonoBehaviour
     }
     public void ItemDrop()
     {
-        int number = Random.Range(1, 16);
+        int number = Random.Range(1, 36);
         if (number <= 8)
         {
             Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[0], gameObject.transform.position, Quaternion.identity);
