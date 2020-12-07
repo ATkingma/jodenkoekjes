@@ -150,37 +150,40 @@ public class GrootRangedScript : MonoBehaviour
     }
     public void RandomTaunt()
     {
-        float RandomIdle = Random.Range(1, 3);
-        if (RandomIdle == 1)
+        if (!death)
         {
-            anim.SetBool("IsTaunting", true);
-            doingIdle = true;
-            Invoke("Resset", 11);
-            attackline_1.SetActive(false);
-            attackline_2.SetActive(false);
-        }
-        if (RandomIdle == 2)
-        {
-            anim.SetBool("IsTaunting", true);
-            doingIdle = true;
-            Invoke("Resset", 11);
-            attackline_1.SetActive(false);
-            attackline_2.SetActive(false);
-        }
-        if (RandomIdle == 3)
-        {
-            Invoke("DefenceShieldOn",2);
-            anim.SetBool("isDefending", true);
-            Invoke("Resset", 6);
-            attackline_1.SetActive(false);
-            attackline_2.SetActive(false);
+            float RandomIdle = Random.Range(1, 4);
+            if (RandomIdle == 1)
+            {
+                anim.SetBool("IsTaunting", true);
+                doingIdle = true;
+                Invoke("Resset", 11);
+                attackline_1.SetActive(false);
+                attackline_2.SetActive(false);
+            }
+            if (RandomIdle == 2)
+            {
+                anim.SetBool("IsTaunting", true);
+                doingIdle = true;
+                Invoke("Resset", 11);
+                attackline_1.SetActive(false);
+                attackline_2.SetActive(false);
+            }
+            if (RandomIdle == 3)
+            {
+                Invoke("DefenceShieldOn", 2);
+                anim.SetBool("isDefending", true);
+                Invoke("Resset", 6);
+                attackline_1.SetActive(false);
+                attackline_2.SetActive(false);
+            }
         }
     }
     public void Atack()
     {      
         ResetAnim();
         anim.SetBool("IsAttacking", true);
-        Invoke("DoLine", 1.5f);
+        Invoke("h", 1.5f);
     }
     public void DoLine()
     {
@@ -192,6 +195,11 @@ public class GrootRangedScript : MonoBehaviour
     }
     public void Death()
     {
+        idleLine_1.SetActive(false);
+        idleLine_2.SetActive(false);
+        attackline_1.SetActive(false);
+        attackline_1.SetActive(false);
+        defenceSphere.SetActive(false);
         deathIsDoing = true;
         UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.destination = gameObject.transform.position;
@@ -208,13 +216,19 @@ public class GrootRangedScript : MonoBehaviour
     }
     public void ResetAnim()
     {
-        anim.SetBool("isDefending", false);
-        anim.SetBool("IsAttacking", false);
-        anim.SetBool("IsTaunting", false);
+        if (!death)
+        {
+            anim.SetBool("isDefending", false);
+            anim.SetBool("IsAttacking", false);
+            anim.SetBool("IsTaunting", false);
+        }
     }
     public void DefenceShieldOn()
     {
-        defenceSphere.SetActive(true);
+        if (!death)
+        {
+            defenceSphere.SetActive(true);
+        }
     }
     public void WhatItemWeGonGet()
     {
