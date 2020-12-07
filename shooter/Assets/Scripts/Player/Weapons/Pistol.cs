@@ -20,8 +20,8 @@ public class Pistol : WeaponReference
             }
             Rigidbody clone = Instantiate(basicBullet, bulletOri.position, transform.rotation);
             //muzzleflash
-            Transform muzzle = Instantiate(muzzleFlash, bulletOri.position, transform.rotation, transform);
-            Destroy(muzzle.gameObject, 0.1f);
+            //Transform muzzle = Instantiate(muzzleFlash, bulletOri.position, transform.rotation, transform);
+            //Destroy(muzzle.gameObject, 0.1f);
             clone.velocity = clone.transform.forward * bulletSpeed;
             clone.GetComponent<BulletBehaviour>().damage = dir;
             clone.GetComponent<BulletBehaviour>().explosionCount = list.itemQuantity[12];

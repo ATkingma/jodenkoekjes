@@ -21,7 +21,7 @@ public class WeaponReference : MonoBehaviour
     protected int ammo;
     protected MeshRenderer mat;
 
-    private void Start()
+    private void Awake()
     {
         list = FindObjectOfType<ItemList>();
         bulletSpeed = baseBulletSpeed;

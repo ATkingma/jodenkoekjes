@@ -12,6 +12,7 @@ public class DeathPlayer : MonoBehaviour
     private void Start()
     {
         clear = FindObjectOfType<Saves>();
+        player = FindObjectOfType<PlayerHealth>().gameObject;
     }
     void Update()
     {
