@@ -79566,7 +79566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5648399812561377231, guid: 864dcdd2634bac6448f3c5e59bd3d473, type: 3}
       propertyPath: enemie.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5648399812561377231, guid: 864dcdd2634bac6448f3c5e59bd3d473, type: 3}
       propertyPath: activeSpawnPoints.Array.size
@@ -79587,7 +79587,19 @@ PrefabInstance:
     - target: {fileID: 5648399812561377231, guid: 864dcdd2634bac6448f3c5e59bd3d473, type: 3}
       propertyPath: enemie.Array.data[2]
       value: 
+      objectReference: {fileID: 5906671018567844216, guid: 7808177682a0cb84f88fadfae274900e, type: 3}
+    - target: {fileID: 5648399812561377231, guid: 864dcdd2634bac6448f3c5e59bd3d473, type: 3}
+      propertyPath: enemie.Array.data[0]
+      value: 
       objectReference: {fileID: 5466880973270337344, guid: e8d3fbf2be1330f4991ec737bdfda616, type: 3}
+    - target: {fileID: 5648399812561377231, guid: 864dcdd2634bac6448f3c5e59bd3d473, type: 3}
+      propertyPath: enemie.Array.data[1]
+      value: 
+      objectReference: {fileID: 5906671018567844216, guid: 7808177682a0cb84f88fadfae274900e, type: 3}
+    - target: {fileID: 5648399812561377231, guid: 864dcdd2634bac6448f3c5e59bd3d473, type: 3}
+      propertyPath: enemie.Array.data[3]
+      value: 
+      objectReference: {fileID: 2656510125842196378, guid: a49883c95deff21408167be8e3278a37, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 864dcdd2634bac6448f3c5e59bd3d473, type: 3}
 --- !u!1 &2079044527 stripped
