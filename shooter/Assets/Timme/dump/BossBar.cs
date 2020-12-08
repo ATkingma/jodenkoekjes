@@ -8,7 +8,7 @@ public class BossBar : MonoBehaviour
     public bool isNormalMap;
     public GameObject UI,bos;
     public Slider healthSlider;
-    private bool gettingDestroyed;
+    private bool gettingDestroyed,homieIsDood;
     void Start()
     {
         if (isNormalMap)
@@ -23,11 +23,19 @@ public class BossBar : MonoBehaviour
     }
     void Update()
     {
-        if (!isNormalMap)
+        if (!homieIsDood)
         {
-            if (bos.GetComponent<Boss>().bossisdeath==false)
-            { 
-            healthSlider.value = bos.GetComponent<EnemyHealth>().health;
+            if (!isNormalMap)
+            {
+                if (bos.GetComponent<Boss>().bossisdeath == false)
+                {
+                    healthSlider.value = bos.GetComponent<EnemyHealth>().health;
+                }
+            }
+            if (bos.GetComponent<EnemyHealth>().health <= 0)
+            {
+                homieIsDood = true;
+                gameObject.GetComponent<BossBar>().enabled = false;
             }
         }
         if (bos.GetComponent<EnemyHealth>().health <= 0)

@@ -13,11 +13,12 @@ public class Boss : MonoBehaviour
     private bool playerIsDeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive, noParticle, didto0;
     private GameObject player, itemHolder;
     private GameObject attack1_1Pos, attack1_2Pos, attack1_3Pos, attack1_4Pos, attack2Pos, attack3Pos, attack4_1Pos, attack4_2Pos, attack4_3Pos;
+    private GameObject[] itemSpawnPoints;
     private Vector3[] attack1RenderLine;
     private float speed;
     private ParticleSystem particle;
     private Vector3 playerPos;
-    private int soMutch;
+    private int soMutch,index;
     RaycastHit hit;
 
     void Start()
@@ -36,6 +37,7 @@ public class Boss : MonoBehaviour
         attack4_3Pos = GameObject.FindGameObjectWithTag("Attack4_3Pos");
         soMutch = 5;
         itemHolder = GameObject.FindGameObjectWithTag("GameManager");
+        itemSpawnPoints= GameObject.FindGameObjectsWithTag("ItemDropPoint");
     }
     void Update()
     {
@@ -244,6 +246,7 @@ public class Boss : MonoBehaviour
     }
     public void Reset()
     {
+        particle.Play(false);
         ResetAnim();
         noParticle = true;
         isAtacking = false;
@@ -337,6 +340,7 @@ public class Boss : MonoBehaviour
     }
     public void DeathFunction()
     {
+        Reset();
         bossisdeath = true;
         Invoke("Disapear", 4);
         anim.SetBool("BosDeath", true);
@@ -350,12 +354,17 @@ public class Boss : MonoBehaviour
         {
             ItemDrop();
             Min();
+            Plus();
             DoDrop();
         }
     }
 public void Min()
     {
         soMutch -= 1;
+    }
+    public void Plus()
+    {
+        index++;
     }
     public void Disapear()
     {
@@ -371,43 +380,43 @@ public void Min()
         int number = Random.Range(24, 36);
         if (number <= 8)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[0], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[0], itemSpawnPoints[index].transform.position, Quaternion.identity);
         }
         if (number <= 16 & number > 8)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[1], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[1], itemSpawnPoints[index].transform.position, Quaternion.identity);
         }
         if (number <= 24 & number > 16)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[2], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[2], itemSpawnPoints[index].transform.position, Quaternion.identity);
         }
         if (number <= 26 & number > 24)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[0], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[0], itemSpawnPoints[index].transform.position, Quaternion.identity);
         }
         if (number <= 28 & number > 26)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[1], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[1], itemSpawnPoints[index].transform.position, Quaternion.identity);
         }
         if (number <= 30 & number > 28)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[2], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[2], itemSpawnPoints[index].transform.position, Quaternion.identity);
         }
         if (number <= 32 & number > 30)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[3], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[3], itemSpawnPoints[index].transform.position, Quaternion.identity);
         }
         if (number <= 34 & number > 32)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[4], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[4], itemSpawnPoints[index].transform.position, Quaternion.identity);
         }
         if (number <= 36 & number > 34)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[5], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[5], itemSpawnPoints[index].transform.position, Quaternion.identity);
         }
         if (number <= 38 & number > 36)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[6], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[6], itemSpawnPoints[index].transform.position, Quaternion.identity);
         }
     }
 }

@@ -62,7 +62,7 @@ public class GrootRangedScript : MonoBehaviour
             {
                 playerIsClose = true;
                 UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-                agent.destination = player.transform.position;
+                agent.destination = gameObject.transform.position;
                 gameObject.transform.LookAt(player.transform);
             }
             if (dist >= 12)
