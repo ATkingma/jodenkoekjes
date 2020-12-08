@@ -53,6 +53,5 @@ public class Button : MonoBehaviour
     {
         int spawn = Random.Range(0, spawnpoints.Length);
         gameObject.transform.position = spawnpoints[spawn].transform.position;
-        print("koek");
     }
 }

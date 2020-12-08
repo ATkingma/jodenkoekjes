@@ -91,6 +91,26 @@ public class Movement : MonoBehaviour
             rotX += Input.GetAxis("Mouse X") * FindObjectOfType<CameraController>().rotSpeed;
             transform.rotation = Quaternion.Euler(0, rotX, 0f);
         }
+        if (Input.GetButtonDown("Fire3"))
+        {
+            FindObjectOfType<Trigger>().CalculateStats();
+            //damage
+            //attackspeed
+            //doubleshot
+            //explosive
+            //slow bullets
+
+            FindObjectOfType<Movement>().CalculateStats();
+            //movementspeed
+
+            FindObjectOfType<PlayerHealth>().CalculateStats();
+            //+maxhealth
+            //execute
+            //lifesteal
+            //glasscannon
+
+            FindObjectOfType<Index>().AddItem();
+        }
     }
     private void JumpCheck()
     {
