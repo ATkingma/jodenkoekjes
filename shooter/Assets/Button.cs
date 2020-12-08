@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-
     //public
-    public GameObject top,door,spawner,spawn1,spawn2,spawn3;
+    public GameObject top,door;
     //private
     private bool triggert, isDown,dontDoAnny, stopRightHere;
     private GameObject[] spawnpoints;
+    
     void Start()
     {
         spawnpoints = GameObject.FindGameObjectsWithTag("ButtonSpawn");
@@ -23,14 +23,11 @@ public class Button : MonoBehaviour
             {
             stopRightHere = true;
             door.SetActive(false);
-            spawner.GetComponent<Spawner>().spawnPoints.Add(spawn1);
-            spawner.GetComponent<Spawner>().spawnPoints.Add(spawn2);
-            spawner.GetComponent<Spawner>().spawnPoints.Add(spawn3);
             }
         }
         if (!dontDoAnny)
         {
-
+            }
         if (top.transform.position.y <= -0.332f)
         {
             isDown = true;
@@ -43,7 +40,7 @@ public class Button : MonoBehaviour
                 top.transform.position -= new Vector3(0, 0.3f, 0) * Time.deltaTime;
             }
         }
-    }
+    
       }
     public void OnTriggerEnter(Collider gameobject)
     {
@@ -56,5 +53,6 @@ public class Button : MonoBehaviour
     {
         int spawn = Random.Range(0, spawnpoints.Length);
         gameObject.transform.position = spawnpoints[spawn].transform.position;
+        print("koek");
     }
 }
