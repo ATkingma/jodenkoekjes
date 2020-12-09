@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
 {
     //public
     public List<GameObject> spawnPoints, enemie,emergencySpawnPoint, activeSpawnPoints;
-    public GameObject Time, portal;
+    public GameObject Times, portal;
     public int maxEnemiesTokill,enemiesDied;
     public TextMeshProUGUI text, emeiesDiedCount;
     //private
@@ -15,6 +15,9 @@ public class Spawner : MonoBehaviour
     private int maxEnemiesToSpawn,remeberme,plusmax, spawnThisTime;
     private bool isSpawning, doingCooldDown,gettingHard;
     private GameObject player;
+
+    //jorn 
+    private float seconde, minuut, uur;
 
     private void Awake()
     {
@@ -30,16 +33,37 @@ public class Spawner : MonoBehaviour
         countminup = 5;
         portal = FindObjectOfType<Portal>().gameObject;
         portal.SetActive(false);
+        seconde = PlayerPrefs.GetFloat("seconde", seconde);
+        minuut = PlayerPrefs.GetFloat("minuut", minuut);
+        uur = PlayerPrefs.GetFloat("uur", uur);
     }
     void Update()
     {
-        if(enemiesDied >= maxEnemiesTokill)
+        //time
+        seconde += Time.deltaTime;
+        if (seconde >= 60)
+        {
+            seconde = 0;
+            minuut++;
+            if (minuut >= 60)
+            {
+                minuut = 0;
+                uur++;
+            }
+        }
+        text.text = minuut + ":" + Mathf.RoundToInt(seconde);
+        if (uur > 0)
+        {
+            text.text = uur + ":" + minuut + ":" + Mathf.RoundToInt(seconde);
+        }
+    
+        if (enemiesDied >= maxEnemiesTokill)
         {
             portal.SetActive(true);
         }
-        float minutes = Mathf.Floor(Time.GetComponent<TimeTime>().timeToSafe / 60);
-        float seconds = Time.GetComponent<TimeTime>().timeToSafe % 60;
-        text.text = minutes + ":" + Mathf.RoundToInt(seconds);
+        float minutes = Mathf.Floor(Times.GetComponent<TimeTime>().timeToSafe / 60);
+        float seconds = Times.GetComponent<TimeTime>().timeToSafe % 60;
+        //text.text = minutes + ":" + Mathf.RoundToInt(seconds);
         emeiesDiedCount.text = enemiesDied.ToString();
             if (minutes==countminup)
             {
@@ -48,7 +72,7 @@ public class Spawner : MonoBehaviour
                     GettingHarder();
                 }
             }
-        float time = Time.GetComponent<TimeTime>().timeToSafe;
+        float time = Times.GetComponent<TimeTime>().timeToSafe;
         if (coolDownTime <= time)
         {      
             Spawn();
@@ -88,7 +112,7 @@ public class Spawner : MonoBehaviour
     public void Cooldown()
     {
         doingCooldDown = true;
-        coolDownTime = SpawnCoolDown + Time.GetComponent<TimeTime>().timeToSafe;
+        coolDownTime = SpawnCoolDown + Times.GetComponent<TimeTime>().timeToSafe;
         Invoke("CoolBool", 0.5f);
     }
     public void CoolBool()
@@ -112,5 +136,11 @@ public class Spawner : MonoBehaviour
     public void GetSpawnPoints()
     {
         spawnPoints.AddRange(GameObject.FindGameObjectsWithTag("SpawnPoint"));
+    }
+    public void SaveTime()
+    {
+        PlayerPrefs.SetFloat("seconde", seconde);
+        PlayerPrefs.SetFloat("minuut", minuut);
+        PlayerPrefs.SetFloat("uur", uur);
     }
 }

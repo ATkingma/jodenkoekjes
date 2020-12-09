@@ -6024,6 +6024,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 152652032}
   m_Mesh: {fileID: -353145847419166158, guid: b08a98a2abfb79043b5671d137afc6cf, type: 3}
+--- !u!1 &157875430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5648399810814527405, guid: 864dcdd2634bac6448f3c5e59bd3d473, type: 3}
+  m_PrefabInstance: {fileID: 2079044526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &163405730
 GameObject:
   m_ObjectHideFlags: 0
@@ -81561,6 +81566,10 @@ PrefabInstance:
       propertyPath: enemie.Array.data[3]
       value: 
       objectReference: {fileID: 2656510125842196378, guid: a49883c95deff21408167be8e3278a37, type: 3}
+    - target: {fileID: 5648399812561377231, guid: 864dcdd2634bac6448f3c5e59bd3d473, type: 3}
+      propertyPath: Times
+      value: 
+      objectReference: {fileID: 157875430}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 864dcdd2634bac6448f3c5e59bd3d473, type: 3}
 --- !u!1 &2079044527 stripped

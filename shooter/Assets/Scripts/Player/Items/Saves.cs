@@ -25,6 +25,9 @@ public class Saves : MonoBehaviour
     }
     public void ClearSaves()
     {
+        PlayerPrefs.SetFloat("seconde", 0);
+        PlayerPrefs.SetFloat("minuut", 0);
+        PlayerPrefs.SetFloat("uur", 0);
         list.DeleteSaves();
         trig.DeleteSaves();
     }

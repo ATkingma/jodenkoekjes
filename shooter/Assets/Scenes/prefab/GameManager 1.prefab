@@ -98,11 +98,13 @@ MonoBehaviour:
   - {fileID: 5906671018567844216, guid: e71f3a0897f12c7488e9af4811ef4c77, type: 3}
   - {fileID: 4897158211990988432, guid: 7e259310c550366489e830e92a0f3e30, type: 3}
   emergencySpawnPoint: []
-  Time: {fileID: 5648399810814527405}
+  activeSpawnPoints: []
+  Times: {fileID: 5648399810814527405}
   portal: {fileID: 0}
   maxEnemiesTokill: 0
   enemiesDied: 0
   text: {fileID: 0}
+  emeiesDiedCount: {fileID: 0}
 --- !u!114 &5648399812561377073
 MonoBehaviour:
   m_ObjectHideFlags: 0
