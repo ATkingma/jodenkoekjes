@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
-
+    ///public
+    public bool bosmap;
     //privates
     private Saves safe;
     private void Start()
@@ -15,7 +16,11 @@ public class Portal : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            if (!bosmap)
+            {
+
             FindObjectOfType<Spawner>().SaveTime();
+            }
             safe.SaveEverything();
             FindObjectOfType<SceneSwitcher>().SceneLoader();
         }
