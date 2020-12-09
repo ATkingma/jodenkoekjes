@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 660767c978288db428d0e43f98aca401, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: e611cc21ae64d4949b8e6374206d1900, type: 2}
 --- !u!1 &4012443
 GameObject:
   m_ObjectHideFlags: 0
@@ -70403,6 +70403,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67392f39b0236a140a8d8a579f7ac37a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67392f39b0236a140a8d8a579f7ac37a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67392f39b0236a140a8d8a579f7ac37a, type: 3}
 --- !u!1 &1742957882 stripped
@@ -73135,7 +73143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7116409325057832979, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0000019073486
+      value: 0.000022888184
       objectReference: {fileID: 0}
     - target: {fileID: 7116409325131199271, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
       propertyPath: m_AnchorMin.y
