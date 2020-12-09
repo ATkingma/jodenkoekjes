@@ -26,6 +26,15 @@ public class Movement : MonoBehaviour
         baseMovewmentSpeed = movementSpeed;
         baseSprintSpeed = sprintSpeed;
         menu = FindObjectOfType<MainMenu>();
+
+        FindObjectOfType<PlayerHealth>().CalculateStats();
+        //+maxhealth
+        //execute
+        //lifesteal
+        //glasscannon
+        FindObjectOfType<PlayerHealth>().health = FindObjectOfType<PlayerHealth>().maxHealth;
+
+        FindObjectOfType<Index>().AddItem();
     }
 
     private void Update()
@@ -111,7 +120,6 @@ public class Movement : MonoBehaviour
             //glasscannon
 
             FindObjectOfType<Index>().AddItem();
-            PlayerPrefs.SetFloat("TimeSaved", 0);
         }
     }
     private void JumpCheck()
