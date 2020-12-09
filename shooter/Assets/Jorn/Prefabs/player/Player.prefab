@@ -350,8 +350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6107a24c627e34449aa5f9bc370864a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
-  sprintSpeed: 15
+  movementSpeed: 5
+  sprintSpeed: 7
   gravity: 2
   jumpForce: 1
   crouchHeight: 0
@@ -404,6 +404,7 @@ MonoBehaviour:
   executebelow: 0
   popupheight: 0
   popup: {fileID: 0}
+  damageNumbersBool: 1
   health: 0
   maxMaxHealth: 0
 --- !u!114 &1745607826103592577
