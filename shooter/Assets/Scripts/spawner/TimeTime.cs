@@ -9,7 +9,8 @@ public class TimeTime : MonoBehaviour
     public bool volgendee;
     public bool clearndieshit;
     void Start()
-    {    
+    {
+        timeToSafe = PlayerPrefs.GetFloat("TimeSaved");
     }
     public void Update()
     {
@@ -17,7 +18,6 @@ public class TimeTime : MonoBehaviour
         {
             SceneManager.LoadScene(1);
         }
-        timeToSafe=Time.time+ PlayerPrefs.GetFloat("TimeSaved");
         if (clearndieshit)
         {
             PlayerPrefs.SetFloat("TimeSaved", 0f);

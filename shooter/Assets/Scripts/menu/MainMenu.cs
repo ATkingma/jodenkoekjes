@@ -20,6 +20,7 @@ public class MainMenu : MonoBehaviour
     //hier doet ie laat scene timme
     public void StartGame()
     {
+        FindObjectOfType<Saves>().ClearSaves();
         RollScenes();
         SceneManager.LoadScene(chosenScene);
     }

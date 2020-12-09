@@ -15,7 +15,7 @@ public class Portal : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            print("ites");
+            FindObjectOfType<Spawner>().SaveTime();
             safe.SaveEverything();
             FindObjectOfType<SceneSwitcher>().SceneLoader();
         }
