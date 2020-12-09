@@ -8,10 +8,7 @@ public class TimeTime : MonoBehaviour
     public float timeToSafe;
     public bool volgendee;
     public bool clearndieshit;
-    void Start()
-    {
-        timeToSafe = PlayerPrefs.GetFloat("TimeSaved");
-    }
+
     public void Update()
     {
         if (volgendee)
@@ -22,6 +19,7 @@ public class TimeTime : MonoBehaviour
         {
             PlayerPrefs.SetFloat("TimeSaved", 0f);
         }
+        timeToSafe += Time.deltaTime;
     }
     void OnApplicationQuit()
     {
