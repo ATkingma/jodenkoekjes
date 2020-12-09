@@ -49,7 +49,8 @@ public class RangedEnemieScript : MonoBehaviour
         {
             float dist = Vector3.Distance(player.transform.position, transform.position);
             if (dist <= 20)
-            {
+            {               
+                gameObject.transform.rotation = Quaternion.Euler(0.1f, 0, 0);
                 Vector3 targetPosition = player.transform.position;
                 targetPosition.y = transform.position.y;
                 transform.LookAt(targetPosition);

@@ -1324,6 +1324,7 @@ MonoBehaviour:
   executebelow: 0
   popupheight: 3
   popup: {fileID: 3528436963971658951, guid: ac737ff13280d054b91b3cfd19707034, type: 3}
+  damageNumbersBool: 1
   health: 0
   maxMaxHealth: 0
 --- !u!54 &5747480693817243798
@@ -1340,7 +1341,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 16
   m_CollisionDetection: 0
 --- !u!65 &6492207164995512827
 BoxCollider:

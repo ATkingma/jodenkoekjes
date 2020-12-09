@@ -463,6 +463,10 @@ MonoBehaviour:
   icePegel2: {fileID: 5881946994635102831, guid: b344c6104432f71439dc7d3c718a1db0, type: 3}
   portal: {fileID: 0}
   PlayerInTrigger: 0
+  bossisdeath: 0
+  damage1: 0
+  damage2: 0
+  damage3: 0
 --- !u!95 &960152552908857641
 Animator:
   serializedVersion: 3
@@ -5347,7 +5351,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 16
   m_CollisionDetection: 0
 --- !u!114 &899669619
 MonoBehaviour:
@@ -5363,7 +5367,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   executebelow: 0
+  popupheight: 0
   popup: {fileID: 3528436963971658951, guid: ac737ff13280d054b91b3cfd19707034, type: 3}
+  damageNumbersBool: 1
   health: 0
   maxMaxHealth: 0
 --- !u!114 &5688262499097402663
