@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
         maxEnemiesToSpawn = 100;
         plusmax = PlayerPrefs.GetInt("MaxEnemiesToKill");
         plusmax += 1; //balancing
-        PlayerPrefs.SetInt("MaxEnemiesToKill", plusmax);
+        PlayerPrefs.SetInt("MaxEnemiesToKill", 5);
         maxEnemiesTokill = PlayerPrefs.GetInt("MaxEnemiesToKill");
         remeberme = 10;
         countminup = 5;
