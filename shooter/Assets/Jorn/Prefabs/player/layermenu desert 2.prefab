@@ -8909,6 +8909,7 @@ MonoBehaviour:
   optionsOn: 0
   itemsOn: 0
   anyIsOn: 0
+  deathscreen: {fileID: 6257387235186232178}
 --- !u!1 &6407730058713719332
 GameObject:
   m_ObjectHideFlags: 0
@@ -14146,6 +14147,11 @@ PrefabInstance:
 --- !u!224 &4342089432838354844 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4546258758593320883, guid: 1699ecdc5dc69484e858dee93b14a58a, type: 3}
+  m_PrefabInstance: {fileID: 240306055336697903}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6257387235186232178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6161779280908839773, guid: 1699ecdc5dc69484e858dee93b14a58a, type: 3}
   m_PrefabInstance: {fileID: 240306055336697903}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3609883392375122886

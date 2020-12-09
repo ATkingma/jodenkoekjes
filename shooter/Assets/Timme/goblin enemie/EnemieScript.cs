@@ -8,7 +8,7 @@ public class EnemieScript : MonoBehaviour
     //public
     public float attackCoolDown, damageValue;
     public Animator anim;
-    public bool PlayerInTrigger, isAtacking;
+    public bool PlayerInTrigger, isAtacking, spearNigga;
     //private
     private GameObject player,itemHolder, lookat;
     private bool doingDamage,death,doingDead, deathIsDoing, didto0;
@@ -99,7 +99,10 @@ public class EnemieScript : MonoBehaviour
     {
         if (doingDamage == false)
         {
-            Invoke("DoDamage", 0.5f);
+            if (!spearNigga)
+            {
+                Invoke("DoDamage", 0.5f);
+            }
             Invoke("DoDamage2", 1);
             Atack();
         }

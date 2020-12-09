@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IngameMenu : MainMenu
 {
+    public GameObject deathscreen;
 
     //privates
     private Trigger trig;
@@ -39,7 +40,7 @@ public class IngameMenu : MainMenu
                 menuOn = true;
             }
         }
-        if(menuOn || itemsOn || optionsOn)
+        if(menuOn || itemsOn || optionsOn || deathscreen.activeInHierarchy)
         {
             Time.timeScale = 0;
             Cursor.visible = true;

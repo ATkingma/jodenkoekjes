@@ -21,6 +21,7 @@ public class DeathPlayer : MonoBehaviour
             clear.ClearSaves();
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             deathUI.SetActive(true);
         }
     }
