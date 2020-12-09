@@ -20,4 +20,11 @@ public class ItemList : MonoBehaviour
             PlayerPrefs.SetFloat("itemQuantity" + i, itemQuantity[i]);
         }
     }
+    public void DeleteSaves()
+    {
+        for (int i = 0; i < itemQuantity.Count; i++)
+        {
+            PlayerPrefs.SetFloat("itemQuantity" + i, 0);
+        }
+    }
 }

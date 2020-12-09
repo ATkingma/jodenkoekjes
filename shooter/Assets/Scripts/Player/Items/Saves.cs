@@ -25,6 +25,7 @@ public class Saves : MonoBehaviour
     }
     public void ClearSaves()
     {
-        PlayerPrefs.DeleteAll();
+        list.DeleteSaves();
+        trig.DeleteSaves();
     }
 }

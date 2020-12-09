@@ -115,4 +115,8 @@ public class Trigger : MonoBehaviour
     {
         PlayerPrefs.SetInt("CurrentGun", gunNumber);
     }
+    public void DeleteSaves()
+    {
+        PlayerPrefs.SetInt("CurrentGun", 0);
+    }
 }
