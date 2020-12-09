@@ -104,6 +104,10 @@ public class EnemieScript : MonoBehaviour
                 Invoke("DoDamage", 0.5f);
             }
             Invoke("DoDamage2", 1);
+            if (spearNigga)
+            {
+                Invoke("DoDamage", 1.5f);
+            }
             Atack();
         }
         isAtacking = true;
