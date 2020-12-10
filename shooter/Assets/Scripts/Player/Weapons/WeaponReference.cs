@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WeaponReference : MonoBehaviour
 {
@@ -20,18 +21,23 @@ public class WeaponReference : MonoBehaviour
     protected RaycastHit hit;
     protected ItemList list;
     protected bool isExplosive, isReloading;
-    protected float bulletSpeed, reloadDone;
-    protected int ammo;
+    protected float bulletSpeed, ammo;
     protected MeshRenderer mat;
+    protected TextMeshProUGUI ammoItem;
 
     private void Awake()
     {
         list = FindObjectOfType<ItemList>();
         bulletSpeed = baseBulletSpeed;
         ammo = maxAmmo;
-        reloadDone = Time.time + ammoRecharge;
         mat = gem.GetComponent<MeshRenderer>();
     }
+    private void Start()
+    {
+        GameObject temp = GameObject.FindGameObjectWithTag("AmmoItem");
+        ammoItem = temp.GetComponent<TextMeshProUGUI>();
+    }
+
     public virtual void Fire(float dir) { }
     public virtual void Fire2(float dir) { }
     public void DoFuntions(float dir)
@@ -46,11 +52,6 @@ public class WeaponReference : MonoBehaviour
         {
             Fire2(dir);
         }
-    }
-    public void ReloadSpeed()
-    {
-        ammo = maxAmmo;
-        isReloading = false;
     }
 
     public void Slowbullets()

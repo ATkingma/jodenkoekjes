@@ -4,24 +4,29 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
-    public Transform weaponHold, weaponDump;
+    public Transform weaponHold, meleeHold, weaponDump;
     public LayerMask canShoot, guns;
     public bool menuIsActive;
-    public List<GameObject> gunlist;
-    public int gunNumber;
+    public List<GameObject> gunlist, meleeList;
+    public int gunNumber, meleeNumber;
 
     //privates
-    private float nextAttack, attackCooldown, attacksPerSec, calculatedDamage, slowBulletAttackSpeed;
-    private Transform currentWeapon;
+    private float nextAttack, attackCooldown, attacksPerSec, calculatedDamage, slowBulletAttackSpeed, meleeDamage, attacksPerSecMelee, attackCooldownMelee;
+    private Transform currentWeapon, currentMelee;
     private WeaponReference weapon;
+    private MeleeReference melee;
     private RaycastHit hit, hitInfo;
     private Vector3 aimAt;
     private ItemList itemList;
+    private bool holdingGun = true;
 
     private void Start()
     {
         currentWeapon = Instantiate(gunlist[gunNumber].transform, weaponHold.position, weaponHold.rotation, transform);
         weapon = currentWeapon.GetComponent<WeaponReference>();
+        currentMelee = Instantiate(meleeList[meleeNumber].transform, meleeHold.position, weaponHold.rotation, transform);
+        melee = currentMelee.GetComponent<MeleeReference>();
+        currentMelee.gameObject.SetActive(false);
         itemList = FindObjectOfType<ItemList>();
 
         CalculateStats();
@@ -53,13 +58,52 @@ public class Trigger : MonoBehaviour
             {
                 if (Time.time >= nextAttack)
                 {
-                    nextAttack = attackCooldown + Time.time;
-                    weapon.Fire(calculatedDamage);
+                    if(holdingGun)
+                    {
+                        nextAttack = attackCooldown + Time.time;
+                        weapon.Fire(calculatedDamage);
+                    }
+                    else
+                    {
+                        nextAttack = attackCooldownMelee + Time.time;
+                        melee.Fire1(meleeDamage);
+                    }
                 }
+            }
+            if (Input.GetButtonDown("2"))
+            {
+                holdingGun = false;
+                SwapToMelee();
+                CalculateStats();
+            }
+            if (Input.GetButtonDown("1"))
+            {
+                holdingGun = true;
+                SwapToGun();
+                CalculateStats();
             }
         }
     }
-
+    private void SwapToMelee()
+    {
+        MeshRenderer[] ooga = weapon.GetComponentsInChildren<MeshRenderer>();
+        foreach(MeshRenderer rend in ooga)
+        {
+            rend.enabled = holdingGun;
+        }
+        //weapon.gameObject.SetActive(holdingGun);
+        melee.gameObject.SetActive(!holdingGun);
+    }
+    private void SwapToGun()
+    {
+        MeshRenderer[] ooga = weapon.GetComponentsInChildren<MeshRenderer>();
+        foreach (MeshRenderer rend in ooga)
+        {
+            rend.enabled = holdingGun;
+        }
+        //weapon.gameObject.SetActive(holdingGun);
+        melee.gameObject.SetActive(!holdingGun);
+    }
     private void WeaponSwap(Transform newWeapon)
     {
         //dump last weapon
@@ -87,8 +131,14 @@ public class Trigger : MonoBehaviour
         attacksPerSec = weapon.baseAttackSpeed * (1 + (0.1f * itemList.itemQuantity[1]));
         attackCooldown = attacksPerSec / Mathf.Pow(attacksPerSec, 2);
 
+        //melee
+        meleeDamage = melee.baseDamage * (1 + (0.1f * itemList.itemQuantity[0]));
+
+        attacksPerSecMelee = melee.baseAttackSpeed * (1 + (0.1f * itemList.itemQuantity[1]));
+        attackCooldownMelee = attacksPerSecMelee / Mathf.Pow(attacksPerSecMelee, 2);
+
         //glasscannon
-        if(itemList.itemQuantity[11] > 0)
+        if (itemList.itemQuantity[11] > 0)
         {
             calculatedDamage = (itemList.itemQuantity[11] + itemList.itemQuantity[11]) * calculatedDamage;
         }

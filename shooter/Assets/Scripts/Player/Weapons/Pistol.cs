@@ -6,7 +6,7 @@ public class Pistol : WeaponReference
 {
     public override void Fire(float dir)
     {
-        if (ammo > 0)
+        if (ammo >= 1)
         {
             if (Random.Range(1, 10) <= explosiveChance)
             {
@@ -38,14 +38,6 @@ public class Pistol : WeaponReference
             DoFuntions(dir);
             ammo--;
         }
-        else
-        {
-            if (!isReloading)
-            {
-                isReloading = true;
-                Invoke("ReloadSpeed", ammoRecharge);
-            }
-        }
     }
     public override void Fire2(float dir)
     {
@@ -58,6 +50,11 @@ public class Pistol : WeaponReference
 
     public void Update()
     {
+        if (ammo < maxAmmo)
+        {
+            ammo = Mathf.Clamp(ammo += Time.deltaTime, 0, maxAmmo);
+        }
+        ammoItem.text = Mathf.Floor(ammo) + " / " + maxAmmo.ToString();
         Color nNew = new Color(mat.material.color.r, mat.material.color.g, mat.material.color.b, ammo / (0.1f * maxAmmo));
         mat.material.SetColor("_BaseColor", nNew);
     }
