@@ -12,6 +12,9 @@ public class WeaponReference : MonoBehaviour
     public LayerMask canShoot;
     public GameObject gem;
     public int gunNumber;
+    //recoil
+    public Vector3 recoilUp;
+    public float spread;
 
     //protected
     protected RaycastHit hit;
@@ -53,5 +56,15 @@ public class WeaponReference : MonoBehaviour
     public void Slowbullets()
     {
         bulletSpeed = baseBulletSpeed / Mathf.Pow(2, list.itemQuantity[15]);
+    }
+
+    public void RecoilUp()
+    {
+        transform.localEulerAngles += recoilUp;
+        Invoke("RecoilDown", 0.1f);
+    }
+    public void RecoilDown()
+    {
+        transform.localEulerAngles -= recoilUp / 2;
     }
 }

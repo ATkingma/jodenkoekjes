@@ -63,6 +63,8 @@ MonoBehaviour:
     m_Bits: 5120
   gem: {fileID: 8314230032728289911}
   gunNumber: 0
+  recoilUp: {x: -2, y: 0, z: 0}
+  spread: 1
 --- !u!65 &2673145041434365955
 BoxCollider:
   m_ObjectHideFlags: 0

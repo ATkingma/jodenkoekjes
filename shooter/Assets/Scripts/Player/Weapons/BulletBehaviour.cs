@@ -23,6 +23,12 @@ public class BulletBehaviour : MonoBehaviour
             Rigidbody rb = GetComponent<Rigidbody>();
             rb.velocity = transform.forward * speed;
         }
+        else
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.velocity = transform.forward * speed;
+            //rb.velocity = new Vector3(transform.forward.x + Random.Range(-spread, spread), transform.forward.x + Random.Range(-0.1f, 0.1f), 1 * transform.forward.z) * speed;
+        }
     }
     public void HitEnemy(Vector3 pos)
     {
