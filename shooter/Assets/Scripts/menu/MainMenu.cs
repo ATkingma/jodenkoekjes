@@ -23,6 +23,7 @@ public class MainMenu : MonoBehaviour
         FindObjectOfType<Saves>().ClearSaves();
         RollScenes();
         SceneManager.LoadScene(chosenScene);
+        PlayerPrefs.SetInt("scene", 0);
     }
 
     //rollllllll

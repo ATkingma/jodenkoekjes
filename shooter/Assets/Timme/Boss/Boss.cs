@@ -232,8 +232,11 @@ public class Boss : MonoBehaviour
     {
         if (noParticle == false)
         {
-            particle.Play(true);
+            if (!bossisdeath)
+            {
             gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            particle.Play(true);
+            }
         }
     }
     public void Idle()
