@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Saves : MonoBehaviour
 {
@@ -11,12 +12,15 @@ public class Saves : MonoBehaviour
 
     private void Awake()
     {
-        list = FindObjectOfType<ItemList>();
-        trig = FindObjectOfType<Trigger>();
-        index = FindObjectOfType<Index>();
-        list.GetSaves();
-        trig.GetSaves();
-        index.AddItem();
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            list = FindObjectOfType<ItemList>();
+            trig = FindObjectOfType<Trigger>();
+            index = FindObjectOfType<Index>();
+            list.GetSaves();
+            trig.GetSaves();
+            index.AddItem();
+        }
     }
     public void SaveEverything()
     {
