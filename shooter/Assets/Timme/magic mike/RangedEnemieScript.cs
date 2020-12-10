@@ -87,7 +87,10 @@ public class RangedEnemieScript : MonoBehaviour
                 }
                 else
                 {
+                    if (dist >= 2)
+                    {
                     gameObject.transform.LookAt(player.transform);
+                    }
                 }
             }
         }

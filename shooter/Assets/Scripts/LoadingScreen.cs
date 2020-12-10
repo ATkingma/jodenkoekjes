@@ -39,7 +39,7 @@ public class LoadingScreen : MonoBehaviour
     }
     IEnumerator LoadSceneBossEnumerator()
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(3);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(5);
         loadingScreen.SetActive(true);
         while (!operation.isDone)
         {

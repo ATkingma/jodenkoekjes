@@ -189,7 +189,16 @@ public class GrootRangedScript : MonoBehaviour
     }
     public void DoLine()
     {
-        settingLine = true;
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
+        {
+            if (hit.transform.tag == "Player")
+            {
+                player.GetComponent<PlayerHealth>().ReceiveDamage(10);
+                print("quick");
+            }
+        }
+            settingLine = true;
         attackline_1.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
         attackline_2.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
         attackline_1.SetActive(true);

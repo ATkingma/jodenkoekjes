@@ -10,7 +10,7 @@ public class Boss : MonoBehaviour
     public bool PlayerInTrigger, bossisdeath;
     public float damage1, damage2, damage3;
     //privates
-    private bool playerIsDeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive, noParticle, didto0;
+    private bool playerIsDeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive, noParticle, didto0,aoe;
     private GameObject player, itemHolder;
     private GameObject attack1_1Pos, attack1_2Pos, attack1_3Pos, attack1_4Pos, attack2Pos, attack3Pos, attack4_1Pos, attack4_2Pos, attack4_3Pos;
     private GameObject[] itemSpawnPoints;
@@ -118,22 +118,34 @@ public class Boss : MonoBehaviour
                         {
                             if (Dontlook == true)
                             {
+                                if (!aoe)
+                                {
                                 gameObject.transform.LookAt(playerPos);
+                                }
                             }
                             if (Dontlook == false)
                             {
+                                if (!aoe)
+                                {
                                 gameObject.transform.LookAt(player.transform);
+                                }
                             }
                         }
                         else
                         {
                             if (Dontlook == true)
                             {
+                                if (!aoe)
+                                {
                                 gameObject.transform.LookAt(playerPos);
+                                }
                             }
                             if (Dontlook == false)
                             {
+                                if (!aoe)
+                                {
                                 gameObject.transform.LookAt(player.transform);
+                                }
                             }
                         }
                     }
@@ -208,6 +220,7 @@ public class Boss : MonoBehaviour
     }
     public void AOE()
     {
+        aoe = true;
         gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         noParticle = false;
         Invoke("ParticleSetActive", 3f);
@@ -266,6 +279,7 @@ public class Boss : MonoBehaviour
         attack4_1Pos.SetActive(false);
         attack4_2Pos.SetActive(false);
         attack4_3Pos.SetActive(false);
+        aoe = false;
     }
     public void SpawnAttack2()
     {
@@ -287,9 +301,11 @@ public class Boss : MonoBehaviour
         RaycastHit hit;
         if (Physics.Linecast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
         {
+            Debug.DrawRay(transform.position, transform.forward, Color.green); print("Hit");
             if (hit.transform.tag == "Player")
             {
                 player.GetComponent<PlayerHealth>().ReceiveDamage(damage3);
+                print("hget");
             }
         }
     }
@@ -302,12 +318,19 @@ public class Boss : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
         {
+            Debug.DrawRay(transform.position, transform.forward, Color.green); print("Hit");
             if (hit.transform.tag == "Player")
             {
                 player.GetComponent<PlayerHealth>().ReceiveDamage(damage1);
+                print("quick");            
             }
         }
-    }
+        if (Physics.Raycast(transform.position, transform.forward, out hit))
+        {
+            if (hit.collider.gameObject.tag == "Tagged") { Debug.DrawRay(transform.position, transform.forward, Color.green); print("Hit"); }
+        }
+
+        }
     public void ResetAttack2()
     {
         attack2IsActive = false;
@@ -325,9 +348,11 @@ public class Boss : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
         {
+            Debug.DrawRay(transform.position, transform.forward, Color.green); print("Hit");
             if (hit.transform.tag == "Player")
             {
                 player.GetComponent<PlayerHealth>().ReceiveDamage(damage2);
+                print("hit4");
             }
         }
         Invoke("DoAttack4LineOff", 0.6f);

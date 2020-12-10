@@ -167,7 +167,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.8905501, b: 0, a: 1}
   m_Intensity: 2
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -205,7 +205,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -322,7 +322,6 @@ GameObject:
   - component: {fileID: 40054712}
   - component: {fileID: 40054715}
   - component: {fileID: 40054714}
-  - component: {fileID: 40054713}
   m_Layer: 0
   m_Name: Cube (33)
   m_TagString: SpawnPoint
@@ -344,19 +343,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &40054713
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 40054711}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &40054714
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -532,7 +518,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.8905501, b: 0, a: 1}
   m_Intensity: 2
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -570,7 +556,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -852,7 +838,6 @@ GameObject:
   - component: {fileID: 106241635}
   - component: {fileID: 106241638}
   - component: {fileID: 106241637}
-  - component: {fileID: 106241636}
   m_Layer: 0
   m_Name: Cube (8)
   m_TagString: SpawnPoint
@@ -874,19 +859,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &106241636
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106241634}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &106241637
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1028,7 +1000,6 @@ GameObject:
   - component: {fileID: 113490272}
   - component: {fileID: 113490275}
   - component: {fileID: 113490274}
-  - component: {fileID: 113490273}
   m_Layer: 0
   m_Name: Cube (17)
   m_TagString: SpawnPoint
@@ -1050,19 +1021,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &113490273
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113490271}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &113490274
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1286,7 +1244,6 @@ GameObject:
   - component: {fileID: 139366898}
   - component: {fileID: 139366901}
   - component: {fileID: 139366900}
-  - component: {fileID: 139366899}
   m_Layer: 0
   m_Name: Cube (12)
   m_TagString: SpawnPoint
@@ -1308,19 +1265,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &139366899
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 139366897}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &139366900
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5794,7 +5738,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143717422}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.708633, y: 2.5546098, z: 58.37333}
+  m_LocalPosition: {x: 19.3, y: 2.5546098, z: 58.37333}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 699554033}
@@ -6217,7 +6161,6 @@ GameObject:
   - component: {fileID: 177499125}
   - component: {fileID: 177499128}
   - component: {fileID: 177499127}
-  - component: {fileID: 177499126}
   m_Layer: 0
   m_Name: Cube (18)
   m_TagString: SpawnPoint
@@ -6239,19 +6182,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &177499126
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 177499124}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &177499127
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6660,7 +6590,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.8905501, b: 0, a: 1}
   m_Intensity: 2
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -6698,7 +6628,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -7473,7 +7403,6 @@ GameObject:
   - component: {fileID: 265268707}
   - component: {fileID: 265268710}
   - component: {fileID: 265268709}
-  - component: {fileID: 265268708}
   m_Layer: 0
   m_Name: Cube (19)
   m_TagString: SpawnPoint
@@ -7495,19 +7424,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &265268708
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265268706}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &265268709
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7568,7 +7484,6 @@ GameObject:
   - component: {fileID: 266863089}
   - component: {fileID: 266863092}
   - component: {fileID: 266863091}
-  - component: {fileID: 266863090}
   m_Layer: 0
   m_Name: Cube (21)
   m_TagString: SpawnPoint
@@ -7590,19 +7505,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &266863090
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 266863088}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &266863091
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8015,7 +7917,6 @@ GameObject:
   - component: {fileID: 279839571}
   - component: {fileID: 279839574}
   - component: {fileID: 279839573}
-  - component: {fileID: 279839572}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: SpawnPoint
@@ -8037,19 +7938,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &279839572
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 279839570}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &279839573
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8143,7 +8031,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.8905501, b: 0, a: 1}
   m_Intensity: 2
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -8181,7 +8069,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -8407,7 +8295,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.19139883, b: 0, a: 1}
   m_Intensity: 9.82
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -8445,7 +8333,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -12896,7 +12784,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6219079, b: 0, a: 1}
   m_Intensity: 5.26
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -12934,7 +12822,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -12988,7 +12876,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.8905501, b: 0, a: 1}
   m_Intensity: 2
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -13026,7 +12914,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -13760,7 +13648,6 @@ GameObject:
   - component: {fileID: 364751480}
   - component: {fileID: 364751483}
   - component: {fileID: 364751482}
-  - component: {fileID: 364751481}
   m_Layer: 0
   m_Name: Cube (16)
   m_TagString: SpawnPoint
@@ -13782,19 +13669,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &364751481
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 364751479}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &364751482
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14022,7 +13896,6 @@ GameObject:
   - component: {fileID: 380230048}
   - component: {fileID: 380230051}
   - component: {fileID: 380230050}
-  - component: {fileID: 380230049}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: SpawnPoint
@@ -14044,19 +13917,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &380230049
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 380230047}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &380230050
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14225,7 +14085,6 @@ GameObject:
   - component: {fileID: 384304966}
   - component: {fileID: 384304969}
   - component: {fileID: 384304968}
-  - component: {fileID: 384304967}
   m_Layer: 0
   m_Name: Cube (23)
   m_TagString: SpawnPoint
@@ -14247,19 +14106,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &384304967
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384304965}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &384304968
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14856,7 +14702,6 @@ GameObject:
   - component: {fileID: 414536163}
   - component: {fileID: 414536166}
   - component: {fileID: 414536165}
-  - component: {fileID: 414536164}
   m_Layer: 0
   m_Name: Cube (24)
   m_TagString: SpawnPoint
@@ -14878,19 +14723,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &414536164
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 414536162}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &414536165
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20062,7 +19894,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.8905501, b: 0, a: 1}
   m_Intensity: 2
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -20100,7 +19932,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -24952,7 +24784,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6219079, b: 0, a: 1}
   m_Intensity: 5.26
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -24990,7 +24822,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -25889,7 +25721,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6219079, b: 0, a: 1}
   m_Intensity: 5.26
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -25927,7 +25759,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -27479,7 +27311,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6219079, b: 0, a: 1}
   m_Intensity: 5.26
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -27517,7 +27349,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -27571,7 +27403,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6219079, b: 0, a: 1}
   m_Intensity: 5.26
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -27609,7 +27441,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -28660,7 +28492,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &818977177
 Transform:
@@ -29316,7 +29148,6 @@ GameObject:
   - component: {fileID: 869662921}
   - component: {fileID: 869662924}
   - component: {fileID: 869662923}
-  - component: {fileID: 869662922}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: SpawnPoint
@@ -29338,19 +29169,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &869662922
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869662920}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &869662923
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29781,7 +29599,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6219079, b: 0, a: 1}
   m_Intensity: 5.26
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -29819,7 +29637,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -29937,7 +29755,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.8905501, b: 0, a: 1}
   m_Intensity: 2
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -29975,7 +29793,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -34632,7 +34450,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -34701,7 +34519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UsePipelineSettings: 0
+  m_UsePipelineSettings: 1
 --- !u!1001 &957848662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35532,7 +35350,6 @@ GameObject:
   - component: {fileID: 1043199957}
   - component: {fileID: 1043199960}
   - component: {fileID: 1043199959}
-  - component: {fileID: 1043199958}
   m_Layer: 0
   m_Name: Cube (11)
   m_TagString: SpawnPoint
@@ -35554,19 +35371,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1043199958
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043199956}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1043199959
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35946,7 +35750,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.8905501, b: 0, a: 1}
   m_Intensity: 2
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -35984,7 +35788,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -36490,7 +36294,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.8905501, b: 0, a: 1}
   m_Intensity: 2
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -36528,7 +36332,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -36732,7 +36536,6 @@ GameObject:
   - component: {fileID: 1135699904}
   - component: {fileID: 1135699907}
   - component: {fileID: 1135699906}
-  - component: {fileID: 1135699905}
   m_Layer: 0
   m_Name: Cube (9)
   m_TagString: SpawnPoint
@@ -36754,19 +36557,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1135699905
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135699903}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1135699906
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36862,7 +36652,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.19139883, b: 0, a: 1}
   m_Intensity: 9.82
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -36900,7 +36690,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -37449,7 +37239,6 @@ GameObject:
   - component: {fileID: 1195533740}
   - component: {fileID: 1195533743}
   - component: {fileID: 1195533742}
-  - component: {fileID: 1195533741}
   m_Layer: 0
   m_Name: Cube (13)
   m_TagString: SpawnPoint
@@ -37471,19 +37260,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1195533741
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195533739}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1195533742
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38249,7 +38025,6 @@ GameObject:
   - component: {fileID: 1244277848}
   - component: {fileID: 1244277851}
   - component: {fileID: 1244277850}
-  - component: {fileID: 1244277849}
   m_Layer: 0
   m_Name: Cube (34)
   m_TagString: SpawnPoint
@@ -38271,19 +38046,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1244277849
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1244277847}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1244277850
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38636,7 +38398,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6219079, b: 0, a: 1}
   m_Intensity: 5.26
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -38674,7 +38436,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -38892,7 +38654,6 @@ GameObject:
   - component: {fileID: 1308247782}
   - component: {fileID: 1308247785}
   - component: {fileID: 1308247784}
-  - component: {fileID: 1308247783}
   m_Layer: 0
   m_Name: Cube (10)
   m_TagString: SpawnPoint
@@ -38914,19 +38675,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1308247783
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308247781}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1308247784
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38987,7 +38735,6 @@ GameObject:
   - component: {fileID: 1310455018}
   - component: {fileID: 1310455021}
   - component: {fileID: 1310455020}
-  - component: {fileID: 1310455019}
   m_Layer: 0
   m_Name: Cube (25)
   m_TagString: SpawnPoint
@@ -39003,25 +38750,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310455017}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 132.6, y: 2.5546098, z: 23.7}
+  m_LocalPosition: {x: 133.9, y: 2.5546098, z: 35.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 699554033}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1310455019
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1310455017}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1310455020
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39163,7 +38897,6 @@ GameObject:
   - component: {fileID: 1316348636}
   - component: {fileID: 1316348639}
   - component: {fileID: 1316348638}
-  - component: {fileID: 1316348637}
   m_Layer: 0
   m_Name: Cube (14)
   m_TagString: SpawnPoint
@@ -39185,19 +38918,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1316348637
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1316348635}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1316348638
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39752,7 +39472,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.8905501, b: 0, a: 1}
   m_Intensity: 2
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -39790,7 +39510,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -44442,7 +44162,6 @@ GameObject:
   - component: {fileID: 1381677898}
   - component: {fileID: 1381677901}
   - component: {fileID: 1381677900}
-  - component: {fileID: 1381677899}
   m_Layer: 0
   m_Name: Cube (29)
   m_TagString: SpawnPoint
@@ -44464,19 +44183,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1381677899
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381677897}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1381677900
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45363,7 +45069,6 @@ GameObject:
   - component: {fileID: 1461666053}
   - component: {fileID: 1461666056}
   - component: {fileID: 1461666055}
-  - component: {fileID: 1461666054}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: SpawnPoint
@@ -45379,25 +45084,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461666052}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 89.70863, y: 2.5546098, z: -20.22667}
+  m_LocalPosition: {x: 112.4, y: 2.5546098, z: -17.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 699554033}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1461666054
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461666052}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1461666055
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45730,7 +45422,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6219079, b: 0, a: 1}
   m_Intensity: 5.26
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -45768,7 +45460,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -50200,7 +49892,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6219079, b: 0, a: 1}
   m_Intensity: 5.26
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -50238,7 +49930,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -50862,7 +50554,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.8905501, b: 0, a: 1}
   m_Intensity: 2
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -50900,7 +50592,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -51135,7 +50827,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6219079, b: 0, a: 1}
   m_Intensity: 5.26
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -51173,7 +50865,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -51491,7 +51183,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6219079, b: 0, a: 1}
   m_Intensity: 5.26
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -51529,7 +51221,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -51778,7 +51470,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.19139883, b: 0, a: 1}
   m_Intensity: 9.82
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -51816,7 +51508,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -51837,7 +51529,6 @@ GameObject:
   - component: {fileID: 1558486825}
   - component: {fileID: 1558486828}
   - component: {fileID: 1558486827}
-  - component: {fileID: 1558486826}
   m_Layer: 0
   m_Name: Cube (28)
   m_TagString: SpawnPoint
@@ -51859,19 +51550,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1558486826
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558486824}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1558486827
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61504,7 +61182,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6219079, b: 0, a: 1}
   m_Intensity: 5.26
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -61542,7 +61220,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -61598,7 +61276,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.19139883, b: 0, a: 1}
   m_Intensity: 9.82
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -61636,7 +61314,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -61678,7 +61356,6 @@ GameObject:
   - component: {fileID: 1619752567}
   - component: {fileID: 1619752570}
   - component: {fileID: 1619752569}
-  - component: {fileID: 1619752568}
   m_Layer: 0
   m_Name: Cube (31)
   m_TagString: SpawnPoint
@@ -61700,19 +61377,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1619752568
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1619752566}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1619752569
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -61808,7 +61472,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.19139883, b: 0, a: 1}
   m_Intensity: 9.82
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -61846,7 +61510,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -61902,7 +61566,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.19139883, b: 0, a: 1}
   m_Intensity: 9.82
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -61940,7 +61604,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -62032,6 +61696,10 @@ PrefabInstance:
     - target: {fileID: 8227335448901666656, guid: 49ca0c5de59aae1478fabdbd4a6583f3, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227335448901666656, guid: 49ca0c5de59aae1478fabdbd4a6583f3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8792491267700341746, guid: 49ca0c5de59aae1478fabdbd4a6583f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62174,7 +61842,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.8905501, b: 0, a: 1}
   m_Intensity: 2
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -62212,7 +61880,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -66972,7 +66640,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.19139883, b: 0, a: 1}
   m_Intensity: 9.82
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -67010,7 +66678,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -67589,7 +67257,6 @@ GameObject:
   - component: {fileID: 1708786439}
   - component: {fileID: 1708786442}
   - component: {fileID: 1708786441}
-  - component: {fileID: 1708786440}
   m_Layer: 0
   m_Name: Cube (30)
   m_TagString: SpawnPoint
@@ -67611,19 +67278,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1708786440
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1708786438}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1708786441
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -72515,7 +72169,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.19139883, b: 0, a: 1}
   m_Intensity: 9.82
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -72553,7 +72207,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -72787,7 +72441,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.19139883, b: 0, a: 1}
   m_Intensity: 9.82
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -72825,7 +72479,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -72975,7 +72629,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.6219079, b: 0, a: 1}
   m_Intensity: 5.26
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -73013,7 +72667,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -73069,7 +72723,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.19139883, b: 0, a: 1}
   m_Intensity: 9.82
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -73107,7 +72761,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -74073,7 +73727,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.19139883, b: 0, a: 1}
   m_Intensity: 9.82
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -74111,7 +73765,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -74687,7 +74341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8330647501056133860, guid: ddbe2f6f74ecb1a4f89c579ca4b7e342, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8330647501056133860, guid: ddbe2f6f74ecb1a4f89c579ca4b7e342, type: 3}
       propertyPath: m_Layer
@@ -74703,7 +74357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ddbe2f6f74ecb1a4f89c579ca4b7e342, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ddbe2f6f74ecb1a4f89c579ca4b7e342, type: 3}
       propertyPath: m_Layer
@@ -79361,7 +79015,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.8905501, b: 0, a: 1}
   m_Intensity: 2
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -79399,7 +79053,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -79568,7 +79222,6 @@ GameObject:
   - component: {fileID: 1916990196}
   - component: {fileID: 1916990199}
   - component: {fileID: 1916990198}
-  - component: {fileID: 1916990197}
   m_Layer: 0
   m_Name: Cube (26)
   m_TagString: SpawnPoint
@@ -79590,19 +79243,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1916990197
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1916990195}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1916990198
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -79746,7 +79386,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.19139883, b: 0, a: 1}
   m_Intensity: 9.82
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -79784,7 +79424,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -80186,7 +79826,6 @@ GameObject:
   - component: {fileID: 1983464528}
   - component: {fileID: 1983464531}
   - component: {fileID: 1983464530}
-  - component: {fileID: 1983464529}
   m_Layer: 0
   m_Name: Cube (22)
   m_TagString: SpawnPoint
@@ -80208,19 +79847,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1983464529
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983464527}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1983464530
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80467,7 +80093,6 @@ GameObject:
   - component: {fileID: 2006155895}
   - component: {fileID: 2006155898}
   - component: {fileID: 2006155897}
-  - component: {fileID: 2006155896}
   m_Layer: 0
   m_Name: Cube (15)
   m_TagString: SpawnPoint
@@ -80489,19 +80114,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2006155896
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2006155894}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2006155897
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -80687,7 +80299,6 @@ GameObject:
   - component: {fileID: 2019508208}
   - component: {fileID: 2019508211}
   - component: {fileID: 2019508210}
-  - component: {fileID: 2019508209}
   m_Layer: 0
   m_Name: Cube (27)
   m_TagString: SpawnPoint
@@ -80709,19 +80320,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2019508209
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2019508207}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2019508210
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81184,7 +80782,6 @@ GameObject:
   - component: {fileID: 2050409048}
   - component: {fileID: 2050409051}
   - component: {fileID: 2050409050}
-  - component: {fileID: 2050409049}
   m_Layer: 0
   m_Name: Cube (32)
   m_TagString: SpawnPoint
@@ -81206,19 +80803,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2050409049
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050409047}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2050409050
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81723,7 +81307,6 @@ GameObject:
   - component: {fileID: 2098495959}
   - component: {fileID: 2098495962}
   - component: {fileID: 2098495961}
-  - component: {fileID: 2098495960}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: SpawnPoint
@@ -81745,19 +81328,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2098495960
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098495958}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2098495961
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82142,7 +81712,6 @@ GameObject:
   - component: {fileID: 2114507431}
   - component: {fileID: 2114507434}
   - component: {fileID: 2114507433}
-  - component: {fileID: 2114507432}
   m_Layer: 0
   m_Name: Cube (20)
   m_TagString: SpawnPoint
@@ -82164,19 +81733,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2114507432
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2114507430}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2114507433
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -82637,7 +82193,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0.19139883, b: 0, a: 1}
   m_Intensity: 9.82
-  m_Range: 69.23
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -82675,7 +82231,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1

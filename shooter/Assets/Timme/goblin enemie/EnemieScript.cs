@@ -52,7 +52,10 @@ public class EnemieScript : MonoBehaviour
                         UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
                         if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
                         {
-                            transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+                            if (dist <= 1)
+                            {
+                                transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+                            }
                         }
                     }
                     if (PlayerInTrigger == true)
@@ -63,7 +66,7 @@ public class EnemieScript : MonoBehaviour
                     }
                 }
             }
-            if (dist <= 2)
+            if (dist <= 1)
             {
                 UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
                 if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
@@ -86,11 +89,13 @@ public class EnemieScript : MonoBehaviour
                 Vector3 toOther = player.transform.position - transform.position;
                 if (Vector3.Dot(forward, toOther) < 0)
                 {
-                    gameObject.transform.LookAt(lookat.transform);
-                    if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
-                    {
-                        transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
-                    }
+                    
+                        gameObject.transform.LookAt(lookat.transform);
+                        if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
+                        {
+                            transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+                        }
+                    
                 }
             }
         }
