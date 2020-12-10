@@ -9,7 +9,7 @@ public class WeaponReference : MonoBehaviour
     public int maxAmmo, ammoRecharge;
     public Transform bulletOri, muzzleFlash;
     public Rigidbody basicBullet;
-    public bool isUsed;
+    public bool isUsed = false;
     public LayerMask canShoot;
     public GameObject gem;
     public int gunNumber;

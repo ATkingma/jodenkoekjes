@@ -18,7 +18,7 @@ public class MeleeReference : MonoBehaviour
         {
             if (hitcollider.GetComponent<EnemyHealth>())
             {
-                hitcollider.GetComponent<EnemyHealth>().ReceiveDamage(damage);
+                hitcollider.GetComponent<EnemyHealth>().ReceiveDamage(damage, 0);
             }
         }
         Invoke("Return", 0.2f);

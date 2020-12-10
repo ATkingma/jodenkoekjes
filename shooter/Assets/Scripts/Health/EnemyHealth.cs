@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : BaseHealthScript
 {
-    public override void ReceiveDamage(float amount)
+    public override void ReceiveDamage(float amount, int usedWeapon)
     {
         if(list.itemQuantity[14] > 0)
         {
@@ -25,11 +25,7 @@ public class EnemyHealth : BaseHealthScript
 
         if (health == 0 || health <= executebelow)
         {
-            Die();
+            FindObjectOfType<Saves>().AddKilledBy(usedWeapon);
         }
-    }
-    public void Die()
-    {
-        
     }
 }

@@ -9,6 +9,7 @@ public class BulletBehaviour : MonoBehaviour
     public GameObject explosionRadius;
     public float speed;
     public LayerMask mask;
+    public int weaponUsed;
 
     //privates
     private Vector3 prefLocation;
@@ -48,7 +49,7 @@ public class BulletBehaviour : MonoBehaviour
         {
             if (hitcollider.GetComponent<BaseHealthScript>())
             {
-                hitcollider.GetComponent<BaseHealthScript>().ReceiveDamage(damage);
+                hitcollider.GetComponent<BaseHealthScript>().ReceiveDamage(damage, weaponUsed);
             }
         }
         Destroy(gameObject);

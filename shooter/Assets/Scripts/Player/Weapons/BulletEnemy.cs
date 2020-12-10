@@ -48,7 +48,7 @@ public class BulletEnemy : MonoBehaviour
         {
             if (hitcollider.GetComponent<BaseHealthScript>())
             {
-                hitcollider.GetComponent<BaseHealthScript>().ReceiveDamage(damage);
+                hitcollider.GetComponent<BaseHealthScript>().ReceiveDamage(damage, 0);
             }
         }
         Destroy(gameObject);

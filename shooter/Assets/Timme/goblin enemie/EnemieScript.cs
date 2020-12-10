@@ -129,7 +129,7 @@ public class EnemieScript : MonoBehaviour
             {
                 if (hitCollider.gameObject.tag == "Player")
                 {
-                    hitCollider.GetComponent<PlayerHealth>().ReceiveDamage(damageValue);
+                    hitCollider.GetComponent<PlayerHealth>().ReceiveDamage(damageValue, 0);
                 }
             }
         }
@@ -145,7 +145,7 @@ public class EnemieScript : MonoBehaviour
             {
                 if (hitCollider.gameObject.tag == "Player")
                 {
-                    hitCollider.GetComponent<PlayerHealth>().ReceiveDamage(damageValue);
+                    hitCollider.GetComponent<PlayerHealth>().ReceiveDamage(damageValue, 0);
                 }
             }
         }

@@ -256,7 +256,8 @@ MonoBehaviour:
   - {fileID: 2640308273281943381, guid: e2b0e23585c9ecc46b47c9cdc2d7312e, type: 3}
   - {fileID: 7865431890135567487, guid: c1510e39f62be794f81f4fdfbcb0ae8e, type: 3}
   - {fileID: 3295791727743766657, guid: 602f8aabf57408c46962b4c9d7058816, type: 3}
-  meleeList: []
+  meleeList:
+  - {fileID: 5546980582551055553, guid: dbdb142b251d68148b6c5e399d245111, type: 3}
   gunNumber: 0
   meleeNumber: 0
 --- !u!114 &1350052527731173487
@@ -453,6 +454,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd45c156c8370fd47a46b733702bedc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesKilled: 
+  killedBy: 
 --- !u!1 &6579444861186322667
 GameObject:
   m_ObjectHideFlags: 0

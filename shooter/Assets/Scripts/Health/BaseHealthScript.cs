@@ -19,7 +19,7 @@ public class BaseHealthScript : MonoBehaviour
         list = FindObjectOfType<ItemList>();
         damageNumbersBool = PlayerPrefs.GetInt("damageNumbersBool") != 0;
     }
-    public virtual void ReceiveDamage(float amount)
+    public virtual void ReceiveDamage(float amount, int usedWeapon)
     {
         health = Mathf.Clamp(health - amount, 0, maxHealth);
 

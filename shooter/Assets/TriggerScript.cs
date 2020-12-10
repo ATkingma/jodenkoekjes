@@ -21,7 +21,7 @@ public class TriggerScript : MonoBehaviour
         {
             ParticleSystem.Particle p = enter[i];
             p.remainingLifetime = 0;
-            FindObjectOfType<PlayerHealth>().ReceiveDamage(aoeDamage);
+            FindObjectOfType<PlayerHealth>().ReceiveDamage(aoeDamage, 0);
             enter[i] = p;
         }
         //set

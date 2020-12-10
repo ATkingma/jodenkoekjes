@@ -307,7 +307,7 @@ public class Boss : MonoBehaviour
             Debug.DrawRay(transform.position, transform.forward, Color.green); print("Hit");
             if (hit.transform.tag == "Player")
             {
-                player.GetComponent<PlayerHealth>().ReceiveDamage(damage3);
+                player.GetComponent<PlayerHealth>().ReceiveDamage(damage3, 0);
                 print("hget");
             }
         }
@@ -324,7 +324,7 @@ public class Boss : MonoBehaviour
             Debug.DrawRay(transform.position, transform.forward, Color.green); print("Hit");
             if (hit.transform.tag == "Player")
             {
-                player.GetComponent<PlayerHealth>().ReceiveDamage(damage1);
+                player.GetComponent<PlayerHealth>().ReceiveDamage(damage1, 0);
                 print("quick");            
             }
         }
@@ -354,7 +354,7 @@ public class Boss : MonoBehaviour
             Debug.DrawRay(transform.position, transform.forward, Color.green); print("Hit");
             if (hit.transform.tag == "Player")
             {
-                player.GetComponent<PlayerHealth>().ReceiveDamage(damage2);
+                player.GetComponent<PlayerHealth>().ReceiveDamage(damage2, 0);
                 print("hit4");
             }
         }

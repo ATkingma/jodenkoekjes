@@ -34,6 +34,7 @@ public class Pistol : WeaponReference
             clone.GetComponent<BulletBehaviour>().speed = bulletSpeed;
             clone.GetComponent<BulletBehaviour>().damage = dir;
             clone.GetComponent<BulletBehaviour>().explosionCount = list.itemQuantity[12];
+            clone.GetComponent<BulletBehaviour>().weaponUsed = gunNumber;
             RecoilUp();
             DoFuntions(dir);
             ammo--;
@@ -42,20 +43,28 @@ public class Pistol : WeaponReference
     public override void Fire2(float dir)
     {
         Rigidbody clone = Instantiate(basicBullet, bulletOri.position, transform.rotation);
-        clone.velocity = clone.transform.forward * bulletSpeed;
+        var randomNumberX = Random.Range(-spread, spread);
+        var randomNumberY = Random.Range(-spread, spread);
+        var randomNumberZ = Random.Range(-spread, spread);
+        clone.transform.Rotate(randomNumberZ, randomNumberY, randomNumberZ);
+        clone.GetComponent<BulletBehaviour>().speed = bulletSpeed;
         clone.GetComponent<BulletBehaviour>().damage = dir;
         clone.GetComponent<BulletBehaviour>().explosionCount = list.itemQuantity[12];
+        clone.GetComponent<BulletBehaviour>().weaponUsed = gunNumber;
         RecoilUp();
     }
 
     public void Update()
     {
-        if (ammo < maxAmmo)
+        if(isUsed)
         {
-            ammo = Mathf.Clamp(ammo += Time.deltaTime, 0, maxAmmo);
+            if (ammo < maxAmmo)
+            {
+                ammo = Mathf.Clamp(ammo += Time.deltaTime * (0.5f * baseAttackSpeed), 0, maxAmmo);
+            }
+            ammoItem.text = Mathf.Floor(ammo) + " / " + maxAmmo.ToString();
+            Color nNew = new Color(mat.material.color.r, mat.material.color.g, mat.material.color.b, ammo / (0.1f * maxAmmo));
+            mat.material.SetColor("_BaseColor", nNew);
         }
-        ammoItem.text = Mathf.Floor(ammo) + " / " + maxAmmo.ToString();
-        Color nNew = new Color(mat.material.color.r, mat.material.color.g, mat.material.color.b, ammo / (0.1f * maxAmmo));
-        mat.material.SetColor("_BaseColor", nNew);
     }
 }
