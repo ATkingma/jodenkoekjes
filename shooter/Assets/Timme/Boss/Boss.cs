@@ -11,7 +11,7 @@ public class Boss : MonoBehaviour
     public float damage1, damage2, damage3;
     //privates
     private bool playerIsDeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive, noParticle, didto0,aoe;
-    private GameObject player, itemHolder;
+    private GameObject player, itemHolder,playerPosition;
     private GameObject attack1_1Pos, attack1_2Pos, attack1_3Pos, attack1_4Pos, attack2Pos, attack3Pos, attack4_1Pos, attack4_2Pos, attack4_3Pos;
     private GameObject[] itemSpawnPoints;
     private Vector3[] attack1RenderLine;
@@ -25,6 +25,7 @@ public class Boss : MonoBehaviour
     {
         particle = GetComponent<ParticleSystem>();
         player = GameObject.FindGameObjectWithTag("Player");
+        playerPosition = GameObject.FindGameObjectWithTag("LookAPlayer");
         speed = GetComponent<NavMeshAgent>().speed;
         attack1_1Pos = GameObject.FindGameObjectWithTag("Attack1_1Pos");
         attack1_2Pos = GameObject.FindGameObjectWithTag("Attack1_2Pos");
@@ -78,7 +79,7 @@ public class Boss : MonoBehaviour
                 {
                     if (gettingPlayerPos == false)
                     {
-                        playerPos = player.transform.position;
+                        playerPos = playerPosition.transform.position;
                         gettingPlayerPos = true;
                     }
                 }
@@ -297,14 +298,13 @@ public class Boss : MonoBehaviour
         attack1_2Pos.SetActive(true);
         attack1_3Pos.SetActive(true);
         attack1_4Pos.SetActive(true);
-        attack1_1Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
-        attack1_2Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
-        attack1_3Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
-        attack1_4Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
+        attack1_1Pos.GetComponent<LineRenderer>().SetPosition(1, playerPosition.transform.position);
+        attack1_2Pos.GetComponent<LineRenderer>().SetPosition(1, playerPosition.transform.position);
+        attack1_3Pos.GetComponent<LineRenderer>().SetPosition(1, playerPosition.transform.position);
+        attack1_4Pos.GetComponent<LineRenderer>().SetPosition(1, playerPosition.transform.position);
         RaycastHit hit;
         if (Physics.Linecast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
         {
-            Debug.DrawRay(transform.position, transform.forward, Color.green); print("Hit");
             if (hit.transform.tag == "Player")
             {
                 player.GetComponent<PlayerHealth>().ReceiveDamage(damage3, 0);
@@ -317,11 +317,10 @@ public class Boss : MonoBehaviour
         attack2IsActive = true;
         attack2Pos.SetActive(true);
         attack2Pos.GetComponent<LineRenderer>().SetPosition(0, attack2Pos.transform.position);
-        attack2Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
+        attack2Pos.GetComponent<LineRenderer>().SetPosition(1, playerPosition.transform.position);
         RaycastHit hit;
         if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
         {
-            Debug.DrawRay(transform.position, transform.forward, Color.green); print("Hit");
             if (hit.transform.tag == "Player")
             {
                 player.GetComponent<PlayerHealth>().ReceiveDamage(damage1, 0);
@@ -345,13 +344,12 @@ public class Boss : MonoBehaviour
         attack4_1Pos.SetActive(true);
         attack4_2Pos.SetActive(true);
         attack4_3Pos.SetActive(true);
-        attack4_1Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
-        attack4_2Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
-        attack4_3Pos.GetComponent<LineRenderer>().SetPosition(1, player.transform.position);
+        attack4_1Pos.GetComponent<LineRenderer>().SetPosition(1, playerPosition.transform.position);
+        attack4_2Pos.GetComponent<LineRenderer>().SetPosition(1, playerPosition.transform.position);
+        attack4_3Pos.GetComponent<LineRenderer>().SetPosition(1, playerPosition.transform.position);
         RaycastHit hit;
         if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
         {
-            Debug.DrawRay(transform.position, transform.forward, Color.green); print("Hit");
             if (hit.transform.tag == "Player")
             {
                 player.GetComponent<PlayerHealth>().ReceiveDamage(damage2, 0);
