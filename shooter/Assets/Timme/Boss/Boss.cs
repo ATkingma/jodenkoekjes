@@ -366,6 +366,7 @@ public class Boss : MonoBehaviour
     }
     public void DeathFunction()
     {
+        FindObjectOfType<Saves>().AddKill(5); //boss
         Reset();
         bossisdeath = true;
         Invoke("Disapear", 4);

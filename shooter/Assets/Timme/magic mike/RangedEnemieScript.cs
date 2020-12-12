@@ -39,7 +39,8 @@ public class RangedEnemieScript : MonoBehaviour
             {
                 if (!deathIsDoing)
                 {
-                Death();
+                    FindObjectOfType<Saves>().AddKill(2); //fire
+                    Death();
 
                 }
 

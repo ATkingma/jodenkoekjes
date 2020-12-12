@@ -7,7 +7,7 @@ public class Saves : MonoBehaviour
 {
     public List<int> enemiesKilled, killedBy;
     //list
-    //0 = goblin; 1 = fire elemental; 2 = groot; 3 = golem; 4 = boss; 5 = final boss;
+    //0 = all; 1 = goblin; 2 = fire elemental; 3 = groot; 4 = golem; 5 = boss; 6 = final boss;
     //0 = pistol; 1 = launcher; 2 = rifle; 3 = staff;
 
     //privates
@@ -47,7 +47,6 @@ public class Saves : MonoBehaviour
             killedBy[i] = PlayerPrefs.GetInt("gun" + i, 0);
         }
         killedBy[gun]++;
-        print(killedBy[gun]);
         for (int i = 0; i < killedBy.Count; i++)
         {
             PlayerPrefs.SetInt("gun" + i, killedBy[i]);
@@ -55,7 +54,15 @@ public class Saves : MonoBehaviour
     }
     public void AddKill(int enemy)
     {
+        for (int i = 0; i < killedBy.Count; i++)
+        {
+            enemiesKilled[i] = PlayerPrefs.GetInt("enemy" + i, 0);
+        }
         enemiesKilled[0]++;
         enemiesKilled[enemy]++;
+        for (int i = 0; i < killedBy.Count; i++)
+        {
+            PlayerPrefs.SetInt("enemy" + i, enemiesKilled[i]);
+        }
     }
 }

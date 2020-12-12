@@ -34,8 +34,8 @@ public class EnemieScript : MonoBehaviour
             {
                 if (!deathIsDoing)
                 {
-
-            Death();
+                    FindObjectOfType<Saves>().AddKill(1); //goblin
+                    Death();
                 }
 
             }
