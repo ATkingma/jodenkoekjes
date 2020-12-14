@@ -5,6 +5,7 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
     public float item;
+    public List<float> itemStats;
 
     //private
     private Index index;
@@ -21,6 +22,16 @@ public class Pickup : MonoBehaviour
         {
             player.GetComponent<ItemList>().itemQuantity[(int)item] += 1;
             StatChanges();
+            for(int i = 0; i < itemStats.Count; i++)
+            {
+                itemStats[i] = PlayerPrefs.GetFloat("itemstats" + i, 0);
+            }
+            itemStats[0]++;
+            itemStats[(int)item]++;
+            for (int i = 0; i < itemStats.Count; i++)
+            {
+                PlayerPrefs.SetFloat("itemstats" + i, itemStats[i]);
+            }
             Destroy(gameObject);
         }
     }

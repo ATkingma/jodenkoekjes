@@ -75,9 +75,9 @@ public class MainMenu : MonoBehaviour
         {
             gunList[m].text = PlayerPrefs.GetInt("gun" + m, 0).ToString();
         }
-        for (int s = 0; s < itemList.Count; s++)
+        for(int s = 0; s < itemList.Count; s++)
         {
-            itemList[s].text = PlayerPrefs.GetInt("itemscollected" + s, 0).ToString();
+            itemList[s].text = PlayerPrefs.GetFloat("itemstats" + s, 0).ToString();
         }
         timesDied.text = PlayerPrefs.GetInt("timesdied", 0).ToString();
         time.text = PlayerPrefs.GetFloat("uurtotal", 0).ToString() + ":" + PlayerPrefs.GetFloat("minuuttotal", 0).ToString() + ":" + Mathf.Floor(PlayerPrefs.GetFloat("secondetotal", 0)); //text.text = uur + ":" + minuut + ":" + Mathf.RoundToInt(seconde);
