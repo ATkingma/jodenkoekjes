@@ -13,6 +13,7 @@ public class WeaponReference : MonoBehaviour
     public LayerMask canShoot;
     public GameObject gem;
     public int gunNumber;
+
     //recoil
     public Vector3 recoilUp;
     public float spread;
@@ -31,11 +32,6 @@ public class WeaponReference : MonoBehaviour
         bulletSpeed = baseBulletSpeed;
         ammo = maxAmmo;
         mat = gem.GetComponent<MeshRenderer>();
-    }
-    private void Start()
-    {
-        GameObject temp = GameObject.FindGameObjectWithTag("AmmoItem");
-        ammoItem = temp.GetComponent<TextMeshProUGUI>();
     }
 
     public virtual void Fire(float dir) { }

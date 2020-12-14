@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Pistol : WeaponReference
 {
@@ -58,6 +59,8 @@ public class Pistol : WeaponReference
     {
         if(isUsed)
         {
+            GameObject temp = GameObject.FindGameObjectWithTag("AmmoItem");
+            ammoItem = temp.GetComponent<TextMeshProUGUI>();
             if (ammo < maxAmmo)
             {
                 ammo = Mathf.Clamp(ammo += Time.deltaTime * (0.5f * baseAttackSpeed), 0, maxAmmo);

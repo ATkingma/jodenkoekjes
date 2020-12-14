@@ -8016,10 +8016,19 @@ MonoBehaviour:
   menu: {fileID: 6481214844654588187}
   options: {fileID: 6481214844405346078}
   items: {fileID: 2626898980503878119}
+  stats: {fileID: 0}
+  enemiesList: []
+  gunList: []
+  itemList: []
+  timesDied: {fileID: 0}
+  time: {fileID: 0}
+  levels: {fileID: 0}
+  games: {fileID: 0}
   menuOn: 0
   optionsOn: 0
   itemsOn: 0
   anyIsOn: 0
+  statsOn: 0
   deathscreen: {fileID: 6326298054463445340}
 --- !u!1 &6481214843662040305
 GameObject:
@@ -8483,18 +8492,18 @@ MonoBehaviour:
   - {fileID: 2219716189026099690, guid: e368bc699038ec04eb67eafef0908d84, type: 3}
   - {fileID: 293272197593168525, guid: 4fb84517c1fc10646b1dbef5d15bb5b2, type: 3}
   - {fileID: 4674630511041248805, guid: 1444634aca0ce004b99afa12f3898c16, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 290320058772928006, guid: bc1ce524b72283a40ad063e7ec6c87d0, type: 3}
   - {fileID: 7537494576677244211, guid: 724509f7045df54429cb0d5427eb8b41, type: 3}
   - {fileID: 8479705322827098465, guid: f12d0a9e088ec7d4b8dffe3acf1edd9e, type: 3}
   - {fileID: 298377819429465579, guid: 83ab6bb2b071c864aa91218ed5ac1f61, type: 3}
   - {fileID: 1977903401878068719, guid: dd25fab9129ee394a8744f85b25b2d31, type: 3}
   - {fileID: 401411383816598390, guid: 5488f8e4216a7b643a08ba99a5142a53, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

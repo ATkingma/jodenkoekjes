@@ -24,6 +24,7 @@ public class Trigger : MonoBehaviour
     {
         currentWeapon = Instantiate(gunlist[gunNumber].transform, weaponHold.position, weaponHold.rotation, transform);
         weapon = currentWeapon.GetComponent<WeaponReference>();
+        weapon.isUsed = true;
         currentMelee = Instantiate(meleeList[meleeNumber].transform, meleeHold.position, weaponHold.rotation, transform);
         melee = currentMelee.GetComponent<MeleeReference>();
         currentMelee.gameObject.SetActive(false);
