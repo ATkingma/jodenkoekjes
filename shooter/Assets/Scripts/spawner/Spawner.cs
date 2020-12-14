@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
     private GameObject player;
 
     //jorn 
-    private float seconde, minuut, uur;
+    private float seconde, minuut, uur, secondeTotal, minuutTotal, uurTotal;
 
     private void Awake()
     {
@@ -36,6 +36,9 @@ public class Spawner : MonoBehaviour
         seconde = PlayerPrefs.GetFloat("seconde", seconde);
         minuut = PlayerPrefs.GetFloat("minuut", minuut);
         uur = PlayerPrefs.GetFloat("uur", uur);
+        secondeTotal += PlayerPrefs.GetFloat("secolndetotal", 0);
+        minuutTotal += PlayerPrefs.GetFloat("minuuttotal", 0);
+        uurTotal += PlayerPrefs.GetFloat("uurtotal", 0);
     }
     void Update()
     {
@@ -142,5 +145,8 @@ public class Spawner : MonoBehaviour
         PlayerPrefs.SetFloat("seconde", seconde);
         PlayerPrefs.SetFloat("minuut", minuut);
         PlayerPrefs.SetFloat("uur", uur);
+        PlayerPrefs.SetFloat("secondetotal", seconde + secondeTotal);
+        PlayerPrefs.SetFloat("minuuttotal", minuut + minuutTotal);
+        PlayerPrefs.SetFloat("uurtotal", uur + uurTotal);
     }
 }

@@ -8,6 +8,7 @@ public class Portal : MonoBehaviour
     public bool bosmap;
     //privates
     private Saves safe;
+    private int levelscom;
     private void Start()
     {
         safe = FindObjectOfType<Saves>();
@@ -19,9 +20,12 @@ public class Portal : MonoBehaviour
             if (!bosmap)
             {
 
-            FindObjectOfType<Spawner>().SaveTime();
+                FindObjectOfType<Spawner>().SaveTime();
             }
             safe.SaveEverything();
+            levelscom = PlayerPrefs.GetInt("levels", 0);
+            levelscom++;
+            PlayerPrefs.SetInt("levels", levelscom);
             FindObjectOfType<SceneSwitcher>().SceneLoader();
         }
     }

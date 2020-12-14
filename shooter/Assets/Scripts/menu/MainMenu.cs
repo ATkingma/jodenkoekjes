@@ -7,8 +7,8 @@ using TMPro;
 public class MainMenu : MonoBehaviour
 {
     public GameObject menu, options, items, stats;
-    public List<int> enemiesKilled, killedBy;
-    public List<TextMeshProUGUI> enemiesList, gunList;
+    public List<TextMeshProUGUI> enemiesList, gunList, itemList;
+    public TextMeshProUGUI timesDied, time, levels, games;
     //list
     //0 = all; 1 = goblin; 2 = fire elemental; 3 = groot; 4 = golem; 5 = boss; 6 = final boss;
     //0 = pistol; 1 = launcher; 2 = rifle; 3 = staff;
@@ -66,22 +66,23 @@ public class MainMenu : MonoBehaviour
     {
         statsOn = true;
         menuOn = false;
-        for (int i = 0; i < killedBy.Count; i++)
-        {
-            killedBy[i] = PlayerPrefs.GetInt("gun" + i, 0);
-        }
-        for (int o = 0; o < enemiesKilled.Count; o++)
-        {
-            enemiesKilled[o] = PlayerPrefs.GetInt("enemy" + o, 0);
-        }
+        //saves ophalen
         for(int q = 0; q < enemiesList.Count; q++)
         {
-            enemiesList[q].text = enemiesKilled[q].ToString();
+            enemiesList[q].text = PlayerPrefs.GetInt("enemy" + q, 0).ToString();
         }
         for(int m = 0; m < gunList.Count; m++)
         {
-            gunList[m].text = killedBy[m].ToString();
+            gunList[m].text = PlayerPrefs.GetInt("gun" + m, 0).ToString();
         }
+        for (int s = 0; s < itemList.Count; s++)
+        {
+            itemList[s].text = PlayerPrefs.GetInt("itemscollected" + s, 0).ToString();
+        }
+        timesDied.text = PlayerPrefs.GetInt("timesdied", 0).ToString();
+        time.text = PlayerPrefs.GetFloat("uurtotal", 0).ToString() + ":" + PlayerPrefs.GetFloat("minuuttotal", 0).ToString() + ":" + Mathf.Floor(PlayerPrefs.GetFloat("secondetotal", 0)); //text.text = uur + ":" + minuut + ":" + Mathf.RoundToInt(seconde);
+        levels.text = PlayerPrefs.GetInt("levels", 0).ToString();
+        games.text = PlayerPrefs.GetInt("games", 0).ToString();
     }
     public void ToMainMenu()
     {
