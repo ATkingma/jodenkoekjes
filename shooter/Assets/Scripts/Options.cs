@@ -41,7 +41,10 @@ public class Options : MonoBehaviour
         resolutionDropDown.RefreshShownValue();
 
         //camera
-        cam = FindObjectOfType<CameraController>();
+        if(FindObjectOfType<CameraController>())
+        {
+            cam = FindObjectOfType<CameraController>();
+        }
         mouse.value = PlayerPrefs.GetFloat("sensitivity", 10);
 
         //damage numebrs
@@ -73,7 +76,10 @@ public class Options : MonoBehaviour
     }
     public void SetSensitivity(Slider slider)
     {
-        cam.sliderValue = slider.value;
+        if (FindObjectOfType<CameraController>())
+        {
+            cam.sliderValue = slider.value;
+        }
         PlayerPrefs.SetFloat("sensitivity", slider.value);
     }
     //damage numbers

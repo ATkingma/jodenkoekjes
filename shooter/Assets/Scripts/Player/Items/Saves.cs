@@ -54,13 +54,13 @@ public class Saves : MonoBehaviour
     }
     public void AddKill(int enemy)
     {
-        for (int i = 0; i < killedBy.Count; i++)
+        for (int i = 0; i < enemiesKilled.Count; i++)
         {
             enemiesKilled[i] = PlayerPrefs.GetInt("enemy" + i, 0);
         }
         enemiesKilled[0]++;
         enemiesKilled[enemy]++;
-        for (int i = 0; i < killedBy.Count; i++)
+        for (int i = 0; i < enemiesKilled.Count; i++)
         {
             PlayerPrefs.SetInt("enemy" + i, enemiesKilled[i]);
         }

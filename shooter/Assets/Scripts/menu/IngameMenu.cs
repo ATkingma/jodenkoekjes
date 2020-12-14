@@ -40,7 +40,7 @@ public class IngameMenu : MainMenu
                 menuOn = true;
             }
         }
-        if(menuOn || itemsOn || optionsOn || deathscreen.activeInHierarchy)
+        if(menuOn || itemsOn || optionsOn || deathscreen.activeInHierarchy || statsOn)
         {
             Time.timeScale = 0;
             Cursor.visible = true;
