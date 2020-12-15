@@ -139,20 +139,20 @@ public class Trigger : MonoBehaviour
         attackCooldownMelee = attacksPerSecMelee / Mathf.Pow(attacksPerSecMelee, 2);
 
         //glasscannon
-        if (itemList.itemQuantity[11] > 0)
+        if (itemList.itemQuantity[5] > 0)
         {
-            calculatedDamage = (itemList.itemQuantity[11] + itemList.itemQuantity[11]) * calculatedDamage;
+            calculatedDamage = (itemList.itemQuantity[5] + itemList.itemQuantity[11]) * calculatedDamage;
         }
         //explosives
-        if(itemList.itemQuantity[12] > 0)
+        if(itemList.itemQuantity[6] > 0)
         {
-            weapon.explosiveChance = itemList.itemQuantity[12];
+            weapon.explosiveChance = itemList.itemQuantity[6];
         }
-        if(itemList.itemQuantity[15] > 0)
+        if(itemList.itemQuantity[9] > 0)
         {
             weapon.Slowbullets();
             attacksPerSec = weapon.baseAttackSpeed * (1 + (0.1f * itemList.itemQuantity[1]));
-            slowBulletAttackSpeed = 1.5f * Mathf.Pow(attacksPerSec, itemList.itemQuantity[15]);
+            slowBulletAttackSpeed = 1.5f * Mathf.Pow(attacksPerSec, itemList.itemQuantity[9]);
             attackCooldown = slowBulletAttackSpeed / Mathf.Pow(slowBulletAttackSpeed, 2);
         }
         //give attackSpeedCooldown to weapon

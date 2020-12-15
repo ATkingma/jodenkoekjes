@@ -44,7 +44,7 @@ public class WeaponReference : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f * attackSpeed);
         float doubleChance = Random.Range(1, 5);
-        if(doubleChance == list.itemQuantity[10])
+        if(doubleChance == list.itemQuantity[4])
         {
             Fire2(dir);
         }
@@ -52,7 +52,7 @@ public class WeaponReference : MonoBehaviour
 
     public void Slowbullets()
     {
-        bulletSpeed = baseBulletSpeed / Mathf.Pow(2, list.itemQuantity[15]);
+        bulletSpeed = baseBulletSpeed / Mathf.Pow(2, list.itemQuantity[9]);
     }
 
     public void RecoilUp()
