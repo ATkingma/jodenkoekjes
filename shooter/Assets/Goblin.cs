@@ -8,15 +8,16 @@ public class Goblin : MonoBehaviour
     public float attackCoolDown, damageValue;
     public Animator anim;
     public bool PlayerInTrigger, isAtacking, goblinInTrigger, isTrowing;
-    public GameObject goblinToSpawn;
+    public GameObject goblinToSpawn, goblinSpawn, goblinToSetActive;
     //private
-    private GameObject player, itemHolder, lookat,goblinSpawn,goblinToSetActive;
+    private GameObject player, itemHolder, lookat;
     private bool doingDamage, death, doingDead, deathIsDoing, didto0;
     void Start()
     {
         lookat = GameObject.FindGameObjectWithTag("LookAPlayer");
         player = GameObject.FindGameObjectWithTag("Player");
         itemHolder = GameObject.FindGameObjectWithTag("GameManager");
+        goblinToSetActive.SetActive(false);
     }
     void Update()
     {
@@ -287,6 +288,8 @@ public class Goblin : MonoBehaviour
         GrabGoblin();
         UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.destination = gameObject.transform.position;
+        Invoke("On", 2.5f);
+        Invoke("Off", 9.5f);
     }
     public void GrabGoblin()
     {
@@ -303,5 +306,13 @@ public class Goblin : MonoBehaviour
     {
         ResetAnim();
         isTrowing = false;
+    }
+    public void Off()
+    {
+        goblinToSetActive.SetActive(false);
+    }
+    public void On()
+    {
+        goblinToSetActive.SetActive(true);
     }
 }

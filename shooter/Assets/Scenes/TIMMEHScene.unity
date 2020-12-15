@@ -566,37 +566,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d1e5a3937ccac548b4017c0c2ee4a52, type: 3}
---- !u!1 &581118796
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 581118797}
-  m_Layer: 0
-  m_Name: hitboxes
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &581118797
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581118796}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1681062968}
-  m_Father: {fileID: 1559300812}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &650512699
 GameObject:
   m_ObjectHideFlags: 0
@@ -11242,6 +11211,8 @@ MonoBehaviour:
   goblinInTrigger: 0
   isTrowing: 0
   goblinToSpawn: {fileID: 251220640}
+  goblinSpawn: {fileID: 1161890110}
+  goblinToSetActive: {fileID: 2656510125072949936}
 --- !u!114 &1559300814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11452,12 +11423,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681062967}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 581118797}
-  m_RootOrder: 0
+  m_Father: {fileID: 1559300812}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1681062969
 BoxCollider:
@@ -11470,8 +11441,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.59, y: 0.79, z: 0.65867305}
-  m_Center: {x: 0, y: 0.42, z: 0.27933657}
+  m_Size: {x: 0.59, y: 0.79, z: 0.30736285}
+  m_Center: {x: 0, y: 0.42, z: 0.24279276}
 --- !u!114 &1681062970
 MonoBehaviour:
   m_ObjectHideFlags: 0
