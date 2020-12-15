@@ -7,6 +7,16 @@ public class TriggerEnemie : MonoBehaviour
     //public
     public bool goblin, groot, ranged,boss,golem;
     public GameObject enemy;
+    //private
+    private bool trowing;
+    private GameObject deletingThis;
+    private void Update()
+    {
+        if (golem)
+        {
+        trowing = enemy.GetComponent<Goblin>().isTrowing;
+        }
+    }
     public void OnTriggerEnter(Collider gameobject)
     {
         if (gameobject.gameObject.tag == "Player")
@@ -36,8 +46,12 @@ public class TriggerEnemie : MonoBehaviour
         {
             if (gameobject.gameObject.tag == "Goblin")
             {
-                enemy.GetComponent<Goblin>().goblinInTrigger = true;
-                Destroy(gameobject);
+                if (!trowing)
+                {
+                    enemy.GetComponent<Goblin>().StartTrow();
+                    deletingThis = gameobject.gameObject;
+                    Invoke("Destroygoblin", 2.5f);
+                }
             }
         }
     }
@@ -66,14 +80,10 @@ public class TriggerEnemie : MonoBehaviour
                 enemy.GetComponent<Goblin>().PlayerInTrigger = false;
             }
         }
-        if (golem)
-        {
-            if (gameobject.gameObject.tag == "Goblin")
-            {
-                enemy.GetComponent<Goblin>().goblinInTrigger = false;
-                //doe hier 1 en de bools
-            }
-        }
+    }
+    public void Destroygoblin()
+    {
+        Destroy(deletingThis);
     }
 }
 //als goblin in box zit

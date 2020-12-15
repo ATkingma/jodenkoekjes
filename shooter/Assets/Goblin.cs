@@ -7,7 +7,7 @@ public class Goblin : MonoBehaviour
     //public
     public float attackCoolDown, damageValue;
     public Animator anim;
-    public bool PlayerInTrigger, isAtacking, goblinInTrigger;
+    public bool PlayerInTrigger, isAtacking, goblinInTrigger, isTrowing;
     public GameObject goblinToSpawn;
     //private
     private GameObject player, itemHolder, lookat,goblinSpawn,goblinToSetActive;
@@ -49,53 +49,62 @@ public class Goblin : MonoBehaviour
                 {
                     if (!PlayerInTrigger)
                     {
-                        UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-                        if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
+                        if (!isTrowing)
                         {
-                            if (dist <= 1)
+                            UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+                            if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
                             {
-                                transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+                                if (dist <= 1)
+                                {
+                                    transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+                                }
                             }
                         }
                     }
                     if (PlayerInTrigger == true)
                     {
-                        Attacking();
+                        if (!isTrowing)
+                        {
+                            Attacking();
                         UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
                         agent.destination = gameObject.transform.position;
+                            }
                     }
                 }
             }
-            if (dist <= 1)
+            if (!isTrowing)
             {
-                UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-                if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
+                if (dist <= 1)
                 {
-                    transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
-                }
-            }
-            if (dist <= 1)
-            {
-                UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-                agent.destination = gameObject.transform.position;
-            }
-            if (dist >= 2.4f)
-            {
-                ResetAnim();
-                UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-                agent.destination = player.transform.position;
-
-                Vector3 forward = transform.TransformDirection(Vector3.forward);
-                Vector3 toOther = player.transform.position - transform.position;
-                if (Vector3.Dot(forward, toOther) < 0)
-                {
-
-                    gameObject.transform.LookAt(lookat.transform);
+                    UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
                     if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
                     {
                         transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
                     }
+                }
+                if (dist <= 1)
+                {
+                    UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+                    agent.destination = gameObject.transform.position;
+                }
+                if (dist >= 2.4f)
+                {
+                    ResetAnim();
+                    UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+                    agent.destination = player.transform.position;
 
+                    Vector3 forward = transform.TransformDirection(Vector3.forward);
+                    Vector3 toOther = player.transform.position - transform.position;
+                    if (Vector3.Dot(forward, toOther) < 0)
+                    {
+
+                        gameObject.transform.LookAt(lookat.transform);
+                        if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
+                        {
+                            transform.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+                        }
+
+                    }
                 }
             }
         }
@@ -176,6 +185,8 @@ public class Goblin : MonoBehaviour
     {
         anim.SetBool("IsAttacking", false);
         anim.SetBool("IsTaunting", false);
+        anim.SetBool("isTrowing", false);
+        anim.SetBool("isPickingUp", false);        
     }
     public void Death()
     {
@@ -269,5 +280,28 @@ public class Goblin : MonoBehaviour
         {
             Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[6], gameObject.transform.position, Quaternion.identity);
         }
+    }
+    public void StartTrow()
+    {
+        isTrowing = true;
+        GrabGoblin();
+        UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent.destination = gameObject.transform.position;
+    }
+    public void GrabGoblin()
+    {
+        Invoke("TrowGoblin", 6);
+        ResetAnim();
+        anim.SetBool("isPickingUp", true);
+    }
+    public void TrowGoblin()
+    {
+        Invoke("ResetTrow", 5);
+        anim.SetBool("isTrowing", true);
+    }
+    public void ResetTrow()
+    {
+        ResetAnim();
+        isTrowing = false;
     }
 }
