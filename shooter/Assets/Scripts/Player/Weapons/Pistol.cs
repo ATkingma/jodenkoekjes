@@ -9,7 +9,7 @@ public class Pistol : WeaponReference
     {
         if (ammo >= 1)
         {
-            if (Random.Range(1, 10) <= explosiveChance)
+            if (Random.Range(1, 11) <= explosiveChance)
             {
                 isExplosive = true;
                 basicBullet.GetComponent<BulletBehaviour>().explode = isExplosive;
@@ -32,10 +32,20 @@ public class Pistol : WeaponReference
             //Destroy(muzzle.gameObject, 0.1f);
 
             //clone.velocity = clone.transform.forward * bulletSpeed;
+            //crits
+            int crit = Random.Range(1, 100);
+            if(crit <= list.itemQuantity[12])
+            {
+                dir *= 2;
+            }
+            //random damage
+            dir = Random.Range(dir - (0.1f * dir), dir + (0.1f * dir));
+            dir = Mathf.Round(dir);
             clone.GetComponent<BulletBehaviour>().speed = bulletSpeed;
             clone.GetComponent<BulletBehaviour>().damage = dir;
-            clone.GetComponent<BulletBehaviour>().explosionCount = list.itemQuantity[12];
+            clone.GetComponent<BulletBehaviour>().explosionCount = list.itemQuantity[6];
             clone.GetComponent<BulletBehaviour>().weaponUsed = gunNumber;
+            clone.GetComponent<BulletBehaviour>().richocetAmount = (int)list.itemQuantity[13];
             RecoilUp();
             DoFuntions(dir);
             ammo--;
@@ -50,8 +60,9 @@ public class Pistol : WeaponReference
         clone.transform.Rotate(randomNumberZ, randomNumberY, randomNumberZ);
         clone.GetComponent<BulletBehaviour>().speed = bulletSpeed;
         clone.GetComponent<BulletBehaviour>().damage = dir;
-        clone.GetComponent<BulletBehaviour>().explosionCount = list.itemQuantity[12];
+        clone.GetComponent<BulletBehaviour>().explosionCount = list.itemQuantity[6];
         clone.GetComponent<BulletBehaviour>().weaponUsed = gunNumber;
+        clone.GetComponent<BulletBehaviour>().richocetAmount = (int)list.itemQuantity[13];
         RecoilUp();
     }
 
