@@ -5,7 +5,7 @@ using UnityEngine;
 public class TriggerEnemie : MonoBehaviour
 {
     //public
-    public bool goblin, groot, ranged,boss,golem;
+    public bool goblin, groot, ranged, boss, golem;
     public GameObject enemy;
     //private
     private bool trowing;
@@ -14,7 +14,7 @@ public class TriggerEnemie : MonoBehaviour
     {
         if (golem)
         {
-        trowing = enemy.GetComponent<Goblin>().isTrowing;
+            trowing = enemy.GetComponent<Goblin>().isTrowing;
         }
     }
     public void OnTriggerEnter(Collider gameobject)
@@ -23,7 +23,7 @@ public class TriggerEnemie : MonoBehaviour
         {
             if (goblin)
             {
-                enemy.GetComponent<EnemieScript>().PlayerInTrigger = true; 
+                enemy.GetComponent<EnemieScript>().PlayerInTrigger = true;
             }
             if (groot)
             {
@@ -48,9 +48,12 @@ public class TriggerEnemie : MonoBehaviour
             {
                 if (!trowing)
                 {
-                    enemy.GetComponent<Goblin>().StartTrow();
-                    deletingThis = gameobject.gameObject;
-                    Invoke("Destroygoblin", 2.5f);
+                    if (enemy.GetComponent<Goblin>().isOnCoolDown == false)
+                    {
+                        enemy.GetComponent<Goblin>().StartTrow();
+                        deletingThis = gameobject.gameObject;
+                        Invoke("Destroygoblin", 2.5f);
+                    }
                 }
             }
         }
@@ -86,17 +89,3 @@ public class TriggerEnemie : MonoBehaviour
         Destroy(deletingThis);
     }
 }
-//als goblin in box zit
-//destroy die
-//en zet bool aan dat die aan het gooien is
-//als player in zit sla die
-//onder tussen gooi de goblins naar de player hoe
-
-//zet bool aan
-//pak hem op
-//zet de gene in de hand aan
-//kijk 1 keer naar de player voordat je gaat gooien
-//dan instantiate op het goeie moment op de positie in de hand die goblin met scripts enz
-//en geef zijn rigid body velocity omhoog zodat dat gebeurt met een soort boogje
-//zet bool uit
-

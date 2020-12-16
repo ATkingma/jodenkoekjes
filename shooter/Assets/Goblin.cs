@@ -7,11 +7,12 @@ public class Goblin : MonoBehaviour
     //public
     public float attackCoolDown, damageValue;
     public Animator anim;
-    public bool PlayerInTrigger, isAtacking, goblinInTrigger, isTrowing;
+    public bool PlayerInTrigger, isAtacking, goblinInTrigger, isTrowing,isOnCoolDown;
     public GameObject goblinToSpawn, goblinSpawn, goblinToSetActive;
     //private
     private GameObject player, itemHolder, lookat;
     private bool doingDamage, death, doingDead, deathIsDoing, didto0;
+    private float coolDownTime = 15,placholder;
     void Start()
     {
         lookat = GameObject.FindGameObjectWithTag("LookAPlayer");
@@ -38,11 +39,11 @@ public class Goblin : MonoBehaviour
                     FindObjectOfType<Saves>().AddKill(1); //goblin
                     Death();
                 }
-
             }
         }
         if (!death)
         {
+            CoolDown();
             float dist = Vector3.Distance(player.transform.position, transform.position);
             if (dist <= 4)
             {
@@ -290,6 +291,7 @@ public class Goblin : MonoBehaviour
         agent.destination = gameObject.transform.position;
         Invoke("On", 2.5f);
         Invoke("Off", 9.5f);
+        Invoke("Spawn", 9.55f);
     }
     public void GrabGoblin()
     {
@@ -306,6 +308,8 @@ public class Goblin : MonoBehaviour
     {
         ResetAnim();
         isTrowing = false;
+        isOnCoolDown = true;
+        placholder = coolDownTime += Time.deltaTime;
     }
     public void Off()
     {
@@ -314,5 +318,16 @@ public class Goblin : MonoBehaviour
     public void On()
     {
         goblinToSetActive.SetActive(true);
+    }
+    public void Spawn()
+    {
+        Instantiate(goblinToSpawn, goblinSpawn.transform.position, Quaternion.identity);
+    }
+    public void CoolDown()
+    {
+        if (placholder < Time.deltaTime)
+        {
+            isOnCoolDown = false;
+        }
     }
 }
