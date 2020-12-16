@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     private Vector3 moveDir;
 
     private float rotX, speed, groundedCooldown = 0.1f, downForce, bodyHeight, baseSprintSpeed, baseMovewmentSpeed;
-    private bool mayJump, mayJumpCheck;
+    private int jumpcount;
 
     private ItemList list;
 
@@ -39,17 +39,6 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        //jump
-        if (Input.GetButtonDown("Jump"))
-        {
-            if (mayJump)
-            {
-                mayJump = false;
-                downForce = jumpForce;
-                Invoke("JumpCheck", 0.1f);
-            }
-        }
-
         //sprint
         if (Input.GetButton("Sprint"))
         {
@@ -73,20 +62,34 @@ public class Movement : MonoBehaviour
         //gravity
         if (controller.isGrounded)
         {
-            if(mayJumpCheck)
-            {
-                mayJumpCheck = false;
-                mayJump = true;
-            }
             if (Time.time == groundedCooldown + Time.time)
             {
                 downForce = -0.01f;
             }
+            if (Input.GetButtonDown("Jump"))
+            {
+                if (jumpcount >= 0)
+                {
+                    downForce = jumpForce;
+                }
+            }
+
+            JumpCheck();
         }
         else
         {
             downForce -= gravity * Time.deltaTime;
+            //jump
+            if (Input.GetButtonDown("Jump"))
+            {
+                if (jumpcount > 0)
+                {
+                    jumpcount--;
+                    downForce = jumpForce;
+                }
+            }
         }
+
 
         //movement
         moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
@@ -124,7 +127,7 @@ public class Movement : MonoBehaviour
     }
     private void JumpCheck()
     {
-        mayJumpCheck = true;
+        jumpcount = (int)list.itemQuantity[11];
     }
     public void CalculateStats()
     {

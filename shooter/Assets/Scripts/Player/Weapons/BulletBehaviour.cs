@@ -9,10 +9,13 @@ public class BulletBehaviour : MonoBehaviour
     public GameObject explosionRadius;
     public float speed;
     public LayerMask mask;
-    public int weaponUsed;
+    public int weaponUsed, richocetAmount;
+    public Rigidbody rb;
 
     //privates
     private Vector3 prefLocation;
+    private Transform dontTouch;
+    private Vector3 thisWay;
 
     private void Start()
     {
@@ -47,9 +50,9 @@ public class BulletBehaviour : MonoBehaviour
         Collider[] hitcolliders = Physics.OverlapSphere(pos, normalHitRange);
         foreach (Collider hitcollider in hitcolliders)
         {
-            if (hitcollider.GetComponent<BaseHealthScript>())
+            if (hitcollider.GetComponent<EnemyHealth>())
             {
-                hitcollider.GetComponent<BaseHealthScript>().ReceiveDamage(damage, weaponUsed);
+                hitcollider.GetComponent<EnemyHealth>().ReceiveDamage(damage, weaponUsed);
             }
         }
         Destroy(gameObject);
@@ -63,7 +66,37 @@ public class BulletBehaviour : MonoBehaviour
             {
                 if (hit.transform.tag == "Enemy")
                 {
-                    HitEnemy(hit.point);
+                    if(hit.transform != dontTouch)
+                    {
+                        if(richocetAmount > 0)
+                        {
+                            Rigidbody clone = Instantiate(rb, hit.point, Quaternion.identity);
+                            clone.GetComponent<BulletBehaviour>().DoNotHit(hit.transform);
+                            richocetAmount--;
+                            Collider[] UwUs = Physics.OverlapSphere(hit.point, 10000);
+                            foreach (Collider UwU in UwUs)
+                            {
+                                print(UwU);
+                                if (UwU.tag == "Enemy")
+                                {
+                                    float dist = Vector3.Distance(clone.transform.position, UwU.transform.position);
+                                    thisWay = UwU.transform.position;
+                                    //if (dist < lastDist)
+                                    //{
+                                    //    lastDist = dist;
+                                    //    thisWay = UwU.transform.position;
+                                    //}
+                                }
+                            }
+                            clone.transform.LookAt(thisWay + new Vector3(0,2,0));
+                            clone.GetComponent<BulletBehaviour>().speed = speed;
+                            clone.GetComponent<BulletBehaviour>().damage = damage;
+                            clone.GetComponent<BulletBehaviour>().explosionCount = explosionCount;
+                            clone.GetComponent<BulletBehaviour>().weaponUsed = weaponUsed;
+                            clone.GetComponent<BulletBehaviour>().richocetAmount = richocetAmount;
+                        }
+                        HitEnemy(hit.point);
+                    }
                 }
                 else
                 {
@@ -72,5 +105,9 @@ public class BulletBehaviour : MonoBehaviour
             }
         }
         prefLocation = transform.position;
+    }
+    public void DoNotHit(Transform gammie)
+    {
+        dontTouch = gammie;
     }
 }

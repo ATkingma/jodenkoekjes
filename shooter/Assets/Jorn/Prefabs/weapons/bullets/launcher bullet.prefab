@@ -106,6 +106,9 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 13312
+  weaponUsed: 0
+  richocetAmount: 0
+  rb: {fileID: 372717927063429436}
 --- !u!54 &372717927063429436
 Rigidbody:
   m_ObjectHideFlags: 0

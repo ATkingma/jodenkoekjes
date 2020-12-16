@@ -46,7 +46,7 @@ public class WeaponReference : MonoBehaviour
         float doubleChance = Random.Range(1, 5);
         if(doubleChance == list.itemQuantity[4])
         {
-            Fire2(dir);
+            Fire2(dir + (0.1f * dir));
         }
     }
 

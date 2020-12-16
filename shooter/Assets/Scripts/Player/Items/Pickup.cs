@@ -14,7 +14,6 @@ public class Pickup : MonoBehaviour
     {
         index = FindObjectOfType<Index>();
         Invoke("StatChanges", 0.1f);
-        StatChanges();
     }
     public void OnTriggerEnter(Collider player)
     {
