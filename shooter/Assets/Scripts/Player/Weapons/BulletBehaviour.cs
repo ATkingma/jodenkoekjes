@@ -16,6 +16,7 @@ public class BulletBehaviour : MonoBehaviour
     private Vector3 prefLocation;
     private Transform dontTouch;
     private Vector3 thisWay;
+    private bool doRichocet;
 
     private void Start()
     {
@@ -70,25 +71,29 @@ public class BulletBehaviour : MonoBehaviour
                     {
                         if(richocetAmount > 0)
                         {
-                            Rigidbody clone = Instantiate(rb, hit.point, Quaternion.identity);
-                            clone.GetComponent<BulletBehaviour>().DoNotHit(hit.transform);
-                            richocetAmount--;
+                            float lastDist = 10000;
                             Collider[] UwUs = Physics.OverlapSphere(hit.point, 10000);
                             foreach (Collider UwU in UwUs)
                             {
-                                print(UwU);
                                 if (UwU.tag == "Enemy")
                                 {
-                                    float dist = Vector3.Distance(clone.transform.position, UwU.transform.position);
-                                    thisWay = UwU.transform.position;
-                                    //if (dist < lastDist)
-                                    //{
-                                    //    lastDist = dist;
-                                    //    thisWay = UwU.transform.position;
-                                    //}
+                                    if(UwU.transform != hit.transform)
+                                    {
+                                        thisWay = transform.position + new Vector3(0, -10, 0);
+                                        float dist = Vector3.Distance(transform.position, UwU.transform.position);
+                                        if (dist < lastDist)
+                                        {
+                                            lastDist = dist;
+                                            thisWay = UwU.transform.position;
+                                        }
+                                    }
                                 }
                             }
-                            clone.transform.LookAt(thisWay + new Vector3(0,2,0));
+                            Rigidbody clone = Instantiate(rb, hit.point, Quaternion.identity);
+                            clone.GetComponent<BulletBehaviour>().DoNotHit(hit.transform);
+                            richocetAmount--;
+
+                            clone.transform.LookAt(thisWay + new Vector3(0,1,0));
                             clone.GetComponent<BulletBehaviour>().speed = speed;
                             clone.GetComponent<BulletBehaviour>().damage = damage;
                             clone.GetComponent<BulletBehaviour>().explosionCount = explosionCount;
