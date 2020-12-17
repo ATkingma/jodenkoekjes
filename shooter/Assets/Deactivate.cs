@@ -22,15 +22,17 @@ public class Deactivate : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         transform.LookAt(player.transform);
         rb = GetComponent<Rigidbody>();
-        speed = 100;
+        speed = 100;    
         rb.velocity = transform.forward * speed;
     }
-    private void Update()
+    public void OnTriggerEnter(Collider gameobject)
     {
-        if (Physics.Raycast(transform.position, -Vector3.up, 1))
+        if (gameobject.gameObject.tag == "Ground")
         {
+        
             DoAchtive();
         }
+            
     }
     public void DoAchtive()
     {
@@ -40,5 +42,6 @@ public class Deactivate : MonoBehaviour
         gameObject.GetComponent<EnemyHealth>().enabled = true;
         gameObject.GetComponent<Animator>().enabled = true;
         agent.enabled = true;
+        controller.enabled = false;
     }
 }
