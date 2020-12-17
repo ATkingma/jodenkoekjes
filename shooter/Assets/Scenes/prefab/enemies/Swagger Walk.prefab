@@ -1195,6 +1195,7 @@ MonoBehaviour:
   groot: 0
   ranged: 1
   boss: 0
+  golem: 0
   enemy: {fileID: 5466880973270337344}
 --- !u!65 &7363158855357206025
 BoxCollider:
@@ -2546,7 +2547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5d319aa2b64f6794291440c652aa44fa, type: 3}
       propertyPath: m_Layer
-      value: 12
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d319aa2b64f6794291440c652aa44fa, type: 3}

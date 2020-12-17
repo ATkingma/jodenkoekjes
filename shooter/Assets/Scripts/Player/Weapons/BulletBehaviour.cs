@@ -11,12 +11,12 @@ public class BulletBehaviour : MonoBehaviour
     public LayerMask mask;
     public int weaponUsed, richocetAmount;
     public Rigidbody rb;
+    public Transform blood;
 
     //privates
     private Vector3 prefLocation;
     private Transform dontTouch;
     private Vector3 thisWay;
-    private bool doRichocet;
 
     private void Start()
     {
@@ -65,6 +65,10 @@ public class BulletBehaviour : MonoBehaviour
             RaycastHit hit;
             if(Physics.Raycast(transform.position, transform.forward, out hit, 1, mask))
             {
+                if(hit.transform.tag == "shield")
+                {
+                    Destroy(gameObject);
+                }
                 if (hit.transform.tag == "Enemy")
                 {
                     if(hit.transform != dontTouch)
@@ -101,6 +105,8 @@ public class BulletBehaviour : MonoBehaviour
                             clone.GetComponent<BulletBehaviour>().richocetAmount = richocetAmount;
                         }
                         HitEnemy(hit.point);
+                        Transform bloodymess = Instantiate(blood, hit.point, transform.rotation);
+                        Destroy(bloodymess, 1);
                     }
                 }
                 else

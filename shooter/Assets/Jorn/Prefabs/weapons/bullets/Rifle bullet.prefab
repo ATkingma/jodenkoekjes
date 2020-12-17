@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8751106260456308472}
   - component: {fileID: 5178689170352296197}
   - component: {fileID: 2081206893362945387}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Rifle bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,8 @@ MonoBehaviour:
   speed: 0
   mask:
     serializedVersion: 2
-    m_Bits: 13312
+    m_Bits: 78848
   weaponUsed: 0
   richocetAmount: 0
   rb: {fileID: 5178689170352296197}
+  blood: {fileID: 5516455397620995255, guid: 4c37220cd3b090847813446f7cf7fd14, type: 3}
