@@ -17130,14 +17130,14 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 7.2
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
-  m_RenderAlignment: 0
+  m_RenderAlignment: 4
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_UseCustomVertexStreams: 1
@@ -17147,7 +17147,7 @@ ParticleSystemRenderer:
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -17161,7 +17161,7 @@ ParticleSystem:
   m_GameObject: {fileID: 2098440543}
   serializedVersion: 6
   lengthInSec: 1
-  simulationSpeed: 1
+  simulationSpeed: 1.21
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -17616,7 +17616,7 @@ ParticleSystem:
     startRotationY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.076096356
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -17866,7 +17866,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.001
+      value: 0.0001
       mode: 0
       spread: 0
       speed:
@@ -18487,7 +18487,7 @@ ParticleSystem:
     fps: 30
     frameOverTime:
       serializedVersion: 2
-      minMaxState: 1
+      minMaxState: 2
       scalar: 0.9999
       minScalar: 0.9999
       maxCurve:
@@ -18592,8 +18592,8 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
-    tilesX: 2
-    tilesY: 8
+    tilesX: 5
+    tilesY: 2
     animationType: 0
     rowIndex: 0
     cycles: 1
@@ -21873,13 +21873,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098440543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 702.8406, y: 1441.58, z: -789.64}
+  m_LocalRotation: {x: 0.7089555, y: 0, z: 0, w: 0.7052532}
+  m_LocalPosition: {x: 734.979, y: 1439.986, z: -801.971}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 26
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90.3, y: 0, z: 0}
 --- !u!1 &10624145929824805
 GameObject:
   m_ObjectHideFlags: 0
@@ -22438,14 +22438,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7252436756576719261}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.188, z: 0}
+  m_LocalRotation: {x: 0.000000005587935, y: 0.018995551, z: 0.0019280703, w: 0.9998177}
+  m_LocalPosition: {x: -0.112, y: -0.19, z: 0.019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7687848298014864218}
   m_Father: {fileID: 3454140854116241160}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.004, y: 2.177, z: 0.221}
 --- !u!1 &1565042324368076108
 GameObject:
   m_ObjectHideFlags: 0
