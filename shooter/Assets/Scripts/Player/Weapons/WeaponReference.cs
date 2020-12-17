@@ -7,7 +7,7 @@ public class WeaponReference : MonoBehaviour
 {
     public float baseAttackSpeed, baseDamage, baseBulletSpeed, attackSpeed, explosiveChance, bulletSpeedMulti;
     public int maxAmmo, ammoRecharge;
-    public Transform bulletOri, muzzleFlash;
+    public Transform bulletOri, muzzleFlash, muzzleFlash2;
     public Rigidbody basicBullet;
     public bool isUsed = false;
     public LayerMask canShoot;
@@ -25,6 +25,7 @@ public class WeaponReference : MonoBehaviour
     protected float bulletSpeed, ammo;
     protected MeshRenderer mat;
     protected TextMeshProUGUI ammoItem;
+    protected int muzzNum;
 
     private void Awake()
     {

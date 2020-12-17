@@ -71,18 +71,18 @@ public class Trigger : MonoBehaviour
                     }
                 }
             }
-            if (Input.GetButtonDown("2"))
-            {
-                holdingGun = false;
-                SwapToMelee();
-                CalculateStats();
-            }
-            if (Input.GetButtonDown("1"))
-            {
-                holdingGun = true;
-                SwapToGun();
-                CalculateStats();
-            }
+            //if (Input.GetButtonDown("2"))
+            //{
+            //    holdingGun = false;
+            //    SwapToMelee();
+            //    CalculateStats();
+            //}
+            //if (Input.GetButtonDown("1"))
+            //{
+            //    holdingGun = true;
+            //    SwapToGun();
+            //    CalculateStats();
+            //}
         }
     }
     private void SwapToMelee()

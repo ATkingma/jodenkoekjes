@@ -28,8 +28,16 @@ public class Pistol : WeaponReference
             clone.transform.Rotate(randomNumberZ, randomNumberY, randomNumberZ);
 
             //muzzleflash
-            //Transform muzzle = Instantiate(muzzleFlash, bulletOri.position, transform.rotation, transform);
-            //Destroy(muzzle.gameObject, 0.1f);
+            Invoke("MuzzOff", 0.1f);
+            muzzNum = Random.Range(1, 3);
+            if(muzzNum == 1)
+            {
+                muzzleFlash.gameObject.SetActive(true);
+            }
+            else
+            {
+                muzzleFlash2.gameObject.SetActive(true);
+            }
 
             //clone.velocity = clone.transform.forward * bulletSpeed;
             //crits
@@ -79,6 +87,17 @@ public class Pistol : WeaponReference
             ammoItem.text = Mathf.Floor(ammo) + " / " + maxAmmo.ToString();
             Color nNew = new Color(mat.material.color.r, mat.material.color.g, mat.material.color.b, ammo / (0.1f * maxAmmo));
             mat.material.SetColor("_BaseColor", nNew);
+        }
+    }
+    public void MuzzOff()
+    {
+        if (muzzNum == 1)
+        {
+            muzzleFlash.gameObject.SetActive(false);
+        }
+        else
+        {
+            muzzleFlash2.gameObject.SetActive(false);
         }
     }
 }

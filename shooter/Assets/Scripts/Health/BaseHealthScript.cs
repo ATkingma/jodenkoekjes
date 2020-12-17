@@ -57,7 +57,7 @@ public class BaseHealthScript : MonoBehaviour
         //glasscannon health stat
         if (list.itemQuantity[11] > 0)
         {
-            maxHealth = (maxMaxHealth + (10 * list.itemQuantity[2])) / Mathf.Pow(2, list.itemQuantity[11]);
+            maxHealth = (maxMaxHealth + (10 * list.itemQuantity[2])) / Mathf.Pow(2, list.itemQuantity[5]);
         }
     }
 }
