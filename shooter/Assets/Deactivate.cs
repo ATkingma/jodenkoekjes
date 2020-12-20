@@ -22,7 +22,7 @@ public class Deactivate : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         transform.LookAt(player.transform);
         rb = GetComponent<Rigidbody>();
-        speed = 100;    
+        speed = 50;    
         rb.velocity = transform.forward * speed;
     }
     public void OnTriggerEnter(Collider gameobject)
