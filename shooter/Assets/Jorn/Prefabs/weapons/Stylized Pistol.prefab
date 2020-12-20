@@ -68,7 +68,9 @@ MonoBehaviour:
   gem: {fileID: 8314230032728289911}
   gunNumber: 0
   recoilUp: {x: -2, y: 0, z: 0}
-  spread: 1
+  spread: 0.5
+  spreadIncrease: 0
+  totalSpread: 0
 --- !u!65 &2673145041434365955
 BoxCollider:
   m_ObjectHideFlags: 0

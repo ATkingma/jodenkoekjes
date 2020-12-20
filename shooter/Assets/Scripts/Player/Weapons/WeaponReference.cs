@@ -16,7 +16,7 @@ public class WeaponReference : MonoBehaviour
 
     //recoil
     public Vector3 recoilUp;
-    public float spread;
+    public float spread, spreadIncrease, totalSpread;
 
     //protected
     protected RaycastHit hit;

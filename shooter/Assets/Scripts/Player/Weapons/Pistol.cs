@@ -22,9 +22,10 @@ public class Pistol : WeaponReference
 
             Rigidbody clone = Instantiate(basicBullet, bulletOri.position, transform.rotation);
             //spread
-            var randomNumberX = Random.Range(-spread, spread);
-            var randomNumberY = Random.Range(-spread, spread);
-            var randomNumberZ = Random.Range(-spread, spread);
+            totalSpread += spread;
+            var randomNumberX = Random.Range(-totalSpread, totalSpread);
+            var randomNumberY = Random.Range(-totalSpread, totalSpread);
+            var randomNumberZ = Random.Range(-totalSpread, totalSpread);
             clone.transform.Rotate(randomNumberZ, randomNumberY, randomNumberZ);
 
             //muzzleflash
@@ -87,6 +88,8 @@ public class Pistol : WeaponReference
             ammoItem.text = Mathf.Floor(ammo) + " / " + maxAmmo.ToString();
             Color nNew = new Color(mat.material.color.r, mat.material.color.g, mat.material.color.b, ammo / (0.1f * maxAmmo));
             mat.material.SetColor("_BaseColor", nNew);
+
+            totalSpread = Mathf.Clamp(totalSpread - 0.1f * Time.deltaTime, 0, 2);
         }
     }
     public void MuzzOff()
