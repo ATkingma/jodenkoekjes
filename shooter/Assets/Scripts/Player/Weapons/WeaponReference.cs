@@ -17,6 +17,8 @@ public class WeaponReference : MonoBehaviour
     //recoil
     public Vector3 recoilUp;
     public float spread, spreadIncrease, totalSpread;
+    //huttig
+    public Animator anim;
 
     //protected
     protected RaycastHit hit;
@@ -58,11 +60,12 @@ public class WeaponReference : MonoBehaviour
 
     public void RecoilUp()
     {
-        transform.localEulerAngles += recoilUp;
+        //transform.localEulerAngles += recoilUp;
         Invoke("RecoilDown", 0.1f);
     }
     public void RecoilDown()
     {
-        transform.localEulerAngles -= recoilUp / 2;
+        anim.SetBool("isShooting", false);
+        //transform.localEulerAngles -= recoilUp / 2;
     }
 }
