@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3454140853429116399}
   - component: {fileID: 2640308273281943383}
   - component: {fileID: 2673145041434365955}
+  - component: {fileID: 8947128653380748567}
   m_Layer: 11
   m_Name: Stylized Pistol
   m_TagString: Gun
@@ -84,6 +85,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.69284445, y: 0.6659034, z: 3.1421218}
   m_Center: {x: 0.0023823678, y: 0.13196346, z: 1.1998184}
+--- !u!95 &8947128653380748567
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2640308273281943381}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4197066302301128505
 GameObject:
   m_ObjectHideFlags: 0
