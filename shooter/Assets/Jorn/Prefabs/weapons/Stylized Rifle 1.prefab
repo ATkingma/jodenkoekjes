@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 2807661979264010811}
   - component: {fileID: 3295791727743766659}
   - component: {fileID: 3295791727743766658}
+  - component: {fileID: 7643131635372200354}
   m_Layer: 11
   m_Name: Stylized Rifle 1
   m_TagString: Gun
@@ -261,7 +262,10 @@ MonoBehaviour:
   gem: {fileID: 2939070098708511766}
   gunNumber: 2
   recoilUp: {x: -2, y: 0, z: 0}
-  spread: 0.5
+  spread: 0.2
+  spreadIncrease: 0
+  totalSpread: 0
+  anim: {fileID: 7643131635372200354}
 --- !u!65 &3295791727743766658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -275,6 +279,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.29069397, y: 0.21299171, z: 1.9414406}
   m_Center: {x: 0.013640568, y: 0.08708954, z: 0.9209738}
+--- !u!95 &7643131635372200354
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3295791727743766657}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7c80ba46d2421d4caa14c37dc55b45c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &191603193172754235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 569192645640663837, guid: 7b465dcb18198c44aab280ded7263710, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.87
+      value: 2.484
       objectReference: {fileID: 0}
     - target: {fileID: 569192645640663837, guid: 7b465dcb18198c44aab280ded7263710, type: 3}
       propertyPath: m_LocalRotation.x
@@ -352,11 +375,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 569192645640663837, guid: 7b465dcb18198c44aab280ded7263710, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 569192645640663837, guid: 7b465dcb18198c44aab280ded7263710, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.49
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b465dcb18198c44aab280ded7263710, type: 3}
@@ -382,7 +405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5416874964231489575, guid: 1f55de8b1230e9e458b2da5d1beb17f5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.57
+      value: 2.4839995
       objectReference: {fileID: 0}
     - target: {fileID: 5416874964231489575, guid: 1f55de8b1230e9e458b2da5d1beb17f5, type: 3}
       propertyPath: m_LocalRotation.x
@@ -418,11 +441,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5416874964231489575, guid: 1f55de8b1230e9e458b2da5d1beb17f5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5416874964231489575, guid: 1f55de8b1230e9e458b2da5d1beb17f5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 7231202656603106538, guid: 1f55de8b1230e9e458b2da5d1beb17f5, type: 3}
       propertyPath: m_Color.a
