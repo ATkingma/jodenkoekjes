@@ -14,7 +14,6 @@ public class Boss : MonoBehaviour
     private GameObject player, itemHolder,playerPosition;
     private GameObject attack1_1Pos, attack1_2Pos, attack1_3Pos, attack1_4Pos, attack2Pos, attack3Pos, attack4_1Pos, attack4_2Pos, attack4_3Pos;
     private GameObject[] itemSpawnPoints;
-    private Vector3[] attack1RenderLine;
     private float speed;
     private ParticleSystem particle;
     private Vector3 playerPos;
@@ -63,17 +62,47 @@ public class Boss : MonoBehaviour
                     attack1_2Pos.GetComponent<LineRenderer>().SetPosition(0, attack1_2Pos.transform.position);
                     attack1_3Pos.GetComponent<LineRenderer>().SetPosition(0, attack1_3Pos.transform.position);
                     attack1_4Pos.GetComponent<LineRenderer>().SetPosition(0, attack1_4Pos.transform.position);
+                    Debug.DrawRay(transform.position + new Vector3(0, 0.5f, 0), transform.forward, Color.green, 100000);
+                    RaycastHit hit;
+                    if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
+                    {
+                        if (hit.transform.tag == "Player")
+                        {
+                            player.GetComponent<PlayerHealth>().ReceiveDamage(damage2, 0);
+                            print("1");//doet t ook
+                        }
+                    }
                 }
                 if (attack4IsActive == true)
                 {
                     attack4_1Pos.GetComponent<LineRenderer>().SetPosition(0, attack4_1Pos.transform.position);
                     attack4_2Pos.GetComponent<LineRenderer>().SetPosition(0, attack4_2Pos.transform.position);
                     attack4_3Pos.GetComponent<LineRenderer>().SetPosition(0, attack4_3Pos.transform.position);
+                    RaycastHit hit;
+                    Debug.DrawRay(transform.position + new Vector3(0, 0.5f, 0), transform.forward,Color.green, 100000);
+                    if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
+                    {
+                        if (hit.transform.tag == "Player")
+                        {
+                            player.GetComponent<PlayerHealth>().ReceiveDamage(damage2, 0);
+                            print("2");// deze ook soort van?
+                        }
+                    }
                 }
                 if (attack2IsActive == true)
                 {
                     Invoke("ResetAttack2", 0.5f);
                     attack2Pos.GetComponent<LineRenderer>().SetPosition(0, attack2Pos.transform.position);
+                    RaycastHit hit;
+                    Debug.DrawRay(transform.position + new Vector3(0, 0.5f, 0), transform.forward, Color.green, 100000);
+                    if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
+                    {
+                        if (hit.transform.tag == "Player")
+                        {
+                            player.GetComponent<PlayerHealth>().ReceiveDamage(damage2, 0);
+                            print("3");//doet het
+                        }
+                    }
                 }
                 if (Dontlook == true)
                 {
@@ -305,11 +334,11 @@ public class Boss : MonoBehaviour
         RaycastHit hit;
         if (Physics.Linecast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
         {
-            if (hit.transform.tag == "Player")
-            {
-                player.GetComponent<PlayerHealth>().ReceiveDamage(damage3, 0);
-                print("hget");
-            }
+            //if (hit.transform.tag == "Player")
+            //{
+            //    player.GetComponent<PlayerHealth>().ReceiveDamage(damage3, 0);
+            //    print("hget");
+            //}
         }
     }
     public void QuickLighting()//deze
@@ -321,15 +350,14 @@ public class Boss : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
         {
-            if (hit.transform.tag == "Player")
-            {
-                player.GetComponent<PlayerHealth>().ReceiveDamage(damage1, 0);
-                print("quick");            
-            }
+            //if (hit.transform.tag == "Player")
+            //{
+            //    player.GetComponent<PlayerHealth>().ReceiveDamage(damage1, 0);
+            //    print("quick");            
+            //}
         }
         if (Physics.Raycast(transform.position, transform.forward, out hit))
-        {
-            if (hit.collider.gameObject.tag == "Tagged") { Debug.DrawRay(transform.position, transform.forward, Color.green); print("Hit"); }
+        {        
         }
 
         }
@@ -350,11 +378,11 @@ public class Boss : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
         {
-            if (hit.transform.tag == "Player")
-            {
-                player.GetComponent<PlayerHealth>().ReceiveDamage(damage2, 0);
-                print("hit4");
-            }
+            //if (hit.transform.tag == "Player")
+            //{
+            //    player.GetComponent<PlayerHealth>().ReceiveDamage(damage2, 0);
+            //    print("hit4");
+            //}
         }
         Invoke("DoAttack4LineOff", 0.6f);
     }
