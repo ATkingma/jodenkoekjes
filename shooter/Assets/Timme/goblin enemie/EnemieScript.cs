@@ -24,7 +24,7 @@ public class EnemieScript : MonoBehaviour
         {
             if (!didto0)
             {
-             GetComponent<EnemyHealth>().health = 0;
+                GetComponent<EnemyHealth>().health = 0;
             }           
         }
         if (GetComponent<EnemyHealth>().health <= 0)
@@ -277,5 +277,9 @@ public class EnemieScript : MonoBehaviour
         {
             Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[6], gameObject.transform.position, Quaternion.identity);            
         }
+    }
+    public void DifficultyIncrease(int UwU)
+    {
+        damageValue *= 1 + (0.1f * UwU);
     }
 }

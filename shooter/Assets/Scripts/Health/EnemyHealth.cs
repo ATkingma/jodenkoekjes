@@ -28,4 +28,10 @@ public class EnemyHealth : BaseHealthScript
             FindObjectOfType<Saves>().AddKilledBy(usedWeapon);
         }
     }
+    public void DifficultyIncrease(int UwU)
+    {
+        maxHealth *= 1 + (0.1f * UwU);
+        health *= 1 + (0.1f * UwU);
+        maxMaxHealth *= 1 + (0.1f * UwU);
+    }
 }

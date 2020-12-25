@@ -7,12 +7,13 @@ public class BaseHealthScript : MonoBehaviour
     public float maxHealth, executebelow, popupheight;
     public Transform popup;
     public bool damageNumbersBool = true;
+    public int difficulty;
 
     //privates
     public float health, maxMaxHealth;
     protected ItemList list;
 
-    private void Start()
+    public virtual void Start()
     {
         maxMaxHealth = maxHealth;
         health = maxHealth;

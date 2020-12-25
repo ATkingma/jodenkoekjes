@@ -16,6 +16,9 @@ public class Spawner : MonoBehaviour
     private bool isSpawning, doingCooldDown,gettingHard;
     private GameObject player;
 
+    //difficulty
+    public int difficult;
+
     //jorn 
     private float seconde, minuut, uur, secondeTotal, minuutTotal, uurTotal;
 
@@ -48,6 +51,8 @@ public class Spawner : MonoBehaviour
         {
             seconde = 0;
             minuut++;
+
+            difficult = (int)Mathf.Floor(minuut / 2);
             if (minuut >= 60)
             {
                 minuut = 0;
@@ -103,7 +108,9 @@ public class Spawner : MonoBehaviour
                     if (dist <= 100 && dist >= 15)
                     {
                         int enemiePrefab = Random.Range(0, enemie.Count);
-                        Instantiate(enemie[enemiePrefab], spawnPoint.transform.position, Quaternion.identity);
+                        GameObject clone = Instantiate(enemie[enemiePrefab], spawnPoint.transform.position, Quaternion.identity);
+                        clone.GetComponent<EnemyHealth>().DifficultyIncrease((int)minuut);
+                        clone.GetComponent<EnemieScript>().DifficultyIncrease((int)minuut);
                         spawnThisTime -= 1;
                         activeSpawnPoints.Clear();
                     }
