@@ -8,7 +8,7 @@ public class EnemyHealth : BaseHealthScript
     {
         if(list.itemQuantity[8] > 0)
         {
-            FindObjectOfType<PlayerHealth>().Heal(amount * (0.1f * list.itemQuantity[14]));
+            FindObjectOfType<PlayerHealth>().Heal(amount * (0.1f * list.itemQuantity[8]));
         }
         if (list.itemQuantity[7] > 0)
         {

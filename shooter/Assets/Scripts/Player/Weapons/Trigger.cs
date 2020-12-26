@@ -141,7 +141,7 @@ public class Trigger : MonoBehaviour
         //glasscannon
         if (itemList.itemQuantity[5] > 0)
         {
-            calculatedDamage = (itemList.itemQuantity[5] + itemList.itemQuantity[11]) * calculatedDamage;
+            calculatedDamage *= itemList.itemQuantity[5] + itemList.itemQuantity[5];
         }
         //explosives
         if(itemList.itemQuantity[6] > 0)
