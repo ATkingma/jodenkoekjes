@@ -19,6 +19,12 @@ public class BaseHealthScript : MonoBehaviour
         health = maxHealth;
         list = FindObjectOfType<ItemList>();
         damageNumbersBool = PlayerPrefs.GetInt("damageNumbersBool") != 0;
+
+        if(GetComponent<Boss>())
+        {
+            float temp = PlayerPrefs.GetFloat("minuut", 0);
+            GetComponent<EnemyHealth>().DifficultyIncrease((int)temp * 3);
+        }
     }
     public virtual void ReceiveDamage(float amount, int usedWeapon)
     {
@@ -56,9 +62,9 @@ public class BaseHealthScript : MonoBehaviour
     {
         maxHealth = maxMaxHealth + (10 * list.itemQuantity[2]);
         //glasscannon health stat
-        if (list.itemQuantity[11] > 0)
+        if (list.itemQuantity[5] > 0)
         {
-            maxHealth = (maxMaxHealth + (10 * list.itemQuantity[2])) / Mathf.Pow(2, list.itemQuantity[5]);
+            maxHealth = Mathf.Clamp(maxHealth = (maxMaxHealth + (10 * list.itemQuantity[2])) / Mathf.Pow(2, list.itemQuantity[5]), 10, Mathf.Infinity); 
         }
     }
 }

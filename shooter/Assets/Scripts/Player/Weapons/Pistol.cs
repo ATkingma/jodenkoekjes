@@ -21,6 +21,7 @@ public class Pistol : WeaponReference
             }
 
             anim.SetBool("isShooting", true);
+            anim.speed += attackSpeed;
             Rigidbody clone = Instantiate(basicBullet, bulletOri.position, transform.rotation);
             //spread
             totalSpread += spread;

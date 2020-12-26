@@ -30,8 +30,9 @@ public class EnemyHealth : BaseHealthScript
     }
     public void DifficultyIncrease(int UwU)
     {
-        maxHealth *= 1 + (0.1f * UwU);
-        health *= 1 + (0.1f * UwU);
-        maxMaxHealth *= 1 + (0.1f * UwU);
+        //health * min + bosses killed
+        maxHealth *= 1 + (0.1f * UwU) + (0.1f * PlayerPrefs.GetInt("bossesKilled", 0));
+        health *= 1 + (0.1f * UwU) + (0.1f * PlayerPrefs.GetInt("bossesKilled", 0));
+        maxMaxHealth *= 1 + (0.1f * UwU) + (0.1f * PlayerPrefs.GetInt("bossesKilled", 0));
     }
 }

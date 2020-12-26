@@ -20,7 +20,9 @@ public class Pickup : MonoBehaviour
         if(player.tag == "Player")
         {
             player.GetComponent<ItemList>().itemQuantity[(int)item] += 1;
+            player.GetComponent<ItemList>().PrintItemInChat((int)item);
             StatChanges();
+            //stats
             for(int i = 0; i < itemStats.Count; i++)
             {
                 itemStats[i] = PlayerPrefs.GetFloat("itemstats" + i, 0);

@@ -37,8 +37,15 @@ public class Saves : MonoBehaviour
         PlayerPrefs.SetFloat("seconde", 0);
         PlayerPrefs.SetFloat("minuut", 0);
         PlayerPrefs.SetFloat("uur", 0);
+        PlayerPrefs.SetInt("bossesKilled", 0);
         list.DeleteSaves();
         trig.DeleteSaves();
+    }
+    public void BossesKilled()
+    {
+        int temp = PlayerPrefs.GetInt("bossesKilled", 0);
+        temp++;
+        PlayerPrefs.SetInt("bossesKilled", temp);
     }
     public void AddKilledBy(int gun)
     {

@@ -38,6 +38,11 @@ public class Boss : MonoBehaviour
         soMutch = 5;
         itemHolder = GameObject.FindGameObjectWithTag("GameManager");
         itemSpawnPoints= GameObject.FindGameObjectsWithTag("ItemDropPoint");
+
+        float temp = PlayerPrefs.GetFloat("minuut", 0);
+        damage1 *= 0.1f * temp;
+        damage2 *= 0.1f * temp;
+        damage3 *= 0.1f * temp;
     }
     void Update()
     {
@@ -395,6 +400,7 @@ public class Boss : MonoBehaviour
     public void DeathFunction()
     {
         FindObjectOfType<Saves>().AddKill(5); //boss
+        FindObjectOfType<Saves>().BossesKilled();
         Reset();
         bossisdeath = true;
         Invoke("Disapear", 4);
