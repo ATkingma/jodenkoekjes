@@ -39,6 +39,7 @@ public class Boss : MonoBehaviour
         itemHolder = GameObject.FindGameObjectWithTag("GameManager");
         itemSpawnPoints= GameObject.FindGameObjectsWithTag("ItemDropPoint");
 
+        //boss damage based on min
         float temp = PlayerPrefs.GetFloat("minuut", 0);
         damage1 *= 0.1f * temp;
         damage2 *= 0.1f * temp;
