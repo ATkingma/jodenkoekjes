@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.1732424, g: 0.21654217, b: 0.29858208, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -245,7 +245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40054711}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 144.1, y: 8.16, z: 25.8}
+  m_LocalPosition: {x: 144.1, y: 6.895, z: 25.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 699554033}
@@ -675,7 +675,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106241634}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.908634, y: 2.5546098, z: 121.27334}
+  m_LocalPosition: {x: 41.49, y: 2.5546098, z: 127.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 699554033}
@@ -955,9 +955,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.27039003
       objectReference: {fileID: 0}
+    - target: {fileID: 8065746135192771159, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065746135192771159, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8209021387850074433, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
       propertyPath: m_Name
       value: Obilisk Dark-Primary (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209021387850074433, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
@@ -976,6 +988,18 @@ PrefabInstance:
     - target: {fileID: 606033616484854150, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
       propertyPath: m_Name
       value: Pillar Alter Dark-Primary Edit (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 606033616484854150, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021613720499503571, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021613720499503571, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6650190752701598374, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1224,7 +1248,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139366897}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.6, y: 2.5546098, z: 62.8}
+  m_LocalPosition: {x: 40.57, y: 2.5546098, z: 57.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 699554033}
@@ -5687,7 +5711,6 @@ GameObject:
   - component: {fileID: 143717423}
   - component: {fileID: 143717426}
   - component: {fileID: 143717425}
-  - component: {fileID: 143717424}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: SpawnPoint
@@ -5703,25 +5726,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143717422}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.3, y: 2.5546098, z: 58.37333}
+  m_LocalPosition: {x: 16.29, y: 2.5546098, z: 53.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 699554033}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &143717424
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 143717422}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &143717425
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6248,9 +6258,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 178919297}
     m_Modifications:
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_Name
       value: Obilisk 2 Dark-Primary (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3454016146741335818, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12795,7 +12817,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380230047}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 89.70863, y: 2.5546098, z: -20.22667}
+  m_LocalPosition: {x: 89.05, y: 2.5546098, z: -37.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 699554033}
@@ -13182,9 +13204,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.27039003
       objectReference: {fileID: 0}
+    - target: {fileID: 8065746135192771159, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065746135192771159, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8209021387850074433, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
       propertyPath: m_Name
       value: Obilisk Dark-Primary (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209021387850074433, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
@@ -18460,6 +18494,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 178919297}
     m_Modifications:
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2910899995701450958, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.35
@@ -18479,6 +18521,10 @@ PrefabInstance:
     - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_Name
       value: Obilisk 2 Dark-Primary
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3454016146741335818, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23089,6 +23135,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillar Alter Dark-Primary Edit
       objectReference: {fileID: 0}
+    - target: {fileID: 606033616484854150, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021613720499503571, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021613720499503571, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6650190752701598374, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 18.2199
@@ -24306,6 +24364,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillar Alter Dark-Primary Edit (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 606033616484854150, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021613720499503571, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021613720499503571, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6650190752701598374, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 20.486343
@@ -25088,9 +25158,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 178919297}
     m_Modifications:
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_Name
       value: Obilisk 2 Dark-Primary (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3454016146741335818, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31240,6 +31322,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 178919297}
     m_Modifications:
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2910899995701450958, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.35
@@ -31259,6 +31349,10 @@ PrefabInstance:
     - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_Name
       value: Obilisk 2 Dark-Primary (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3454016146741335818, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31581,9 +31675,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.27039003
       objectReference: {fileID: 0}
+    - target: {fileID: 8065746135192771159, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065746135192771159, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8209021387850074433, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
       propertyPath: m_Name
       value: Obilisk Dark-Primary (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209021387850074433, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
@@ -31622,7 +31728,6 @@ GameObject:
   - component: {fileID: 984231845}
   - component: {fileID: 984231848}
   - component: {fileID: 984231847}
-  - component: {fileID: 984231846}
   m_Layer: 0
   m_Name: Cube
   m_TagString: SpawnPoint
@@ -31644,19 +31749,6 @@ Transform:
   m_Father: {fileID: 699554033}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &984231846
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984231844}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &984231847
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31769,9 +31861,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.279035
       objectReference: {fileID: 0}
+    - target: {fileID: 8065746135192771159, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065746135192771159, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8209021387850074433, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
       propertyPath: m_Name
       value: Obilisk Dark-Primary
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209021387850074433, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
@@ -32004,6 +32108,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pillar Alter Dark-Primary Edit (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 606033616484854150, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021613720499503571, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021613720499503571, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6650190752701598374, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.45276
@@ -32184,7 +32300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043199956}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.9, y: 2.5546098, z: 90.3}
+  m_LocalPosition: {x: 34.1, y: 2.5546098, z: 47.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 699554033}
@@ -33033,6 +33149,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pyramid 3 Dark theme
       objectReference: {fileID: 0}
+    - target: {fileID: 4288032437654722246, guid: 113842dd230017441b94cf4ea191cef6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5902740341502985309, guid: 113842dd230017441b94cf4ea191cef6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5902740341502985309, guid: 113842dd230017441b94cf4ea191cef6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 113842dd230017441b94cf4ea191cef6, type: 3}
 --- !u!1 &1166835560
@@ -33378,7 +33506,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195533739}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.3, y: 2.5546098, z: 69}
+  m_LocalPosition: {x: 42.55, y: 2.5546098, z: 42.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 699554033}
@@ -33445,12 +33573,76 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2246752170334991956, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246752170334991956, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246752170334991956, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246752170334991956, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3436629012583981437, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3436629012583981437, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3436629012583981437, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3436629012583981437, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4999636475249325008, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4999636475249325008, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448025162663655072, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448025162663655072, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448025162663655072, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5448025162663655072, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035996853390720783, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035996853390720783, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035996853390720783, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035996853390720783, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6481214844266174747, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
@@ -33553,6 +33745,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8763896246835538323, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763896246835538323, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763896246835538323, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763896246835538323, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
 --- !u!1 &1220719093
@@ -33566,7 +33774,6 @@ GameObject:
   - component: {fileID: 1220719094}
   - component: {fileID: 1220719097}
   - component: {fileID: 1220719096}
-  - component: {fileID: 1220719095}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: SpawnPoint
@@ -33582,25 +33789,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220719093}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 83.90863, y: 2.5546098, z: 84.573326}
+  m_LocalPosition: {x: 80.89, y: 2.5546098, z: 87.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 699554033}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1220719095
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220719093}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1220719096
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34099,7 +34293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244277847}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.7, y: 4.28, z: 83.3}
+  m_LocalPosition: {x: 58.79, y: 2.226, z: 68.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 699554033}
@@ -34437,7 +34631,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308247781}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 71.5, y: 2.5546098, z: 111.5}
+  m_LocalPosition: {x: 88.79, y: 2.5546098, z: 111.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 699554033}
@@ -40467,9 +40661,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.27903497
       objectReference: {fileID: 0}
+    - target: {fileID: 8065746135192771159, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065746135192771159, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8209021387850074433, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
       propertyPath: m_Name
       value: Obilisk Dark-Primary (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209021387850074433, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
@@ -45885,6 +46091,18 @@ PrefabInstance:
     - target: {fileID: 606033616484854150, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
       propertyPath: m_Name
       value: Pillar Alter Dark-Primary Edit (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 606033616484854150, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021613720499503571, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021613720499503571, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6650190752701598374, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -59992,9 +60210,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 178919297}
     m_Modifications:
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_Name
       value: Obilisk 2 Dark-Primary (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3454016146741335818, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -60174,6 +60404,18 @@ PrefabInstance:
     - target: {fileID: 606033616484854150, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
       propertyPath: m_Name
       value: Pillar Alter Dark-Primary Edit (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 606033616484854150, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021613720499503571, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021613720499503571, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6650190752701598374, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -65306,6 +65548,18 @@ PrefabInstance:
     - target: {fileID: 606033616484854150, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
       propertyPath: m_Name
       value: Pillar Alter Dark-Primary Edit (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 606033616484854150, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021613720499503571, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021613720499503571, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6402642485470665577, guid: f669bc20f64af8047ae3cc8ab69ddcef, type: 3}
       propertyPath: m_LocalPosition.y
@@ -71394,6 +71648,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 178919297}
     m_Modifications:
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2910899995701450958, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.35
@@ -71413,6 +71675,10 @@ PrefabInstance:
     - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_Name
       value: Obilisk 2 Dark-Primary (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3454016146741335818, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -72792,6 +73058,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 178919297}
     m_Modifications:
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2910899995701450958, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.35
@@ -72811,6 +73085,10 @@ PrefabInstance:
     - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_Name
       value: Obilisk 2 Dark-Primary (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3454016146741335818, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -73907,9 +74185,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 178919297}
     m_Modifications:
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535043574006334068, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_Name
       value: Obilisk 2 na tussenpresentatie V2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454016146741335813, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3454016146741335818, guid: 37d870a66f6918146b6b732137671bc2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -74020,9 +74310,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3850635261869309853, guid: 3799cd3ed957aba48b2557aaf13853ae, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3850635261869309853, guid: 3799cd3ed957aba48b2557aaf13853ae, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8181078578556368297, guid: 3799cd3ed957aba48b2557aaf13853ae, type: 3}
       propertyPath: m_Name
       value: Pyramid low alter
+      objectReference: {fileID: 0}
+    - target: {fileID: 8181078578556368297, guid: 3799cd3ed957aba48b2557aaf13853ae, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3799cd3ed957aba48b2557aaf13853ae, type: 3}
@@ -74399,6 +74701,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pyramid 3 Dark theme
       objectReference: {fileID: 0}
+    - target: {fileID: 4288032437654722246, guid: 113842dd230017441b94cf4ea191cef6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5902740341502985309, guid: 113842dd230017441b94cf4ea191cef6, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5902740341502985309, guid: 113842dd230017441b94cf4ea191cef6, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 113842dd230017441b94cf4ea191cef6, type: 3}
 --- !u!4 &6713695793012946136 stripped
@@ -74477,9 +74791,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.34642345
       objectReference: {fileID: 0}
+    - target: {fileID: 8065746135192771159, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065746135192771159, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8209021387850074433, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
       propertyPath: m_Name
       value: Obilisk Dark-Primary
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209021387850074433, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18c530e878e211641b9f649f6446c7d8, type: 3}
@@ -74554,6 +74880,18 @@ PrefabInstance:
     - target: {fileID: 4843573938102422601, guid: bf34744cba4f8704cb403988b313c314, type: 3}
       propertyPath: m_Name
       value: Table Dark-Primary theme
+      objectReference: {fileID: 0}
+    - target: {fileID: 4843573938102422601, guid: bf34744cba4f8704cb403988b313c314, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5349573105480292268, guid: bf34744cba4f8704cb403988b313c314, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5349573105480292268, guid: bf34744cba4f8704cb403988b313c314, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf34744cba4f8704cb403988b313c314, type: 3}
