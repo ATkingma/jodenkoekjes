@@ -121,6 +121,20 @@ public class Trigger : MonoBehaviour
         weapon = currentWeapon.GetComponent<WeaponReference>();
         gunNumber = weapon.gunNumber;
         weapon.isUsed = true;
+        int ooga = 14;
+        if(gunNumber == 0)
+        {
+            ooga = 14;
+        }
+        if (gunNumber == 1)
+        {
+            ooga = 15;
+        }
+        if (gunNumber == 2)
+        {
+            ooga = 16;
+        }
+        itemList.PrintItemInChat(ooga);
 
         CalculateStats();
     }

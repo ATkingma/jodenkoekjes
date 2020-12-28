@@ -9,11 +9,12 @@ public class MainMenu : MonoBehaviour
     public GameObject menu, options, items, stats;
     public List<TextMeshProUGUI> enemiesList, gunList, itemList;
     public TextMeshProUGUI timesDied, time, levels, games;
+    public List<GameObject> achievementLocks;
     //list
     //0 = all; 1 = goblin; 2 = fire elemental; 3 = groot; 4 = golem; 5 = boss; 6 = final boss;
     //0 = pistol; 1 = launcher; 2 = rifle; 3 = staff;
 
-    //privates
+    //privates                                              
     public bool menuOn, optionsOn, itemsOn, anyIsOn, statsOn;
     private int chosenScene;
     protected Saves clear;
@@ -57,10 +58,31 @@ public class MainMenu : MonoBehaviour
         optionsOn = true;
         menuOn = false;
     }
+    //↓↓↓↓↓↓↓↓↓↓↓↓ voor Timme bools voor item in pool ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ er staan saves, die kan je in andere script ophalen! UwU
     public void ToItems()
     {
         itemsOn = true;
         menuOn = false;
+        if(PlayerPrefs.GetInt("enemy" + 0, 0) >= 100)
+        {
+            achievementLocks[0].SetActive(false);
+            PlayerPrefs.SetInt("critUnlocked", 1);
+        }
+        if (PlayerPrefs.GetInt("timesdied", 0) >= 5)
+        {
+            achievementLocks[1].SetActive(false);
+            PlayerPrefs.SetInt("shieldUnlocked", 1);
+        }
+        if (PlayerPrefs.GetInt("enemy" + 6, 0) >= 1)
+        {
+            achievementLocks[2].SetActive(false);
+            PlayerPrefs.SetInt("featherUnlocked", 1);
+        }
+        if (PlayerPrefs.GetInt("enemy" + 5, 0) >= 5)
+        {
+            achievementLocks[3].SetActive(false);
+            PlayerPrefs.SetInt("richocetUnlocked", 1);
+        }
     }
     public void ToStats()
     {

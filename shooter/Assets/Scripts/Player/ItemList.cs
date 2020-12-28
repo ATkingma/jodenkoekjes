@@ -37,7 +37,14 @@ public class ItemList : MonoBehaviour
         inChatQueue[3] = inChatQueue[2];
         inChatQueue[2] = inChatQueue[1];
         inChatQueue[1] = inChatQueue[0];
-        inChatQueue[0] = itemTest[damnSon] + " [" + itemQuantity[damnSon] + "]";
+        if(damnSon < 14)
+        {
+            inChatQueue[0] = itemTest[damnSon] + " [" + itemQuantity[damnSon] + "]";
+        }
+        else
+        {
+            inChatQueue[0] = itemTest[damnSon];
+        }
 
         for(int i = 0; i < 5; i++)
         {

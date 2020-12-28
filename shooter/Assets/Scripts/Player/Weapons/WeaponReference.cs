@@ -11,7 +11,7 @@ public class WeaponReference : MonoBehaviour
     public Rigidbody basicBullet;
     public bool isUsed = false;
     public LayerMask canShoot;
-    public GameObject gem;
+    public GameObject gem, recharge;
     public int gunNumber;
 
     //recoil

@@ -92,7 +92,12 @@ public class Pistol : WeaponReference
             Color nNew = new Color(mat.material.color.r, mat.material.color.g, mat.material.color.b, ammo / (0.1f * maxAmmo));
             mat.material.SetColor("_BaseColor", nNew);
 
+            recharge.SetActive(true);
             totalSpread = Mathf.Clamp(totalSpread - 0.1f * Time.deltaTime, 0, 2);
+        }
+        else
+        {
+            recharge.SetActive(false);
         }
     }
     public void MuzzOff()

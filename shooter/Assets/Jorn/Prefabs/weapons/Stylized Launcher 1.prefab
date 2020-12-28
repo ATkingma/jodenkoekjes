@@ -260,6 +260,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 78848
   gem: {fileID: 7091493872227179322}
+  recharge: {fileID: 7439390041678845995}
   gunNumber: 1
   recoilUp: {x: -2, y: 0, z: 0}
   spread: 0.2
@@ -559,6 +560,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 264db4022535c4148a49b5260724dfc4, type: 3}
+--- !u!1 &7439390041678845995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4249730051903739569, guid: 264db4022535c4148a49b5260724dfc4, type: 3}
+  m_PrefabInstance: {fileID: 6756550786980695706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7439390041678845999 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4249730051903739573, guid: 264db4022535c4148a49b5260724dfc4, type: 3}
