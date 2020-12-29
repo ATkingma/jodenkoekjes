@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 using TMPro;
 
 public class MainMenu : MonoBehaviour
@@ -9,19 +11,29 @@ public class MainMenu : MonoBehaviour
     public GameObject menu, options, items, stats;
     public List<TextMeshProUGUI> enemiesList, gunList, itemList;
     public TextMeshProUGUI timesDied, time, levels, games;
-    public List<GameObject> achievementLocks;
+    public List<GameObject> achievementLocks, soundSliders;
     //list
     //0 = all; 1 = goblin; 2 = fire elemental; 3 = groot; 4 = golem; 5 = boss; 6 = final boss;
     //0 = pistol; 1 = launcher; 2 = rifle; 3 = staff;
 
+    public AudioMixer master;
+
     //privates                                              
     public bool menuOn, optionsOn, itemsOn, anyIsOn, statsOn;
-    private int chosenScene;
     protected Saves clear;
     private void Start()
     {
         menuOn = true;
         clear = FindObjectOfType<Saves>();
+        master.SetFloat("master", PlayerPrefs.GetFloat("mastervolume", 0));
+        master.SetFloat("music", PlayerPrefs.GetFloat("musicvolume", 0));
+        master.SetFloat("sfx", PlayerPrefs.GetFloat("sfxvolume", 0));
+        master.SetFloat("ui", PlayerPrefs.GetFloat("uivolume", 0));
+
+        soundSliders[0].GetComponent<Slider>().value = PlayerPrefs.GetFloat("mastervolume", 0);
+        soundSliders[1].GetComponent<Slider>().value = PlayerPrefs.GetFloat("musicvolume", 0);
+        soundSliders[2].GetComponent<Slider>().value = PlayerPrefs.GetFloat("sfxvolume", 0);
+        soundSliders[3].GetComponent<Slider>().value = PlayerPrefs.GetFloat("uivolume", 0);
     }
 
     //hier doet ie laat scene timme
@@ -35,15 +47,8 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetFloat("seconde", 0);
         PlayerPrefs.SetFloat("minuut", 0);
         PlayerPrefs.SetFloat("uur", 0);
-        RollScenes();
-        SceneManager.LoadScene(chosenScene);
         PlayerPrefs.SetInt("scene", 0);
-    }
-
-    //rollllllll
-    public void RollScenes()
-    {
-        chosenScene = Random.Range(1, 2);
+        FindObjectOfType<SceneSwitcher>().SceneLoader();
     }
 
     public void ToMenu()
@@ -122,5 +127,25 @@ public class MainMenu : MonoBehaviour
         options.SetActive(optionsOn);
         items.SetActive(itemsOn);
         stats.SetActive(statsOn);
+    }
+    public void MasterVolume(Slider slider)
+    {
+        master.SetFloat("master", slider.value);
+        PlayerPrefs.SetFloat("mastervolume", slider.value);
+    }
+    public void SfxVolume(Slider slider)
+    {
+        master.SetFloat("sfx", slider.value);
+        PlayerPrefs.SetFloat("sfxvolume", slider.value);
+    }
+    public void MusicVolume(Slider slider)
+    {
+        master.SetFloat("music", slider.value);
+        PlayerPrefs.SetFloat("musicvolume", slider.value);
+    }
+    public void UiVolume(Slider slider)
+    {
+        master.SetFloat("ui", slider.value);
+        PlayerPrefs.SetFloat("uivolume", slider.value);
     }
 }

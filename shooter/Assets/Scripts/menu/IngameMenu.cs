@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class IngameMenu : MainMenu
 {
@@ -13,6 +15,16 @@ public class IngameMenu : MainMenu
     {
         trig = FindObjectOfType<Trigger>();
         clear = FindObjectOfType<Saves>();
+
+        master.SetFloat("master", PlayerPrefs.GetFloat("mastervolume", 0));
+        master.SetFloat("music", PlayerPrefs.GetFloat("musicvolume", 0));
+        master.SetFloat("sfx", PlayerPrefs.GetFloat("sfxvolume", 0));
+        master.SetFloat("ui", PlayerPrefs.GetFloat("uivolume", 0));
+
+        soundSliders[0].GetComponent<Slider>().value = PlayerPrefs.GetFloat("mastervolume", 0);
+        soundSliders[1].GetComponent<Slider>().value = PlayerPrefs.GetFloat("musicvolume", 0);
+        soundSliders[2].GetComponent<Slider>().value = PlayerPrefs.GetFloat("sfxvolume", 0);
+        soundSliders[3].GetComponent<Slider>().value = PlayerPrefs.GetFloat("uivolume", 0);
     }
     private void Update()
     {

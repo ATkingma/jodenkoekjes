@@ -20,13 +20,11 @@ public class SceneSwitcher : MonoBehaviour
             Plus();
             PlayerPrefs.SetInt("scene", scenes);
             FindObjectOfType<LoadingScreen>().StartLoadingScreenNormalMap();
-            print("normal map");
         }   
         if (scenes >= 3)
         {
             PlayerPrefs.SetInt("scene", scenes);
-        FindObjectOfType<LoadingScreen>().StartLoadingScreenNormaBossMap();
-            print("boss");
+            FindObjectOfType<LoadingScreen>().StartLoadingScreenNormaBossMap();
         }
     }
     public void ResetDieShit()

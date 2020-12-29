@@ -13,6 +13,7 @@ public class WeaponReference : MonoBehaviour
     public LayerMask canShoot;
     public GameObject gem, recharge;
     public int gunNumber;
+    public AudioSource piew;
 
     //recoil
     public Vector3 recoilUp;

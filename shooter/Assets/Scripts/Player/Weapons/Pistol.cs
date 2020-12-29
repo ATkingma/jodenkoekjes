@@ -22,6 +22,7 @@ public class Pistol : WeaponReference
 
             anim.SetBool("isShooting", true);
             anim.speed += attackSpeed;
+            piew.Play(0);
             Rigidbody clone = Instantiate(basicBullet, bulletOri.position, transform.rotation);
             //spread
             totalSpread += spread;
@@ -65,6 +66,7 @@ public class Pistol : WeaponReference
     public override void Fire2(float dir)
     {
         anim.SetBool("isShooting", true);
+        piew.Play(0);
         Rigidbody clone = Instantiate(basicBullet, bulletOri.position, transform.rotation);
         var randomNumberX = Random.Range(-spread, spread);
         var randomNumberY = Random.Range(-spread, spread);
