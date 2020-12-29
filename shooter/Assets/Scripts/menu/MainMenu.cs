@@ -58,7 +58,7 @@ public class MainMenu : MonoBehaviour
         optionsOn = true;
         menuOn = false;
     }
-    //↓↓↓↓↓↓↓↓↓↓↓↓ voor Timme bools voor item in pool ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ er staan saves, die kan je in andere script ophalen! UwU
+
     public void ToItems()
     {
         itemsOn = true;

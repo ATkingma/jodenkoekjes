@@ -439,7 +439,7 @@ public void Min()
     }
     public void ItemDrop()
     {
-        int number = Random.Range(24, 36);
+        int number = Random.Range(24, 47);
         if (number <= 8)
         {
             Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[0], itemSpawnPoints[index].transform.position, Quaternion.identity);
@@ -479,6 +479,52 @@ public void Min()
         if (number <= 38 & number > 36)
         {
             Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[6], itemSpawnPoints[index].transform.position, Quaternion.identity);
+        }
+        //unlockable items
+        if (number <= 40 & number > 38)
+        {
+            if (PlayerPrefs.GetInt("enemy" + 0, 0) >= 100)
+            {
+                Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[7], gameObject.transform.position, Quaternion.identity);
+            }
+            else
+            {
+                ItemDrop();
+            }
+
+        }
+        if (number <= 42 & number > 40)
+        {
+            if (PlayerPrefs.GetInt("timesdied", 0) >= 5)
+            {
+                Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[8], gameObject.transform.position, Quaternion.identity);
+            }
+            else
+            {
+                ItemDrop();
+            }
+        }
+        if (number <= 44 & number > 42)
+        {
+            if (PlayerPrefs.GetInt("enemy" + 6, 0) >= 1)
+            {
+                Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[9], gameObject.transform.position, Quaternion.identity);
+            }
+            else
+            {
+                ItemDrop();
+            }
+        }
+        if (number <= 46 & number > 44)
+        {
+            if (PlayerPrefs.GetInt("enemy" + 5, 0) >= 5)
+            {
+                Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[10], gameObject.transform.position, Quaternion.identity);
+            }
+            else
+            {
+                ItemDrop();
+            }
         }
     }
 }
