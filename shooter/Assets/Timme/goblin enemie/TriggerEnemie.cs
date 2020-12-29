@@ -5,7 +5,7 @@ using UnityEngine;
 public class TriggerEnemie : MonoBehaviour
 {
     //public
-    public bool goblin, groot, ranged, boss, golem;
+    public bool goblin, groot, ranged, boss, golem, fireBoss;
     public GameObject enemy;
     //private
     private bool trowing;
@@ -36,6 +36,10 @@ public class TriggerEnemie : MonoBehaviour
             if (boss)
             {
                 enemy.GetComponent<Boss>().PlayerInTrigger = true;
+            }
+            if (fireBoss)
+            {
+                enemy.GetComponent<FinalBoss>().PlayerInTrigger = true;
             }
             if (golem)
             {
@@ -77,6 +81,10 @@ public class TriggerEnemie : MonoBehaviour
             if (boss)
             {
                 enemy.GetComponent<Boss>().PlayerInTrigger = false;
+            }
+            if (fireBoss)
+            {
+                enemy.GetComponent<FinalBoss>().PlayerInTrigger = false;
             }
             if (golem)
             {
