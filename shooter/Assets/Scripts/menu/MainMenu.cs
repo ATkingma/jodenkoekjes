@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     public List<TextMeshProUGUI> enemiesList, gunList, itemList;
     public TextMeshProUGUI timesDied, time, levels, games;
     public List<GameObject> achievementLocks, soundSliders;
+    public AudioSource confirmButton;
     //list
     //0 = all; 1 = goblin; 2 = fire elemental; 3 = groot; 4 = golem; 5 = boss; 6 = final boss;
     //0 = pistol; 1 = launcher; 2 = rifle; 3 = staff;
@@ -19,7 +20,8 @@ public class MainMenu : MonoBehaviour
     public AudioMixer master;
 
     //privates                                              
-    public bool menuOn, optionsOn, itemsOn, anyIsOn, statsOn;
+    public bool menuOn, optionsOn, itemsOn, anyIsOn, statsOn,
+        slider0, slider1, slider2, slider3;
     protected Saves clear;
     private void Start()
     {
@@ -53,6 +55,7 @@ public class MainMenu : MonoBehaviour
 
     public void ToMenu()
     {
+        confirmButton.Play();
         menuOn = true;
         optionsOn = false;
         itemsOn = false;
@@ -60,12 +63,14 @@ public class MainMenu : MonoBehaviour
     }
     public void ToOptions()
     {
+        confirmButton.Play();
         optionsOn = true;
         menuOn = false;
     }
 
     public void ToItems()
     {
+        confirmButton.Play();
         itemsOn = true;
         menuOn = false;
         if(PlayerPrefs.GetInt("enemy" + 0, 0) >= 100)
@@ -91,6 +96,7 @@ public class MainMenu : MonoBehaviour
     }
     public void ToStats()
     {
+        confirmButton.Play();
         statsOn = true;
         menuOn = false;
         //saves ophalen
@@ -113,12 +119,14 @@ public class MainMenu : MonoBehaviour
     }
     public void ToMainMenu()
     {
+        confirmButton.Play();
         clear.ClearSaves();
         SceneManager.LoadScene(0);
     }
     public void ExitGame()
     {
-        clear.ClearSaves();
+        confirmButton.Play();
+        //clear.ClearSaves();
         Application.Quit();
     }
     private void Update()
@@ -130,22 +138,62 @@ public class MainMenu : MonoBehaviour
     }
     public void MasterVolume(Slider slider)
     {
+        if(slider0)
+        {
+            slider0 = false;
+            Invoke("SliderCooldownSlider0", 0.1f);
+            confirmButton.Play();
+        }
         master.SetFloat("master", slider.value);
         PlayerPrefs.SetFloat("mastervolume", slider.value);
     }
     public void SfxVolume(Slider slider)
     {
+        if (slider1)
+        {
+            slider1 = false;
+            Invoke("SliderCooldownSlider1", 0.1f);
+            confirmButton.Play();
+        }
         master.SetFloat("sfx", slider.value);
         PlayerPrefs.SetFloat("sfxvolume", slider.value);
     }
     public void MusicVolume(Slider slider)
     {
+        if (slider2)
+        {
+            slider2 = false;
+            Invoke("SliderCooldownSlider2", 0.1f);
+            confirmButton.Play();
+        }
         master.SetFloat("music", slider.value);
         PlayerPrefs.SetFloat("musicvolume", slider.value);
     }
     public void UiVolume(Slider slider)
     {
+        if (slider3)
+        {
+            slider3 = false;
+            Invoke("SliderCooldownSlider3", 0.1f);
+            confirmButton.Play();
+        }
         master.SetFloat("ui", slider.value);
         PlayerPrefs.SetFloat("uivolume", slider.value);
+    }
+    public void SliderCooldownSlider0()
+    {
+        slider0 = true;
+    }
+    public void SliderCooldownSlider1()
+    {
+        slider1 = true;
+    }
+    public void SliderCooldownSlider2()
+    {
+        slider2 = true;
+    }
+    public void SliderCooldownSlider3()
+    {
+        slider3 = true;
     }
 }

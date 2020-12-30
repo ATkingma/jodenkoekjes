@@ -9,9 +9,10 @@ public class EnemieScript : MonoBehaviour
     public float attackCoolDown, damageValue;
     public Animator anim;
     public bool PlayerInTrigger, isAtacking, spearNigga;
+    public AudioSource walking;
     //private
     private GameObject player,itemHolder, lookat;
-    private bool doingDamage,death,doingDead, deathIsDoing, didto0;
+    private bool doingDamage,death,doingDead, deathIsDoing, didto0, soundOn = true;
     void Start()
     {
         lookat = GameObject.FindGameObjectWithTag("LookAPlayer");
@@ -20,6 +21,12 @@ public class EnemieScript : MonoBehaviour
     }
     void Update()
     {
+        if(soundOn)
+        {
+            soundOn = false;
+            Invoke("SoundCooldown",0.1f);
+            walking.Play();
+        }
         if (GetComponent<EnemyHealth>().health <= GetComponent<EnemyHealth>().executebelow)
         {
             if (!didto0)
@@ -326,5 +333,9 @@ public class EnemieScript : MonoBehaviour
     public void DifficultyIncrease(int UwU)
     {
         damageValue *= 1 + (0.1f * UwU);
+    }
+    public void SoundCooldown()
+    {
+        soundOn = false;
     }
 }

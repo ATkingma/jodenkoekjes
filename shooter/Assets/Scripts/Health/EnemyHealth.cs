@@ -14,6 +14,7 @@ public class EnemyHealth : BaseHealthScript
         {
             CalculateExecute();
         }
+        hurt.Play();
         health = Mathf.Clamp(health - amount, 0, maxHealth);
 
         //damage numbers

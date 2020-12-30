@@ -9,6 +9,7 @@ public class Trigger : MonoBehaviour
     public bool menuIsActive;
     public List<GameObject> gunlist, meleeList;
     public int gunNumber, meleeNumber;
+    public AudioSource weaponPickup;
 
     //privates
     private float nextAttack, attackCooldown, attacksPerSec, calculatedDamage, slowBulletAttackSpeed, meleeDamage, attacksPerSecMelee, attackCooldownMelee;
@@ -71,6 +72,8 @@ public class Trigger : MonoBehaviour
                     }
                 }
             }
+            //melee swap
+
             //if (Input.GetButtonDown("2"))
             //{
             //    holdingGun = false;
@@ -107,6 +110,7 @@ public class Trigger : MonoBehaviour
     }
     private void WeaponSwap(Transform newWeapon)
     {
+        weaponPickup.Play();
         //dump last weapon
         weapon.isUsed = false;
         currentWeapon.parent = weaponDump;

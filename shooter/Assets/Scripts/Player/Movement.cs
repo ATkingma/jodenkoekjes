@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
     public float movementSpeed, sprintSpeed, gravity, jumpForce, crouchHeight;
+    public AudioSource desert, forest, ice;
+    public bool doSound = true;
 
     //privates
     private CharacterController controller;
@@ -89,7 +92,31 @@ public class Movement : MonoBehaviour
                 }
             }
         }
-
+        //sound
+        if(doSound)
+        {
+            if(controller.isGrounded)
+            {
+                if(SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 2)
+                {
+                    doSound = false;
+                    Invoke("SoundCooldown", 0.1f);
+                    desert.Play();
+                }
+                if (SceneManager.GetActiveScene().buildIndex == 3 || SceneManager.GetActiveScene().buildIndex == 4)
+                {
+                    doSound = false;
+                    Invoke("SoundCooldown", 0.1f);
+                    forest.Play();
+                }
+                if (SceneManager.GetActiveScene().buildIndex == 5)
+                {
+                    doSound = false;
+                    Invoke("SoundCooldown", 0.1f);
+                    ice.Play();
+                }
+            }
+        }
 
         //movement
         moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
@@ -133,5 +160,9 @@ public class Movement : MonoBehaviour
     {
         sprintSpeed = baseSprintSpeed * (1 + (0.1f * list.itemQuantity[3]));
         movementSpeed = baseMovewmentSpeed * (1 + (0.1f * list.itemQuantity[3]));
+    }
+    public void SoundCooldown()
+    {
+        doSound = true;
     }
 }
