@@ -8,7 +8,7 @@ public class FinalBoss : MonoBehaviour
     public Animator anim;
     public bool PlayerInTrigger, bossisdeath;
     public float damage1, damage2, damage3;
-    public GameObject fist;
+    public GameObject fist,bal1,bal2,FireFist;
     //privates
     private bool playerIsDeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive, noParticle, didto0, aoe;
     private GameObject player, itemHolder;
@@ -31,6 +31,8 @@ public class FinalBoss : MonoBehaviour
         damage1 *= 0.1f * temp;
         damage2 *= 0.1f * temp;
         damage3 *= 0.1f * temp;
+        bal1.SetActive(false);
+        bal2.SetActive(false);
     }
     void Update()
     {
@@ -98,35 +100,43 @@ public class FinalBoss : MonoBehaviour
     {
         ResetAnim();
         anim.SetBool("Attack1", true);
-        Invoke("Reset", 4f);
+        Invoke("Reset", 3f);
     }
     public void Attack2()
     {
         ResetAnim();
         anim.SetBool("Attack2", true);
-        Invoke("Reset", 4f);
+        Invoke("Reset", 3f);
     }
     public void Attack3()
     {
         ResetAnim();
         anim.SetBool("Attack3", true);
-        Invoke("Reset", 4f);
+        Invoke("Reset", 1f);
     }
     public void Attack1SpawnFireBalls()
     {
-
+        bal1.SetActive(true);
+        bal2.SetActive(true);
     }
     public void Attack1ShootBalls()
     {
-
+        bal1.SetActive(false);
+        bal2.SetActive(false);
+        Instantiate(FireFist, bal1.transform.position, Quaternion.identity);
+        Instantiate(FireFist, bal2.transform.position, Quaternion.identity);
     }
     public void ShowInpactAttack2Aoe()
     {
-
+        playerPos = player.transform.position;
     }
     public void DoAttackVisual2Aoe()
     {
-
+        Instantiate(fist, playerPos - new Vector3(0, 5, 0), Quaternion.identity);
+        Instantiate(fist, playerPos + new Vector3(6, 0, 6) - new Vector3(0,5,0), Quaternion.identity);
+        Instantiate(fist, playerPos + new Vector3(9, 0, 0) - new Vector3(0, 5, 7), Quaternion.identity);
+        Instantiate(fist, playerPos + new Vector3(0, 0, 0) - new Vector3(6, 5, 6), Quaternion.identity);
+        Instantiate(fist, playerPos + new Vector3(0, 0, 10) - new Vector3(10, 5, 0), Quaternion.identity);
     }
     public void ShowInpactAttack3()
     {
@@ -134,12 +144,12 @@ public class FinalBoss : MonoBehaviour
     }
     public void DoAttackVisual3()
     {
-        Instantiate(fist, player.transform.position, Quaternion.identity);
+        Instantiate(fist, player.transform.position-new Vector3(0,5,0), Quaternion.identity) ;
     }
     public void RandomAttack()
     {
-        //float RandomAttack = Random.Range(1, 3);
-        float RandomAttack = 3;
+        float RandomAttack = Random.Range(1, 3);
+       // float RandomAttack = 1;
         if (RandomAttack == 1)
         {
             Attack1();
