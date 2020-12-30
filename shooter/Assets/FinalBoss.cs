@@ -8,6 +8,7 @@ public class FinalBoss : MonoBehaviour
     public Animator anim;
     public bool PlayerInTrigger, bossisdeath;
     public float damage1, damage2, damage3;
+    public GameObject fist;
     //privates
     private bool playerIsDeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive, noParticle, didto0, aoe;
     private GameObject player, itemHolder;
@@ -97,16 +98,19 @@ public class FinalBoss : MonoBehaviour
     {
         ResetAnim();
         anim.SetBool("Attack1", true);
+        Invoke("Reset", 4f);
     }
     public void Attack2()
     {
         ResetAnim();
         anim.SetBool("Attack2", true);
+        Invoke("Reset", 4f);
     }
     public void Attack3()
     {
         ResetAnim();
         anim.SetBool("Attack3", true);
+        Invoke("Reset", 4f);
     }
     public void Attack1SpawnFireBalls()
     {
@@ -128,26 +132,27 @@ public class FinalBoss : MonoBehaviour
     {
 
     }
-    public void DoAttackVisual3
-()
+    public void DoAttackVisual3()
     {
-
+        Instantiate(fist, player.transform.position, Quaternion.identity);
     }
     public void RandomAttack()
     {
-        float RanomAttack = Random.Range(1, 3);
-        if (RanomAttack == 1)
+        //float RandomAttack = Random.Range(1, 3);
+        float RandomAttack = 3;
+        if (RandomAttack == 1)
         {
             Attack1();
         }
-        if (RanomAttack == 2)
+        if (RandomAttack == 2)
         {
             Attack2();
         }
-        if (RanomAttack == 3)
+        if (RandomAttack == 3)
         {
             Attack3();
         }
+        isAtacking = true;
     }
     public void RandomTaunt()
     {
@@ -175,6 +180,10 @@ public class FinalBoss : MonoBehaviour
         anim.SetBool("Attack1", false);
         anim.SetBool("Attack2", false);
         anim.SetBool("Attack3", false);
+    }
+    public void Reset()
+    {
+        isAtacking = false;
     }
     public void DeathFunction()
     {
