@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
     public GameObject menu, options, items, stats;
     public List<TextMeshProUGUI> enemiesList, gunList, itemList;
     public TextMeshProUGUI timesDied, time, levels, games;
-    public List<GameObject> achievementLocks, soundSliders;
+    public List<GameObject> achievementLocks, soundSliders, gunSkins;
     public AudioSource confirmButton;
     //list
     //0 = all; 1 = goblin; 2 = fire elemental; 3 = groot; 4 = golem; 5 = boss; 6 = final boss;
@@ -107,8 +107,37 @@ public class MainMenu : MonoBehaviour
         for(int m = 0; m < gunList.Count; m++)
         {
             gunList[m].text = PlayerPrefs.GetInt("gun" + m, 0).ToString();
+            if(PlayerPrefs.GetInt("gun" + m, 0) >= 100)
+            {
+                gunSkins[m].SetActive(true);
+            }
         }
-        for(int s = 0; s < itemList.Count; s++)
+        if(PlayerPrefs.GetInt("goldenpistol", 0) == 0)
+        {
+            gunSkins[0].GetComponent<Toggle>().isOn = false;
+        }
+        else
+        {
+            gunSkins[0].GetComponent<Toggle>().isOn = true;
+        }
+        if (PlayerPrefs.GetInt("goldenlauncher", 0) == 0)
+        {
+            gunSkins[1].GetComponent<Toggle>().isOn = false;
+        }
+        else
+        {
+            gunSkins[1].GetComponent<Toggle>().isOn = true;
+        }
+        if (PlayerPrefs.GetInt("goldenrifle", 0) == 0)
+        {
+            gunSkins[2].GetComponent<Toggle>().isOn = false;
+        }
+        else
+        {
+            gunSkins[2].GetComponent<Toggle>().isOn = true;
+        }
+
+        for (int s = 0; s < itemList.Count; s++)
         {
             itemList[s].text = PlayerPrefs.GetFloat("itemstats" + s, 0).ToString();
         }
@@ -136,6 +165,7 @@ public class MainMenu : MonoBehaviour
         items.SetActive(itemsOn);
         stats.SetActive(statsOn);
     }
+    #region sliders
     public void MasterVolume(Slider slider)
     {
         if(slider0)
@@ -180,6 +210,8 @@ public class MainMenu : MonoBehaviour
         master.SetFloat("ui", slider.value);
         PlayerPrefs.SetFloat("uivolume", slider.value);
     }
+    
+    //slider sound
     public void SliderCooldownSlider0()
     {
         slider0 = true;
@@ -195,5 +227,22 @@ public class MainMenu : MonoBehaviour
     public void SliderCooldownSlider3()
     {
         slider3 = true;
+    }
+    #endregion
+    //golden skins
+    public void GoldenPistolOn()
+    {
+        confirmButton.Play();
+        PlayerPrefs.SetInt("goldenpistol", 1);
+    }
+    public void GoldenLauncherOn()
+    {
+        confirmButton.Play();
+        PlayerPrefs.SetInt("goldenlauncher", 1);
+    }
+    public void GoldenRifleOn()
+    {
+        confirmButton.Play();
+        PlayerPrefs.SetInt("goldenrifle", 1);
     }
 }
