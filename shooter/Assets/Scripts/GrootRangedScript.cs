@@ -271,7 +271,7 @@ public class GrootRangedScript : MonoBehaviour
             }
             else
             {
-                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[0], gameObject.transform.position, Quaternion.identity);
+                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[2], gameObject.transform.position, Quaternion.identity);
             }
         }
         if (number <= 8 & number > 4)
@@ -282,7 +282,7 @@ public class GrootRangedScript : MonoBehaviour
             }
             else
             {
-                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[1], gameObject.transform.position, Quaternion.identity);
+                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[0], gameObject.transform.position, Quaternion.identity);
             }
         }
         if (number <= 12 & number > 8)
@@ -293,7 +293,7 @@ public class GrootRangedScript : MonoBehaviour
             }
             else
             {
-                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[2], gameObject.transform.position, Quaternion.identity);
+                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[1], gameObject.transform.position, Quaternion.identity);
             }
         }
     }

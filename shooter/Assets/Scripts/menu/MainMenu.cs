@@ -231,17 +231,39 @@ public class MainMenu : MonoBehaviour
     //golden skins
     public void GoldenPistolOn()
     {
+        if(PlayerPrefs.GetInt("goldenpistol", 0) == 0)
+        {
+            PlayerPrefs.SetInt("goldenpistol", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("goldenpistol", 0);
+        }
         confirmButton.Play();
-        PlayerPrefs.SetInt("goldenpistol", 1);
+
     }
     public void GoldenLauncherOn()
     {
+        if (PlayerPrefs.GetInt("goldenlauncher", 0) == 0)
+        {
+            PlayerPrefs.SetInt("goldenlauncher", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("goldenlauncher", 0);
+        }
         confirmButton.Play();
-        PlayerPrefs.SetInt("goldenlauncher", 1);
     }
     public void GoldenRifleOn()
     {
+        if (PlayerPrefs.GetInt("goldenrifle", 0) == 0)
+        {
+            PlayerPrefs.SetInt("goldenrifle", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("goldenrifle", 0);
+        }
         confirmButton.Play();
-        PlayerPrefs.SetInt("goldenrifle", 1);
     }
 }

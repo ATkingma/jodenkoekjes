@@ -100,19 +100,19 @@ public class Movement : MonoBehaviour
                 if(SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 2)
                 {
                     doSound = false;
-                    Invoke("SoundCooldown", 0.1f);
+                    Invoke("SoundCooldown", 0.5f);
                     desert.Play();
                 }
                 if (SceneManager.GetActiveScene().buildIndex == 3 || SceneManager.GetActiveScene().buildIndex == 4)
                 {
                     doSound = false;
-                    Invoke("SoundCooldown", 0.1f);
+                    Invoke("SoundCooldown", 0.5f);
                     forest.Play();
                 }
                 if (SceneManager.GetActiveScene().buildIndex == 5)
                 {
                     doSound = false;
-                    Invoke("SoundCooldown", 0.1f);
+                    Invoke("SoundCooldown", 0.5f);
                     ice.Play();
                 }
             }

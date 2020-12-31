@@ -45,8 +45,8 @@ public class Pistol : WeaponReference
 
             //clone.velocity = clone.transform.forward * bulletSpeed;
             //crits
-            int crit = Random.Range(1, 100);
-            if(crit <= list.itemQuantity[12])
+            int crit = Random.Range(1, 101);
+            if(crit <= list.itemQuantity[12] * 10)
             {
                 dir *= 2;
             }
