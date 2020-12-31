@@ -148,7 +148,6 @@ public class MainMenu : MonoBehaviour
     }
     public void ToMainMenu()
     {
-        confirmButton.Play();
         clear.ClearSaves();
         SceneManager.LoadScene(0);
     }

@@ -212,9 +212,11 @@ public class EnemieScript : MonoBehaviour
         int number=Random.Range(1, 16);
         if (number <= 4)
         {
+            WeaponDrop();
         }
         if (number <= 8 & number >4)
         {
+            WeaponDrop();
         }
         if (number <= 12 & number > 8)
         {
@@ -230,15 +232,36 @@ public class EnemieScript : MonoBehaviour
         int number = Random.Range(1, 12);
         if (number <= 4)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().guns[0], gameObject.transform.position, Quaternion.identity);
+            if (PlayerPrefs.GetInt("goldenpistol", 0) == 1)
+            {
+                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[3], gameObject.transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[0], gameObject.transform.position, Quaternion.identity);
+            }
         }
         if (number <= 8 & number > 4)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().guns[1], gameObject.transform.position, Quaternion.identity);
+            if (PlayerPrefs.GetInt("goldenlauncher", 0) == 1)
+            {
+                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[4], gameObject.transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[1], gameObject.transform.position, Quaternion.identity);
+            }
         }
         if (number <= 12 & number > 8)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().guns[2], gameObject.transform.position, Quaternion.identity);
+            if (PlayerPrefs.GetInt("goldenrifle", 0) == 1)
+            {
+                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[5], gameObject.transform.position, Quaternion.identity);
+            }
+            else
+            {
+                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[2], gameObject.transform.position, Quaternion.identity);
+            }
         }
     }
     public void ItemDrop()

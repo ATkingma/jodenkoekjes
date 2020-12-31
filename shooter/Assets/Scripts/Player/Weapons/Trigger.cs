@@ -159,6 +159,18 @@ public class Trigger : MonoBehaviour
         {
             ooga = 16;
         }
+        if (gunNumber == 3)
+        {
+            ooga = 14;
+        }
+        if (gunNumber == 4)
+        {
+            ooga = 15;
+        }
+        if (gunNumber == 5)
+        {
+            ooga = 16;
+        }
         itemList.PrintItemInChat(ooga);
 
         CalculateStats();
