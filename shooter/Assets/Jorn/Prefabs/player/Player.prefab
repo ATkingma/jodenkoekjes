@@ -257,6 +257,9 @@ MonoBehaviour:
   - {fileID: 2640308273281943381, guid: e2b0e23585c9ecc46b47c9cdc2d7312e, type: 3}
   - {fileID: 7865431890135567487, guid: c1510e39f62be794f81f4fdfbcb0ae8e, type: 3}
   - {fileID: 3295791727743766657, guid: 602f8aabf57408c46962b4c9d7058816, type: 3}
+  - {fileID: 165733123124189745, guid: 1fa26633b3cb21147bc2f3eaf1c20525, type: 3}
+  - {fileID: 8602592693692019128, guid: 18d8a7d6efdafe241a30e72fd170b173, type: 3}
+  - {fileID: 7109753308379399435, guid: 0d0048084fc9d004f8a026412b4cd913, type: 3}
   meleeList:
   - {fileID: 5546980582551055553, guid: dbdb142b251d68148b6c5e399d245111, type: 3}
   gunNumber: 0
@@ -494,6 +497,7 @@ MonoBehaviour:
   desert: {fileID: 5604985272346921073}
   forest: {fileID: 1585868317871231496}
   ice: {fileID: 5871038855383434997}
+  doSound: 1
 --- !u!114 &2949705085181920099
 MonoBehaviour:
   m_ObjectHideFlags: 0

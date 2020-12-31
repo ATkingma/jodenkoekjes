@@ -23,6 +23,27 @@ public class Trigger : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.GetInt("goldenpistol", 0) == 1)
+        {
+            if(gunNumber == 0)
+            {
+                gunNumber = 3;
+            }
+        }
+        if (PlayerPrefs.GetInt("goldenlauncher", 0) == 1)
+        {
+            if (gunNumber == 1)
+            {
+                gunNumber = 4;
+            }
+        }
+        if (PlayerPrefs.GetInt("goldenrifle", 0) == 1)
+        {
+            if (gunNumber == 2)
+            {
+                gunNumber = 5;
+            }
+        }
         currentWeapon = Instantiate(gunlist[gunNumber].transform, weaponHold.position, weaponHold.rotation, transform);
         weapon = currentWeapon.GetComponent<WeaponReference>();
         weapon.isUsed = true;

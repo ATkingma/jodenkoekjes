@@ -26,6 +26,18 @@ public class EnemyHealth : BaseHealthScript
 
         if (health == 0 || health <= executebelow)
         {
+            if(usedWeapon == 3)
+            {
+                usedWeapon = 0;
+            }
+            if (usedWeapon == 4)
+            {
+                usedWeapon = 1;
+            }
+            if (usedWeapon == 5)
+            {
+                usedWeapon = 2;
+            }
             FindObjectOfType<Saves>().AddKilledBy(usedWeapon);
         }
     }
