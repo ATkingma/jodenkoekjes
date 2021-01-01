@@ -81,7 +81,8 @@ public class FinalBoss : MonoBehaviour
                 }
                 if (dist <= 40)
                 {
-                   
+                    gameObject.transform.LookAt(player.transform);
+                    //doet gay hier moet niet rotaten
                 }
             }
         }
@@ -112,7 +113,7 @@ public class FinalBoss : MonoBehaviour
     {
         ResetAnim();
         anim.SetBool("Attack3", true);
-        Invoke("Reset", 1f);
+        Invoke("Reset", 3f);
     }
     public void Attack1SpawnFireBalls()
     {
@@ -128,6 +129,7 @@ public class FinalBoss : MonoBehaviour
     }
     public void ShowInpactAttack2Aoe()
     {
+        print("movee");
         playerPos = player.transform.position;
     }
     public void DoAttackVisual2Aoe()
@@ -148,17 +150,17 @@ public class FinalBoss : MonoBehaviour
     }
     public void RandomAttack()
     {
-        float RandomAttack = Random.Range(1, 3);
-       // float RandomAttack = 1;
-        if (RandomAttack == 1)
+        //float RandomAttack = Random.Range(1,9);
+        float RandomAttack = 6;
+        if (RandomAttack == 1 | RandomAttack == 2 | RandomAttack == 3)
         {
             Attack1();
         }
-        if (RandomAttack == 2)
+        if (RandomAttack == 4 | RandomAttack == 5 | RandomAttack == 6)
         {
             Attack2();
         }
-        if (RandomAttack == 3)
+        if (RandomAttack == 7 | RandomAttack == 8 | RandomAttack == 9)
         {
             Attack3();
         }
@@ -318,3 +320,10 @@ public class FinalBoss : MonoBehaviour
         }
     }
 }
+
+///rotation fixen
+///// inpact fixen
+///// delay player poss
+///// animaties goed doenn
+//////goeie objects
+///////damage op alles
