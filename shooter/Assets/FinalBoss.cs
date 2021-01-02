@@ -8,7 +8,7 @@ public class FinalBoss : MonoBehaviour
     public Animator anim;
     public bool PlayerInTrigger, bossisdeath;
     public float damage1, damage2, damage3;
-    public GameObject fist,bal1,bal2,FireFist;
+    public GameObject fist,bal1,bal2,FireFist,inpactShowObject;
     //privates
     private bool playerIsDeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive, noParticle, didto0, aoe;
     private GameObject player, itemHolder;
@@ -101,19 +101,19 @@ public class FinalBoss : MonoBehaviour
     {
         ResetAnim();
         anim.SetBool("Attack1", true);
-        Invoke("Reset", 3f);
+        Invoke("Reset", 3.4f);
     }
     public void Attack2()
     {
         ResetAnim();
         anim.SetBool("Attack2", true);
-        Invoke("Reset", 3f);
+        Invoke("Reset", 3.3f);
     }
     public void Attack3()
     {
         ResetAnim();
         anim.SetBool("Attack3", true);
-        Invoke("Reset", 3f);
+        Invoke("Reset", 3.4f);
     }
     public void Attack1SpawnFireBalls()
     {
@@ -129,29 +129,34 @@ public class FinalBoss : MonoBehaviour
     }
     public void ShowInpactAttack2Aoe()
     {
-        print("movee");
         playerPos = player.transform.position;
+        Instantiate(inpactShowObject, playerPos - new Vector3(0, 1.44f, 0), Quaternion.identity);
+        Instantiate(inpactShowObject, playerPos + new Vector3(6, 0, 6) - new Vector3(0, 1.44f, 0), Quaternion.identity);
+        Instantiate(inpactShowObject, playerPos + new Vector3(9, 0, 0) - new Vector3(0, 1.44f, 7), Quaternion.identity);
+        Instantiate(inpactShowObject, playerPos + new Vector3(0, 0, 0) - new Vector3(6, 1.44f, 6), Quaternion.identity);
+        Instantiate(inpactShowObject, playerPos + new Vector3(0, 0, 10) - new Vector3(10, 1.44f, 0), Quaternion.identity);
     }
     public void DoAttackVisual2Aoe()
     {
-        Instantiate(fist, playerPos - new Vector3(0, 5, 0), Quaternion.identity);
-        Instantiate(fist, playerPos + new Vector3(6, 0, 6) - new Vector3(0,5,0), Quaternion.identity);
-        Instantiate(fist, playerPos + new Vector3(9, 0, 0) - new Vector3(0, 5, 7), Quaternion.identity);
-        Instantiate(fist, playerPos + new Vector3(0, 0, 0) - new Vector3(6, 5, 6), Quaternion.identity);
-        Instantiate(fist, playerPos + new Vector3(0, 0, 10) - new Vector3(10, 5, 0), Quaternion.identity);
+        Instantiate(fist, playerPos - new Vector3(0, 1, 0), Quaternion.identity);
+        Instantiate(fist, playerPos + new Vector3(6, 0, 6) - new Vector3(0, 2.3f, 0), Quaternion.identity);
+        Instantiate(fist, playerPos + new Vector3(9, 0, 0) - new Vector3(0, 2.3f, 7), Quaternion.identity);
+        Instantiate(fist, playerPos + new Vector3(0, 0, 0) - new Vector3(6, 2.3f, 6), Quaternion.identity);
+        Instantiate(fist, playerPos + new Vector3(0, 0, 10) - new Vector3(10, 2.3f, 0), Quaternion.identity);
     }
     public void ShowInpactAttack3()
     {
-
+        playerPos = player.transform.position;
+        Instantiate(inpactShowObject, player.transform.position - new Vector3(0, 1.44f, 0), Quaternion.identity);
     }
     public void DoAttackVisual3()
     {
-        Instantiate(fist, player.transform.position-new Vector3(0,5,0), Quaternion.identity) ;
+        Instantiate(fist, playerPos-new Vector3(0, 2.3f, 0), Quaternion.identity) ;
     }
     public void RandomAttack()
     {
-        //float RandomAttack = Random.Range(1,9);
-        float RandomAttack = 6;
+        float RandomAttack = Random.Range(1,9);
+       // float RandomAttack = 6;
         if (RandomAttack == 1 | RandomAttack == 2 | RandomAttack == 3)
         {
             Attack1();
@@ -195,6 +200,7 @@ public class FinalBoss : MonoBehaviour
     }
     public void Reset()
     {
+        ResetAnim();
         isAtacking = false;
     }
     public void DeathFunction()
@@ -322,8 +328,5 @@ public class FinalBoss : MonoBehaviour
 }
 
 ///rotation fixen
-///// inpact fixen
-///// delay player poss
-///// animaties goed doenn
 //////goeie objects
 ///////damage op alles
