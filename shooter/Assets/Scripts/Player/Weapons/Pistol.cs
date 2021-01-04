@@ -95,7 +95,7 @@ public class Pistol : WeaponReference
             mat.material.SetColor("_BaseColor", nNew);
 
             recharge.SetActive(true);
-            totalSpread = Mathf.Clamp(totalSpread - 0.1f * Time.deltaTime, 0, 2);
+            totalSpread = Mathf.Clamp(totalSpread - 0.3f * Time.deltaTime, 0, 1);
         }
         else
         {

@@ -20,7 +20,7 @@ public class Trigger : MonoBehaviour
     private RaycastHit hit, hitInfo;
     private Vector3 aimAt;
     private ItemList itemList;
-    private bool holdingGun = true;
+    private bool holdingGun = true, aimForward;
 
     private void Start()
     {
@@ -64,11 +64,14 @@ public class Trigger : MonoBehaviour
                 aimAt = hit.point;
                 if (Vector3.Distance(transform.position, aimAt) > 2)
                 {
-                    currentWeapon.LookAt(aimAt, Vector3.up);
+                    if(!aimForward)
+                    {
+                        currentWeapon.LookAt(aimAt, Vector3.up);
+                    }
                 }
             }
             //gunpickup
-            if (Physics.Raycast(transform.position, transform.forward, out hitInfo, 1000, guns))
+            if (Physics.Raycast(transform.position, transform.forward, out hitInfo, 4, guns))
             {
                 if (hitInfo.transform.tag == "Gun")
                 {
@@ -89,6 +92,8 @@ public class Trigger : MonoBehaviour
                 {
                     if(holdingGun)
                     {
+                        aimForward = true;
+                        Invoke("AimCooldown", 0.1f * attackCooldown);
                         nextAttack = attackCooldown + Time.time;
                         weapon.Fire(calculatedDamage);
                     }
@@ -114,6 +119,10 @@ public class Trigger : MonoBehaviour
             //    CalculateStats();
             //}
         }
+    }
+    private void AimCooldown()
+    {
+        aimForward = false;
     }
     private void SwapToMelee()
     {

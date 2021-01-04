@@ -265,6 +265,7 @@ MonoBehaviour:
   gunNumber: 0
   meleeNumber: 0
   weaponPickup: {fileID: 4869108868190744524}
+  pressF: {fileID: 0}
 --- !u!114 &1350052527731173487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,6 +422,7 @@ GameObject:
   - component: {fileID: 6579444859761588947}
   - component: {fileID: 6579444859761588945}
   - component: {fileID: 6579444859761588958}
+  - component: {fileID: 7492443233465131597}
   - component: {fileID: 2949705085181920099}
   - component: {fileID: 6032636393318719837}
   - component: {fileID: 1745607826103592577}
@@ -498,6 +500,19 @@ MonoBehaviour:
   forest: {fileID: 1585868317871231496}
   ice: {fileID: 5871038855383434997}
   doSound: 1
+--- !u!114 &7492443233465131597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579444859761588959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bbf1620b254c6a4ca2c2e0e71056f7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  list: {fileID: 2949705085181920099}
 --- !u!114 &2949705085181920099
 MonoBehaviour:
   m_ObjectHideFlags: 0
