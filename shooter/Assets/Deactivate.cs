@@ -10,6 +10,7 @@ public class Deactivate : MonoBehaviour
     private CharacterController controller;
     private GameObject player;
     private Rigidbody rb;
+    private float x, y, z;
 
     void Start()
     {
@@ -22,8 +23,15 @@ public class Deactivate : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         transform.LookAt(player.transform);
         rb = GetComponent<Rigidbody>();
-        speed = 50;    
+        speed = 25;    
         rb.velocity = transform.forward * speed;
+    }
+    private void Update()
+    {
+        gameObject.transform.rotation = Quaternion.Euler(new Vector3(x, y, z));
+        x = +0.0001f;
+        y = +0.0001f;
+        z = +0.0001f;
     }
     public void OnTriggerEnter(Collider gameobject)
     {

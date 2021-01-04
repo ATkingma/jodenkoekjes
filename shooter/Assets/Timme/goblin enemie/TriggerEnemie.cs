@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class TriggerEnemie : MonoBehaviour
 {
@@ -56,6 +57,7 @@ public class TriggerEnemie : MonoBehaviour
                     {
                         enemy.GetComponent<Goblin>().StartTrow();
                         deletingThis = gameobject.gameObject;
+                        deletingThis.GetComponent<NavMeshAgent>().speed = 0;
                         Invoke("Destroygoblin", 2.5f);
                     }
                 }

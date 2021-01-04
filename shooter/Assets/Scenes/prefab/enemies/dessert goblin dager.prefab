@@ -1062,7 +1062,7 @@ GameObject:
   - component: {fileID: 7994338634477764991}
   m_Layer: 12
   m_Name: dessert goblin dager
-  m_TagString: Enemy
+  m_TagString: Goblin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1184,6 +1184,7 @@ MonoBehaviour:
   hurt: {fileID: -3953272809920735857}
   health: 0
   maxMaxHealth: 0
+  list: {fileID: 0}
 --- !u!65 &7074798229449813143
 BoxCollider:
   m_ObjectHideFlags: 0
