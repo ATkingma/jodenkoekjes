@@ -23,9 +23,12 @@ public class EnemieScript : MonoBehaviour
     {
         if(soundOn)
         {
-            soundOn = false;
-            Invoke("SoundCooldown",0.4f);
-            walking.Play();
+            if (death)
+            {
+                soundOn = false;
+                Invoke("SoundCooldown", 0.4f);
+                walking.Play();
+            }
         }
         if (GetComponent<EnemyHealth>().health <= GetComponent<EnemyHealth>().executebelow)
         {

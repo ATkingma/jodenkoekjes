@@ -160,6 +160,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1278659811020018247, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
+      propertyPath: pressF
+      value: 
+      objectReference: {fileID: 564896286}
     - target: {fileID: 6032636393318719837, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
       propertyPath: popup
       value: 
@@ -984,6 +988,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+--- !u!1 &564896286 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5131200797486015602, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+  m_PrefabInstance: {fileID: 564896285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &586280875
 GameObject:
   m_ObjectHideFlags: 0

@@ -1312,6 +1312,7 @@ MonoBehaviour:
   balPosition: {fileID: 5124861724992000098}
   shield: {fileID: 5466880973412752813}
   PlayerInTrigger: 0
+  lava: {fileID: 1642130303030677933}
 --- !u!114 &5545319501817215094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1333,6 +1334,7 @@ MonoBehaviour:
   hurt: {fileID: 8876967450834231626}
   health: 0
   maxMaxHealth: 0
+  list: {fileID: 0}
 --- !u!54 &5747480693817243798
 Rigidbody:
   m_ObjectHideFlags: 0
