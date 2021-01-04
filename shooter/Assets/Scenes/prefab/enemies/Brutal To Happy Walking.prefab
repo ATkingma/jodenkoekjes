@@ -1235,6 +1235,7 @@ MonoBehaviour:
   hurt: {fileID: 4051260437947830234}
   health: 0
   maxMaxHealth: 0
+  list: {fileID: 0}
 --- !u!65 &3958663610405753880
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1356,7 +1357,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8766378964490745035, guid: f9ec44d2957565e4997e23ff85f75b6c, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0

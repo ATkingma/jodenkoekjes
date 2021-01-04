@@ -41,6 +41,7 @@ public class MainMenu : MonoBehaviour
     //hier doet ie laat scene timme
     public void StartGame()
     {
+        confirmButton.Play();
         for (int i = 0; i < 20; i++)
         {
             PlayerPrefs.SetFloat("itemQuantity" + i, 0);

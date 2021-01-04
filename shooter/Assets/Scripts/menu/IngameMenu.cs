@@ -74,6 +74,7 @@ public class IngameMenu : MainMenu
     }
     public void Resume()
     {
+        confirmButton.Play();
         menuOn = false;
         optionsOn = false;
         itemsOn = false;
