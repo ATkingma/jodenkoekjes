@@ -584,7 +584,8 @@ MonoBehaviour:
   difficulty: 0
   hurt: {fileID: 0}
   health: 0
-  maxMaxHealth: 0
+  maxMaxHealth: 100
+  list: {fileID: 2949705085181920099}
 --- !u!114 &1745607826103592577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,7 +708,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8766378964490745035, guid: f9ec44d2957565e4997e23ff85f75b6c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 91bf53c549bec774887b1304c514a457, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -803,7 +804,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8766378964490745035, guid: f9ec44d2957565e4997e23ff85f75b6c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 0f3211127b08fdb4d8adfbafdaa1dac2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0

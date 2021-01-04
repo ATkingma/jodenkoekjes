@@ -24,7 +24,7 @@ public class EnemieScript : MonoBehaviour
         if(soundOn)
         {
             soundOn = false;
-            Invoke("SoundCooldown",0.1f);
+            Invoke("SoundCooldown",0.4f);
             walking.Play();
         }
         if (GetComponent<EnemyHealth>().health <= GetComponent<EnemyHealth>().executebelow)
@@ -359,6 +359,6 @@ public class EnemieScript : MonoBehaviour
     }
     public void SoundCooldown()
     {
-        soundOn = false;
+        soundOn = true;
     }
 }

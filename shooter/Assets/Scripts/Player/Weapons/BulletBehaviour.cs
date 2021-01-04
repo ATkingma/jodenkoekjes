@@ -106,7 +106,7 @@ public class BulletBehaviour : MonoBehaviour
                         }
                         HitEnemy(hit.point);
                         Transform bloodymess = Instantiate(blood, hit.point, transform.rotation);
-                        Destroy(bloodymess, 1);
+                        Destroy(bloodymess.gameObject, 1);
                     }
                 }
                 else

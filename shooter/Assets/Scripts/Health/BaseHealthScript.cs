@@ -12,7 +12,7 @@ public class BaseHealthScript : MonoBehaviour
 
     //privates
     public float health, maxMaxHealth;
-    protected ItemList list;
+    public ItemList list;
 
     public virtual void Start()
     {
