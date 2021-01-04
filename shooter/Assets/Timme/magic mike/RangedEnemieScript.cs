@@ -9,12 +9,14 @@ public class RangedEnemieScript : MonoBehaviour
     public float attackCoolDown;
     public Animator anim;
     public GameObject magicBall, balPosition, shield;
-        public bool PlayerInTrigger;
+    public bool PlayerInTrigger;
     //privates
     private bool playerIsClose, doingDamage, isAtacking,death, doingDead, deathIsDoing, didto0;
     private GameObject player, itemHolder;
     private float speed;
     RaycastHit hit;
+    public AudioSource lava;
+
     void Start()
     {       
         player = GameObject.FindGameObjectWithTag("Player");
@@ -41,7 +43,7 @@ public class RangedEnemieScript : MonoBehaviour
                 {
                     FindObjectOfType<Saves>().AddKill(2); //fire
                     Death();
-
+                    lava.Stop();
                 }
 
             }

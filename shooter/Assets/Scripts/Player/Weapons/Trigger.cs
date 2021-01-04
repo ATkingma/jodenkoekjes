@@ -10,6 +10,7 @@ public class Trigger : MonoBehaviour
     public List<GameObject> gunlist, meleeList;
     public int gunNumber, meleeNumber;
     public AudioSource weaponPickup;
+    public GameObject pressF;
 
     //privates
     private float nextAttack, attackCooldown, attacksPerSec, calculatedDamage, slowBulletAttackSpeed, meleeDamage, attacksPerSecMelee, attackCooldownMelee;
@@ -69,13 +70,18 @@ public class Trigger : MonoBehaviour
             //gunpickup
             if (Physics.Raycast(transform.position, transform.forward, out hitInfo, 1000, guns))
             {
-                if (Input.GetButtonDown("Pickup"))
+                if (hitInfo.transform.tag == "Gun")
                 {
-                    if (hitInfo.transform.tag == "Gun")
+                    if (Input.GetButtonDown("Pickup"))
                     {
                         WeaponSwap(hitInfo.transform);
                     }
-                }
+                    pressF.SetActive(true);
+                } 
+            }
+            else
+            {
+                pressF.SetActive(false);
             }
             if (Input.GetButton("Fire1"))
             {
@@ -184,10 +190,10 @@ public class Trigger : MonoBehaviour
         attackCooldown = attacksPerSec / Mathf.Pow(attacksPerSec, 2);
 
         //melee
-        meleeDamage = melee.baseDamage * (1 + (0.1f * itemList.itemQuantity[0]));
+        //meleeDamage = melee.baseDamage * (1 + (0.1f * itemList.itemQuantity[0]));
 
-        attacksPerSecMelee = melee.baseAttackSpeed * (1 + (0.1f * itemList.itemQuantity[1]));
-        attackCooldownMelee = attacksPerSecMelee / Mathf.Pow(attacksPerSecMelee, 2);
+        //attacksPerSecMelee = melee.baseAttackSpeed * (1 + (0.1f * itemList.itemQuantity[1]));
+        //attackCooldownMelee = attacksPerSecMelee / Mathf.Pow(attacksPerSecMelee, 2);
 
         //glasscannon
         if (itemList.itemQuantity[5] > 0)

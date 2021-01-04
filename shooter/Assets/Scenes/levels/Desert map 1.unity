@@ -69090,6 +69090,10 @@ PrefabInstance:
       propertyPath: gunNumber
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1278659811020018247, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
+      propertyPath: pressF
+      value: 
+      objectReference: {fileID: 2105289151}
     - target: {fileID: 2949705085181920099, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
       propertyPath: itemQuantity.Array.data[2]
       value: 2
@@ -70325,6 +70329,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2105289151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5131200797486015602, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+  m_PrefabInstance: {fileID: 2105289148}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2107888006
 GameObject:
   m_ObjectHideFlags: 0
