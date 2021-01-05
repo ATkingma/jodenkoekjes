@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &629505761019308928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6112668623541139701}
+  m_Layer: 0
+  m_Name: Arena Ice version
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6112668623541139701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629505761019308928}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2053233238321284905}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2014294019434553538
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6112668623541139701}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -522067208597565041, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 90c2864970bb0cf4bb59e1e533741cbb, type: 2}
+    - target: {fileID: -319484376462432912, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 067f183513b2e9c46aab8fd0f3cbf639, type: 2}
+    - target: {fileID: 919132149155446097, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_Name
+      value: Arena Finished Ice version
+      objectReference: {fileID: 0}
+    - target: {fileID: 6775029173741390595, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 84f3acf78a4dba94cb8ba036c6ff0ac6, type: 2}
+    - target: {fileID: 7006931447299984445, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 418310d62755dc048af9b56f3d871071, type: 2}
+    - target: {fileID: 7821625320815587429, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9944b7f195c0be443a1f55a50313a162, type: 2}
+    - target: {fileID: 8247994413960396516, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 068358ce84f1a784d8fa847fceae4c9a, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+--- !u!4 &2053233238321284905 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1de49270fc5723a4280b70567b9aaf19, type: 3}
+  m_PrefabInstance: {fileID: 2014294019434553538}
+  m_PrefabAsset: {fileID: 0}
