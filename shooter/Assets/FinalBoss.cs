@@ -124,8 +124,10 @@ public class FinalBoss : MonoBehaviour
     {
         bal1.SetActive(false);
         bal2.SetActive(false);
-        Instantiate(FireFist, bal1.transform.position, Quaternion.identity);
-        Instantiate(FireFist, bal2.transform.position, Quaternion.identity);
+        GameObject projectile0 = Instantiate(FireFist, bal1.transform.position, Quaternion.identity);
+        projectile0.GetComponent<IceBeamScript>().damage = damage1;
+        GameObject projectile1 = Instantiate(FireFist, bal2.transform.position, Quaternion.identity);
+        projectile1.GetComponent<IceBeamScript>().damage = damage1;
     }
     public void ShowInpactAttack2Aoe()
     {
@@ -138,11 +140,16 @@ public class FinalBoss : MonoBehaviour
     }
     public void DoAttackVisual2Aoe()
     {
-        Instantiate(fist, playerPos - new Vector3(0, 1, 0), Quaternion.identity);
-        Instantiate(fist, playerPos + new Vector3(6, 0, 6) - new Vector3(0, 2.3f, 0), Quaternion.identity);
-        Instantiate(fist, playerPos + new Vector3(9, 0, 0) - new Vector3(0, 2.3f, 7), Quaternion.identity);
-        Instantiate(fist, playerPos + new Vector3(0, 0, 0) - new Vector3(6, 2.3f, 6), Quaternion.identity);
-        Instantiate(fist, playerPos + new Vector3(0, 0, 10) - new Vector3(10, 2.3f, 0), Quaternion.identity);
+        GameObject fist0 = Instantiate(fist, playerPos - new Vector3(0, 1, 0), Quaternion.identity);
+        fist0.GetComponent<DestroyScriptFist>().damage = damage2;
+        GameObject fist1 = Instantiate(fist, playerPos + new Vector3(6, 0, 6) - new Vector3(0, 2.3f, 0), Quaternion.identity);
+        fist1.GetComponent<DestroyScriptFist>().damage = damage2;
+        GameObject fist2 = Instantiate(fist, playerPos + new Vector3(9, 0, 0) - new Vector3(0, 2.3f, 7), Quaternion.identity);
+        fist2.GetComponent<DestroyScriptFist>().damage = damage2;
+        GameObject fist3 = Instantiate(fist, playerPos + new Vector3(0, 0, 0) - new Vector3(6, 2.3f, 6), Quaternion.identity);
+        fist3.GetComponent<DestroyScriptFist>().damage = damage2;
+        GameObject fist4 = Instantiate(fist, playerPos + new Vector3(0, 0, 10) - new Vector3(10, 2.3f, 0), Quaternion.identity);
+        fist4.GetComponent<DestroyScriptFist>().damage = damage2;
     }
     public void ShowInpactAttack3()
     {
@@ -151,7 +158,8 @@ public class FinalBoss : MonoBehaviour
     }
     public void DoAttackVisual3()
     {
-        Instantiate(fist, playerPos-new Vector3(0, 2.3f, 0), Quaternion.identity) ;
+        GameObject fist0 = Instantiate(fist, playerPos-new Vector3(0, 2.3f, 0), Quaternion.identity) ;
+        fist0.GetComponent<DestroyScriptFist>().damage = damage3;
     }
     public void RandomAttack()
     {

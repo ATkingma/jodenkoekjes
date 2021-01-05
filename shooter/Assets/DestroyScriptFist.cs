@@ -7,6 +7,7 @@ public class DestroyScriptFist : MonoBehaviour
     public Animator anim;
     public GameObject papa;
     private float rotation;
+    public float damage;
     void Start()
     {
         Invoke("AnimDestroy", 2.5f);
@@ -22,5 +23,9 @@ public class DestroyScriptFist : MonoBehaviour
     {
         Destroy(gameObject);
         Destroy(papa);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        other.GetComponent<PlayerHealth>().ReceiveDamage(damage, 0);
     }
 }

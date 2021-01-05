@@ -5,7 +5,7 @@ using UnityEngine;
 public class IceBeamScript : MonoBehaviour
 {
     //public
-    public float speed,coolDown;
+    public float speed,coolDown, damage;
     //private
     private GameObject player;
     private bool canGoForward;
@@ -23,7 +23,7 @@ public class IceBeamScript : MonoBehaviour
     {
         if (canGoForward == true)
         {
-        transform.Translate(Vector3.forward * speed);
+            transform.Translate(Vector3.forward * speed);
         }
     }
 
@@ -31,7 +31,7 @@ public class IceBeamScript : MonoBehaviour
     {
         if (gameobject.gameObject.tag == "Player")
         {
-          
+            gameobject.GetComponent<PlayerHealth>().ReceiveDamage(damage, 0);
         }
     }
 }
