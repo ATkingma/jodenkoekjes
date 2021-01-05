@@ -6,11 +6,11 @@ public class Boss : MonoBehaviour
 {
     //publics
     public Animator anim;
-    public GameObject icePegel1, icePegel2, portal;
+    public GameObject icePegel1, icePegel2, portal,raycast;
     public bool PlayerInTrigger, bossisdeath;
     public float damage1, damage2, damage3;
     //privates
-    private bool playerIsDeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive, noParticle, didto0,aoe;
+    private bool playerIsDeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive, noParticle, didto0,aoe,AttackDoingDamage;
     private GameObject player, itemHolder,playerPosition;
     private GameObject attack1_1Pos, attack1_2Pos, attack1_3Pos, attack1_4Pos, attack2Pos, attack3Pos, attack4_1Pos, attack4_2Pos, attack4_3Pos;
     private GameObject[] itemSpawnPoints;
@@ -49,6 +49,7 @@ public class Boss : MonoBehaviour
     {
         if (playerIsDeath == false)
         {
+            raycast.transform.LookAt(player.transform.position);
             if (bossisdeath == false)
             {
                 if (GetComponent<EnemyHealth>().health <= GetComponent<EnemyHealth>().executebelow)
@@ -68,14 +69,18 @@ public class Boss : MonoBehaviour
                     attack1_2Pos.GetComponent<LineRenderer>().SetPosition(0, attack1_2Pos.transform.position);
                     attack1_3Pos.GetComponent<LineRenderer>().SetPosition(0, attack1_3Pos.transform.position);
                     attack1_4Pos.GetComponent<LineRenderer>().SetPosition(0, attack1_4Pos.transform.position);
-                    Debug.DrawRay(transform.position + new Vector3(0, 0.5f, 0), transform.forward, Color.green, 100000);
                     RaycastHit hit;
-                    if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
+                    Debug.DrawRay(raycast.transform.position, raycast.transform.forward, Color.green, 10000000000000000000000000000000000000f);
+                    if (Physics.Raycast(raycast.transform.position, raycast.transform.forward,  out hit, 10000000000000000000000000000000000000f))
                     {
                         if (hit.transform.tag == "Player")
                         {
-                            player.GetComponent<PlayerHealth>().ReceiveDamage(damage2, 0);
-                            print("1");//doet t ook
+                            if (!AttackDoingDamage)
+                            {
+                                player.GetComponent<PlayerHealth>().ReceiveDamage(damage2, 0);
+                                AttackDoingDamage = true;
+                                print("doetie");
+                            }
                         }
                     }
                 }
@@ -85,13 +90,17 @@ public class Boss : MonoBehaviour
                     attack4_2Pos.GetComponent<LineRenderer>().SetPosition(0, attack4_2Pos.transform.position);
                     attack4_3Pos.GetComponent<LineRenderer>().SetPosition(0, attack4_3Pos.transform.position);
                     RaycastHit hit;
-                    Debug.DrawRay(transform.position + new Vector3(0, 0.5f, 0), transform.forward,Color.green, 100000);
-                    if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
+                    Debug.DrawRay(raycast.transform.position, raycast.transform.forward, Color.green, 10000000000000000000000000000000000000f);
+                    if (Physics.Raycast(raycast.transform.position, raycast.transform.forward, out hit, 10000000000000000000000000000000000000f))
                     {
                         if (hit.transform.tag == "Player")
                         {
-                            player.GetComponent<PlayerHealth>().ReceiveDamage(damage2, 0);
-                            print("2");// deze ook soort van?
+                            if (!AttackDoingDamage)
+                            {
+                                player.GetComponent<PlayerHealth>().ReceiveDamage(damage2, 0);
+                                AttackDoingDamage = true;
+                                print("hier ook");
+                            }                            
                         }
                     }
                 }
@@ -100,13 +109,17 @@ public class Boss : MonoBehaviour
                     Invoke("ResetAttack2", 0.5f);
                     attack2Pos.GetComponent<LineRenderer>().SetPosition(0, attack2Pos.transform.position);
                     RaycastHit hit;
-                    Debug.DrawRay(transform.position + new Vector3(0, 0.5f, 0), transform.forward, Color.green, 100000);
-                    if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), transform.forward, out hit))
+                    Debug.DrawRay(raycast.transform.position, raycast.transform.forward, Color.green, 10000000000000000000000000000000000000f);
+                    if (Physics.Raycast(raycast.transform.position, raycast.transform.forward, out hit, 10000000000000000000000000000000000000f))
                     {
                         if (hit.transform.tag == "Player")
                         {
-                            player.GetComponent<PlayerHealth>().ReceiveDamage(damage2, 0);
-                            print("3");//doet het
+                            if (!AttackDoingDamage)
+                            {
+                                player.GetComponent<PlayerHealth>().ReceiveDamage(damage2, 0);
+                                AttackDoingDamage = true;
+                                print("ookl hier");
+                            }
                         }
                     }
                 }
@@ -319,6 +332,7 @@ public class Boss : MonoBehaviour
         attack4_2Pos.SetActive(false);
         attack4_3Pos.SetActive(false);
         aoe = false;
+        AttackDoingDamage = false;
     }
     public void SpawnAttack2()
     {
