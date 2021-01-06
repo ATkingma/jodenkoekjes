@@ -68,7 +68,7 @@ public class BulletBehaviour : MonoBehaviour
                 {
                     Destroy(gameObject);
                 }
-                if (hit.transform.tag == "Enemy")
+                if (hit.transform.tag == "Enemy" || hit.transform.tag == "Goblin")
                 {
                     if(hit.transform != dontTouch)
                     {
@@ -78,7 +78,7 @@ public class BulletBehaviour : MonoBehaviour
                             Collider[] UwUs = Physics.OverlapSphere(hit.point, 10000);
                             foreach (Collider UwU in UwUs)
                             {
-                                if (UwU.tag == "Enemy")
+                                if (UwU.tag == "Enemy" || UwU.tag == "Goblin")
                                 {
                                     if(UwU.transform != hit.transform)
                                     {

@@ -1650,7 +1650,7 @@ GameObject:
   - component: {fileID: 3847028250975896085}
   m_Layer: 12
   m_Name: forest goblin speer
-  m_TagString: Enemy
+  m_TagString: Goblin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1772,6 +1772,7 @@ MonoBehaviour:
   hurt: {fileID: 1313792474172757284}
   health: 0
   maxMaxHealth: 0
+  list: {fileID: 0}
 --- !u!65 &1660666750084580144
 BoxCollider:
   m_ObjectHideFlags: 0
