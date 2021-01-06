@@ -113,30 +113,9 @@ public class MainMenu : MonoBehaviour
                 gunSkins[m].SetActive(true);
             }
         }
-        if(PlayerPrefs.GetInt("goldenpistol", 0) == 0)
-        {
-            gunSkins[0].GetComponent<Toggle>().isOn = false;
-        }
-        else
-        {
-            gunSkins[0].GetComponent<Toggle>().isOn = true;
-        }
-        if (PlayerPrefs.GetInt("goldenlauncher", 0) == 0)
-        {
-            gunSkins[1].GetComponent<Toggle>().isOn = false;
-        }
-        else
-        {
-            gunSkins[1].GetComponent<Toggle>().isOn = true;
-        }
-        if (PlayerPrefs.GetInt("goldenrifle", 0) == 0)
-        {
-            gunSkins[2].GetComponent<Toggle>().isOn = false;
-        }
-        else
-        {
-            gunSkins[2].GetComponent<Toggle>().isOn = true;
-        }
+        gunSkins[0].GetComponent<Toggle>().isOn = PlayerPrefs.GetInt("goldenpistol") != 0;
+        gunSkins[1].GetComponent<Toggle>().isOn = PlayerPrefs.GetInt("goldenlauncher") != 0;
+        gunSkins[2].GetComponent<Toggle>().isOn = PlayerPrefs.GetInt("goldenrifle") != 0;
 
         for (int s = 0; s < itemList.Count; s++)
         {
@@ -232,39 +211,17 @@ public class MainMenu : MonoBehaviour
     //golden skins
     public void GoldenPistolOn()
     {
-        if(PlayerPrefs.GetInt("goldenpistol", 0) == 0)
-        {
-            PlayerPrefs.SetInt("goldenpistol", 1);
-        }
-        else
-        {
-            PlayerPrefs.SetInt("goldenpistol", 0);
-        }
+        PlayerPrefs.SetInt("goldenpistol", (gunSkins[0].GetComponent<Toggle>().isOn ? 1 : 0));
         confirmButton.Play();
-
     }
     public void GoldenLauncherOn()
     {
-        if (PlayerPrefs.GetInt("goldenlauncher", 0) == 0)
-        {
-            PlayerPrefs.SetInt("goldenlauncher", 1);
-        }
-        else
-        {
-            PlayerPrefs.SetInt("goldenlauncher", 0);
-        }
+        PlayerPrefs.SetInt("goldenlauncher", (gunSkins[1].GetComponent<Toggle>().isOn ? 1 : 0));
         confirmButton.Play();
     }
     public void GoldenRifleOn()
     {
-        if (PlayerPrefs.GetInt("goldenrifle", 0) == 0)
-        {
-            PlayerPrefs.SetInt("goldenrifle", 1);
-        }
-        else
-        {
-            PlayerPrefs.SetInt("goldenrifle", 0);
-        }
+        PlayerPrefs.SetInt("goldenrifle", (gunSkins[2].GetComponent<Toggle>().isOn ? 1 : 0));
         confirmButton.Play();
     }
 }

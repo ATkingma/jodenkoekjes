@@ -29,15 +29,11 @@ public class BaseHealthScript : MonoBehaviour
     }
     public virtual void ReceiveDamage(float amount, int usedWeapon)
     {
-        if(gameObject.tag != "Player")
+        if(gameObject.tag == "Player")
         {
-            amount = Mathf.Clamp(amount - 2 * list.itemQuantity[10], 0, Mathf.Infinity);
+            amount = Mathf.Clamp(amount - (2 * list.itemQuantity[10]), 0, Mathf.Infinity);
         }
-        else
-        {
-            health = Mathf.Clamp(health - amount, 0, maxHealth);
-        }
-
+        health = Mathf.Clamp(health - amount, 0, maxHealth);
 
         if(health == 0)
         {

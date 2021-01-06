@@ -12,6 +12,7 @@ public class BulletBehaviour : MonoBehaviour
     public int weaponUsed, richocetAmount;
     public Rigidbody rb;
     public Transform blood;
+    public AudioSource boem;
 
     //privates
     private Vector3 prefLocation;
@@ -41,6 +42,7 @@ public class BulletBehaviour : MonoBehaviour
             normalHitRange = explosionRange * explosionCount;
             GameObject boom = Instantiate(explosionRadius, pos, Quaternion.identity);
             boom.transform.localScale = new Vector3(normalHitRange, normalHitRange, normalHitRange) * 2;
+            boem.Play();
             Destroy(boom, 0.1f);
         }
         else

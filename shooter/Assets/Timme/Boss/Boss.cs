@@ -41,12 +41,13 @@ public class Boss : MonoBehaviour
 
         //boss damage based on min
         float temp = PlayerPrefs.GetFloat("minuut", 0);
-        damage1 *= 0.1f * temp;
-        damage2 *= 0.1f * temp;
-        damage3 *= 0.1f * temp;
+        damage1 *= (1 + 0.1f) * (1 + temp);
+        damage2 *= (1 + 0.1f) * (1 + temp);
+        damage3 *= (1 + 0.1f) * (1 + temp);
     }
     void Update()
     {
+        Debug.DrawRay(raycast.transform.position, raycast.transform.forward * 10000000000000000000000000000000000000f, Color.green, 10000);
         if (playerIsDeath == false)
         {
             raycast.transform.LookAt(player.transform.position);
@@ -70,7 +71,7 @@ public class Boss : MonoBehaviour
                     attack1_3Pos.GetComponent<LineRenderer>().SetPosition(0, attack1_3Pos.transform.position);
                     attack1_4Pos.GetComponent<LineRenderer>().SetPosition(0, attack1_4Pos.transform.position);
                     RaycastHit hit;
-                    Debug.DrawRay(raycast.transform.position, raycast.transform.forward, Color.green, 10000000000000000000000000000000000000f);
+                    
                     if (Physics.Raycast(raycast.transform.position, raycast.transform.forward,  out hit, 10000000000000000000000000000000000000f))
                     {
                         if (hit.transform.tag == "Player")
