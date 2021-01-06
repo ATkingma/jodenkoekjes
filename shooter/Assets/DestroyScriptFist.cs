@@ -29,6 +29,10 @@ public class DestroyScriptFist : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<PlayerHealth>().ReceiveDamage(damage, 0);
+        if(other.tag == "Player")
+        {
+            other.GetComponent<PlayerHealth>().ReceiveDamage(damage, 0);
+            Destroy(gameObject);
+        }
     }
 }
