@@ -4678,9 +4678,9 @@ GameObject:
   - component: {fileID: 8363637914744305037}
   - component: {fileID: 8363637914744305038}
   - component: {fileID: 8363637914744305040}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: gollem forest
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4774,6 +4774,11 @@ MonoBehaviour:
   goblinToSpawn: {fileID: 7295516758634166157, guid: 37a4c3d3bf85b8847a511e67d73ad7b9, type: 3}
   goblinSpawn: {fileID: 8363637914367866494}
   goblinToSetActive: {fileID: 5822113892118044144}
+  walking: {fileID: 0}
+  trowing: {fileID: 0}
+  smacking: {fileID: 0}
+  dying: {fileID: 0}
+  taunting: {fileID: 0}
 --- !u!114 &8363637914744305038
 MonoBehaviour:
   m_ObjectHideFlags: 0
