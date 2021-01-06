@@ -9,6 +9,8 @@ public class Goblin : MonoBehaviour
     public Animator anim;
     public bool PlayerInTrigger, isAtacking, goblinInTrigger, isTrowing,isOnCoolDown;
     public GameObject goblinToSpawn, goblinSpawn, goblinToSetActive;
+
+    public AudioSource walking,trowing,smacking,dying,taunting;
     //private
     private GameObject player, itemHolder, lookat;
     private bool doingDamage, death, doingDead, deathIsDoing, didto0;
@@ -43,6 +45,7 @@ public class Goblin : MonoBehaviour
         }
         if (!death)
         {
+
             CoolDown();
             float dist = Vector3.Distance(player.transform.position, transform.position);
             if (dist <= 4)
@@ -177,11 +180,18 @@ public class Goblin : MonoBehaviour
     {
         ResetAnim();
         anim.SetBool("IsTaunting", true);
+        taunting.Play();
     }
     public void Atack()
     {
         ResetAnim();
         anim.SetBool("IsAttacking", true);
+        smacking.Play();
+        Invoke("AudioSecondhit", 1.2f);
+    }
+    public void AudioSecondhit()
+    {
+        smacking.Play();
     }
     public void ResetAnim()
     {
@@ -198,6 +208,7 @@ public class Goblin : MonoBehaviour
         anim.SetBool("Death", true);
         gameObject.GetComponent<BoxCollider>().enabled = false;
         itemHolder.GetComponent<Spawner>().enemiesDied++;
+        dying.Play();
         WhatItemWeGonGet();
         Invoke("IsDeath", 3);
     }
@@ -322,6 +333,7 @@ public class Goblin : MonoBehaviour
     public void Spawn()
     {
         Instantiate(goblinToSpawn, goblinSpawn.transform.position, Quaternion.identity);
+        trowing.Play();
     }
     public void CoolDown()
     {

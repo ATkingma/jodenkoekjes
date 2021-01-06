@@ -9,6 +9,7 @@ public class FinalBoss : MonoBehaviour
     public bool PlayerInTrigger, bossisdeath;
     public float damage1, damage2, damage3;
     public GameObject fist,bal1,bal2,FireFist,inpactShowObject;
+    public AudioSource dying, walking, taunt1Sound, taunt2Sound,shootSound,quickfistattack,aoeattack;
     //privates
     private bool playerIsDeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive, noParticle, didto0, aoe;
     private GameObject player, itemHolder;
@@ -40,6 +41,7 @@ public class FinalBoss : MonoBehaviour
         {
             if (bossisdeath == false)
             {
+                walking.Play();
                 if (GetComponent<EnemyHealth>().health <= GetComponent<EnemyHealth>().executebelow)
                 {
                     if (!didto0)
@@ -102,18 +104,21 @@ public class FinalBoss : MonoBehaviour
         ResetAnim();
         anim.SetBool("Attack1", true);
         Invoke("Reset", 3.4f);
+        shootSound.Play();
     }
     public void Attack2()
     {
         ResetAnim();
         anim.SetBool("Attack2", true);
         Invoke("Reset", 3.3f);
+        aoeattack.Play();
     }
     public void Attack3()
     {
         ResetAnim();
         anim.SetBool("Attack3", true);
         Invoke("Reset", 3.4f);
+        quickfistattack.Play();
     }
     public void Attack1SpawnFireBalls()
     {
@@ -185,10 +190,12 @@ public class FinalBoss : MonoBehaviour
         if (RanomAttack == 1)
         {
             Taunt1();
+            taunt1Sound.Play();
         }
         if (RanomAttack == 2)
         {
             Taunt2();
+            taunt2Sound.Play();
         }
     }
 
@@ -216,6 +223,7 @@ public class FinalBoss : MonoBehaviour
         FindObjectOfType<Saves>().AddKill(5); //boss
         FindObjectOfType<Saves>().BossesKilled();
         bossisdeath = true;
+        dying.Play();
         Invoke("Disapear", 4);
         anim.SetBool("IsDeath", true);
         gameObject.GetComponent<BoxCollider>().enabled = false;

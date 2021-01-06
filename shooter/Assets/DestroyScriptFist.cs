@@ -6,10 +6,12 @@ public class DestroyScriptFist : MonoBehaviour
 {
     public Animator anim;
     public GameObject papa;
+    public AudioSource fistGoingUpSound, fistGoingDownSound;
     private float rotation;
     public float damage;
     void Start()
     {
+        fistGoingUpSound.Play();
         Invoke("AnimDestroy", 2.5f);
         Invoke("Destroy", 3);
         rotation = Random.Range(0f, 360f);
@@ -17,6 +19,7 @@ public class DestroyScriptFist : MonoBehaviour
     }
     public void AnimDestroy()
     {
+        fistGoingDownSound.Play();
         anim.SetBool("Destroy", true);
     }
     public void Destroy()

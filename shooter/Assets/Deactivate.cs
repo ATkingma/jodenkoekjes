@@ -5,12 +5,14 @@ using UnityEngine.AI;
 
 public class Deactivate : MonoBehaviour
 {
+    public AudioSource yeetsound;
     private float speed;
     private NavMeshAgent agent;
     private CharacterController controller;
     private GameObject player;
     private Rigidbody rb;
     private float x, y, z;
+    private GameObject ground;
 
     void Start()
     {
@@ -25,6 +27,9 @@ public class Deactivate : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         speed = 25;    
         rb.velocity = transform.forward * speed;
+        yeetsound.Play();
+        ground = GameObject.FindGameObjectWithTag("ground");
+        Invoke("LookGround", 4);
     }
     private void Update()
     {
@@ -51,5 +56,9 @@ public class Deactivate : MonoBehaviour
         gameObject.GetComponent<Animator>().enabled = true;
         agent.enabled = true;
         controller.enabled = false;
+    }
+    public void LookGround()
+    {
+        transform.LookAt(ground.transform);
     }
 }
