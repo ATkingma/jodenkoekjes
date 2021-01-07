@@ -34,6 +34,7 @@ public class Saves : MonoBehaviour
     }
     public void ClearSaves()
     {
+        PlayerPrefs.SetFloat("MaxEnemiesToKill", 5);
         PlayerPrefs.SetFloat("seconde", 0);
         PlayerPrefs.SetFloat("minuut", 0);
         PlayerPrefs.SetFloat("uur", 0);
