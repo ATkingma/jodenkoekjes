@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
-    public float movementSpeed, sprintSpeed, gravity, jumpForce, crouchHeight;
+    public float movementSpeed, sprintSpeed, gravity, jumpForce, crouchHeight, downForce;
     public AudioSource desert, forest, ice;
     public bool doSound = true;
 
@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     private CharacterController controller;
     private Vector3 moveDir;
 
-    private float rotX, speed, groundedCooldown = 0.1f, downForce, bodyHeight, baseSprintSpeed, baseMovewmentSpeed;
+    private float rotX, speed, groundedCooldown = 0.1f, bodyHeight, baseSprintSpeed, baseMovewmentSpeed;
     private int jumpcount;
 
     private ItemList list;

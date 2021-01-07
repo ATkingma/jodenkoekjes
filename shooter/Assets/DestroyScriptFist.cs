@@ -36,6 +36,7 @@ public class DestroyScriptFist : MonoBehaviour
             if (afblijven)
             {
                 other.GetComponent<PlayerHealth>().ReceiveDamage(damage, 0);
+                other.GetComponent<Movement>().downForce = 3;
             }
         }
     }
