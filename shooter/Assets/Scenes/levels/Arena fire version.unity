@@ -2181,6 +2181,18 @@ PrefabInstance:
       propertyPath: FireFist
       value: 
       objectReference: {fileID: 9146692290216557146, guid: bcc6ea967ff693241b10baad3a9d3674, type: 3}
+    - target: {fileID: 1840869934887492005, guid: 4a001b1628c1ebe47b8680d0529aaca8, type: 3}
+      propertyPath: damage1
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1840869934887492005, guid: 4a001b1628c1ebe47b8680d0529aaca8, type: 3}
+      propertyPath: damage2
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1840869934887492005, guid: 4a001b1628c1ebe47b8680d0529aaca8, type: 3}
+      propertyPath: damage3
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2163605851119777516, guid: 4a001b1628c1ebe47b8680d0529aaca8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.5

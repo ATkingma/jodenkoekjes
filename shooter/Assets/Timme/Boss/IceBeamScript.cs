@@ -32,6 +32,8 @@ public class IceBeamScript : MonoBehaviour
         if (gameobject.gameObject.tag == "Player")
         {
             gameobject.GetComponent<PlayerHealth>().ReceiveDamage(damage, 0);
+            Destroy(gameobject);
         }
+        Destroy(gameobject);
     }
 }
