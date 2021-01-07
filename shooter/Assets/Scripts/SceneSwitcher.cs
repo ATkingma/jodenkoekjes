@@ -27,6 +27,10 @@ public class SceneSwitcher : MonoBehaviour
             FindObjectOfType<LoadingScreen>().StartLoadingScreenNormaBossMap();
         }
     }
+    public void mainMenu()
+    {
+        FindObjectOfType<LoadingScreen>().MainMenu();
+    }
     public void ResetDieShit()
     {
         PlayerPrefs.SetFloat("TimeSaved", 0f);

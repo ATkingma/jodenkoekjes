@@ -23,7 +23,7 @@ public class FinalBoss : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         speed = GetComponent<NavMeshAgent>().speed;
-        soMutch = 5;
+        soMutch = 12;
         itemHolder = GameObject.FindGameObjectWithTag("GameManager");
         itemSpawnPoints = GameObject.FindGameObjectsWithTag("ItemDropPoint");
 
