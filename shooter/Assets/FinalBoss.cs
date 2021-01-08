@@ -220,7 +220,7 @@ public class FinalBoss : MonoBehaviour
     }
     public void DeathFunction()
     {
-        FindObjectOfType<Saves>().AddKill(5); //boss
+        FindObjectOfType<Saves>().AddKill(6); //boss final
         FindObjectOfType<Saves>().BossesKilled();
         bossisdeath = true;
         dying.Play();

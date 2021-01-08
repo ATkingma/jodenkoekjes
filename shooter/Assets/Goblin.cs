@@ -38,7 +38,7 @@ public class Goblin : MonoBehaviour
             {
                 if (!deathIsDoing)
                 {
-                    FindObjectOfType<Saves>().AddKill(1); //goblin
+                    FindObjectOfType<Saves>().AddKill(4); //goblin
                     Death();
                 }
             }
