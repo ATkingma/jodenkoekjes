@@ -15,17 +15,17 @@ public class SceneSwitcher : MonoBehaviour
     public void SceneLoader()
     {
         scenes = PlayerPrefs.GetInt("scene");
+        if (scenes >= 3)
+        {
+            PlayerPrefs.SetInt("scene", scenes);
+            FindObjectOfType<LoadingScreen>().StartLoadingScreenNormaBossMap();
+        }
         if (scenes <= 2)
         {
             Plus();
             PlayerPrefs.SetInt("scene", scenes);
             FindObjectOfType<LoadingScreen>().StartLoadingScreenNormalMap();
         }   
-        if (scenes >= 3)
-        {
-            PlayerPrefs.SetInt("scene", scenes);
-            FindObjectOfType<LoadingScreen>().StartLoadingScreenNormaBossMap();
-        }
     }
     public void mainMenu()
     {
