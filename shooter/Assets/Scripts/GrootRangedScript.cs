@@ -12,7 +12,7 @@ public class GrootRangedScript : MonoBehaviour
     public GameObject defenceSphere, attackline_1, attackline_2, idleLine_1, idleLine_2;
     public bool PlayerInTrigger;
     //privates
-    private bool playerIsClose, doingDamage, didto0, isAtacking, death, doingDead, settingLine,doingIdle, deathIsDoing;
+    private bool playerIsClose, doingDamage, didto0, isAtacking, death, doingDead, settingLine,doingIdle, deathIsDoing,taunting;
     private GameObject player, itemHolder;
     private float speed;
     RaycastHit hit;
@@ -64,10 +64,14 @@ public class GrootRangedScript : MonoBehaviour
                 playerIsClose = true;
                 UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
                 agent.destination = gameObject.transform.position;
+                if (!taunting)
+                {
                 gameObject.transform.LookAt(player.transform);
+                }
             }
             if (dist >= 12)
             {
+                taunting = false;
                 playerIsClose = false;
                 GetComponent<NavMeshAgent>().speed = speed;
             }
@@ -103,7 +107,10 @@ public class GrootRangedScript : MonoBehaviour
                 }
                 else
                 {
-                    gameObject.transform.LookAt(player.transform);
+                    if (!taunting)
+                    {
+                        gameObject.transform.LookAt(player.transform);
+                    }
                 }
             }
         }
@@ -138,6 +145,7 @@ public class GrootRangedScript : MonoBehaviour
         idleLine_1.SetActive(false);
         idleLine_2.SetActive(false);
         defenceSphere.SetActive(false);
+        taunting = false;
     }
     public void Taunt()
     {
@@ -149,7 +157,10 @@ public class GrootRangedScript : MonoBehaviour
     }
     public void LookAtHim()
     {
-        gameObject.transform.LookAt(player.transform);
+        if (!taunting)
+        {
+            gameObject.transform.LookAt(player.transform);
+        }
     }
     public void RandomTaunt()
     {
@@ -163,6 +174,7 @@ public class GrootRangedScript : MonoBehaviour
                 Invoke("Resset", 11);
                 attackline_1.SetActive(false);
                 attackline_2.SetActive(false);
+                taunting = true;
             }
             if (RandomIdle == 2)
             {
@@ -171,6 +183,7 @@ public class GrootRangedScript : MonoBehaviour
                 Invoke("Resset", 11);
                 attackline_1.SetActive(false);
                 attackline_2.SetActive(false);
+                taunting = true;
             }
             if (RandomIdle == 3)
             {
@@ -179,6 +192,7 @@ public class GrootRangedScript : MonoBehaviour
                 Invoke("Resset", 6);
                 attackline_1.SetActive(false);
                 attackline_2.SetActive(false);
+                taunting = true;
             }
         }
     }
