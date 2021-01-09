@@ -37,7 +37,10 @@ public class BaseHealthScript : MonoBehaviour
 
         if(health == 0)
         {
-            print("moet inheritance gebruiken!");
+            if (gameObject.tag == "Player")
+            {
+                FindObjectOfType<DeathPlayer>().DEAD();
+            }
         }
     }
     public virtual void Heal(float amount)

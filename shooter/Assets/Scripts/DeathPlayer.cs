@@ -15,7 +15,7 @@ public class DeathPlayer : MonoBehaviour
         clear = FindObjectOfType<Saves>();
         player = FindObjectOfType<PlayerHealth>().gameObject;
     }
-    void Update()
+    public void DEAD()
     {
         if (player.GetComponent<PlayerHealth>().health <= 0)
         {
