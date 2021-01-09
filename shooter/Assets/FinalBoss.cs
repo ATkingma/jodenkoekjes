@@ -118,7 +118,6 @@ public class FinalBoss : MonoBehaviour
         ResetAnim();
         anim.SetBool("Attack3", true);
         Invoke("Reset", 3.4f);
-        quickfistattack.Play();
     }
     public void Attack1SpawnFireBalls()
     {
@@ -340,6 +339,11 @@ public class FinalBoss : MonoBehaviour
                 ItemDrop();
             }
         }
+    }
+    public void AudioQuick()
+    {
+        quickfistattack.Play();
+        print("doet t ");
     }
 }
 
