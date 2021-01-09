@@ -2711,6 +2711,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4961196290701748858, guid: 96d35f61b15378e4b83460a0e0dbecbd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 4961196290701748858, guid: 96d35f61b15378e4b83460a0e0dbecbd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 45.66
+      objectReference: {fileID: 0}
     - target: {fileID: 6665965489879339545, guid: 96d35f61b15378e4b83460a0e0dbecbd, type: 3}
       propertyPath: m_Name
       value: Terrain
