@@ -10,5 +10,5 @@ public class OutMapDamageScript : MonoBehaviour
         {
             gameobject.GetComponent<PlayerHealth>().ReceiveDamage(2.2f*Time.deltaTime/0.15f, 0);
         }
-    }
+    }    
 }

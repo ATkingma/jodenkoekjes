@@ -30,7 +30,7 @@ public class Spawner : MonoBehaviour
         maxEnemiesToSpawn = 100;
         plusmax = PlayerPrefs.GetInt("MaxEnemiesToKill");
         plusmax += 1; //balancing
-        maxEnemiesTokill = (int)(PlayerPrefs.GetInt("MaxEnemiesToKill") * 1.5f);
+        maxEnemiesTokill = (int)((PlayerPrefs.GetInt("MaxEnemiesToKill")+5 )* 1.5);
         remeberme = 10;
         countminup = 5;
         portal = FindObjectOfType<Portal>().gameObject;
