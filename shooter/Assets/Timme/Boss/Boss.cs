@@ -50,7 +50,7 @@ public class Boss : MonoBehaviour
         Debug.DrawRay(raycast.transform.position, raycast.transform.forward * 10000000000000000000000000000000000000f, Color.green, 10000);
         if (playerIsDeath == false)
         {
-            raycast.transform.LookAt(player.transform.position);
+            raycast.transform.LookAt(playerPos);
             if (bossisdeath == false)
             {
                 if (GetComponent<EnemyHealth>().health <= GetComponent<EnemyHealth>().executebelow)
@@ -124,12 +124,11 @@ public class Boss : MonoBehaviour
                         }
                     }
                 }
-                if (Dontlook == true)
+                if (gettingPlayerPos == false)
                 {
-                    if (gettingPlayerPos == false)
+                    if (!isAtacking)
                     {
-                        playerPos = playerPosition.transform.position;
-                        gettingPlayerPos = true;
+                    StartCoroutine(GetPlayerBing());
                     }
                 }
                 float dist = Vector3.Distance(player.transform.position, transform.position);
@@ -177,7 +176,7 @@ public class Boss : MonoBehaviour
                             {
                                 if (!aoe)
                                 {
-                                gameObject.transform.LookAt(player.transform);
+                                gameObject.transform.LookAt(playerPos);
                                 }
                             }
                         }
@@ -194,7 +193,7 @@ public class Boss : MonoBehaviour
                             {
                                 if (!aoe)
                                 {
-                                gameObject.transform.LookAt(player.transform);
+                                gameObject.transform.LookAt(playerPos);
                                 }
                             }
                         }
@@ -203,6 +202,14 @@ public class Boss : MonoBehaviour
             }
         }
     }
+    IEnumerator GetPlayerBing()
+    {
+        playerPos = player.transform.position;
+        gettingPlayerPos = true;
+        yield return new WaitForSeconds(1.0f);
+        gettingPlayerPos = false;
+    }
+
     public void RandomAttack()
     {
         float RanomAttack = Random.Range(1, 7);
