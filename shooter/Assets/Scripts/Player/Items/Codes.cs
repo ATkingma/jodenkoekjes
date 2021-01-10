@@ -34,84 +34,84 @@ public class Codes : MonoBehaviour
     //health
     public void GiveHealth()
     {
-        list.itemQuantity[1] += 10;
+        list.itemQuantity[2] += 10;
         UpdateItems();
     }
     
     //movementspeed
     public void GiveMovementSpeed()
     {
-        list.itemQuantity[1] += 5;
+        list.itemQuantity[3] += 5;
         UpdateItems();
     }
 
     //double shot
     public void GiveDoubleShot()
     {
-        list.itemQuantity[1] += 1;
+        list.itemQuantity[4] += 1;
         UpdateItems();
     }
 
     //glasscannon
     public void GiveGlasscannon()
     {
-        list.itemQuantity[1] += 1;
+        list.itemQuantity[5] += 1;
         UpdateItems();
     }
 
     //explosive
     public void GiveExplosive()
     {
-        list.itemQuantity[1] += 2;
+        list.itemQuantity[6] += 2;
         UpdateItems();
     }
 
     //exeecute
     public void GiveExecute()
     {
-        list.itemQuantity[1] += 2;
+        list.itemQuantity[7] += 2;
         UpdateItems();
     }
 
     //lifesteal
     public void GiveLifesteal()
     {
-        list.itemQuantity[1] += 1;
+        list.itemQuantity[8] += 1;
         UpdateItems();
     }
 
     //slow bullets
     public void GiveSlowBullets()
     {
-        list.itemQuantity[1] += 1;
+        list.itemQuantity[9] += 1;
         UpdateItems();
     }
 
     //damage reduction
     public void GiveDamageReduction()
     {
-        list.itemQuantity[1] += 1;
+        list.itemQuantity[10] += 1;
         UpdateItems();
     }
 
     //double jump
     public void GiveDoubleJump()
     {
-        list.itemQuantity[1] += 1;
+        list.itemQuantity[11] += 1;
         UpdateItems();
     }
 
     //crit
     public void GiveCrit()
     {
-        list.itemQuantity[1] += 4;
+        list.itemQuantity[12] += 4;
         UpdateItems();
     }
 
     //richocet
     public void GiveRichocet()
     {
-        list.itemQuantity[1] += 1;
+        list.itemQuantity[13] += 1;
         UpdateItems();
     }
 
