@@ -135,7 +135,6 @@ public class Goblin : MonoBehaviour
             {
                 if (hitCollider.gameObject.tag == "Player")
                 {
-                    hitCollider.GetComponent<PlayerHealth>().ReceiveDamage(damageValue, 0);
                 }
             }
         }
@@ -151,7 +150,6 @@ public class Goblin : MonoBehaviour
             {
                 if (hitCollider.gameObject.tag == "Player")
                 {
-                    hitCollider.GetComponent<PlayerHealth>().ReceiveDamage(damageValue, 0);
                 }
             }
         }
@@ -221,9 +219,11 @@ public class Goblin : MonoBehaviour
         int number = Random.Range(1, 16);
         if (number <= 4)
         {
+            WeaponDrop();
         }
         if (number <= 8 & number > 4)
         {
+            ItemDrop();
         }
         if (number <= 12 & number > 8)
         {
@@ -340,6 +340,13 @@ public class Goblin : MonoBehaviour
         if (placholder < Time.deltaTime)
         {
             isOnCoolDown = false;
+        }
+    }
+    public void DAMAge()
+    {
+        if(PlayerInTrigger)
+        {
+            player.GetComponent<PlayerHealth>().ReceiveDamage(damageValue, 0);
         }
     }
 }
