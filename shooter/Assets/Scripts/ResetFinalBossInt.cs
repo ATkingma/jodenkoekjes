@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RessetSceneInt : MonoBehaviour
+public class ResetFinalBossInt : MonoBehaviour
 {
     void Start()
     {
-        PlayerPrefs.SetInt("scene", 0);
+        PlayerPrefs.SetInt("scenecount", 0);
     }
 }

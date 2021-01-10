@@ -24,6 +24,10 @@ public class LoadingScreen : MonoBehaviour
     {
         StartCoroutine(LoadSceneBossEnumerator());
     }
+    public void StartLoadingScreenFinalBossMap()
+    {
+        StartCoroutine(LoadSceneFinalBossEnumerator());
+    }
     public void MainMenu()
     {
         StartCoroutine(LoadMainMenu());
@@ -44,6 +48,18 @@ public class LoadingScreen : MonoBehaviour
     IEnumerator LoadSceneBossEnumerator()
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(5);
+        loadingScreen.SetActive(true);
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / .9f);
+            slider.value = progress;
+            text.text = progress * 100f + "%";
+            yield return null;
+        }
+    }
+    IEnumerator LoadSceneFinalBossEnumerator()///final  
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(6);
         loadingScreen.SetActive(true);
         while (!operation.isDone)
         {

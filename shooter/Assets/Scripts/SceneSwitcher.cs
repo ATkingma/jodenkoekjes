@@ -7,25 +7,41 @@ public class SceneSwitcher : MonoBehaviour
 {
     //public
     //private
-    private int scenes;
+    private int scenes,countScenes;
     void Start()
     {
-        scenes = PlayerPrefs.GetInt("scene");       
+        PlayerPrefs.SetInt("scenecount", 5);
+        scenes = PlayerPrefs.GetInt("scene");
+        countScenes = PlayerPrefs.GetInt("scenecount");
     }
     public void SceneLoader()
     {
+        countScenes = PlayerPrefs.GetInt("scenecount");
         scenes = PlayerPrefs.GetInt("scene");
-        if (scenes >= 3)
+        if (countScenes >= 20)
         {
+            FindObjectOfType<LoadingScreen>().StartLoadingScreenFinalBossMap();
+            PlayerPrefs.SetInt("scenecount", countScenes);
             PlayerPrefs.SetInt("scene", scenes);
-            FindObjectOfType<LoadingScreen>().StartLoadingScreenNormaBossMap();
         }
-        if (scenes <= 2)
+        else if (countScenes < 20)
         {
-            Plus();
-            PlayerPrefs.SetInt("scene", scenes);
-            FindObjectOfType<LoadingScreen>().StartLoadingScreenNormalMap();
-        }   
+            if (scenes >= 3)
+            {
+                Ples();
+                PlayerPrefs.SetInt("scenecount", countScenes);
+                PlayerPrefs.SetInt("scene", scenes);
+                FindObjectOfType<LoadingScreen>().StartLoadingScreenNormaBossMap();
+            }
+            if (scenes <= 2)
+            {
+                Ples();
+                Plus();
+                PlayerPrefs.SetInt("scenecount", countScenes);
+                PlayerPrefs.SetInt("scene", scenes);
+                FindObjectOfType<LoadingScreen>().StartLoadingScreenNormalMap();
+            }
+        }
     }
     public void mainMenu()
     {
@@ -41,8 +57,17 @@ public class SceneSwitcher : MonoBehaviour
         scenes++;
         print("plus");
     }
+    public void Ples()
+    {
+        countScenes++;
+    }
     void OnApplicationQuit()
     {
+        PlayerPrefs.SetInt("scenecount", countScenes);
         PlayerPrefs.SetInt("scene", scenes);
+    }
+    private void Update()
+    {
+        print(countScenes);
     }
 }
