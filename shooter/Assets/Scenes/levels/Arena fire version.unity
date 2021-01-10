@@ -1001,6 +1001,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3826622140301036537, guid: f1bfce23910d4594b9ad490fc898e527, type: 3}
   m_PrefabInstance: {fileID: 7047585122093990668}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &665828957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1535020085230644310, guid: 4a001b1628c1ebe47b8680d0529aaca8, type: 3}
+  m_PrefabInstance: {fileID: 2109750408}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &670385640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2983,6 +2988,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 560469066409874027, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: bos
+      value: 
+      objectReference: {fileID: 665828957}
     - target: {fileID: 1204386929157313998, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -3339,6 +3348,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7223213743689871029, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_text
+      value: Driscoll Graves
+      objectReference: {fileID: 0}
+    - target: {fileID: 7223213743689871029, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_fontSize
+      value: 29.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7278079192084781963, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -3385,6 +3402,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8763896246835538323, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9055599334329584344, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
