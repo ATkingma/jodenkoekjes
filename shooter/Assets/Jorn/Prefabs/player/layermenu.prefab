@@ -10863,7 +10863,7 @@ MonoBehaviour:
   slider1: 0
   slider2: 0
   slider3: 0
-  deathscreen: {fileID: 3165567934686745407}
+  deathscreen: {fileID: 1435775830302901092}
 --- !u!82 &1569086108634261035
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17873,14 +17873,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb2d4d331bf626846b63635bf7b6e761, type: 3}
---- !u!1 &3165567934686745407 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4211789374053910867, guid: bb2d4d331bf626846b63635bf7b6e761, type: 3}
-  m_PrefabInstance: {fileID: 1269191960785148524}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8752852933396381578 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7558572908636988902, guid: bb2d4d331bf626846b63635bf7b6e761, type: 3}
+  m_PrefabInstance: {fileID: 1269191960785148524}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1435775830302901092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 176192200989382920, guid: bb2d4d331bf626846b63635bf7b6e761, type: 3}
   m_PrefabInstance: {fileID: 1269191960785148524}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3676577594339686888
