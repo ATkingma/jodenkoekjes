@@ -2547,6 +2547,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5648399812561377231, guid: 864dcdd2634bac6448f3c5e59bd3d473, type: 3}
+      propertyPath: enemie.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5648399812561377231, guid: 864dcdd2634bac6448f3c5e59bd3d473, type: 3}
       propertyPath: text
       value: 
       objectReference: {fileID: 813796903}
@@ -2558,6 +2562,14 @@ PrefabInstance:
       propertyPath: portal
       value: 
       objectReference: {fileID: 1924356346}
+    - target: {fileID: 5648399812561377231, guid: 864dcdd2634bac6448f3c5e59bd3d473, type: 3}
+      propertyPath: enemie.Array.data[3]
+      value: 
+      objectReference: {fileID: 4897158211990988432, guid: 7e259310c550366489e830e92a0f3e30, type: 3}
+    - target: {fileID: 5648399812561377231, guid: 864dcdd2634bac6448f3c5e59bd3d473, type: 3}
+      propertyPath: enemie.Array.data[4]
+      value: 
+      objectReference: {fileID: 8705728074320657025, guid: 26be4170a0a00c342b762a240ca00307, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 864dcdd2634bac6448f3c5e59bd3d473, type: 3}
 --- !u!114 &1252571536 stripped
