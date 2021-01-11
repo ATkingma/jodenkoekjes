@@ -216,11 +216,10 @@ public class EnemieScript : MonoBehaviour
         int number=Random.Range(1, 16);
         if (number <= 4)
         {
-            WeaponDrop();
         }
         if (number <= 8 & number >4)
         {
-            WeaponDrop();
+            ItemDrop();
         }
         if (number <= 12 & number > 8)
         {
@@ -238,33 +237,33 @@ public class EnemieScript : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("goldenpistol", 0) == 1)
             {
-                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[3], gameObject.transform.position, Quaternion.identity);
+                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[3], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
             }
             else
             {
-                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[2], gameObject.transform.position, Quaternion.identity);
+                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[2], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
             }
         }
         if (number <= 8 & number > 4)
         {
             if (PlayerPrefs.GetInt("goldenlauncher", 0) == 1)
             {
-                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[4], gameObject.transform.position, Quaternion.identity);
+                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[4], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
             }
             else
             {
-                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[0], gameObject.transform.position, Quaternion.identity);
+                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[0], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
             }
         }
         if (number <= 12 & number > 8)
         {
             if (PlayerPrefs.GetInt("goldenrifle", 0) == 1)
             {
-                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[5], gameObject.transform.position, Quaternion.identity);
+                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[5], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
             }
             else
             {
-                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[1], gameObject.transform.position, Quaternion.identity);
+                Instantiate(itemHolder.GetComponent<ItemHolder>().guns[1], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
             }
         }
     }
@@ -273,50 +272,50 @@ public class EnemieScript : MonoBehaviour
         int number = Random.Range(1, 47);
         if (number <= 8)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[0], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[0], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
         }
         if (number <= 16 & number > 8)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[1], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[1], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
         }
         if (number <= 24 & number > 16)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[2], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().comonItems[2], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
         }
         if (number <= 26 & number > 24)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[0], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[0], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
         }
         if (number <= 28 & number > 26)
         {
-             Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[1], gameObject.transform.position, Quaternion.identity);       
+             Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[1], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);       
         }
         if (number <= 30 & number > 28)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[2], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[2], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
         }
         if (number <= 32 & number > 30)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[3], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[3], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
         }
         if (number <= 34 & number > 32)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[4], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[4], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
         }
         if (number <= 36 & number > 34)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[5], gameObject.transform.position, Quaternion.identity);
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[5], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
         }
         if (number <= 38 & number > 36)
         {
-            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[6], gameObject.transform.position, Quaternion.identity);            
+            Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[6], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);            
         }
         //unlockable items
         if (number <= 40 & number > 38)
         {
             if (PlayerPrefs.GetInt("enemy" + 0, 0) >= 100)
             {
-                Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[7], gameObject.transform.position, Quaternion.identity);
+                Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[7], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
             }
             else
             {
@@ -327,7 +326,7 @@ public class EnemieScript : MonoBehaviour
         {
             if(PlayerPrefs.GetInt("timesdied", 0) >= 5)
             {
-                Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[8], gameObject.transform.position, Quaternion.identity);
+                Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[8], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
             }
             else
             {
@@ -338,7 +337,7 @@ public class EnemieScript : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("enemy" + 6, 0) >= 1)
                 {
-                Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[9], gameObject.transform.position, Quaternion.identity);
+                Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[9], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
             }
             else
             {
@@ -349,7 +348,7 @@ public class EnemieScript : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("enemy" + 5, 0) >= 5)
             {
-                Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[10], gameObject.transform.position, Quaternion.identity);
+                Instantiate(itemHolder.GetComponent<ItemHolder>().rareItems[10], gameObject.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
             }
             else
             {

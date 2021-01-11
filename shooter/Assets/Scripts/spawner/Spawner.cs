@@ -31,6 +31,7 @@ public class Spawner : MonoBehaviour
         plusmax = PlayerPrefs.GetInt("MaxEnemiesToKill");
         plusmax += 1; //balancing
         maxEnemiesTokill = (int)((PlayerPrefs.GetInt("MaxEnemiesToKill")+5 )* 1.5);
+        PlayerPrefs.SetInt("MaxEnemiesToKill", maxEnemiesTokill);
         remeberme = 10;
         countminup = 5;
         portal = FindObjectOfType<Portal>().gameObject;
@@ -96,7 +97,6 @@ public class Spawner : MonoBehaviour
     public void Spawn()
     {
         spawnThisTime = Random.Range(1, 5 * (int)((1 + 0.1f) + (0.1f * minuut)));
-        print(spawnThisTime);
         foreach (GameObject spawnPoint in spawnPoints)
         {
             if (maxEnemiesToSpawn > 0)
@@ -132,7 +132,6 @@ public class Spawner : MonoBehaviour
                         if (dist <= 200 && dist >= 15)
                         {
                             enemiesAlive++;
-                            print(enemiesAlive);
                             int enemiePrefab = Random.Range(0, enemie.Count);
                             GameObject clone = Instantiate(enemie[enemiePrefab], spawnPoint.transform.position, Quaternion.identity);
                             clone.GetComponent<EnemyHealth>().DifficultyIncrease((int)minuut);
