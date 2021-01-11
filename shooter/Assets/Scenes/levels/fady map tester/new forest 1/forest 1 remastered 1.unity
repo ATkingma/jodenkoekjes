@@ -293,10 +293,10 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 299370513f6f9bd449a6574a2bc39d7f, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_TreeBillboardDistance: 2000
+  m_TreeCrossFadeLength: 200
+  m_TreeMaximumFullLODCount: 10000
+  m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -369,10 +369,10 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 5b041f81219feb042a4dbfa51ea0b36f, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_TreeBillboardDistance: 2000
+  m_TreeCrossFadeLength: 200
+  m_TreeMaximumFullLODCount: 10000
+  m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -503,6 +503,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1fb45efa9d09c644886be653772144e0, type: 3}
       propertyPath: m_Name
       value: Grand tree Bark (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 1fb45efa9d09c644886be653772144e0, type: 3}
+      propertyPath: m_LODs.Array.data[3].screenRelativeHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 1fb45efa9d09c644886be653772144e0, type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0.0844154
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fb45efa9d09c644886be653772144e0, type: 3}
@@ -1341,10 +1349,10 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: d147e66b8d161ed4aa21249c6d24c663, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_TreeBillboardDistance: 2000
+  m_TreeCrossFadeLength: 200
+  m_TreeMaximumFullLODCount: 10000
+  m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -1634,10 +1642,10 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 686f8fb9a21542643985f63177c0e719, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_TreeBillboardDistance: 2000
+  m_TreeCrossFadeLength: 200
+  m_TreeMaximumFullLODCount: 10000
+  m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -1736,6 +1744,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grand tree Bark
       objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 1fb45efa9d09c644886be653772144e0, type: 3}
+      propertyPath: m_LODs.Array.data[3].screenRelativeHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: 1fb45efa9d09c644886be653772144e0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fb45efa9d09c644886be653772144e0, type: 3}
 --- !u!1 &1193666494
@@ -1778,10 +1794,10 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 493913f2a7af94848aa7b6dfa797f72f, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_TreeBillboardDistance: 2000
+  m_TreeCrossFadeLength: 200
+  m_TreeMaximumFullLODCount: 10000
+  m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -2722,10 +2738,10 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: f2ba3818f59ca5b45b1ef1ca9e0d03f6, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_TreeBillboardDistance: 2000
+  m_TreeCrossFadeLength: 200
+  m_TreeMaximumFullLODCount: 10000
+  m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -3023,7 +3039,7 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2141931819}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 656423709}
@@ -3156,10 +3172,10 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 9203aa9a4bc5c104bae8c18e5ee9eb8a, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_TreeBillboardDistance: 2000
+  m_TreeCrossFadeLength: 200
+  m_TreeMaximumFullLODCount: 10000
+  m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -5491,11 +5507,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3859408363906410728}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2973852418169891920}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!205 &2113000350126920151
 LODGroup:
   m_ObjectHideFlags: 0
@@ -5522,11 +5538,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3859408363774343338}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2973852418301967378}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!205 &2113000350307209137
 LODGroup:
   m_ObjectHideFlags: 0
@@ -5553,11 +5569,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8622237116324691024}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 5408467299195945195}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!205 &2113000350319332924
 LODGroup:
   m_ObjectHideFlags: 0
@@ -5584,11 +5600,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8622237116310601181}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 5408467299176612198}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!205 &2113000350362112429
 LODGroup:
   m_ObjectHideFlags: 0
@@ -5615,11 +5631,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3859408363540166864}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2973852418537192552}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!205 &2113000350614565841
 LODGroup:
   m_ObjectHideFlags: 0
@@ -5646,11 +5662,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8622237117021863984}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 5408467298410986635}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!205 &2113000350649580200
 LODGroup:
   m_ObjectHideFlags: 0
@@ -5677,11 +5693,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3859408363219178453}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2973852417750865773}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!205 &2113000350697430965
 LODGroup:
   m_ObjectHideFlags: 0
@@ -5708,11 +5724,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3859408363070633672}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2973852417799287408}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!205 &2113000350868043370
 LODGroup:
   m_ObjectHideFlags: 0
@@ -5739,11 +5755,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8622237116835628427}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 5408467298634807600}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!205 &2113000350988201505
 LODGroup:
   m_ObjectHideFlags: 0
@@ -5770,11 +5786,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3859408362744235868}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2973852419154838500}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!205 &2113000351183430853
 LODGroup:
   m_ObjectHideFlags: 0
@@ -5801,11 +5817,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3859408362684272056}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2973852419358984448}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!205 &2113000351296758785
 LODGroup:
   m_ObjectHideFlags: 0
@@ -5832,11 +5848,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 8622237117415643104}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 5408467298273192795}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!205 &2113000351392494261
 LODGroup:
   m_ObjectHideFlags: 0
@@ -5863,11 +5879,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3859408362355678152}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2973852419584302960}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!205 &2113000351726327954
 LODGroup:
   m_ObjectHideFlags: 0
@@ -5894,11 +5910,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3859408362140332527}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2973852418819241303}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!205 &2113000351869245628
 LODGroup:
   m_ObjectHideFlags: 0
@@ -5925,11 +5941,11 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3859408362015207873}
-  - screenRelativeHeight: 0.01
+  - screenRelativeHeight: 0
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 2973852418979493241}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!33 &2295014166330122538
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12717,10 +12733,10 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: aaf01630dbf004b4cb1ffb4f8973a9bb, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_TreeBillboardDistance: 2000
+  m_TreeCrossFadeLength: 200
+  m_TreeMaximumFullLODCount: 10000
+  m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -12898,10 +12914,10 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 6e954522c3e978340b6fdaedc828c5a7, type: 2}
   m_TreeDistance: 5000
-  m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_TreeBillboardDistance: 2000
+  m_TreeCrossFadeLength: 200
+  m_TreeMaximumFullLODCount: 10000
+  m_DetailObjectDistance: 250
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
