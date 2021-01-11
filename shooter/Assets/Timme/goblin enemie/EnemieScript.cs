@@ -23,7 +23,7 @@ public class EnemieScript : MonoBehaviour
     {
         if(soundOn)
         {
-            if (death)
+            if (!death)
             {
                 soundOn = false;
                 Invoke("SoundCooldown", 0.4f);
