@@ -13,9 +13,11 @@ public class Deactivate : MonoBehaviour
     private Rigidbody rb;
     private float x, y, z;
     private GameObject ground;
+    private bool floowwn;
 
     void Start()
     {
+        Invoke("Fly", 0.7f);
         controller = GetComponent<CharacterController>();
         gameObject.GetComponent<EnemieScript>().enabled = false;
         gameObject.GetComponent<EnemyHealth>().enabled = false;
@@ -27,6 +29,7 @@ public class Deactivate : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         speed = 25;    
         rb.velocity = transform.forward * speed;
+        rb.velocity = transform.up *4;
         yeetsound.Play();
         ground = GameObject.FindGameObjectWithTag("ground");
         Invoke("LookGround", 4);
@@ -38,23 +41,19 @@ public class Deactivate : MonoBehaviour
         y = +0.0001f;
         z = +0.0001f;
     }
-    public void OnTriggerEnter(Collider gameobject)
+    public void Fly()
     {
-        if (gameobject.gameObject.tag == "Ground")
-        {
-        
-            DoAchtive();
-        }
-            
+        DoAchtive();
+        print("jiea");
     }
     public void DoAchtive()
     {
+        agent.enabled = true;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         gameObject.GetComponent<EnemieScript>().enabled = true;
         gameObject.GetComponent<EnemyHealth>().enabled = true;
         gameObject.GetComponent<Animator>().enabled = true;
-        agent.enabled = true;
         controller.enabled = false;
     }
     public void LookGround()
