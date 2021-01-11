@@ -117,7 +117,7 @@ MonoBehaviour:
   explosionRange: 1
   executePrecent: 0
   explosionCount: 0
-  explode: 1
+  explode: 0
   explosionRadius: {fileID: 6804563409148012847, guid: f2ba43ce1b7400242bdc199c6e14a81b, type: 3}
   speed: 0
   mask:
@@ -139,8 +139,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 8766378964490745035, guid: f9ec44d2957565e4997e23ff85f75b6c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 8b4f4fa058c940547a5bb26983f3096a, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
