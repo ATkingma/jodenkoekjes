@@ -41,6 +41,7 @@ public class GrootRangedScript : MonoBehaviour
                 if (!deathIsDoing)
                 {
                     FindObjectOfType<Saves>().AddKill(3); //groot
+                    FindObjectOfType<Spawner>().enemiesAlive--;
                     Death();
                 }
             }

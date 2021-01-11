@@ -45,6 +45,7 @@ public class EnemieScript : MonoBehaviour
                 if (!deathIsDoing)
                 {
                     FindObjectOfType<Saves>().AddKill(1); //goblin
+                    FindObjectOfType<Spawner>().enemiesAlive--;
                     Death();
                 }
 
