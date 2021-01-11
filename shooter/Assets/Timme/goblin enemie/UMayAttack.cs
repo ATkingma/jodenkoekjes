@@ -6,7 +6,7 @@ public class UMayAttack : MonoBehaviour
 {
     void Start()
     {
-        Invoke("CanAttack", 1.5f);
+        Invoke("CanAttack", 2.5f);
         GetComponent<TriggerEnemie>().enabled = false;
     }
     public void CanAttack()

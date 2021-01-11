@@ -12,7 +12,7 @@ public class GoUp : MonoBehaviour
     {
         if (canGoUp)
         {
-        if (transform.position.y <= -0.07f)
+        if (transform.position.y <= 0.08)
         {
         transform.position += new Vector3(0, 1.4f, 0) * Time.deltaTime ;              
         }

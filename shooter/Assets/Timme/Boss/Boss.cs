@@ -548,5 +548,6 @@ public void Min()
                 ItemDrop();
             }
         }
+        index++;
     }
 }
