@@ -42,6 +42,7 @@ public class RangedEnemieScript : MonoBehaviour
                 if (!deathIsDoing)
                 {
                     FindObjectOfType<Saves>().AddKill(2); //fire
+                    FindObjectOfType<Spawner>().enemiesAlive--;
                     Death();
                     lava.Stop();
                 }
