@@ -9,6 +9,7 @@ public class Boss : MonoBehaviour
     public GameObject icePegel1, icePegel2, portal,raycast;
     public bool PlayerInTrigger, bossisdeath;
     public float damage1, damage2, damage3;
+    public AudioSource aoeSound,iceSound,quickSound,longSound,mediumSound;
     //privates
     private bool playerIsDeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive, noParticle, didto0,aoe,AttackDoingDamage;
     private GameObject player, itemHolder,playerPosition;
@@ -200,7 +201,7 @@ public class Boss : MonoBehaviour
                     }
                 }
             }
-        }
+        }      
     }
     IEnumerator GetPlayerBing()
     {
@@ -245,6 +246,7 @@ public class Boss : MonoBehaviour
             Idle();
         }
         isAtacking = true;
+        transform.rotation = Quaternion.Euler(new Vector3(0, transform.rotation.y, transform.rotation.z));
     }
     public void Attacking1()
     {
@@ -293,6 +295,7 @@ public class Boss : MonoBehaviour
             {
             gameObject.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
             particle.Play(true);
+                aoeSound.Play();
             }
         }
     }
@@ -341,15 +344,22 @@ public class Boss : MonoBehaviour
         attack4_3Pos.SetActive(false);
         aoe = false;
         AttackDoingDamage = false;
+        aoeSound.Stop();
+        quickSound.Stop();
+        mediumSound.Stop();
+        longSound.Stop();
+        iceSound.Stop();
     }
     public void SpawnAttack2()
     {
+        iceSound.Play();
         Instantiate(icePegel1, attack2Pos.transform.position, Quaternion.identity);
         Instantiate(icePegel1, attack2Pos.transform.position, Quaternion.identity);
         Instantiate(icePegel2, attack2Pos.transform.position, Quaternion.identity);
     }
     public void GetThat()//deze
     {
+        mediumSound.Play();
         attack1IsActive = true;
         attack1_1Pos.SetActive(true);
         attack1_2Pos.SetActive(true);
@@ -371,6 +381,7 @@ public class Boss : MonoBehaviour
     }
     public void QuickLighting()//deze
     {
+        quickSound.Play();
         attack2IsActive = true;
         attack2Pos.SetActive(true);
         attack2Pos.GetComponent<LineRenderer>().SetPosition(0, attack2Pos.transform.position);
@@ -396,6 +407,7 @@ public class Boss : MonoBehaviour
     }
     public void Attack4Line()//deze
     {
+        longSound.Play();
         attack4IsActive = true;
         attack4_1Pos.SetActive(true);
         attack4_2Pos.SetActive(true);
