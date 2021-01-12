@@ -113,7 +113,7 @@ public class Spawner : MonoBehaviour
                             enemiesAlive++;
                             int enemiePrefab = Random.Range(0, enemie.Count);
                             GameObject clone = Instantiate(enemie[enemiePrefab], spawnPoint.transform.position, Quaternion.identity);
-                            clone.GetComponent<EnemyHealth>().DifficultyIncrease((int)minuut);
+                            clone.GetComponent<EnemyHealth>().DifficultyIncrease((int)minuut * 3);
                             if (FindObjectOfType<GameObject>().GetComponent<Boss>())
                             {
                                 clone.GetComponent<EnemieScript>().DifficultyIncrease((int)minuut);

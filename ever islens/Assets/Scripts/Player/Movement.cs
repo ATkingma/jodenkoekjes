@@ -153,6 +153,7 @@ public class Movement : MonoBehaviour
             //glasscannon
 
             FindObjectOfType<Index>().AddItem();
+            //FindObjectOfType<Codes>().Aan();
         }
     }
     private void JumpCheck()

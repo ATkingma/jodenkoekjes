@@ -158,4 +158,8 @@ public class Codes : MonoBehaviour
 
         FindObjectOfType<Index>().AddItem();
     }
+    public void Aan()
+    {
+        FindObjectOfType<Spawner>().enemiesDied = FindObjectOfType<Spawner>().maxEnemiesTokill;
+    }
 }

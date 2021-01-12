@@ -49,7 +49,7 @@ public class BaseHealthScript : MonoBehaviour
     }
     private void Update()
     {
-        health = Mathf.Clamp(health, 0, maxHealth);
+        health = (int)Mathf.Clamp(health, 0, maxHealth);
     }
 
     //execute
