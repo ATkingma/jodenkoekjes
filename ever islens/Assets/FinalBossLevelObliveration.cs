@@ -6,6 +6,8 @@ public class FinalBossLevelObliveration : MonoBehaviour
     public GameObject ui,youshure;
     public void StartOb()
     {
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
         ui.SetActive(true); 
     }
     public void Yes()
@@ -19,6 +21,7 @@ public class FinalBossLevelObliveration : MonoBehaviour
     public void YesYes()
     {
         youshure.SetActive(false);
+        ui.SetActive(false);
         MainMenu();
     }
     public void NoNo()

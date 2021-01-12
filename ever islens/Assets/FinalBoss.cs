@@ -8,7 +8,7 @@ public class FinalBoss : MonoBehaviour
     public Animator anim;
     public bool PlayerInTrigger, bossisdeath;
     public float damage1, damage2, damage3;
-    public GameObject fist,bal1,bal2,FireFist,inpactShowObject;
+    public GameObject fist,bal1,bal2,FireFist,inpactShowObject, portal1, portal2;
     public AudioSource dying, walking, taunt1Sound, taunt2Sound,shootSound,quickfistattack,aoeattack;
     //privates
     private bool playerIsDeath, playerIsClose, isAtacking, Dontlook, gettingPlayerPos, attack1IsActive, attack2IsActive, attack4IsActive, noParticle, didto0, aoe;
@@ -227,6 +227,8 @@ public class FinalBoss : MonoBehaviour
         anim.SetBool("IsDeath", true);
         gameObject.GetComponent<BoxCollider>().enabled = false;
         DoDrop();
+        portal2.GetComponent<GoUp>().canGoUp = true;
+        portal1.GetComponent<GoUp>().canGoUp = true;
     }
     public void DoDrop()
     {
