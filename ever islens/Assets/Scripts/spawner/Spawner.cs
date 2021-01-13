@@ -72,7 +72,7 @@ public class Spawner : MonoBehaviour
         float minutes = Mathf.Floor(Times.GetComponent<TimeTime>().timeToSafe / 60);
         float seconds = Times.GetComponent<TimeTime>().timeToSafe % 60;
         //text.text = minutes + ":" + Mathf.RoundToInt(seconds);
-        emeiesDiedCount.text = enemiesDied.ToString() + " / " + maxEnemiesTokill.ToString();
+        emeiesDiedCount.text = "Kills" + enemiesDied.ToString() + " / " + maxEnemiesTokill.ToString();
         //if (minutes==countminup)
         //{
         //    if (doingCooldDown == false)
