@@ -45,6 +45,10 @@ public class BaseHealthScript : MonoBehaviour
     }
     public virtual void Heal(float amount)
     {
+        if(amount < 1)
+        {
+            amount = 1;
+        }
         health = Mathf.Clamp(health + amount, 0, maxHealth);
     }
     private void Update()
