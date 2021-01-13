@@ -210,8 +210,11 @@ public class GrootRangedScript : MonoBehaviour
         {
             if (hit.transform.tag == "Player")
             {
-                player.GetComponent<PlayerHealth>().ReceiveDamage(10, 0);
-                print("quick");
+                if (!death)
+                {
+                    player.GetComponent<PlayerHealth>().ReceiveDamage(10, 0);
+                    print("quick");
+                }
             }
         }
             settingLine = true;
