@@ -84,7 +84,7 @@ public class BulletBehaviour : MonoBehaviour
                                 {
                                     if(UwU.transform != hit.transform)
                                     {
-                                        thisWay = transform.position + new Vector3(0, -10, 0);
+                                        thisWay = UwU.transform.position;
                                         float dist = Vector3.Distance(transform.position, UwU.transform.position);
                                         if (dist < lastDist)
                                         {
