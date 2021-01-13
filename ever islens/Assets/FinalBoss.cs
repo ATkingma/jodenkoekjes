@@ -104,7 +104,6 @@ public class FinalBoss : MonoBehaviour
         ResetAnim();
         anim.SetBool("Attack1", true);
         Invoke("Reset", 3.4f);
-        shootSound.Play();
     }
     public void Attack2()
     {
@@ -123,6 +122,10 @@ public class FinalBoss : MonoBehaviour
     {
         bal1.SetActive(true);
         bal2.SetActive(true);
+    }
+    public void ShootSoundRingDingDing()
+    {
+        shootSound.Play();
     }
     public void Attack1ShootBalls()
     {
