@@ -32,6 +32,10 @@ public class BulletBehaviour : MonoBehaviour
         else
         {
             Rigidbody rb = GetComponent<Rigidbody>();
+            if (speed < 10)
+            {
+                speed = 10;
+            }
             rb.velocity = transform.forward * speed;
         }
     }
@@ -86,7 +90,7 @@ public class BulletBehaviour : MonoBehaviour
                                     {
                                         thisWay = UwU.transform.position;
                                         float dist = Vector3.Distance(transform.position, UwU.transform.position);
-                                        if (dist < lastDist)
+                                        if (dist > lastDist)
                                         {
                                             lastDist = dist;
                                             thisWay = UwU.transform.position;
