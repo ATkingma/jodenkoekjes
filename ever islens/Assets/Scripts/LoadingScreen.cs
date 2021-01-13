@@ -81,4 +81,9 @@ public class LoadingScreen : MonoBehaviour
             yield return null;
         }
     }
+    public void MainMainMenu()
+    {
+        PlayerPrefs.SetInt("scenecount", 0);
+        PlayerPrefs.SetInt("scene", 0);
+    }
 }
