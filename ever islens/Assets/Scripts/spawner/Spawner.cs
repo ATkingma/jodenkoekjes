@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    private TextMeshProUGUI textMesh;
+    private float disappearTime;
+    private Color textColor;
     //public
     public List<GameObject> spawnPoints, enemie,emergencySpawnPoint, activeSpawnPoints;
     public GameObject Times, portal;
@@ -14,7 +17,7 @@ public class Spawner : MonoBehaviour
     private float SpawnCoolDown,coolDownTime, countminup;
     private int maxEnemiesToSpawn,remeberme,plusmax, spawnThisTime;
     private bool isSpawning, doingCooldDown,gettingHard;
-    private GameObject player;
+    private GameObject player, hasopened;
 
     //difficulty
     public int difficult;
@@ -24,6 +27,11 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
+        hasopened = GameObject.FindGameObjectWithTag("oewie");
+        hasopened.SetActive(false);
+        textMesh = hasopened.GetComponent<TextMeshProUGUI>();
+        textColor = textMesh.color;
+        disappearTime = 1f;
         player = FindObjectOfType<PlayerHealth>().gameObject;
         GetSpawnPoints();
         SpawnCoolDown = 20;
@@ -68,6 +76,18 @@ public class Spawner : MonoBehaviour
         if (enemiesDied >= maxEnemiesTokill)
         {
             portal.SetActive(true);
+            hasopened.SetActive(true);
+            disappearTime -= Time.deltaTime;
+            if (disappearTime < 0)
+            {
+                float disappearSpeed = 3f;
+                textColor.a -= disappearSpeed * Time.deltaTime;
+                textMesh.color = textColor;
+                if (textColor.a < 0)
+                {
+                    Destroy(hasopened);
+                }
+            }
         }
         float minutes = Mathf.Floor(Times.GetComponent<TimeTime>().timeToSafe / 60);
         float seconds = Times.GetComponent<TimeTime>().timeToSafe % 60;
