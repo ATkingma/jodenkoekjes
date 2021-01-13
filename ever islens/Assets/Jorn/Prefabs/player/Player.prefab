@@ -612,6 +612,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - code: sk
+    cheatEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7492443233465131597}
+          m_TargetAssemblyTypeName: Codes, Assembly-CSharp
+          m_MethodName: Aan
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4764078662531124636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,6 +1114,7 @@ MonoBehaviour:
   gravity: 2
   jumpForce: 1
   crouchHeight: 0
+  downForce: 0
   desert: {fileID: 5604985272346921073}
   forest: {fileID: 1585868317871231496}
   ice: {fileID: 5871038855383434997}
