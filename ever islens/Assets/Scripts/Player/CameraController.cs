@@ -29,13 +29,13 @@ public class CameraController : MonoBehaviour
         rotSpeed = sensitivity * sliderValue;
         if (!menu.anyIsOn)
         {
-            transform.position = player.transform.position;
+            //transform.position = player.transform.position;
             //rotation
-            rotX += Input.GetAxis("Mouse X") * rotSpeed;
+            //rotX += Input.GetAxis("Mouse X") * rotSpeed;
             rotY += Input.GetAxis("Mouse Y") * rotSpeed;
 
             rotY = Mathf.Clamp(rotY, -maxLookDown, maxLookUp);
-            transform.rotation = Quaternion.Euler(-rotY, rotX, 0f);
+            transform.rotation = Quaternion.Euler(-rotY, player.GetComponent<Movement>().rotX, 0f);
         }
     }
 }

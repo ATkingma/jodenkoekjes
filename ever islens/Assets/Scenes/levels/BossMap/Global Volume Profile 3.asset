@@ -74,26 +74,26 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   color:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.41509432, g: 0.017230311, b: 0.017230311, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
   center:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: {x: 0.5, y: 0.5}
   intensity:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
     min: 0
     max: 1
   smoothness:
-    m_OverrideState: 0
-    m_Value: 0.2
+    m_OverrideState: 1
+    m_Value: 1
     min: 0.01
     max: 1
   rounded:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -112,6 +112,7 @@ MonoBehaviour:
   - {fileID: 3179374077335967163}
   - {fileID: -7523038279930738886}
   - {fileID: 87063699135315959}
+  - {fileID: -7070887992139206896}
 --- !u!114 &87063699135315959
 MonoBehaviour:
   m_ObjectHideFlags: 3
