@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.6415094, g: 0.55457425, b: 0.25720897, a: 1}
+  m_SubtractiveShadowColor: {r: 0.35799998, g: 0.35799998, b: 0.35799998, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: e9ac5de57ea6d5f44a6d1e5e6881a367, type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 9b244b3fa1e4ab240ad4cfdb4750f061, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -30496,7 +30496,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -30513,13 +30513,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951906021}
-  m_LocalRotation: {x: -0.16219789, y: 0.2592733, z: 0.022194296, w: -0.95182806}
+  m_LocalRotation: {x: -0.30674666, y: 0.2387486, z: -0.02073235, w: -0.92112744}
   m_LocalPosition: {x: 140.6, y: 73.6, z: 62.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 17.293, y: -391.633, z: -7.605}
+  m_LocalEulerAnglesHint: {x: 35.1, y: -391.47, z: -7.605}
 --- !u!114 &951906024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32361,6 +32361,10 @@ PrefabInstance:
     - target: {fileID: 5448025162663655072, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5982711943557665578, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -66.6
       objectReference: {fileID: 0}
     - target: {fileID: 6035996853390720783, guid: 5b8abd9b8ab935d438aa74d338455a02, type: 3}
       propertyPath: m_AnchorMin.y
@@ -44684,6 +44688,10 @@ PrefabInstance:
     - target: {fileID: 7737307528133667873, guid: b2971c87c2977b345a23763d65d31897, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.24999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875289673308772174, guid: b2971c87c2977b345a23763d65d31897, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2971c87c2977b345a23763d65d31897, type: 3}
@@ -69595,15 +69603,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7737307528133667873, guid: b2971c87c2977b345a23763d65d31897, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.560124
+      value: -13.623
       objectReference: {fileID: 0}
     - target: {fileID: 7737307528133667873, guid: b2971c87c2977b345a23763d65d31897, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.551198
+      value: 1.434
       objectReference: {fileID: 0}
     - target: {fileID: 7737307528133667873, guid: b2971c87c2977b345a23763d65d31897, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.348188
+      value: -13.3
       objectReference: {fileID: 0}
     - target: {fileID: 7737307528133667873, guid: b2971c87c2977b345a23763d65d31897, type: 3}
       propertyPath: m_LocalRotation.x
@@ -69648,6 +69656,10 @@ PrefabInstance:
     - target: {fileID: 7737307528133667873, guid: b2971c87c2977b345a23763d65d31897, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.24999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8875289673308772174, guid: b2971c87c2977b345a23763d65d31897, type: 3}
+      propertyPath: m_ScaleInLightmap
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2971c87c2977b345a23763d65d31897, type: 3}
