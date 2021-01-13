@@ -8,7 +8,7 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject menu, options, items, stats;
+    public GameObject menu, options, items, stats, help;
     public List<TextMeshProUGUI> enemiesList, gunList, itemList;
     public TextMeshProUGUI timesDied, time, levels, games;
     public List<GameObject> achievementLocks, soundSliders, gunSkins;
@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     public AudioMixer master;
 
     //privates                                              
-    public bool menuOn, optionsOn, itemsOn, anyIsOn, statsOn,
+    public bool menuOn, optionsOn, itemsOn, anyIsOn, statsOn, helpOn,
         slider0, slider1, slider2, slider3;
     protected Saves clear;
     private void Start()
@@ -61,6 +61,7 @@ public class MainMenu : MonoBehaviour
         optionsOn = false;
         itemsOn = false;
         statsOn = false;
+        helpOn = false;
     }
     public void ToOptions()
     {
@@ -94,6 +95,12 @@ public class MainMenu : MonoBehaviour
             achievementLocks[3].SetActive(false);
             PlayerPrefs.SetInt("richocetUnlocked", 1);
         }
+    }
+    public void ToHelp()
+    {
+        confirmButton.Play();
+        helpOn = true;
+        menuOn = false;
     }
     public void ToStats()
     {
@@ -143,6 +150,7 @@ public class MainMenu : MonoBehaviour
         options.SetActive(optionsOn);
         items.SetActive(itemsOn);
         stats.SetActive(statsOn);
+        help.SetActive(helpOn);
     }
     #region sliders
     public void MasterVolume(Slider slider)
