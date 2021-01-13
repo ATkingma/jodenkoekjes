@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     private CharacterController controller;
     private Vector3 moveDir;
 
-    public float rotX, speed, groundedCooldown = 0.1f, bodyHeight, baseSprintSpeed, baseMovewmentSpeed;
+    private float rotX, speed, groundedCooldown = 0.1f, bodyHeight, baseSprintSpeed, baseMovewmentSpeed;
     private int jumpcount;
 
     private ItemList list;
