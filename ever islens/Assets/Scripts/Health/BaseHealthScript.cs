@@ -58,7 +58,7 @@ public class BaseHealthScript : MonoBehaviour
     }
     private void Update()
     {
-        health = (int)Mathf.Clamp(health, 0, maxHealth);
+        health = Mathf.Clamp(health, 0, maxHealth);
         //if(gameObject.tag == "Player")
         //{
         //    prof = volume.GetComponent<Volume>().profile;
