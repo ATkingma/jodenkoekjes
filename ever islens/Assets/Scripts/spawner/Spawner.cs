@@ -144,6 +144,10 @@ public class Spawner : MonoBehaviour
                         }
                     }
                 }
+                if(enemiesAlive == 0)
+                {
+                    Spawn();
+                }
             }
         }
         isSpawning = true;

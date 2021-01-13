@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class BaseHealthScript : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class BaseHealthScript : MonoBehaviour
     //privates
     public float health, maxMaxHealth;
     public ItemList list;
+    private GameObject volume;
+    private VolumeProfile prof;
 
     public virtual void Start()
     {
@@ -20,6 +24,7 @@ public class BaseHealthScript : MonoBehaviour
         health = maxHealth;
         list = FindObjectOfType<ItemList>();
         damageNumbersBool = PlayerPrefs.GetInt("damageNumbersBool") != 0;
+        volume = GameObject.FindGameObjectWithTag("volume");
 
         if(GetComponent<Boss>())
         {
@@ -54,6 +59,25 @@ public class BaseHealthScript : MonoBehaviour
     private void Update()
     {
         health = (int)Mathf.Clamp(health, 0, maxHealth);
+        //if(gameObject.tag == "Player")
+        //{
+        //    prof = volume.GetComponent<Volume>().profile;
+        //    Vignette vignette;
+
+        //    if (!prof.TryGet(out vignette)) throw new System.NullReferenceException(nameof(vignette));
+
+        //    vignette.intensity.Override(0.5f);
+        //    if (health < maxHealth * 0.3f)
+        //    {
+        //        float value = Mathf.Clamp((health / 100) * Time.deltaTime, 0, 0.3f);
+        //        vignette.intensity.Override(value);
+        //    }
+        //    else
+        //    {
+        //        float value = Mathf.Clamp((health / 100) * Time.deltaTime, 0, 0.3f);
+        //        vignette.intensity.Override(value);
+        //    }
+        //}
     }
 
     //execute
