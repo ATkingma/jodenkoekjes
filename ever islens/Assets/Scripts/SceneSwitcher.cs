@@ -17,7 +17,7 @@ public class SceneSwitcher : MonoBehaviour
     {
         countScenes = PlayerPrefs.GetInt("scenecount");
         scenes = PlayerPrefs.GetInt("scene");
-        if (countScenes >= 9)
+        if (countScenes >= 10)
         {
             FindObjectOfType<LoadingScreen>().StartLoadingScreenFinalBossMap();
             PlayerPrefs.SetInt("scenecount", countScenes);
@@ -64,5 +64,10 @@ public class SceneSwitcher : MonoBehaviour
     {
         PlayerPrefs.SetInt("scenecount", countScenes);
         PlayerPrefs.SetInt("scene", scenes);
+    }
+    private void Update()
+    {
+        print(countScenes);
+        print(scenes);
     }
 }

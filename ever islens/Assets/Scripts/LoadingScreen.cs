@@ -93,6 +93,6 @@ public class LoadingScreen : MonoBehaviour
         PlayerPrefs.SetFloat("uur", 0);
         PlayerPrefs.SetInt("scene", 0);
         PlayerPrefs.SetInt("scenecount", 0);
-        PlayerPrefs.SetInt("scene", 0);
+        PlayerPrefs.SetInt("scene", 1);
     }
 }
