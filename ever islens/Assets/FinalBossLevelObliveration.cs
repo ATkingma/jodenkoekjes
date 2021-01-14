@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 public class FinalBossLevelObliveration : MonoBehaviour
 {
-    public GameObject ui,youshure;
+    public GameObject ui, youshure;
     public void StartOb()
     {
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
-        ui.SetActive(true); 
+        ui.SetActive(true);
     }
     public void Yes()
     {
@@ -32,5 +32,9 @@ public class FinalBossLevelObliveration : MonoBehaviour
     public void MainMenu()
     {
         FindObjectOfType<LoadingScreen>().MainMenu();
+    }
+    private void Update()
+    {
+        
     }
 }
