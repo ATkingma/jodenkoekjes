@@ -162,4 +162,11 @@ public class Codes : MonoBehaviour
     {
         FindObjectOfType<Spawner>().enemiesDied = FindObjectOfType<Spawner>().maxEnemiesTokill;
     }
+    public void UnlockItems()
+    {
+        PlayerPrefs.SetInt("enemy" + 0, 100);
+        PlayerPrefs.SetInt("timesdied", 5);
+        PlayerPrefs.SetInt("enemy" + 6, 1);
+        PlayerPrefs.SetInt("enemy" + 5, 5);
+    }
 }

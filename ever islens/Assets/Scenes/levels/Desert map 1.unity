@@ -68954,6 +68954,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1196288561655037373, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
+      propertyPath: cheatCodeList.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196288561655037373, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
+      propertyPath: cheatCodeList.Array.data[19].cheatEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196288561655037373, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
+      propertyPath: cheatCodeList.Array.data[19].code
+      value: unlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196288561655037373, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
+      propertyPath: cheatCodeList.Array.data[19].cheatEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2035256298}
+    - target: {fileID: 1196288561655037373, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
+      propertyPath: cheatCodeList.Array.data[19].cheatEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Codes, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196288561655037373, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
+      propertyPath: cheatCodeList.Array.data[19].cheatEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnlockItems
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196288561655037373, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
+      propertyPath: cheatCodeList.Array.data[19].cheatEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196288561655037373, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
+      propertyPath: cheatCodeList.Array.data[19].cheatEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196288561655037373, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
+      propertyPath: cheatCodeList.Array.data[19].cheatEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1278659811020018247, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
       propertyPath: gunNumber
       value: 0
@@ -69047,6 +69083,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bff7037b3452b845b7c6e905c2c600a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2035256298 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7492443233465131597, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
+  m_PrefabInstance: {fileID: 2035256290}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035256291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bbf1620b254c6a4ca2c2e0e71056f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2037761785 stripped
@@ -71635,6 +71682,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2576207168413919226, guid: 7523fa5aff661114daf5f25e7fbfa101, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.28
+      objectReference: {fileID: 0}
     - target: {fileID: 2576207168533337320, guid: 7523fa5aff661114daf5f25e7fbfa101, type: 3}
       propertyPath: m_Name
       value: playerSpawnPoints des

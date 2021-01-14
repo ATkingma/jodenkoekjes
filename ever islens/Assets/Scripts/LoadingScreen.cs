@@ -83,6 +83,15 @@ public class LoadingScreen : MonoBehaviour
     }
     public void MainMainMenu()
     {
+        for (int i = 0; i < 20; i++)
+        {
+            PlayerPrefs.SetFloat("itemQuantity" + i, 0);
+        }
+        PlayerPrefs.SetInt("CurrentGun", 0);
+        PlayerPrefs.SetFloat("seconde", 0);
+        PlayerPrefs.SetFloat("minuut", 0);
+        PlayerPrefs.SetFloat("uur", 0);
+        PlayerPrefs.SetInt("scene", 0);
         PlayerPrefs.SetInt("scenecount", 0);
         PlayerPrefs.SetInt("scene", 0);
     }
