@@ -76,19 +76,16 @@ public class Spawner : MonoBehaviour
         if (enemiesDied >= maxEnemiesTokill)
         {
             portal.SetActive(true);
-            if(hasopened.activeInHierarchy)
+            hasopened.SetActive(true);
+            disappearTime -= Time.deltaTime;
+            if (disappearTime < 0)
             {
-                hasopened.SetActive(true);
-                disappearTime -= Time.deltaTime;
-                if (disappearTime < 0)
+                float disappearSpeed = 3f;
+                textColor.a -= disappearSpeed * Time.deltaTime;
+                textMesh.color = textColor;
+                if (textColor.a < 0)
                 {
-                    float disappearSpeed = 3f;
-                    textColor.a -= disappearSpeed * Time.deltaTime;
-                    textMesh.color = textColor;
-                    if (textColor.a < 0)
-                    {
-                        Destroy(hasopened);
-                    }
+                    hasopened.SetActive(false);
                 }
             }
         }
