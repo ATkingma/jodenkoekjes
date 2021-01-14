@@ -37,7 +37,7 @@ public class Portal : MonoBehaviour
         {
             if (other.tag == "Player")
             {
-                FindObjectOfType<FinalBossLevelObliveration>().StartOb();
+                FindObjectOfType<FinalBossLevelObliveration>().WerktNiet();
             }
         }
     }

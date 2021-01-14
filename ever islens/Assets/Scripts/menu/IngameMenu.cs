@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 
 public class IngameMenu : MainMenu
 {
-    public GameObject deathscreen;
+    public GameObject deathscreen, obliterate, sure;
 
     //privates
     private Trigger trig;
@@ -52,7 +52,7 @@ public class IngameMenu : MainMenu
                 menuOn = true;
             }
         }
-        if(menuOn || itemsOn || optionsOn || statsOn || deathscreen.activeInHierarchy)
+        if(menuOn || itemsOn || optionsOn || statsOn || deathscreen.activeInHierarchy || sure.activeInHierarchy || obliterate.activeInHierarchy)
         {
             Time.timeScale = 0;
             Cursor.visible = true;

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9146692290216557151}
   - component: {fileID: 9146692290216557144}
   - component: {fileID: 9146692290216557145}
+  - component: {fileID: -7148128319977460616}
   m_Layer: 0
   m_Name: fist of fire (2)
   m_TagString: ijs
@@ -97,3 +98,17 @@ MonoBehaviour:
   speed: 0.2
   coolDown: 0
   damage: 0
+--- !u!136 &-7148128319977460616
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9146692290216557146}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.0065140664
+  m_Height: 0.0058379504
+  m_Direction: 1
+  m_Center: {x: -0.0007033403, y: -0.0006116307, z: -0.00280825}

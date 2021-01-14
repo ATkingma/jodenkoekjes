@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 public class FinalBossLevelObliveration : MonoBehaviour
 {
-    public GameObject ui, youshure;
-    public void StartOb()
+    public GameObject jemoeder, youshure;
+
+    private void Start()
     {
+        print(jemoeder);
+    }
+    public void WerktNiet()
+    {
+        print(jemoeder);
+        jemoeder.SetActive(true);
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
-        ui.SetActive(true);
     }
     public void Yes()
     {
@@ -16,18 +22,18 @@ public class FinalBossLevelObliveration : MonoBehaviour
     }
     public void No()
     {
-        ui.SetActive(false);
+        jemoeder.SetActive(false);
     }
     public void YesYes()
     {
         youshure.SetActive(false);
-        ui.SetActive(false);
+        jemoeder.SetActive(false);
         MainMenu();
     }
     public void NoNo()
     {
         youshure.SetActive(false);
-        ui.SetActive(false);
+        jemoeder.SetActive(false);
     }
     public void MainMenu()
     {

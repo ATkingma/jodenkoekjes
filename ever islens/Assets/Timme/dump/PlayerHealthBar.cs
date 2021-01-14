@@ -18,8 +18,10 @@ public class PlayerHealthBar : MonoBehaviour
     }
     void Update()
     {
+        int ooga = (int)player.GetComponent<PlayerHealth>().health;
+        int ooooga = (int)player.GetComponent<PlayerHealth>().maxHealth;
         healthSlider.value = player.GetComponent<PlayerHealth>().health;
-        healthValueText.text = player.GetComponent<PlayerHealth>().health.ToString() + " / " + player.GetComponent<PlayerHealth>().maxHealth.ToString();
+        healthValueText.text = ooga.ToString() + " / " + ooooga.ToString();
         healthSlider.maxValue = player.GetComponent<PlayerHealth>().maxHealth;
     }
 }
