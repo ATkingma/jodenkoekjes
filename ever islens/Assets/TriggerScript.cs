@@ -6,7 +6,7 @@ public class TriggerScript : MonoBehaviour
 {
     public float aoeDamage;
 
-    void OnParticleTrigger()
+    public void OnParticleTrigger()
     {
         ParticleSystem ps = GetComponent<ParticleSystem>();
 

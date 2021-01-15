@@ -977,6 +977,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2554973888460817179, guid: 905a637fc9b89de46a7f90e9a4df2abd, type: 3}
   m_PrefabInstance: {fileID: 531750802908106242}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &619994460 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6579444859761588946, guid: dcbee6919d009a345bc43340fcd9de58, type: 3}
+  m_PrefabInstance: {fileID: 531750803137465136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &799368110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4191,7 +4196,7 @@ PrefabInstance:
     - target: {fileID: 960152552908857621, guid: 905a637fc9b89de46a7f90e9a4df2abd, type: 3}
       propertyPath: TriggerModule.collisionShape0
       value: 
-      objectReference: {fileID: 3804575360790908645, guid: 1086c76800ab8e74d9f343e390080c65, type: 3}
+      objectReference: {fileID: 619994460}
     - target: {fileID: 960152552908857621, guid: 905a637fc9b89de46a7f90e9a4df2abd, type: 3}
       propertyPath: TriggerModule.enter
       value: 2
