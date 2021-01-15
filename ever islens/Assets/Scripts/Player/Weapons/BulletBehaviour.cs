@@ -6,7 +6,7 @@ public class BulletBehaviour : MonoBehaviour
 {
     public float damage, normalHitRange, explosionRange, executePrecent, explosionCount;
     public bool explode;
-    public GameObject explosionRadius;
+    public GameObject explosionRadius, bulletHole;
     public float speed;
     public LayerMask mask;
     public int weaponUsed, richocetAmount;
