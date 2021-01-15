@@ -36,12 +36,15 @@ public class MainMenu : MonoBehaviour
         soundSliders[1].GetComponent<Slider>().value = PlayerPrefs.GetFloat("musicvolume", 0);
         soundSliders[2].GetComponent<Slider>().value = PlayerPrefs.GetFloat("sfxvolume", 0);
         soundSliders[3].GetComponent<Slider>().value = PlayerPrefs.GetFloat("uivolume", 0);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     //hier doet ie laat scene timme
     public void StartGame()
     {
         confirmButton.Play();
+        PlayerPrefs.SetInt("MaxEnemiesToKill", 0);
         for (int i = 0; i < 20; i++)
         {
             PlayerPrefs.SetFloat("itemQuantity" + i, 0);
@@ -135,6 +138,7 @@ public class MainMenu : MonoBehaviour
     }
     public void ToMainMenu()
     {
+        PlayerPrefs.SetInt("MaxEnemiesToKill", 0);
         clear.ClearSaves();
         SceneManager.LoadScene(0);
     }

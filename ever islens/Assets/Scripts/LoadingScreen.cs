@@ -94,5 +94,6 @@ public class LoadingScreen : MonoBehaviour
         PlayerPrefs.SetInt("scene", 0);
         PlayerPrefs.SetInt("scenecount", 0);
         PlayerPrefs.SetInt("scene", 1);
+        PlayerPrefs.SetInt("MaxEnemiesToKill", 0);
     }
 }

@@ -35,9 +35,6 @@ public class Spawner : MonoBehaviour
         player = FindObjectOfType<PlayerHealth>().gameObject;
         GetSpawnPoints();
         SpawnCoolDown = 20;
-        maxEnemiesToSpawn = 100;
-        plusmax = PlayerPrefs.GetInt("MaxEnemiesToKill");
-        plusmax += 1; //balancing
         maxEnemiesTokill = (int)((PlayerPrefs.GetInt("MaxEnemiesToKill")+5 )* 1.1);
         PlayerPrefs.SetInt("MaxEnemiesToKill", maxEnemiesTokill);
         remeberme = 10;

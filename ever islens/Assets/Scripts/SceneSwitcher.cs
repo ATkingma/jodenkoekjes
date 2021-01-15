@@ -62,6 +62,7 @@ public class SceneSwitcher : MonoBehaviour
     }
     void OnApplicationQuit()
     {
+        PlayerPrefs.SetInt("MaxEnemiesToKill", 0);
         PlayerPrefs.SetInt("scenecount", countScenes);
         PlayerPrefs.SetInt("scene", scenes);
     }
