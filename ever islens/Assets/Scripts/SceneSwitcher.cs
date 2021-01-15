@@ -23,7 +23,7 @@ public class SceneSwitcher : MonoBehaviour
             PlayerPrefs.SetInt("scenecount", countScenes);
             PlayerPrefs.SetInt("scene", scenes);
         }
-        else if (countScenes < 9)
+        else if (countScenes < 10)
         {
             if (scenes >= 3)
             {
