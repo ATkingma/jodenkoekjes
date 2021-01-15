@@ -66,9 +66,4 @@ public class SceneSwitcher : MonoBehaviour
         PlayerPrefs.SetInt("scenecount", countScenes);
         PlayerPrefs.SetInt("scene", scenes);
     }
-    private void Update()
-    {
-        print(countScenes);
-        print(scenes);
-    }
 }
